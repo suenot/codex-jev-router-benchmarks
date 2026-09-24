@@ -4,6 +4,10 @@ All notable changes are documented here in Keep a Changelog format.
 
 ## Unreleased
 
+### Changed
+
+- State measured Codex token reductions and their sample limits in both READMEs and the benchmark report; distinguish token change from API price change.
+
 ## [0.1.0] - 2026-09-25
 
 ### Added

@@ -4,6 +4,12 @@
 
 This repository holds the benchmark runner, grading code, task inputs, traces, patches, and measurements for Codex subagent model routing. The router's installation and runtime code live in [suenot/codex-jev-router](https://github.com/suenot/codex-jev-router). The benchmark materials were moved from that repository after version 0.7.0; the report and raw artifacts are preserved here.
 
+## Codex token results
+
+In the selected real-task sample, routing used **15.8% fewer Codex tokens** across nine paired Django source-task runs (450,240 → 379,265; 9/9 correct in each arm) and **68.8% fewer** across three paired runs of one bounded Django fix (1,355,801 → 422,815; 3/3 official tests passed in each arm). The calculation is `(baseline − routed) / baseline × 100` using Codex input plus output tokens. Jev decision tokens are counted separately.
+
+These percentages describe the recorded tasks, **not a general saving**. Same-model controls show large run-to-run variation, and the historical synthetic run lacks a clean baseline. See the [full comparison and limits](BENCHMARK.md#measured-codex-token-change).
+
 ## Contents
 
 - [BENCHMARK.md](BENCHMARK.md): results, price assumptions, limitations, and links to each case.
