@@ -6,7 +6,7 @@ All notable changes are documented here in Keep a Changelog format.
 
 ### Changed
 
-- State measured Codex token reductions and their sample limits in both READMEs and the benchmark report; distinguish token change from API price change.
+- Lead with estimated API cost savings, including Jev, and state the pricing assumptions and sample limits in both READMEs and the benchmark report.
 
 ## [0.1.0] - 2026-09-25
 

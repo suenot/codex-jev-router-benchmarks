@@ -1,29 +1,26 @@
 # Codex subagent routing benchmarks
 
-## Measured Codex token change
+## Estimated API cost savings
 
-For a selected sample of real Django tasks, the routed arm used **15.8% fewer Codex tokens** across nine paired read-only source-task runs and **68.8% fewer Codex tokens** across three paired runs of one bounded code fix. The relevant answer checks passed in both arms. These are observed differences in this small selected sample, **not a general expected saving**. Jev decision tokens are reported separately and excluded from the Codex token percentages.
+For a selected sample of real Django tasks, routing had a **71.0% lower estimated API cost** across nine paired read-only source-task runs and a **98.3% lower estimated API cost** across three paired runs of one bounded code fix. The routed estimates include the separately priced Jev decisions. The relevant answer checks passed in both arms. These are estimates for this small selected sample, **not measured Codex subscription charges or a general expected saving**.
 
-| Sample | Clean Sol-high Codex tokens | Routed Codex tokens | Observed change | Quality check |
-| --- | ---: | ---: | ---: | --- |
-| Three Django source tasks, three runs per arm | 450,240 | 379,265 | **15.8% fewer** | 9/9 correct in each arm |
-| One bounded Django fix, three runs per arm | 1,355,801 | 422,815 | **68.8% fewer** | 3/3 official regression tests passed in each arm |
-| Django secret-key fix, same Sol-high profile in both arms | 898,994 | 581,761 | 35.3% fewer | Both passed; **not attributable to routing** |
-| Earlier pytest fix, same Sol-high profile in both arms | 388,090 | 460,781 | 18.7% more | Both failed; **not a saving** |
-| Historical synthetic tasks, without clean Codex isolation | 190,774 | 189,775 | 0.5% fewer | 12/12 correct in each arm; **not a clean baseline** |
+| Sample | Clean Sol-high Codex | Routed Codex | Jev decisions | Routed total | Estimated saving | Quality check |
+| --- | ---: | ---: | ---: | ---: | ---: | --- |
+| Three Django source tasks, three runs per arm | $0.214806 | $0.062071 | $0.000246 | $0.062317 | **71.0%** | 9/9 correct in each arm |
+| One bounded Django fix, three runs per arm | $0.555916 | $0.009588 | $0.000081 | $0.009668 | **98.3%** | 3/3 official regression tests passed in each arm |
 
-The percentage is `(baseline Codex tokens − routed Codex tokens) / baseline Codex tokens × 100`; Codex tokens are `input_tokens + output_tokens`, with cached input already included in input. The two real cheaper-route samples were chosen because their task scope allowed cheaper profiles; they do not measure the route distribution, accuracy, or token savings over an unselected workload. Same-model controls show that token counts vary even without a model change. The synthetic experiment is retained for transparency but cannot support a clean savings claim.
+The percentage is `(baseline Codex cost − routed Codex cost − Jev decision cost) / baseline Codex cost × 100`, using the [published Standard, short-context API rates](https://developers.openai.com/api/docs/pricing) and the Jev rate detailed below. Totals and percentages use the unrounded amounts in the result files; displayed components are rounded separately. Raw token counts remain in the case tables and artifacts so the estimates can be checked. The two cheaper-route samples were chosen because their task scope allowed cheaper profiles; they do not measure savings over an unselected workload. Same-model controls show run-to-run variation, and the historical synthetic experiment lacks a clean baseline.
 
 ## Cheaper routes on real Django source tasks
 
 On 2026-09-24, we tested three read-only subagent tasks against the real Django checkout at commit [`9b224579875e30203d079cc2fee83b116d98eb78`](https://github.com/django/django/commit/9b224579875e30203d079cc2fee83b116d98eb78). The tasks required finding a method definition, extracting four setting defaults and one method signature from two files, and checking one claim about `SessionBase.cycle_key()`. Each task ran three times with clean Sol high and three times with the profile selected by Jev. Every Codex run used shell tools to read the repository; **all 18 answers were correct** against the pinned source. The [manifest, answers, traces, and results](benchmarks/django-source-tasks-2026-09-24/) are public. Run `python3 benchmarks/django-source-tasks-2026-09-24/grade.py --source /path/to/django` against that checkout to check the answers and source facts.
 
-| Task | Jev route | Correct, baseline / routed | Codex tokens, baseline / routed | Codex token change | Estimated API price for three runs: baseline / routed Codex + Jev | Estimated price saving |
-| --- | --- | ---: | ---: | ---: | ---: | ---: |
-| Exact symbol lookup | Luna low | 3/3 / 3/3 | 146,711 / 127,742 | 12.9% fewer | $0.064169 / $0.002899 + $0.000081 | 95.4% |
-| Settings and signature from two files | Luna medium | 3/3 / 3/3 | 134,900 / 133,255 | 1.2% fewer | $0.067515 / $0.003895 + $0.000085 | 94.1% |
-| Check `cycle_key()` behavior | Sol low | 3/3 / 3/3 | 168,629 / 118,268 | 29.9% fewer | $0.083122 / $0.055277 + $0.000081 | 33.4% |
-| **All nine pairs** | | **9/9 / 9/9** | **450,240 / 379,265** | **15.8% fewer** | **$0.214806 / $0.062071 + $0.000246** | **71.0%** |
+| Task | Jev route | Correct, baseline / routed | Codex tokens, baseline / routed | Estimated API price for three runs: baseline / routed Codex + Jev | Estimated price saving |
+| --- | --- | ---: | ---: | ---: | ---: |
+| Exact symbol lookup | Luna low | 3/3 / 3/3 | 146,711 / 127,742 | $0.064169 / $0.002899 + $0.000081 | 95.4% |
+| Settings and signature from two files | Luna medium | 3/3 / 3/3 | 134,900 / 133,255 | $0.067515 / $0.003895 + $0.000085 | 94.1% |
+| Check `cycle_key()` behavior | Sol low | 3/3 / 3/3 | 168,629 / 118,268 | $0.083122 / $0.055277 + $0.000081 | 33.4% |
+| **All nine pairs** | | **9/9 / 9/9** | **450,240 / 379,265** | **$0.214806 / $0.062071 + $0.000246** | **71.0%** |
 
 Jev used **5,865 input and 645 output tokens separately** across the nine repeated decisions. Those tokens are **not added to either Codex token total**. Adding the separately measured Jev decision time to each routed Codex run gives 142.570 seconds for the nine routed runs versus 169.331 seconds for the baselines. This is an additive end-to-end estimate: the repeated Jev calls confirmed the same profiles but were measured separately from the Codex sessions. A fourth preselected task, diagnosis from a failing auth log, was routed to Sol high and excluded from this cheaper-route comparison; the [selection audit](benchmarks/routing-selection-audit-2026-09-24.json) records it.
 
@@ -39,7 +36,7 @@ We also used [`django__django-16527`](https://huggingface.co/datasets/SWE-bench/
 | Estimated Codex API price | $0.555916 | $0.009588 |
 | Jev decision | — | 1,917 input and 216 output tokens; $0.000081; median total time 33.559 s |
 
-For this **one small, explicitly scoped fix**, the routed arm used **68.8% fewer Codex tokens**. Its illustrative API price including Jev is **98.3% lower**, and the median elapsed time including a separately measured Jev decision is **64.1% lower**. The first Luna run was an experimental profile based on Jev's preferred `luna_medium` choice before the router threshold changed; three later live decisions under the new policy selected Luna medium. The [case directory](benchmarks/swe-bench-verified-django-16527/) includes all six patches and traces, the official test patch, control and reference verdicts, and [machine-readable usage and cost](benchmarks/swe-bench-verified-django-16527/results.json).
+For this **one small, explicitly scoped fix**, the illustrative API price including Jev was **98.3% lower**, and the median elapsed time including a separately measured Jev decision was **64.1% lower**. The first Luna run was an experimental profile based on Jev's preferred `luna_medium` choice before the router threshold changed; three later live decisions under the new policy selected Luna medium. The [case directory](benchmarks/swe-bench-verified-django-16527/) includes all six patches and traces, the official test patch, control and reference verdicts, and [machine-readable usage and cost](benchmarks/swe-bench-verified-django-16527/results.json).
 
 Previously, a single confidence threshold kept all six short SWE-bench issue descriptions in the audit on Sol high, even when Jev preferred Luna medium. We lowered **only the Luna-medium gate** to `confidence ≥ 0.60` and `luna_medium probability ≥ 0.70`, while retaining the exception check, reviewer exclusion, and Sol-high fallback. The route for `django__django-16527` selected Luna medium on three of three repeated live decisions. Another public task, [`django__django-15103`](benchmarks/swe-bench-verified-django-15103/), had an experimental Luna-medium solution that passed both official tests, but live routing chose Luna medium on only **one of three** repeats and Sol high on the others; it is **not counted as a stable routed saving**. Both its baseline and Luna patch passed 19 related tests. The [selection audit](benchmarks/routing-selection-audit-2026-09-24.json) preserves the candidate routes before and after the gate change.
 
