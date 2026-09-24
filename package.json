@@ -1,0 +1,11 @@
+{
+  "name": "codex-jev-router-benchmarks",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "check": "node --check scripts/benchmark.mjs && python3 benchmarks/django-source-tasks-2026-09-24/grade.py",
+    "benchmark": "node scripts/benchmark.mjs"
+  }
+}

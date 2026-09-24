@@ -1,0 +1,29 @@
+# Бенчмарки Codex Jev Router
+
+[English](README.md) · [Полный отчет на английском](BENCHMARK.md) · [Основной проект](https://github.com/suenot/codex-jev-router)
+
+Здесь находятся запускатель бенчмарка, код проверки ответов, задания, трассы, патчи и измерения выбора моделей для субагентов Codex. Установка и рабочий код роутера остаются в [suenot/codex-jev-router](https://github.com/suenot/codex-jev-router). Материалы перенесены из него после версии 0.7.0 без изменения записанных результатов.
+
+- [BENCHMARK.md](BENCHMARK.md) — результаты, допущения расчета цены и ограничения.
+- [benchmarks/](benchmarks/) — входные данные, ответы, трассы, патчи и результаты проверок.
+- [scripts/benchmark.mjs](scripts/benchmark.mjs) — запускатель синтетических задач с данными прямо в запросе. Он **не** воспроизводит автоматически эксперименты с правками Django и pytest.
+- [grade.py](benchmarks/django-source-tasks-2026-09-24/grade.py) — проверка 18 ответов по исходникам; параметр `--source` дополнительно сверяет факты с закрепленным коммитом Django.
+
+Клонируй оба репозитория рядом и установи закрепленную зависимость основного проекта:
+
+```sh
+gh repo clone suenot/codex-jev-router
+gh repo clone suenot/codex-jev-router-benchmarks
+cd codex-jev-router
+npm ci
+cd ../codex-jev-router-benchmarks
+npm run check
+```
+
+Если каталоги расположены иначе, задай `CODEX_ROUTER_REPO=/absolute/path/to/codex-jev-router`. Запускатель импортирует рабочие файлы роутера из этого каталога. Для нового запуска синтетического теста нужны авторизация Codex CLI и настроенный движок решений:
+
+```sh
+npm run benchmark -- --repetitions 3 --output /tmp/codex-router-benchmark.json
+```
+
+Перед сравнением токенов и расчетных цен прочитай [отчет](BENCHMARK.md): ранний синтетический запуск сделан до исправления изоляции, а результаты на настоящих репозиториях относятся к небольшой выбранной выборке.
