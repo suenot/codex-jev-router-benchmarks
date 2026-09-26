@@ -1,5 +1,22 @@
 # Codex subagent routing benchmarks
 
+## Direct routing before the root Codex turn
+
+We ran a third arrangement of the **same 12 preregistered Django source tasks**, twice each. For every task, Jev chose a model and effort **before** `codex exec`; one isolated Codex root session then solved the task with subagents disabled. The [direct-root runner](scripts/direct-routed-root.mjs), [saved-result auditor](scripts/audit-direct-root.py), [results](benchmarks/django-task-suite-2026-09-26/direct-root-results.json), and [24 sanitized event traces](benchmarks/django-task-suite-2026-09-26/direct-root-results-traces/) record the experiment. The selected profiles matched the earlier routed-child arm: eight Luna low, eight Luna medium, and eight Sol low. All 24 root rollouts confirmed the requested model and effort, and showed no child session.
+
+| Task type, eight runs each | Historical direct Sol high: strict / price | Jev-routed root: strict / price | Routed price change |
+| --- | ---: | ---: | ---: |
+| Exact symbol lookup, Luna low | 8/8 · $0.112199 | 8/8 · $0.005828 | −94.8% |
+| Bounded extraction, Luna medium | 8/8 · $0.215430 | 7/8 · $0.010099 | −95.3% |
+| Focused source judgment, Sol low | 6/8 · $0.125048 | 6/8 · $0.168450 | **+34.7%** |
+| **All 24 runs** | **22/24 · $0.452677** | **21/24 · $0.184377** | **−59.3%** |
+
+The direct-root total includes **$0.183746** estimated Codex API price and **$0.000632** Jev price. Summed end-to-end time, including **36.7 seconds** of Jev decisions, was **775.6 seconds** versus **735.8 seconds** for historical direct Sol high (**5.4% longer**). Unlike the Sol-parent-plus-child arm, this arrangement avoids a second Codex session. It also shows that changing Sol high to Sol low does not ensure a saving: their per-token rates are identical, and the Sol-low judgment runs were more expensive in this sample. The Luna results are the source of the aggregate price reduction.
+
+The strict failures were one bounded extraction with correct facts but the wrong JSON shape, and two focused judgments with the correct Boolean verdict but without a required citation to line 47. These are task-completion failures under the preregistered contract, even though the factual values were correct. The historical Sol-high control had **22/24** strict passes; **21/24** is not an established equal-quality result. These were later runs compared with saved Sol-high results, **not an interleaved or randomized pairwise A/B test**. The tasks were deliberately selected as cheap-route candidates, all were read-only, and each run had a fresh isolated Codex home. No continuing-thread cache, retries, full code fix, or regular user plugins were measured in this arm. Costs use the published Standard short-context API rates and are **not actual Codex subscription charges**.
+
+To rerun the direct-root arm, check out the pinned Django commit from the [manifest](benchmarks/django-task-suite-2026-09-26/manifest.json), configure the same decision backend, and run `npm run benchmark:direct-root -- --repo /path/to/pinned/django --output /tmp/direct-root-results.json --repetitions 2`. To recheck the published answers, protocol, prices, and trace presence without making model calls, run `python3 scripts/audit-direct-root.py benchmarks/django-task-suite-2026-09-26/direct-root-results.json`.
+
 ## Full Codex workflow: one Sol high agent or a routed subagent
 
 The earlier comparisons below price the worker chosen by Jev against a clean Sol-high worker. They do not include a Sol-high **parent** creating the subagent. On 2026-09-26 we measured that parent work directly on [12 preregistered read-only Django tasks](benchmarks/django-task-suite-2026-09-26/manifest.json) at commit [`9b224579875e30203d079cc2fee83b116d98eb78`](https://github.com/django/django/commit/9b224579875e30203d079cc2fee83b116d98eb78). Four tasks locate an exact symbol, four extract bounded facts from named files, and four check a focused behavior claim. Each task ran twice per arm, with arm order alternated. The [grader](benchmarks/django-task-suite-2026-09-26/grade.py) checks the requested values and supporting source locations. The [runner](scripts/agent-overhead.mjs), [audit](scripts/audit-agent-overhead.py), [results](benchmarks/django-task-suite-2026-09-26/results.json), and [Codex event traces](benchmarks/django-task-suite-2026-09-26/results-traces/) make the measurements inspectable.

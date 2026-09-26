@@ -4,6 +4,17 @@ All notable changes are documented here in Keep a Changelog format.
 
 ## Unreleased
 
+## [0.3.0] - 2026-09-26
+
+### Added
+
+- Measure the same pinned Django source tasks with Jev selecting the model before one root Codex turn, without a Sol parent or subagent.
+- Publish the 24 direct-root traces, strict grades, token usage, price estimates, and an independent saved-result audit.
+
+### Changed
+
+- Compare direct-root routing with the historical Sol-high control and state its quality and run-order limits.
+
 ## [0.2.0] - 2026-09-26
 
 ### Added

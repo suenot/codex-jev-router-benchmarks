@@ -1,14 +1,15 @@
 {
   "name": "codex-jev-router-benchmarks",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "check": "node --check scripts/benchmark.mjs && node --check scripts/agent-overhead.mjs && node --check scripts/batch-agent-overhead.mjs && node --check scripts/code-fix-agent-overhead.mjs && python3 benchmarks/django-source-tasks-2026-09-24/grade.py && python3 -m py_compile benchmarks/django-task-suite-2026-09-26/grade.py scripts/audit-agent-overhead.py scripts/audit-batch-agent-overhead.py && python3 scripts/audit-agent-overhead.py benchmarks/django-task-suite-2026-09-26/results.json && python3 scripts/audit-batch-agent-overhead.py benchmarks/django-task-suite-2026-09-26/batch-results.json",
+    "check": "node --check scripts/benchmark.mjs && node --check scripts/agent-overhead.mjs && node --check scripts/batch-agent-overhead.mjs && node --check scripts/code-fix-agent-overhead.mjs && node --check scripts/direct-routed-root.mjs && python3 benchmarks/django-source-tasks-2026-09-24/grade.py && python3 -m py_compile benchmarks/django-task-suite-2026-09-26/grade.py scripts/audit-agent-overhead.py scripts/audit-batch-agent-overhead.py scripts/audit-direct-root.py && python3 scripts/audit-agent-overhead.py benchmarks/django-task-suite-2026-09-26/results.json && python3 scripts/audit-batch-agent-overhead.py benchmarks/django-task-suite-2026-09-26/batch-results.json && python3 scripts/audit-direct-root.py benchmarks/django-task-suite-2026-09-26/direct-root-results.json",
     "benchmark": "node scripts/benchmark.mjs",
     "benchmark:agents": "node scripts/agent-overhead.mjs",
     "benchmark:batch": "node scripts/batch-agent-overhead.mjs",
-    "benchmark:code-fix": "node scripts/code-fix-agent-overhead.mjs"
+    "benchmark:code-fix": "node scripts/code-fix-agent-overhead.mjs",
+    "benchmark:direct-root": "node scripts/direct-routed-root.mjs"
   }
 }
