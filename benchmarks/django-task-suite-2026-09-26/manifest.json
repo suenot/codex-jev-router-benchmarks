@@ -1,0 +1,265 @@
+{
+  "fixture_repo": "django/django",
+  "base_commit": "9b224579875e30203d079cc2fee83b116d98eb78",
+  "preregistered": true,
+  "answer_contract": "Final response is only JSON: {\"answer\": {<task fields>}, \"citations\": {<answer field>: [\"path:line\", ...]}}.",
+  "tasks": [
+    {
+      "id": "paginator-elided-symbol",
+      "role": "explorer",
+      "expected_answer": {
+        "location": "django/core/paginator.py:132"
+      },
+      "required_citations": {
+        "location": [
+          "django/core/paginator.py:132"
+        ]
+      },
+      "source_evidence": {
+        "django/core/paginator.py:132": "def get_elided_page_range(self, number=1, *, on_each_side=3, on_ends=2):"
+      },
+      "type": "exact_symbol",
+      "summary": "Find the exact Paginator.get_elided_page_range definition in the checked-out Django source and return only its path and line.",
+      "prompt": "Locate the exact definition of Paginator.get_elided_page_range. Give its repository-relative path and definition line as one path:line string.\n\nRead the checked-out Django source at the pinned commit. Return only a JSON object with exactly two top-level keys, \"answer\" and \"citations\". The answer object must have these keys: {\"location\": \"<value>\"}. For each answer key, citations must contain an array of repository-relative \"path:line\" locations that directly support that value. Use exact line numbers from the source. Do not edit files or use the internet."
+    },
+    {
+      "id": "url-namespace-symbol",
+      "role": "explorer",
+      "expected_answer": {
+        "location": "django/urls/resolvers.py:117"
+      },
+      "required_citations": {
+        "location": [
+          "django/urls/resolvers.py:117"
+        ]
+      },
+      "source_evidence": {
+        "django/urls/resolvers.py:117": "def get_ns_resolver(ns_pattern, resolver, converters):"
+      },
+      "type": "exact_symbol",
+      "summary": "Find the exact get_ns_resolver definition in the checked-out Django source and return only its path and line.",
+      "prompt": "Locate the exact definition of get_ns_resolver. Give its repository-relative path and definition line as one path:line string.\n\nRead the checked-out Django source at the pinned commit. Return only a JSON object with exactly two top-level keys, \"answer\" and \"citations\". The answer object must have these keys: {\"location\": \"<value>\"}. For each answer key, citations must contain an array of repository-relative \"path:line\" locations that directly support that value. Use exact line numbers from the source. Do not edit files or use the internet."
+    },
+    {
+      "id": "signal-robust-symbol",
+      "role": "explorer",
+      "expected_answer": {
+        "location": "django/dispatch/dispatcher.py:269"
+      },
+      "required_citations": {
+        "location": [
+          "django/dispatch/dispatcher.py:269"
+        ]
+      },
+      "source_evidence": {
+        "django/dispatch/dispatcher.py:269": "def send_robust(self, sender, **named):"
+      },
+      "type": "exact_symbol",
+      "summary": "Find the exact Signal.send_robust definition in the checked-out Django source and return only its path and line.",
+      "prompt": "Locate the exact definition of Signal.send_robust. Give its repository-relative path and definition line as one path:line string.\n\nRead the checked-out Django source at the pinned commit. Return only a JSON object with exactly two top-level keys, \"answer\" and \"citations\". The answer object must have these keys: {\"location\": \"<value>\"}. For each answer key, citations must contain an array of repository-relative \"path:line\" locations that directly support that value. Use exact line numbers from the source. Do not edit files or use the internet."
+    },
+    {
+      "id": "static-location-symbol",
+      "role": "explorer",
+      "expected_answer": {
+        "location": "django/contrib/staticfiles/finders.py:131"
+      },
+      "required_citations": {
+        "location": [
+          "django/contrib/staticfiles/finders.py:131"
+        ]
+      },
+      "source_evidence": {
+        "django/contrib/staticfiles/finders.py:131": "def find_location(self, root, path, prefix=None):"
+      },
+      "type": "exact_symbol",
+      "summary": "Find the exact FileSystemFinder.find_location definition in the checked-out Django source and return only its path and line.",
+      "prompt": "Locate the exact definition of FileSystemFinder.find_location. Give its repository-relative path and definition line as one path:line string.\n\nRead the checked-out Django source at the pinned commit. Return only a JSON object with exactly two top-level keys, \"answer\" and \"citations\". The answer object must have these keys: {\"location\": \"<value>\"}. For each answer key, citations must contain an array of repository-relative \"path:line\" locations that directly support that value. Use exact line numbers from the source. Do not edit files or use the internet."
+    },
+    {
+      "id": "forms-normalization",
+      "role": "worker",
+      "expected_answer": {
+        "url_scheme": "http",
+        "boolean_false_strings": [
+          "false",
+          "0"
+        ],
+        "checkbox_check_helper": "boolean_check"
+      },
+      "required_citations": {
+        "url_scheme": [
+          "django/forms/fields.py:774"
+        ],
+        "boolean_false_strings": [
+          "django/forms/fields.py:796"
+        ],
+        "checkbox_check_helper": [
+          "django/forms/widgets.py:554"
+        ]
+      },
+      "source_evidence": {
+        "django/forms/fields.py:774": "url_fields[0] = \"http\"",
+        "django/forms/fields.py:796": "if isinstance(value, str) and value.lower() in (\"false\", \"0\"):",
+        "django/forms/widgets.py:554": "self.check_test = boolean_check if check_test is None else check_test"
+      },
+      "type": "bounded_extraction",
+      "summary": "Extract three specified URL, BooleanField, and CheckboxInput facts from django/forms/fields.py and django/forms/widgets.py; return brief cited values.",
+      "prompt": "In django/forms/fields.py and django/forms/widgets.py, report the scheme URLField.to_python assumes when none is present; the two case-insensitive string literals BooleanField.to_python maps to False (preserve their source order); and the default check helper assigned by CheckboxInput.__init__.\n\nRead the checked-out Django source at the pinned commit. Return only a JSON object with exactly two top-level keys, \"answer\" and \"citations\". The answer object must have these keys: {\"url_scheme\": \"<value>\", \"boolean_false_strings\": \"<value>\", \"checkbox_check_helper\": \"<value>\"}. For each answer key, citations must contain an array of repository-relative \"path:line\" locations that directly support that value. Use exact line numbers from the source. Do not edit files or use the internet."
+    },
+    {
+      "id": "slash-redirect-default",
+      "role": "worker",
+      "expected_answer": {
+        "redirect_class": "HttpResponsePermanentRedirect",
+        "status_code": 301
+      },
+      "required_citations": {
+        "redirect_class": [
+          "django/middleware/common.py:32"
+        ],
+        "status_code": [
+          "django/http/response.py:659"
+        ]
+      },
+      "source_evidence": {
+        "django/middleware/common.py:32": "response_redirect_class = HttpResponsePermanentRedirect",
+        "django/http/response.py:659": "status_code = 301"
+      },
+      "type": "bounded_extraction",
+      "summary": "Extract CommonMiddleware.response_redirect_class and that class's status code from two named Django source files; return brief cited values.",
+      "prompt": "In django/middleware/common.py and django/http/response.py, report CommonMiddleware.response_redirect_class by class name and that class's status_code as an integer.\n\nRead the checked-out Django source at the pinned commit. Return only a JSON object with exactly two top-level keys, \"answer\" and \"citations\". The answer object must have these keys: {\"redirect_class\": \"<value>\", \"status_code\": \"<value>\"}. For each answer key, citations must contain an array of repository-relative \"path:line\" locations that directly support that value. Use exact line numbers from the source. Do not edit files or use the internet."
+    },
+    {
+      "id": "orm-chunk-sizes",
+      "role": "worker",
+      "expected_answer": {
+        "queryset_iterable_chunk_size": 2000,
+        "sql_get_iterator_chunk_size": 100
+      },
+      "required_citations": {
+        "queryset_iterable_chunk_size": [
+          "django/db/models/query.py:512"
+        ],
+        "sql_get_iterator_chunk_size": [
+          "django/db/models/sql/constants.py:7"
+        ]
+      },
+      "source_evidence": {
+        "django/db/models/query.py:512": "chunk_size=chunk_size or 2000,",
+        "django/db/models/sql/constants.py:7": "GET_ITERATOR_CHUNK_SIZE = 100"
+      },
+      "type": "bounded_extraction",
+      "summary": "Extract the QuerySet._iterator fallback chunk size and GET_ITERATOR_CHUNK_SIZE from two named Django source files; return brief cited values.",
+      "prompt": "In django/db/models/query.py and django/db/models/sql/constants.py, report the fallback chunk_size passed by QuerySet._iterator to its iterable, and the value of GET_ITERATOR_CHUNK_SIZE. Keep the two values distinct.\n\nRead the checked-out Django source at the pinned commit. Return only a JSON object with exactly two top-level keys, \"answer\" and \"citations\". The answer object must have these keys: {\"queryset_iterable_chunk_size\": \"<value>\", \"sql_get_iterator_chunk_size\": \"<value>\"}. For each answer key, citations must contain an array of repository-relative \"path:line\" locations that directly support that value. Use exact line numbers from the source. Do not edit files or use the internet."
+    },
+    {
+      "id": "template-truncation",
+      "role": "worker",
+      "expected_answer": {
+        "invalid_arg_result": "original_value",
+        "default_truncation_format": "%(truncated_text)s…"
+      },
+      "required_citations": {
+        "invalid_arg_result": [
+          "django/template/defaultfilters.py:298"
+        ],
+        "default_truncation_format": [
+          "django/utils/text.py:78"
+        ]
+      },
+      "source_evidence": {
+        "django/template/defaultfilters.py:298": "return value  # Fail silently.",
+        "django/utils/text.py:78": "\"String to return when truncating text\", \"%(truncated_text)s…\""
+      },
+      "type": "bounded_extraction",
+      "summary": "Extract two specified truncatechars and Truncator facts from django/template/defaultfilters.py and django/utils/text.py; return brief cited values.",
+      "prompt": "In django/template/defaultfilters.py and django/utils/text.py, report what truncatechars returns for a non-integer argument using the label \"original_value\" or \"empty_string\", and report the default format string passed to pgettext by Truncator.add_truncation_text.\n\nRead the checked-out Django source at the pinned commit. Return only a JSON object with exactly two top-level keys, \"answer\" and \"citations\". The answer object must have these keys: {\"invalid_arg_result\": \"<value>\", \"default_truncation_format\": \"<value>\"}. For each answer key, citations must contain an array of repository-relative \"path:line\" locations that directly support that value. Use exact line numbers from the source. Do not edit files or use the internet."
+    },
+    {
+      "id": "paginator-float-claim",
+      "role": "worker",
+      "expected_answer": {
+        "claim": true
+      },
+      "required_citations": {
+        "claim": [
+          "django/core/paginator.py:46",
+          "django/core/paginator.py:47",
+          "django/core/paginator.py:48"
+        ]
+      },
+      "source_evidence": {
+        "django/core/paginator.py:46": "if isinstance(number, float) and not number.is_integer():",
+        "django/core/paginator.py:47": "raise ValueError",
+        "django/core/paginator.py:48": "number = int(number)"
+      },
+      "type": "focused_judgment",
+      "summary": "Check one focused claim about Paginator.validate_number accepting float 2.0 but rejecting float 2.5 in its short method body.",
+      "prompt": "For a Paginator with at least three pages, does validate_number accept the float 2.0 and reject the float 2.5? Answer the combined claim as a JSON boolean.\n\nRead the checked-out Django source at the pinned commit. Return only a JSON object with exactly two top-level keys, \"answer\" and \"citations\". The answer object must have these keys: {\"claim\": \"<value>\"}. For each answer key, citations must contain an array of repository-relative \"path:line\" locations that directly support that value. Use exact line numbers from the source. Do not edit files or use the internet."
+    },
+    {
+      "id": "json-response-list-claim",
+      "role": "worker",
+      "expected_answer": {
+        "claim": false
+      },
+      "required_citations": {
+        "claim": [
+          "django/http/response.py:736",
+          "django/http/response.py:740"
+        ]
+      },
+      "source_evidence": {
+        "django/http/response.py:736": "safe=True,",
+        "django/http/response.py:740": "if safe and not isinstance(data, dict):"
+      },
+      "type": "focused_judgment",
+      "summary": "Check one focused claim about JsonResponse accepting a list with its default safe argument from its constructor.",
+      "prompt": "Does JsonResponse accept a list as data with its default safe argument? Answer as a JSON boolean.\n\nRead the checked-out Django source at the pinned commit. Return only a JSON object with exactly two top-level keys, \"answer\" and \"citations\". The answer object must have these keys: {\"claim\": \"<value>\"}. For each answer key, citations must contain an array of repository-relative \"path:line\" locations that directly support that value. Use exact line numbers from the source. Do not edit files or use the internet."
+    },
+    {
+      "id": "extension-case-claim",
+      "role": "worker",
+      "expected_answer": {
+        "claim": true
+      },
+      "required_citations": {
+        "claim": [
+          "django/core/validators.py:539",
+          "django/core/validators.py:548",
+          "django/core/validators.py:551"
+        ]
+      },
+      "source_evidence": {
+        "django/core/validators.py:539": "allowed_extension.lower() for allowed_extension in allowed_extensions",
+        "django/core/validators.py:548": "extension = Path(value.name).suffix[1:].lower()",
+        "django/core/validators.py:551": "and extension not in self.allowed_extensions"
+      },
+      "type": "focused_judgment",
+      "summary": "Check one focused claim about FileExtensionValidator accepting mixed-case PDF extensions from its normalization code.",
+      "prompt": "Would FileExtensionValidator(allowed_extensions=[\"PDF\"]) accept a file whose name is \"report.PdF\"? Answer as a JSON boolean; assume the file otherwise satisfies the validator.\n\nRead the checked-out Django source at the pinned commit. Return only a JSON object with exactly two top-level keys, \"answer\" and \"citations\". The answer object must have these keys: {\"claim\": \"<value>\"}. For each answer key, citations must contain an array of repository-relative \"path:line\" locations that directly support that value. Use exact line numbers from the source. Do not edit files or use the internet."
+    },
+    {
+      "id": "filefield-form-data-claim",
+      "role": "worker",
+      "expected_answer": {
+        "claim": true
+      },
+      "required_citations": {
+        "claim": [
+          "django/db/models/fields/files.py:344",
+          "django/db/models/fields/files.py:347"
+        ]
+      },
+      "source_evidence": {
+        "django/db/models/fields/files.py:344": "if data is not None:",
+        "django/db/models/fields/files.py:347": "setattr(instance, self.name, data or \"\")"
+      },
+      "type": "focused_judgment",
+      "summary": "Check one focused claim about FileField.save_form_data with data=None and empty data from its short method body.",
+      "prompt": "Does FileField.save_form_data leave the current field value unchanged for data=None while setting it to the empty string for data=False? Answer the combined claim as a JSON boolean.\n\nRead the checked-out Django source at the pinned commit. Return only a JSON object with exactly two top-level keys, \"answer\" and \"citations\". The answer object must have these keys: {\"claim\": \"<value>\"}. For each answer key, citations must contain an array of repository-relative \"path:line\" locations that directly support that value. Use exact line numbers from the source. Do not edit files or use the internet."
+    }
+  ],
+  "repository_url": "https://github.com/django/django.git"
+}

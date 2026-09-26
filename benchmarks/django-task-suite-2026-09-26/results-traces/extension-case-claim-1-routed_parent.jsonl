@@ -1,0 +1,6 @@
+{"type":"thread.started","thread_id":"01a0dd02-f199-7772-ae06-98d6b935ebf2"}
+{"type":"turn.started"}
+{"type":"item.started","item":{"id":"item_0","type":"collab_tool_call","tool":"wait","sender_thread_id":"01a0dd02-f199-7772-ae06-98d6b935ebf2","receiver_thread_ids":[],"prompt":null,"agents_states":{},"status":"in_progress"}}
+{"type":"item.completed","item":{"id":"item_0","type":"collab_tool_call","tool":"wait","sender_thread_id":"01a0dd02-f199-7772-ae06-98d6b935ebf2","receiver_thread_ids":[],"prompt":null,"agents_states":{},"status":"completed"}}
+{"type":"item.completed","item":{"id":"item_1","type":"agent_message","text":"{\"answer\":{\"claim\":\"Yes. FileExtensionValidator(allowed_extensions=[\\\"PDF\\\"]) accepts \\\"report.PdF\\\" because it lowercases both the allowed extension and the file’s extension before comparing them.\"},\"citations\":{\"claim\":[\"django/core/validators.py:536\",\"django/core/validators.py:539\",\"django/core/validators.py:548\",\"django/core/validators.py:551\"]}}"}}
+{"type":"turn.completed","usage":{"input_tokens":43231,"cached_input_tokens":40064,"cache_write_input_tokens":0,"output_tokens":440,"reasoning_output_tokens":95}}

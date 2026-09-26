@@ -1,0 +1,3 @@
+The worker updated [admin_modify.py](<WORKTREE_B>/django/contrib/admin/templatetags/admin_modify.py) so `show_save_as_new` requires add permission. It also added a regression test in [test_templatetags.py](<WORKTREE_B>/tests/admin_views/test_templatetags.py) for a user who can change an object but cannot add one.
+
+Verification passed in the repository’s existing virtual environment: all 7 template tag tests, the save-as-new permissions integration test, and `git diff --check`.

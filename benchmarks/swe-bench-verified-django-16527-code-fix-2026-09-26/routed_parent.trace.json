@@ -1,0 +1,121 @@
+{
+  "root_thread_id": "01a0dd22-4874-79d1-83b4-7fa9f77c2c4e",
+  "root_usage": {
+    "input_tokens": 108041,
+    "cached_input_tokens": 99200,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 949,
+    "reasoning_output_tokens": 209
+  },
+  "sessions": [
+    {
+      "id": "01a0dd22-4874-79d1-83b4-7fa9f77c2c4e",
+      "parent_id": null,
+      "model": "gpt-6-sol",
+      "reasoning_effort": "high",
+      "usage": {
+        "input_tokens": 108041,
+        "cached_input_tokens": 99200,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 949,
+        "reasoning_output_tokens": 209,
+        "total_tokens": 108990
+      },
+      "spawn_calls": 1
+    },
+    {
+      "id": "01a0dd22-7554-75f0-89ad-25e6c13aa359",
+      "parent_id": "01a0dd22-4874-79d1-83b4-7fa9f77c2c4e",
+      "model": "gpt-6-luna",
+      "reasoning_effort": "medium",
+      "usage": {
+        "input_tokens": 537998,
+        "cached_input_tokens": 507392,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2974,
+        "reasoning_output_tokens": 601,
+        "total_tokens": 540972
+      },
+      "spawn_calls": 0
+    }
+  ],
+  "cli_events": [
+    {
+      "type": "thread.started",
+      "thread_id": "01a0dd22-4874-79d1-83b4-7fa9f77c2c4e"
+    },
+    {
+      "type": "turn.started"
+    },
+    {
+      "type": "item.completed",
+      "item_type": "agent_message",
+      "item_id": "item_0"
+    },
+    {
+      "type": "item.started",
+      "item_type": "collab_tool_call",
+      "item_id": "item_1"
+    },
+    {
+      "type": "item.completed",
+      "item_type": "collab_tool_call",
+      "item_id": "item_1"
+    },
+    {
+      "type": "item.completed",
+      "item_type": "agent_message",
+      "item_id": "item_2"
+    },
+    {
+      "type": "item.started",
+      "item_type": "collab_tool_call",
+      "item_id": "item_3"
+    },
+    {
+      "type": "item.completed",
+      "item_type": "collab_tool_call",
+      "item_id": "item_3"
+    },
+    {
+      "type": "item.completed",
+      "item_type": "agent_message",
+      "item_id": "item_4"
+    },
+    {
+      "type": "item.started",
+      "item_type": "collab_tool_call",
+      "item_id": "item_5"
+    },
+    {
+      "type": "item.completed",
+      "item_type": "collab_tool_call",
+      "item_id": "item_5"
+    },
+    {
+      "type": "item.started",
+      "item_type": "collab_tool_call",
+      "item_id": "item_6"
+    },
+    {
+      "type": "item.completed",
+      "item_type": "collab_tool_call",
+      "item_id": "item_6"
+    },
+    {
+      "type": "item.completed",
+      "item_type": "agent_message",
+      "item_id": "item_7"
+    },
+    {
+      "type": "turn.completed",
+      "usage": {
+        "input_tokens": 108041,
+        "cached_input_tokens": 99200,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 949,
+        "reasoning_output_tokens": 209
+      }
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{"type":"thread.started","thread_id":"01a0dd01-1b83-7e32-905a-0a33fd21146e"}
+{"type":"turn.started"}
+{"type":"item.started","item":{"id":"item_0","type":"collab_tool_call","tool":"wait","sender_thread_id":"01a0dd01-1b83-7e32-905a-0a33fd21146e","receiver_thread_ids":[],"prompt":null,"agents_states":{},"status":"in_progress"}}
+{"type":"item.completed","item":{"id":"item_0","type":"collab_tool_call","tool":"wait","sender_thread_id":"01a0dd01-1b83-7e32-905a-0a33fd21146e","receiver_thread_ids":[],"prompt":null,"agents_states":{},"status":"completed"}}
+{"type":"item.completed","item":{"id":"item_1","type":"agent_message","text":"{\"answer\":{\"claim\":false},\"citations\":{\"claim\":[\"django/http/response.py:736\",\"django/http/response.py:740\",\"django/http/response.py:741\"]}}"}}
+{"type":"turn.completed","usage":{"input_tokens":42985,"cached_input_tokens":39936,"cache_write_input_tokens":0,"output_tokens":303,"reasoning_output_tokens":33}}

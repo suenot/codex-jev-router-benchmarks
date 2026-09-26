@@ -1,0 +1,10 @@
+Testing against Django installed in '<WORKTREE_A>/django' with up to 12 processes
+Found 1 test(s).
+System check identified no issues (1 silenced).
+Creating test database for alias 'default'...
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.202s
+
+OK
+Destroying test database for alias 'default'...

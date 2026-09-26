@@ -1,8 +1,59 @@
 # Codex subagent routing benchmarks
 
-## Estimated API cost savings
+## Full Codex workflow: one Sol high agent or a routed subagent
 
-For a selected sample of real Django tasks, routing had a **71.0% lower estimated API cost** across nine paired read-only source-task runs and a **98.3% lower estimated API cost** across three paired runs of one bounded code fix. The routed estimates include the separately priced Jev decisions. The relevant answer checks passed in both arms. These are estimates for this small selected sample, **not measured Codex subscription charges or a general expected saving**.
+The earlier comparisons below price the worker chosen by Jev against a clean Sol-high worker. They do not include a Sol-high **parent** creating the subagent. On 2026-09-26 we measured that parent work directly on [12 preregistered read-only Django tasks](benchmarks/django-task-suite-2026-09-26/manifest.json) at commit [`9b224579875e30203d079cc2fee83b116d98eb78`](https://github.com/django/django/commit/9b224579875e30203d079cc2fee83b116d98eb78). Four tasks locate an exact symbol, four extract bounded facts from named files, and four check a focused behavior claim. Each task ran twice per arm, with arm order alternated. The [grader](benchmarks/django-task-suite-2026-09-26/grade.py) checks the requested values and supporting source locations. The [runner](scripts/agent-overhead.mjs), [audit](scripts/audit-agent-overhead.py), [results](benchmarks/django-task-suite-2026-09-26/results.json), and [Codex event traces](benchmarks/django-task-suite-2026-09-26/results-traces/) make the measurements inspectable.
+
+The control was one isolated `gpt-6-sol` **high** Codex session with subagents disabled. The routed arm was an isolated Sol-high parent that spawned exactly one subagent with Jev's selected profile. **The routed price and token totals include the parent and child.** Jev's measured decision cost is added to the price, while Jev tokens are kept separate from Codex tokens.
+
+| Task type, eight runs per arm | Strict answers, single / routed | Codex tokens, single / parent + child | Estimated API cost, single / routed incl. Jev | Routed cost change |
+| --- | ---: | ---: | ---: | ---: |
+| Exact symbol lookup; Luna low | 8/8 / 8/8 | 267,777 / 667,402 | $0.112199 / $0.162173 | **+44.5%** |
+| Bounded extraction; Luna medium | 8/8 / 8/8 | 343,272 / 769,299 | $0.215430 / $0.172733 | **−19.8%** |
+| Focused source judgment; Sol low | 6/8 / 5/8 | 284,607 / 660,201 | $0.125048 / $0.322194 | **+157.7%** |
+| **All 24 paired tasks** | **22/24 / 21/24** | **895,656 / 2,096,902** | **$0.452677 / $0.657100** | **+45.2%** |
+
+All 24 Jev decisions chose the intended cheaper profile: eight each of Luna low, Luna medium, and Sol low. The routed arm used **134.1% more Codex tokens** and took **53.5% more summed end-to-end time** (1,129.4 versus 735.8 seconds). Jev itself accounted for about **$0.000632** of the routed price. The parent and child sessions, not the decision call, explain most of the extra cost. Luna medium did save money on the bounded extraction subset, so the result depends on task size and the selected model.
+
+The strict grader accepts semantically equivalent number and two-literal representations and source spans of at most ten lines. It still rejected four answers to the float-pagination task for omitting a required supporting line, although their Boolean verdicts were correct. One routed answer expressed the correct extension verdict as free text instead of the requested JSON Boolean. Thus the strict scores include format and citation compliance; manual inspection of those five failures found the requested factual values were correct. Two initial protocol flags in the raw run were corrected during [the recorded audit](scripts/audit-agent-overhead.py): this Codex build sometimes reused a parent thread ID in a child rollout. The root event usage, unique isolated home, child model/effort, and collaboration trace identified the two sessions unambiguously. The result file retains the initial flags and explains the correction.
+
+### Four tasks in one parent session
+
+To test the workflow where a person keeps working with one model rather than opening a fresh session for every task, we grouped the **same 12 tasks** into [three fixed groups of four](scripts/batch-agent-overhead.mjs), with two repetitions per group. This is a second arrangement of the same tasks, **not 12 additional independent tasks**. In each pair, one Sol-high session solved all four tasks itself; the other Sol-high parent delegated each task to a separately routed subagent. The [batch results](benchmarks/django-task-suite-2026-09-26/batch-results.json), [audit script](scripts/audit-batch-agent-overhead.py), and [event and rollout traces](benchmarks/django-task-suite-2026-09-26/batch-results-traces/) are recorded.
+
+| Six four-task runs per arm | One Sol-high session | Sol-high parent + four routed subagents |
+| --- | ---: | ---: |
+| Strictly graded answers | 20/24 | 22/24 |
+| Codex input + output tokens | 273,043 | 1,834,944 |
+| Estimated API price, including Jev where used | $0.193704 | $0.547248 |
+| Summed end-to-end time | 255.8 s | 548.8 s |
+
+The routed batches cost **182.5% more** at these prices and used **572.0% more Codex tokens**. In one single-agent run, the model gave all four visible factual values but omitted the last JSON brace; the strict parser rejected that entire group. Two routed float-pagination answers had correct verdicts but omitted a required source line. The strict pass counts therefore differ, and this small batch test cannot establish a general quality advantage. It does show how much one continuing Sol-high session can amortize its context compared with four new child sessions.
+
+### Method and limits of the new comparison
+
+Both arms used Codex CLI 0.157.1, the same public pinned source, read-only sandbox, and fresh `CODEX_HOME` containing only an authentication symlink. They ignored user config and rules; the checkout had no `AGENTS.md` or project Codex config. The single-agent arm set `agents.enabled=false`. The routed arm used the same Sol-high root model, then passed Jev's model and effort explicitly to the child. The harness called Jev **before** starting the parent and supplied its route to the parent prompt. It includes Jev's measured price and elapsed time but **does not include any extra Sol-parent tokens for invoking the route command itself**. This makes the routed cost estimate optimistic relative to the installed instruction-driven workflow. The runs used separate sessions and no retries. A short smoke run of one exact lookup preceded the full suite; it is excluded from the tables but may have warmed server-side caches for that first task. The original per-task run saved the root event stream and child session counters, but not full child rollouts; its child usage cannot be independently re-extracted from the published traces. The batch run saved both root and child rollouts. Temporary local paths in those batch traces were sanitized before publication without changing usage fields.
+
+Prices apply the [published GPT-6 Sol](https://developers.openai.com/api/docs/models/gpt-6-sol) and [GPT-6 Luna](https://developers.openai.com/api/docs/models/gpt-6-luna) Standard short-context rates to each session's measured input, cached input, and output counts. Cached input is part of input, and reasoning tokens are part of output. All recorded cache-write counters were zero. The calculation adds [TypeSafe's published Jev input price](https://typesafe.ai/blog/introducing-system-one-models-and-jev) of $0.042 per million input tokens; Jev output has no listed charge. These are **illustrative API price estimates, not observed Codex subscription charges**. The CLI's aggregate session usage cannot prove whether every API call qualified for short-context pricing. The task mix deliberately includes cheap-route candidates and only read-only source work; it is not a random sample of real Codex workloads. Two repetitions per task and group are too few for a general quality or latency claim.
+
+## Full Codex workflow: one real Django code fix
+
+We also ran one paired **editing** task, [`django__django-16527`](benchmarks/swe-bench-verified-django-16527-code-fix-2026-09-26/results.json), from SWE-bench Verified. The task is to hide the Django admin "Save as new" button when the user lacks add permission. Both arms started at Django commit `bd366ca2aeffa869b7dbc0b0aa01caea75e6dc31` in fresh worktrees. One arm used a single Sol-high session with subagents disabled. The other used a Sol-high parent and exactly one Jev-selected Luna-medium child. The [runner](scripts/code-fix-agent-overhead.mjs), [saved patches, event traces, and official test logs](benchmarks/swe-bench-verified-django-16527-code-fix-2026-09-26/) permit replay and inspection.
+
+| One paired trial | Single Sol high | Sol-high parent + Luna-medium child |
+| --- | ---: | ---: |
+| Local official FAIL_TO_PASS test | Pass | Pass |
+| Codex tokens, including parent where used | 350,701 | 649,962 |
+| Estimated API price, including Jev where used | $0.144088 | $0.056660 |
+| End-to-end time, including Jev where used | 93.95 s | 141.40 s |
+
+The routed arm cost **60.7% less** at the stated API rates but took **50.5% longer** and used **85.3% more Codex tokens**. Jev selected Luna medium with 624 input and 72 output tokens, adding $0.000026 to the routed price and 1.62 seconds. Both patches made the same one-line production fix and added different regression tests. The archived base checkout fails the official test and the reference solution passes it. We applied the official test patch to fresh worktrees containing each saved agent patch and ran that exact test; the routed patch had an adjacent test insertion, so its official patch required `patch -F 3` to place it. This is **one paired local test, not the full SWE-bench Docker harness**. The original grade invocation lacked `PYTHONPATH`, so the official tests were replayed from the saved patches with `PYTHONPATH` fixed; the agent sessions were not rerun. As in the source-task suite, Jev was called before the parent, so any Sol-parent cost for invoking the route command is omitted. A single success and a single price difference do not establish an expected saving for code edits.
+
+To replay the official test from the saved patches, check out the pinned Django commit, install Python 3.10 and `uv`, then run `node scripts/code-fix-agent-overhead.mjs --source /path/to/pinned/django --output benchmarks/swe-bench-verified-django-16527-code-fix-2026-09-26/results.json --grade-only` from a clone of this repository. This mutates the saved result and logs; copy the case directory first if you want to preserve the published files byte for byte.
+
+## Earlier selected worker-only cost savings
+
+For a selected sample of real Django tasks, the **chosen worker plus Jev**, without a Sol-high parent, had a 71.0% lower estimated API cost across nine paired read-only source-task runs and a 98.3% lower estimated API cost across three paired runs of one bounded code fix. The relevant answer checks passed in both arms. These estimates **exclude the parent's work** and cannot establish a complete-subagent saving. They are not measured Codex subscription charges or a general expected saving.
 
 | Sample | Clean Sol-high Codex | Routed Codex | Jev decisions | Routed total | Estimated saving | Quality check |
 | --- | ---: | ---: | ---: | ---: | ---: | --- |

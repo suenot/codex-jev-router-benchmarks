@@ -1,0 +1,40 @@
+diff --git a/django/contrib/admin/templatetags/admin_modify.py b/django/contrib/admin/templatetags/admin_modify.py
+index 9df4b7aad..5b742af46 100644
+--- a/django/contrib/admin/templatetags/admin_modify.py
++++ b/django/contrib/admin/templatetags/admin_modify.py
+@@ -100,6 +100,7 @@ def submit_row(context):
+                 and context.get("show_delete", True)
+             ),
+             "show_save_as_new": not is_popup
++            and has_add_permission
+             and has_change_permission
+             and change
+             and save_as,
+diff --git a/tests/admin_views/test_templatetags.py b/tests/admin_views/test_templatetags.py
+index a13133095..c2a9e9a83 100644
+--- a/tests/admin_views/test_templatetags.py
++++ b/tests/admin_views/test_templatetags.py
+@@ -33,6 +33,23 @@ class AdminTemplateTagsTest(AdminViewBasicTestCase):
+         self.assertIs(template_context["extra"], True)
+         self.assertIs(template_context["show_save"], True)
+ 
++    def test_submit_row_save_as_new_requires_add_permission(self):
++        context = {
++            "add": False,
++            "change": True,
++            "is_popup": False,
++            "save_as": True,
++            "has_add_permission": False,
++            "has_change_permission": True,
++            "has_view_permission": True,
++            "has_editable_inline_admin_formsets": False,
++            "has_delete_permission": False,
++        }
++
++        template_context = submit_row(context)
++
++        self.assertIs(template_context["show_save_as_new"], False)
++
+     def test_override_show_save_and_add_another(self):
+         request = self.request_factory.get(
+             reverse("admin:auth_user_change", args=[self.superuser.pk]),

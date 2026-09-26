@@ -1,0 +1,126 @@
+{
+  "benchmark": "Django SWE-bench Verified 16527 code-fix agent overhead",
+  "generated_at": "2026-09-26T09:51:40.465Z",
+  "instance_id": "django__django-16527",
+  "base_commit": "bd366ca2aeffa869b7dbc0b0aa01caea75e6dc31",
+  "source": "<PINNED_DJANGO_SOURCE>",
+  "codex_version": "codex-cli 0.157.1",
+  "decider_backend": "jev",
+  "test_patch_sha256": "f6a7281cfea2bd4556de316e62bac92bff2fa78c6ebbb20c1357b226fe197b43",
+  "official_test": "admin_views.test_templatetags.AdminTemplateTagsTest.test_submit_row_save_as_new_add_permission_required",
+  "grading": "Local official FAIL_TO_PASS test after applying hidden test.patch; not the full SWE-bench Docker harness",
+  "control_evidence": {
+    "base_test_passed": false,
+    "reference_test_passed": true,
+    "base_log": "../swe-bench-verified-django-16527/control.official-test.log",
+    "reference_log": "../swe-bench-verified-django-16527/gold.official-test.log"
+  },
+  "arms": {
+    "single_sol_high": {
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_ms": 93952,
+      "protocol_ok": true,
+      "usage_complete": true,
+      "sessions": [
+        {
+          "id": "01a0dd20-e03b-7430-9a1b-211cc9cc8b04",
+          "parent_id": null,
+          "model": "gpt-6-sol",
+          "reasoning_effort": "high",
+          "usage": {
+            "input_tokens": 347386,
+            "cached_input_tokens": 324352,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 3315,
+            "reasoning_output_tokens": 484,
+            "total_tokens": 350701
+          },
+          "spawn_calls": 0
+        }
+      ],
+      "codex_tokens": 350701,
+      "estimated_codex_api_usd": 0.1440884,
+      "patch_sha256": "f716d45b6ebbf76ef06c405397733fd1ff0f20a6f489c43ee50069956afcfea9",
+      "patch_bytes": 1781,
+      "answer_file": "single_sol_high.answer.txt",
+      "patch_file": "single_sol_high.patch",
+      "trace_file": "single_sol_high.trace.json",
+      "events_file": "single_sol_high.events.jsonl",
+      "stderr_file": "single_sol_high.stderr.log",
+      "official_patch_applied": true,
+      "official_test_exit_code": 0,
+      "official_test_passed": true,
+      "estimated_total_api_usd": 0.1440884,
+      "end_to_end_ms": 93952,
+      "official_patch_method": "git apply"
+    },
+    "routed_parent": {
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_ms": 139776,
+      "protocol_ok": true,
+      "usage_complete": true,
+      "sessions": [
+        {
+          "id": "01a0dd22-4874-79d1-83b4-7fa9f77c2c4e",
+          "parent_id": null,
+          "model": "gpt-6-sol",
+          "reasoning_effort": "high",
+          "usage": {
+            "input_tokens": 108041,
+            "cached_input_tokens": 99200,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 949,
+            "reasoning_output_tokens": 209,
+            "total_tokens": 108990
+          },
+          "spawn_calls": 1
+        },
+        {
+          "id": "01a0dd22-7554-75f0-89ad-25e6c13aa359",
+          "parent_id": "01a0dd22-4874-79d1-83b4-7fa9f77c2c4e",
+          "model": "gpt-6-luna",
+          "reasoning_effort": "medium",
+          "usage": {
+            "input_tokens": 537998,
+            "cached_input_tokens": 507392,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 2974,
+            "reasoning_output_tokens": 601,
+            "total_tokens": 540972
+          },
+          "spawn_calls": 0
+        }
+      ],
+      "codex_tokens": 649962,
+      "estimated_codex_api_usd": 0.05663352,
+      "patch_sha256": "d04c953688f2c1652f624bde91a8e6b3d553446a0d357dff19086e802f77fe50",
+      "patch_bytes": 1700,
+      "answer_file": "routed_parent.answer.txt",
+      "patch_file": "routed_parent.patch",
+      "trace_file": "routed_parent.trace.json",
+      "events_file": "routed_parent.events.jsonl",
+      "stderr_file": "routed_parent.stderr.log",
+      "official_patch_applied": true,
+      "official_test_exit_code": 0,
+      "official_test_passed": true,
+      "estimated_total_api_usd": 0.056659728,
+      "end_to_end_ms": 141397,
+      "official_patch_method": "patch -F 3 after overlapping regression insertion"
+    }
+  },
+  "route": {
+    "model": "gpt-6-luna",
+    "reasoning_effort": "medium",
+    "reason": "bounded",
+    "usage": {
+      "input_tokens": 624,
+      "output_tokens": 72
+    },
+    "attempts": 1,
+    "wall_ms": 1621,
+    "estimated_jev_api_usd": 0.000026208
+  },
+  "grade_replay_note": "Official tests replayed from the saved agent patches in fresh pinned worktrees with PYTHONPATH set to each worktree. The initial grading invocation omitted PYTHONPATH; agent sessions and patches were not rerun."
+}

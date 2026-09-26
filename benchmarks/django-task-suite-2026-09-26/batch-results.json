@@ -1,0 +1,1823 @@
+{
+  "benchmark": "Four-task Sol-high batch versus Sol-high parent with four routed subagents",
+  "generated_at": "2026-09-26T09:24:00.194Z",
+  "codex_version": "codex-cli 0.157.1",
+  "fixture_repo": "django/django",
+  "base_commit": "9b224579875e30203d079cc2fee83b116d98eb78",
+  "manifest_sha256": "ec3131f9337b646143ea1038ce0c0e983f9290adadf11908549024876db83445",
+  "repetitions": 2,
+  "groups": [
+    {
+      "id": "group-1",
+      "task_ids": [
+        "paginator-elided-symbol",
+        "url-namespace-symbol",
+        "forms-normalization",
+        "filefield-form-data-claim"
+      ]
+    },
+    {
+      "id": "group-2",
+      "task_ids": [
+        "signal-robust-symbol",
+        "slash-redirect-default",
+        "orm-chunk-sizes",
+        "extension-case-claim"
+      ]
+    },
+    {
+      "id": "group-3",
+      "task_ids": [
+        "static-location-symbol",
+        "template-truncation",
+        "paginator-float-claim",
+        "json-response-list-claim"
+      ]
+    }
+  ],
+  "baseline": {
+    "model": "gpt-6-sol",
+    "reasoning_effort": "high",
+    "subagents_enabled": false
+  },
+  "routed_parent": {
+    "model": "gpt-6-sol",
+    "reasoning_effort": "high",
+    "subagents_enabled": true,
+    "children": 4
+  },
+  "codex_isolation": "Fresh CODEX_HOME per arm with auth symlink only; --ignore-user-config; --ignore-rules; no project AGENTS.md",
+  "sandbox": "read-only",
+  "pricing": {
+    "units": "USD per million tokens",
+    "rates": {
+      "gpt-6-sol": {
+        "input": 2,
+        "cached": 0.2,
+        "cache_write": 2.5,
+        "output": 10
+      },
+      "gpt-6-luna": {
+        "input": 0.1,
+        "cached": 0.01,
+        "cache_write": 0.125,
+        "output": 0.5
+      }
+    },
+    "jev_input": 0.042,
+    "assumption": "Standard, short-context, no regional premium"
+  },
+  "decider_backend": "jev",
+  "trace_directory": "batch-results-traces",
+  "runs": [
+    {
+      "group": "group-1",
+      "repetition": 1,
+      "arm": "single_sol_high",
+      "task_ids": [
+        "paginator-elided-symbol",
+        "url-namespace-symbol",
+        "forms-normalization",
+        "filefield-form-data-claim"
+      ],
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_ms": 27432,
+      "answer": "{\"answers\":{\"paginator-elided-symbol\":{\"answer\":{\"location\":\"django/core/paginator.py:132\"},\"citations\":{\"location\":[\"django/core/paginator.py:132\"]}},\"url-namespace-symbol\":{\"answer\":{\"location\":\"django/urls/resolvers.py:117\"},\"citations\":{\"location\":[\"django/urls/resolvers.py:117\"]}},\"forms-normalization\":{\"answer\":{\"url_scheme\":\"http\",\"boolean_false_strings\":\"(\\\"false\\\", \\\"0\\\")\",\"checkbox_check_helper\":\"boolean_check\"},\"citations\":{\"url_scheme\":[\"django/forms/fields.py:772\",\"django/forms/fields.py:774\"],\"boolean_false_strings\":[\"django/forms/fields.py:796\"],\"checkbox_check_helper\":[\"django/forms/widgets.py:554\"]}},\"filefield-form-data-claim\":{\"answer\":{\"claim\":true},\"citations\":{\"claim\":[\"django/db/models/fields/files.py:339\",\"django/db/models/fields/files.py:344\",\"django/db/models/fields/files.py:347\"]}}}}",
+      "grades": [
+        {
+          "task": "paginator-elided-symbol",
+          "correct": true,
+          "detail": "paginator-elided-symbol: PASS (correct)"
+        },
+        {
+          "task": "url-namespace-symbol",
+          "correct": true,
+          "detail": "url-namespace-symbol: PASS (correct)"
+        },
+        {
+          "task": "forms-normalization",
+          "correct": true,
+          "detail": "forms-normalization: PASS (correct)"
+        },
+        {
+          "task": "filefield-form-data-claim",
+          "correct": true,
+          "detail": "filefield-form-data-claim: PASS (correct)"
+        }
+      ],
+      "correct_count": 4,
+      "all_correct": true,
+      "extra_answer_ids": [],
+      "protocol_ok": true,
+      "root_thread_id": "01a0dd07-57a0-75b0-adf2-1ac86e247bde",
+      "root_usage": {
+        "input_tokens": 44124,
+        "cached_input_tokens": 37888,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 772,
+        "reasoning_output_tokens": 210
+      },
+      "root_usage_matches_rollout": true,
+      "command_calls": 5,
+      "sessions": [
+        {
+          "id": "01a0dd07-57a0-75b0-adf2-1ac86e247bde",
+          "parent_id": null,
+          "model": "gpt-6-sol",
+          "reasoning_effort": "high",
+          "usage": {
+            "input_tokens": 44124,
+            "cached_input_tokens": 37888,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 772,
+            "reasoning_output_tokens": 210,
+            "total_tokens": 44896
+          },
+          "trace": "group-1-rep-1-single_sol_high-rollout-1.jsonl"
+        }
+      ],
+      "usage_complete": true,
+      "codex_usage": {
+        "input_tokens": 44124,
+        "cached_input_tokens": 37888,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 772
+      },
+      "codex_tokens": 44896,
+      "estimated_codex_api_usd": 0.0277696,
+      "traces": {
+        "events": "group-1-rep-1-single_sol_high.events.jsonl",
+        "stderr": "group-1-rep-1-single_sol_high.stderr.txt",
+        "rollouts": [
+          "group-1-rep-1-single_sol_high-rollout-1.jsonl"
+        ]
+      },
+      "end_to_end_ms": 27432,
+      "estimated_total_api_usd": 0.0277696,
+      "grades_before_uniform_recheck": [
+        {
+          "task": "paginator-elided-symbol",
+          "correct": true,
+          "detail": "paginator-elided-symbol: PASS (correct)"
+        },
+        {
+          "task": "url-namespace-symbol",
+          "correct": true,
+          "detail": "url-namespace-symbol: PASS (correct)"
+        },
+        {
+          "task": "forms-normalization",
+          "correct": false,
+          "detail": "forms-normalization: FAIL (answer mismatch)"
+        },
+        {
+          "task": "filefield-form-data-claim",
+          "correct": true,
+          "detail": "filefield-form-data-claim: PASS (correct)"
+        }
+      ]
+    },
+    {
+      "group": "group-1",
+      "repetition": 1,
+      "arm": "routed_parent",
+      "task_ids": [
+        "paginator-elided-symbol",
+        "url-namespace-symbol",
+        "forms-normalization",
+        "filefield-form-data-claim"
+      ],
+      "routes": [
+        {
+          "task": "paginator-elided-symbol",
+          "model": "gpt-6-luna",
+          "reasoning_effort": "low",
+          "reason": "simple",
+          "usage": {
+            "input_tokens": 627,
+            "output_tokens": 72
+          },
+          "wall_ms": 369
+        },
+        {
+          "task": "url-namespace-symbol",
+          "model": "gpt-6-luna",
+          "reasoning_effort": "low",
+          "reason": "simple",
+          "usage": {
+            "input_tokens": 624,
+            "output_tokens": 72
+          },
+          "wall_ms": 310
+        },
+        {
+          "task": "forms-normalization",
+          "model": "gpt-6-luna",
+          "reasoning_effort": "medium",
+          "reason": "bounded",
+          "usage": {
+            "input_tokens": 635,
+            "output_tokens": 72
+          },
+          "wall_ms": 383
+        },
+        {
+          "task": "filefield-form-data-claim",
+          "model": "gpt-6-sol",
+          "reasoning_effort": "low",
+          "reason": "focused",
+          "usage": {
+            "input_tokens": 623,
+            "output_tokens": 71
+          },
+          "wall_ms": 652
+        }
+      ],
+      "jev_wall_ms": 1714,
+      "estimated_jev_api_usd": 0.00010537799999999999,
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_ms": 103118,
+      "answer": "{\"answers\":{\"paginator-elided-symbol\":{\"answer\":{\"location\":\"django/core/paginator.py:132\"},\"citations\":{\"location\":[\"django/core/paginator.py:132\"]}},\"url-namespace-symbol\":{\"answer\":{\"location\":\"django/urls/resolvers.py:117\"},\"citations\":{\"location\":[\"django/urls/resolvers.py:117\"]}},\"forms-normalization\":{\"answer\":{\"url_scheme\":\"http\",\"boolean_false_strings\":\"false, 0\",\"checkbox_check_helper\":\"boolean_check\"},\"citations\":{\"url_scheme\":[\"django/forms/fields.py:773\",\"django/forms/fields.py:774\"],\"boolean_false_strings\":[\"django/forms/fields.py:796\"],\"checkbox_check_helper\":[\"django/forms/widgets.py:542\",\"django/forms/widgets.py:554\"]}},\"filefield-form-data-claim\":{\"answer\":{\"claim\":true},\"citations\":{\"claim\":[\"django/db/models/fields/files.py:340\",\"django/db/models/fields/files.py:344\",\"django/db/models/fields/files.py:347\"]}}}}",
+      "grades": [
+        {
+          "task": "paginator-elided-symbol",
+          "correct": true,
+          "detail": "paginator-elided-symbol: PASS (correct)"
+        },
+        {
+          "task": "url-namespace-symbol",
+          "correct": true,
+          "detail": "url-namespace-symbol: PASS (correct)"
+        },
+        {
+          "task": "forms-normalization",
+          "correct": true,
+          "detail": "forms-normalization: PASS (correct)"
+        },
+        {
+          "task": "filefield-form-data-claim",
+          "correct": true,
+          "detail": "filefield-form-data-claim: PASS (correct)"
+        }
+      ],
+      "correct_count": 4,
+      "all_correct": true,
+      "extra_answer_ids": [],
+      "protocol_ok": true,
+      "root_thread_id": "01a0dd07-dab5-7822-9ca6-e477ab9145e0",
+      "root_usage": {
+        "input_tokens": 142714,
+        "cached_input_tokens": 132224,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1540,
+        "reasoning_output_tokens": 177
+      },
+      "root_usage_matches_rollout": true,
+      "command_calls": 0,
+      "sessions": [
+        {
+          "id": "01a0dd07-dab5-7822-9ca6-e477ab9145e0",
+          "parent_id": null,
+          "model": "gpt-6-sol",
+          "reasoning_effort": "high",
+          "usage": {
+            "input_tokens": 142714,
+            "cached_input_tokens": 132224,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 1540,
+            "reasoning_output_tokens": 177,
+            "total_tokens": 144254
+          },
+          "trace": "group-1-rep-1-routed_parent-rollout-1.jsonl"
+        },
+        {
+          "id": "01a0dd08-4a26-7a40-afdc-99dbf2b19941",
+          "parent_id": "01a0dd07-dab5-7822-9ca6-e477ab9145e0",
+          "model": "gpt-6-luna",
+          "reasoning_effort": "low",
+          "usage": {
+            "input_tokens": 34892,
+            "cached_input_tokens": 24064,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 87,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 34979
+          },
+          "trace": "group-1-rep-1-routed_parent-rollout-2.jsonl"
+        },
+        {
+          "id": "01a0dd08-653e-7211-b3ce-3c6a393de51c",
+          "parent_id": "01a0dd07-dab5-7822-9ca6-e477ab9145e0",
+          "model": "gpt-6-luna",
+          "reasoning_effort": "low",
+          "usage": {
+            "input_tokens": 34864,
+            "cached_input_tokens": 33280,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 88,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 34952
+          },
+          "trace": "group-1-rep-1-routed_parent-rollout-3.jsonl"
+        },
+        {
+          "id": "01a0dd08-7d24-7c13-ac6d-ca8330a08635",
+          "parent_id": "01a0dd07-dab5-7822-9ca6-e477ab9145e0",
+          "model": "gpt-6-luna",
+          "reasoning_effort": "medium",
+          "usage": {
+            "input_tokens": 75033,
+            "cached_input_tokens": 58368,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 349,
+            "reasoning_output_tokens": 31,
+            "total_tokens": 75382
+          },
+          "trace": "group-1-rep-1-routed_parent-rollout-4.jsonl"
+        },
+        {
+          "id": "01a0dd08-e868-77e2-95bd-07a260ff452e",
+          "parent_id": "01a0dd07-dab5-7822-9ca6-e477ab9145e0",
+          "model": "gpt-6-sol",
+          "reasoning_effort": "low",
+          "usage": {
+            "input_tokens": 28316,
+            "cached_input_tokens": 25344,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 145,
+            "reasoning_output_tokens": 7,
+            "total_tokens": 28461
+          },
+          "trace": "group-1-rep-1-routed_parent-rollout-5.jsonl"
+        }
+      ],
+      "usage_complete": true,
+      "codex_usage": {
+        "input_tokens": 315819,
+        "cached_input_tokens": 273280,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2209
+      },
+      "codex_tokens": 318028,
+      "estimated_codex_api_usd": 0.07961441999999999,
+      "traces": {
+        "events": "group-1-rep-1-routed_parent.events.jsonl",
+        "stderr": "group-1-rep-1-routed_parent.stderr.txt",
+        "rollouts": [
+          "group-1-rep-1-routed_parent-rollout-1.jsonl",
+          "group-1-rep-1-routed_parent-rollout-2.jsonl",
+          "group-1-rep-1-routed_parent-rollout-3.jsonl",
+          "group-1-rep-1-routed_parent-rollout-4.jsonl",
+          "group-1-rep-1-routed_parent-rollout-5.jsonl"
+        ]
+      },
+      "end_to_end_ms": 104832,
+      "estimated_total_api_usd": 0.079719798
+    },
+    {
+      "group": "group-2",
+      "repetition": 1,
+      "arm": "routed_parent",
+      "task_ids": [
+        "signal-robust-symbol",
+        "slash-redirect-default",
+        "orm-chunk-sizes",
+        "extension-case-claim"
+      ],
+      "routes": [
+        {
+          "task": "signal-robust-symbol",
+          "model": "gpt-6-luna",
+          "reasoning_effort": "low",
+          "reason": "simple",
+          "usage": {
+            "input_tokens": 624,
+            "output_tokens": 72
+          },
+          "wall_ms": 962
+        },
+        {
+          "task": "slash-redirect-default",
+          "model": "gpt-6-luna",
+          "reasoning_effort": "medium",
+          "reason": "bounded",
+          "usage": {
+            "input_tokens": 628,
+            "output_tokens": 72
+          },
+          "wall_ms": 312
+        },
+        {
+          "task": "orm-chunk-sizes",
+          "model": "gpt-6-luna",
+          "reasoning_effort": "medium",
+          "reason": "bounded",
+          "usage": {
+            "input_tokens": 629,
+            "output_tokens": 72
+          },
+          "wall_ms": 343
+        },
+        {
+          "task": "extension-case-claim",
+          "model": "gpt-6-sol",
+          "reasoning_effort": "low",
+          "reason": "focused",
+          "usage": {
+            "input_tokens": 622,
+            "output_tokens": 71
+          },
+          "wall_ms": 296
+        }
+      ],
+      "jev_wall_ms": 1913,
+      "estimated_jev_api_usd": 0.00010512600000000001,
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_ms": 52267,
+      "answer": "{\"answers\":{\"signal-robust-symbol\":{\"answer\":{\"location\":\"django/dispatch/dispatcher.py:269\"},\"citations\":{\"location\":[\"django/dispatch/dispatcher.py:269\"]}},\"slash-redirect-default\":{\"answer\":{\"redirect_class\":\"HttpResponsePermanentRedirect\",\"status_code\":\"301\"},\"citations\":{\"redirect_class\":[\"django/middleware/common.py:32\"],\"status_code\":[\"django/http/response.py:659\"]}},\"orm-chunk-sizes\":{\"answer\":{\"queryset_iterable_chunk_size\":\"2000\",\"sql_get_iterator_chunk_size\":\"100\"},\"citations\":{\"queryset_iterable_chunk_size\":[\"django/db/models/query.py:512\"],\"sql_get_iterator_chunk_size\":[\"django/db/models/sql/constants.py:7\"]}},\"extension-case-claim\":{\"answer\":{\"claim\":true},\"citations\":{\"claim\":[\"django/core/validators.py:536\",\"django/core/validators.py:539\",\"django/core/validators.py:548\",\"django/core/validators.py:551\"]}}}}",
+      "grades": [
+        {
+          "task": "signal-robust-symbol",
+          "correct": true,
+          "detail": "signal-robust-symbol: PASS (correct)"
+        },
+        {
+          "task": "slash-redirect-default",
+          "correct": true,
+          "detail": "slash-redirect-default: PASS (correct)"
+        },
+        {
+          "task": "orm-chunk-sizes",
+          "correct": true,
+          "detail": "orm-chunk-sizes: PASS (correct)"
+        },
+        {
+          "task": "extension-case-claim",
+          "correct": true,
+          "detail": "extension-case-claim: PASS (correct)"
+        }
+      ],
+      "correct_count": 4,
+      "all_correct": true,
+      "extra_answer_ids": [],
+      "protocol_ok": true,
+      "root_thread_id": "01a0dd09-6617-7202-9077-d7d0124268f5",
+      "root_usage": {
+        "input_tokens": 108864,
+        "cached_input_tokens": 103424,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1231,
+        "reasoning_output_tokens": 153
+      },
+      "root_usage_matches_rollout": true,
+      "command_calls": 0,
+      "sessions": [
+        {
+          "id": "01a0dd09-6617-7202-9077-d7d0124268f5",
+          "parent_id": null,
+          "model": "gpt-6-sol",
+          "reasoning_effort": "high",
+          "usage": {
+            "input_tokens": 108864,
+            "cached_input_tokens": 103424,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 1231,
+            "reasoning_output_tokens": 153,
+            "total_tokens": 110095
+          },
+          "trace": "group-2-rep-1-routed_parent-rollout-1.jsonl"
+        },
+        {
+          "id": "01a0dd09-8e2a-77e2-9884-419e73a4b892",
+          "parent_id": "01a0dd09-6617-7202-9077-d7d0124268f5",
+          "model": "gpt-6-luna",
+          "reasoning_effort": "low",
+          "usage": {
+            "input_tokens": 34888,
+            "cached_input_tokens": 28160,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 94,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 34982
+          },
+          "trace": "group-2-rep-1-routed_parent-rollout-2.jsonl"
+        },
+        {
+          "id": "01a0dd09-a41a-79d2-8ffa-2581582edf2f",
+          "parent_id": "01a0dd09-6617-7202-9077-d7d0124268f5",
+          "model": "gpt-6-luna",
+          "reasoning_effort": "medium",
+          "usage": {
+            "input_tokens": 35447,
+            "cached_input_tokens": 28160,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 129,
+            "reasoning_output_tokens": 9,
+            "total_tokens": 35576
+          },
+          "trace": "group-2-rep-1-routed_parent-rollout-3.jsonl"
+        },
+        {
+          "id": "01a0dd09-bbc0-7551-9134-6e7e5bf0d760",
+          "parent_id": "01a0dd09-6617-7202-9077-d7d0124268f5",
+          "model": "gpt-6-luna",
+          "reasoning_effort": "medium",
+          "usage": {
+            "input_tokens": 54096,
+            "cached_input_tokens": 50432,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 240,
+            "reasoning_output_tokens": 18,
+            "total_tokens": 54336
+          },
+          "trace": "group-2-rep-1-routed_parent-rollout-4.jsonl"
+        },
+        {
+          "id": "01a0dd09-d0ae-7492-b4fa-b804c7e5f8e3",
+          "parent_id": "01a0dd09-6617-7202-9077-d7d0124268f5",
+          "model": "gpt-6-sol",
+          "reasoning_effort": "low",
+          "usage": {
+            "input_tokens": 28133,
+            "cached_input_tokens": 13696,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 108,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 28241
+          },
+          "trace": "group-2-rep-1-routed_parent-rollout-5.jsonl"
+        }
+      ],
+      "usage_complete": true,
+      "codex_usage": {
+        "input_tokens": 261428,
+        "cached_input_tokens": 223872,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1802
+      },
+      "codex_tokens": 263230,
+      "estimated_codex_api_usd": 0.07963492,
+      "traces": {
+        "events": "group-2-rep-1-routed_parent.events.jsonl",
+        "stderr": "group-2-rep-1-routed_parent.stderr.txt",
+        "rollouts": [
+          "group-2-rep-1-routed_parent-rollout-1.jsonl",
+          "group-2-rep-1-routed_parent-rollout-2.jsonl",
+          "group-2-rep-1-routed_parent-rollout-3.jsonl",
+          "group-2-rep-1-routed_parent-rollout-4.jsonl",
+          "group-2-rep-1-routed_parent-rollout-5.jsonl"
+        ]
+      },
+      "end_to_end_ms": 54180,
+      "estimated_total_api_usd": 0.079740046
+    },
+    {
+      "group": "group-2",
+      "repetition": 1,
+      "arm": "single_sol_high",
+      "task_ids": [
+        "signal-robust-symbol",
+        "slash-redirect-default",
+        "orm-chunk-sizes",
+        "extension-case-claim"
+      ],
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_ms": 41022,
+      "answer": "{\"answers\":{\"signal-robust-symbol\":{\"answer\":{\"location\":\"django/dispatch/dispatcher.py:269\"},\"citations\":{\"location\":[\"django/dispatch/dispatcher.py:269\"]}},\"slash-redirect-default\":{\"answer\":{\"redirect_class\":\"HttpResponsePermanentRedirect\",\"status_code\":301},\"citations\":{\"redirect_class\":[\"django/middleware/common.py:32\"],\"status_code\":[\"django/http/response.py:658\",\"django/http/response.py:659\"]}},\"orm-chunk-sizes\":{\"answer\":{\"queryset_iterable_chunk_size\":2000,\"sql_get_iterator_chunk_size\":100},\"citations\":{\"queryset_iterable_chunk_size\":[\"django/db/models/query.py:512\"],\"sql_get_iterator_chunk_size\":[\"django/db/models/sql/constants.py:7\"]}},\"extension-case-claim\":{\"answer\":{\"claim\":true},\"citations\":{\"claim\":[\"django/core/validators.py:537\",\"django/core/validators.py:539\",\"django/core/validators.py:548\",\"django/core/validators.py:551\"]}}}}",
+      "grades": [
+        {
+          "task": "signal-robust-symbol",
+          "correct": true,
+          "detail": "signal-robust-symbol: PASS (correct)"
+        },
+        {
+          "task": "slash-redirect-default",
+          "correct": true,
+          "detail": "slash-redirect-default: PASS (correct)"
+        },
+        {
+          "task": "orm-chunk-sizes",
+          "correct": true,
+          "detail": "orm-chunk-sizes: PASS (correct)"
+        },
+        {
+          "task": "extension-case-claim",
+          "correct": true,
+          "detail": "extension-case-claim: PASS (correct)"
+        }
+      ],
+      "correct_count": 4,
+      "all_correct": true,
+      "extra_answer_ids": [],
+      "protocol_ok": true,
+      "root_thread_id": "01a0dd0a-33dd-74b1-a82f-2f3e5547365c",
+      "root_usage": {
+        "input_tokens": 44006,
+        "cached_input_tokens": 32000,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 742,
+        "reasoning_output_tokens": 140
+      },
+      "root_usage_matches_rollout": true,
+      "command_calls": 8,
+      "sessions": [
+        {
+          "id": "01a0dd0a-33dd-74b1-a82f-2f3e5547365c",
+          "parent_id": null,
+          "model": "gpt-6-sol",
+          "reasoning_effort": "high",
+          "usage": {
+            "input_tokens": 44006,
+            "cached_input_tokens": 32000,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 742,
+            "reasoning_output_tokens": 140,
+            "total_tokens": 44748
+          },
+          "trace": "group-2-rep-1-single_sol_high-rollout-1.jsonl"
+        }
+      ],
+      "usage_complete": true,
+      "codex_usage": {
+        "input_tokens": 44006,
+        "cached_input_tokens": 32000,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 742
+      },
+      "codex_tokens": 44748,
+      "estimated_codex_api_usd": 0.037832,
+      "traces": {
+        "events": "group-2-rep-1-single_sol_high.events.jsonl",
+        "stderr": "group-2-rep-1-single_sol_high.stderr.txt",
+        "rollouts": [
+          "group-2-rep-1-single_sol_high-rollout-1.jsonl"
+        ]
+      },
+      "end_to_end_ms": 41022,
+      "estimated_total_api_usd": 0.037832
+    },
+    {
+      "group": "group-3",
+      "repetition": 1,
+      "arm": "single_sol_high",
+      "task_ids": [
+        "static-location-symbol",
+        "template-truncation",
+        "paginator-float-claim",
+        "json-response-list-claim"
+      ],
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_ms": 43154,
+      "answer": "{\"answers\":{\"static-location-symbol\":{\"answer\":{\"location\":\"django/contrib/staticfiles/finders.py:131\"},\"citations\":{\"location\":[\"django/contrib/staticfiles/finders.py:131\"]}},\"template-truncation\":{\"answer\":{\"invalid_arg_result\":\"original_value\",\"default_truncation_format\":\"%(truncated_text)s\u2026\"},\"citations\":{\"invalid_arg_result\":[\"django/template/defaultfilters.py:295\",\"django/template/defaultfilters.py:297\",\"django/template/defaultfilters.py:298\"],\"default_truncation_format\":[\"django/utils/text.py:75\",\"django/utils/text.py:76\",\"django/utils/text.py:77\",\"django/utils/text.py:78\"]}},\"paginator-float-claim\":{\"answer\":{\"claim\":true},\"citations\":{\"claim\":[\"django/core/paginator.py:43\",\"django/core/paginator.py:46\",\"django/core/paginator.py:47\",\"django/core/paginator.py:48\",\"django/core/paginator.py:49\",\"django/core/paginator.py:50\",\"django/core/paginator.py:53\",\"django/core/paginator.py:55\"]}},\"json-response-list-claim\":{\"answer\":{\"claim\":false},\"citations\":{\"claim\":[\"django/http/response.py:736\",\"django/http/response.py:740\",\"django/http/response.py:741\"]}}}}",
+      "grades": [
+        {
+          "task": "static-location-symbol",
+          "correct": true,
+          "detail": "static-location-symbol: PASS (correct)"
+        },
+        {
+          "task": "template-truncation",
+          "correct": true,
+          "detail": "template-truncation: PASS (correct)"
+        },
+        {
+          "task": "paginator-float-claim",
+          "correct": true,
+          "detail": "paginator-float-claim: PASS (correct)"
+        },
+        {
+          "task": "json-response-list-claim",
+          "correct": true,
+          "detail": "json-response-list-claim: PASS (correct)"
+        }
+      ],
+      "correct_count": 4,
+      "all_correct": true,
+      "extra_answer_ids": [],
+      "protocol_ok": true,
+      "root_thread_id": "01a0dd0a-e293-7181-be83-8cb855369ffe",
+      "root_usage": {
+        "input_tokens": 43334,
+        "cached_input_tokens": 34944,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 730,
+        "reasoning_output_tokens": 152
+      },
+      "root_usage_matches_rollout": true,
+      "command_calls": 6,
+      "sessions": [
+        {
+          "id": "01a0dd0a-e293-7181-be83-8cb855369ffe",
+          "parent_id": null,
+          "model": "gpt-6-sol",
+          "reasoning_effort": "high",
+          "usage": {
+            "input_tokens": 43334,
+            "cached_input_tokens": 34944,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 730,
+            "reasoning_output_tokens": 152,
+            "total_tokens": 44064
+          },
+          "trace": "group-3-rep-1-single_sol_high-rollout-1.jsonl"
+        }
+      ],
+      "usage_complete": true,
+      "codex_usage": {
+        "input_tokens": 43334,
+        "cached_input_tokens": 34944,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 730
+      },
+      "codex_tokens": 44064,
+      "estimated_codex_api_usd": 0.0310688,
+      "traces": {
+        "events": "group-3-rep-1-single_sol_high.events.jsonl",
+        "stderr": "group-3-rep-1-single_sol_high.stderr.txt",
+        "rollouts": [
+          "group-3-rep-1-single_sol_high-rollout-1.jsonl"
+        ]
+      },
+      "end_to_end_ms": 43154,
+      "estimated_total_api_usd": 0.0310688
+    },
+    {
+      "group": "group-3",
+      "repetition": 1,
+      "arm": "routed_parent",
+      "task_ids": [
+        "static-location-symbol",
+        "template-truncation",
+        "paginator-float-claim",
+        "json-response-list-claim"
+      ],
+      "routes": [
+        {
+          "task": "static-location-symbol",
+          "model": "gpt-6-luna",
+          "reasoning_effort": "low",
+          "reason": "simple",
+          "usage": {
+            "input_tokens": 626,
+            "output_tokens": 72
+          },
+          "wall_ms": 492
+        },
+        {
+          "task": "template-truncation",
+          "model": "gpt-6-luna",
+          "reasoning_effort": "medium",
+          "reason": "bounded",
+          "usage": {
+            "input_tokens": 632,
+            "output_tokens": 72
+          },
+          "wall_ms": 399
+        },
+        {
+          "task": "paginator-float-claim",
+          "model": "gpt-6-sol",
+          "reasoning_effort": "low",
+          "reason": "focused",
+          "usage": {
+            "input_tokens": 629,
+            "output_tokens": 71
+          },
+          "wall_ms": 374
+        },
+        {
+          "task": "json-response-list-claim",
+          "model": "gpt-6-sol",
+          "reasoning_effort": "low",
+          "reason": "focused",
+          "usage": {
+            "input_tokens": 621,
+            "output_tokens": 71
+          },
+          "wall_ms": 304
+        }
+      ],
+      "jev_wall_ms": 1569,
+      "estimated_jev_api_usd": 0.00010533600000000001,
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_ms": 108399,
+      "answer": "{\"answers\":{\"static-location-symbol\":{\"answer\":{\"location\":\"django/contrib/staticfiles/finders.py:131\"},\"citations\":{\"location\":[\"django/contrib/staticfiles/finders.py:131\"]}},\"template-truncation\":{\"answer\":{\"invalid_arg_result\":\"original_value\",\"default_truncation_format\":\"%(truncated_text)s\u2026\"},\"citations\":{\"invalid_arg_result\":[\"django/template/defaultfilters.py:295\",\"django/template/defaultfilters.py:296\",\"django/template/defaultfilters.py:297\",\"django/template/defaultfilters.py:298\"],\"default_truncation_format\":[\"django/utils/text.py:75\",\"django/utils/text.py:76\",\"django/utils/text.py:77\",\"django/utils/text.py:78\",\"django/utils/text.py:79\"]}},\"paginator-float-claim\":{\"answer\":{\"claim\":true},\"citations\":{\"claim\":[\"django/core/paginator.py:46\",\"django/core/paginator.py:48\",\"django/core/paginator.py:49\",\"django/core/paginator.py:53\",\"django/core/paginator.py:55\"]}},\"json-response-list-claim\":{\"answer\":{\"claim\":false},\"citations\":{\"claim\":[\"django/http/response.py:736\",\"django/http/response.py:740\",\"django/http/response.py:741\"]}}}}",
+      "grades": [
+        {
+          "task": "static-location-symbol",
+          "correct": true,
+          "detail": "static-location-symbol: PASS (correct)"
+        },
+        {
+          "task": "template-truncation",
+          "correct": true,
+          "detail": "template-truncation: PASS (correct)"
+        },
+        {
+          "task": "paginator-float-claim",
+          "correct": false,
+          "detail": "paginator-float-claim: FAIL (citations.claim lacks a required source location)"
+        },
+        {
+          "task": "json-response-list-claim",
+          "correct": true,
+          "detail": "json-response-list-claim: PASS (correct)"
+        }
+      ],
+      "correct_count": 3,
+      "all_correct": false,
+      "extra_answer_ids": [],
+      "protocol_ok": true,
+      "root_thread_id": "01a0dd0b-92d3-7153-b0b5-9aac94077e2a",
+      "root_usage": {
+        "input_tokens": 142670,
+        "cached_input_tokens": 132096,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1568,
+        "reasoning_output_tokens": 144
+      },
+      "root_usage_matches_rollout": true,
+      "command_calls": 0,
+      "sessions": [
+        {
+          "id": "01a0dd0b-92d3-7153-b0b5-9aac94077e2a",
+          "parent_id": null,
+          "model": "gpt-6-sol",
+          "reasoning_effort": "high",
+          "usage": {
+            "input_tokens": 142670,
+            "cached_input_tokens": 132096,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 1568,
+            "reasoning_output_tokens": 144,
+            "total_tokens": 144238
+          },
+          "trace": "group-3-rep-1-routed_parent-rollout-1.jsonl"
+        },
+        {
+          "id": "01a0dd0b-e5b2-7a72-8055-6086fb9bbf4c",
+          "parent_id": "01a0dd0b-92d3-7153-b0b5-9aac94077e2a",
+          "model": "gpt-6-luna",
+          "reasoning_effort": "low",
+          "usage": {
+            "input_tokens": 35022,
+            "cached_input_tokens": 24064,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 120,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 35142
+          },
+          "trace": "group-3-rep-1-routed_parent-rollout-2.jsonl"
+        },
+        {
+          "id": "01a0dd0c-0378-7122-bb34-c690ef734440",
+          "parent_id": "01a0dd0b-92d3-7153-b0b5-9aac94077e2a",
+          "model": "gpt-6-luna",
+          "reasoning_effort": "medium",
+          "usage": {
+            "input_tokens": 54098,
+            "cached_input_tokens": 45312,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 297,
+            "reasoning_output_tokens": 50,
+            "total_tokens": 54395
+          },
+          "trace": "group-3-rep-1-routed_parent-rollout-3.jsonl"
+        },
+        {
+          "id": "01a0dd0c-1df4-73e3-854c-cab0723ad359",
+          "parent_id": "01a0dd0b-92d3-7153-b0b5-9aac94077e2a",
+          "model": "gpt-6-sol",
+          "reasoning_effort": "low",
+          "usage": {
+            "input_tokens": 42442,
+            "cached_input_tokens": 27520,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 209,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 42651
+          },
+          "trace": "group-3-rep-1-routed_parent-rollout-4.jsonl"
+        },
+        {
+          "id": "01a0dd0c-649c-76b1-a24c-cf6ed4be7f00",
+          "parent_id": "01a0dd0b-92d3-7153-b0b5-9aac94077e2a",
+          "model": "gpt-6-sol",
+          "reasoning_effort": "low",
+          "usage": {
+            "input_tokens": 42240,
+            "cached_input_tokens": 39040,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 182,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 42422
+          },
+          "trace": "group-3-rep-1-routed_parent-rollout-5.jsonl"
+        }
+      ],
+      "usage_complete": true,
+      "codex_usage": {
+        "input_tokens": 316472,
+        "cached_input_tokens": 268032,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2376
+      },
+      "codex_tokens": 318848,
+      "estimated_codex_api_usd": 0.11958986,
+      "traces": {
+        "events": "group-3-rep-1-routed_parent.events.jsonl",
+        "stderr": "group-3-rep-1-routed_parent.stderr.txt",
+        "rollouts": [
+          "group-3-rep-1-routed_parent-rollout-1.jsonl",
+          "group-3-rep-1-routed_parent-rollout-2.jsonl",
+          "group-3-rep-1-routed_parent-rollout-3.jsonl",
+          "group-3-rep-1-routed_parent-rollout-4.jsonl",
+          "group-3-rep-1-routed_parent-rollout-5.jsonl"
+        ]
+      },
+      "end_to_end_ms": 109968,
+      "estimated_total_api_usd": 0.119695196
+    },
+    {
+      "group": "group-1",
+      "repetition": 2,
+      "arm": "routed_parent",
+      "task_ids": [
+        "paginator-elided-symbol",
+        "url-namespace-symbol",
+        "forms-normalization",
+        "filefield-form-data-claim"
+      ],
+      "routes": [
+        {
+          "task": "paginator-elided-symbol",
+          "model": "gpt-6-luna",
+          "reasoning_effort": "low",
+          "reason": "simple",
+          "usage": {
+            "input_tokens": 627,
+            "output_tokens": 72
+          },
+          "wall_ms": 2505
+        },
+        {
+          "task": "url-namespace-symbol",
+          "model": "gpt-6-luna",
+          "reasoning_effort": "low",
+          "reason": "simple",
+          "usage": {
+            "input_tokens": 624,
+            "output_tokens": 72
+          },
+          "wall_ms": 977
+        },
+        {
+          "task": "forms-normalization",
+          "model": "gpt-6-luna",
+          "reasoning_effort": "medium",
+          "reason": "bounded",
+          "usage": {
+            "input_tokens": 635,
+            "output_tokens": 72
+          },
+          "wall_ms": 952
+        },
+        {
+          "task": "filefield-form-data-claim",
+          "model": "gpt-6-sol",
+          "reasoning_effort": "low",
+          "reason": "focused",
+          "usage": {
+            "input_tokens": 623,
+            "output_tokens": 71
+          },
+          "wall_ms": 951
+        }
+      ],
+      "jev_wall_ms": 5385,
+      "estimated_jev_api_usd": 0.00010537799999999999,
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_ms": 114932,
+      "answer": "{\"answers\":{\"paginator-elided-symbol\":{\"answer\":{\"location\":\"django/core/paginator.py:132\"},\"citations\":{\"location\":[\"django/core/paginator.py:132\"]}},\"url-namespace-symbol\":{\"answer\":{\"location\":\"django/urls/resolvers.py:117\"},\"citations\":{\"location\":[\"django/urls/resolvers.py:117\"]}},\"forms-normalization\":{\"answer\":{\"url_scheme\":\"http\",\"boolean_false_strings\":\"false, 0\",\"checkbox_check_helper\":\"boolean_check\"},\"citations\":{\"url_scheme\":[\"django/forms/fields.py:774\"],\"boolean_false_strings\":[\"django/forms/fields.py:796\"],\"checkbox_check_helper\":[\"django/forms/widgets.py:554\"]}},\"filefield-form-data-claim\":{\"answer\":{\"claim\":true},\"citations\":{\"claim\":[\"django/db/models/fields/files.py:340\",\"django/db/models/fields/files.py:344\",\"django/db/models/fields/files.py:347\"]}}}}",
+      "grades": [
+        {
+          "task": "paginator-elided-symbol",
+          "correct": true,
+          "detail": "paginator-elided-symbol: PASS (correct)"
+        },
+        {
+          "task": "url-namespace-symbol",
+          "correct": true,
+          "detail": "url-namespace-symbol: PASS (correct)"
+        },
+        {
+          "task": "forms-normalization",
+          "correct": true,
+          "detail": "forms-normalization: PASS (correct)"
+        },
+        {
+          "task": "filefield-form-data-claim",
+          "correct": true,
+          "detail": "filefield-form-data-claim: PASS (correct)"
+        }
+      ],
+      "correct_count": 4,
+      "all_correct": true,
+      "extra_answer_ids": [],
+      "protocol_ok": true,
+      "root_thread_id": "01a0dd0d-5008-7c51-a2b0-b5e55236702a",
+      "root_usage": {
+        "input_tokens": 143114,
+        "cached_input_tokens": 132096,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1745,
+        "reasoning_output_tokens": 430
+      },
+      "root_usage_matches_rollout": true,
+      "command_calls": 0,
+      "sessions": [
+        {
+          "id": "01a0dd0d-5008-7c51-a2b0-b5e55236702a",
+          "parent_id": null,
+          "model": "gpt-6-sol",
+          "reasoning_effort": "high",
+          "usage": {
+            "input_tokens": 143114,
+            "cached_input_tokens": 132096,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 1745,
+            "reasoning_output_tokens": 430,
+            "total_tokens": 144859
+          },
+          "trace": "group-1-rep-2-routed_parent-rollout-1.jsonl"
+        },
+        {
+          "id": "01a0dd0d-ab66-7873-a9c2-a2675bad824f",
+          "parent_id": "01a0dd0d-5008-7c51-a2b0-b5e55236702a",
+          "model": "gpt-6-luna",
+          "reasoning_effort": "low",
+          "usage": {
+            "input_tokens": 34883,
+            "cached_input_tokens": 24064,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 86,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 34969
+          },
+          "trace": "group-1-rep-2-routed_parent-rollout-2.jsonl"
+        },
+        {
+          "id": "01a0dd0d-c7bf-7471-a908-4e03a685deea",
+          "parent_id": "01a0dd0d-5008-7c51-a2b0-b5e55236702a",
+          "model": "gpt-6-luna",
+          "reasoning_effort": "low",
+          "usage": {
+            "input_tokens": 34856,
+            "cached_input_tokens": 33280,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 88,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 34944
+          },
+          "trace": "group-1-rep-2-routed_parent-rollout-3.jsonl"
+        },
+        {
+          "id": "01a0dd0d-e282-79e0-86d6-d69d6ed30274",
+          "parent_id": "01a0dd0d-5008-7c51-a2b0-b5e55236702a",
+          "model": "gpt-6-luna",
+          "reasoning_effort": "medium",
+          "usage": {
+            "input_tokens": 81976,
+            "cached_input_tokens": 69632,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 387,
+            "reasoning_output_tokens": 76,
+            "total_tokens": 82363
+          },
+          "trace": "group-1-rep-2-routed_parent-rollout-4.jsonl"
+        },
+        {
+          "id": "01a0dd0e-4fe7-7a30-92e9-327ff44d9d9e",
+          "parent_id": "01a0dd0d-5008-7c51-a2b0-b5e55236702a",
+          "model": "gpt-6-sol",
+          "reasoning_effort": "low",
+          "usage": {
+            "input_tokens": 28346,
+            "cached_input_tokens": 11520,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 135,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 28481
+          },
+          "trace": "group-1-rep-2-routed_parent-rollout-5.jsonl"
+        }
+      ],
+      "usage_complete": true,
+      "codex_usage": {
+        "input_tokens": 323175,
+        "cached_input_tokens": 270592,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2441
+      },
+      "codex_tokens": 325616,
+      "estimated_codex_api_usd": 0.10723536,
+      "traces": {
+        "events": "group-1-rep-2-routed_parent.events.jsonl",
+        "stderr": "group-1-rep-2-routed_parent.stderr.txt",
+        "rollouts": [
+          "group-1-rep-2-routed_parent-rollout-1.jsonl",
+          "group-1-rep-2-routed_parent-rollout-2.jsonl",
+          "group-1-rep-2-routed_parent-rollout-3.jsonl",
+          "group-1-rep-2-routed_parent-rollout-4.jsonl",
+          "group-1-rep-2-routed_parent-rollout-5.jsonl"
+        ]
+      },
+      "end_to_end_ms": 120317,
+      "estimated_total_api_usd": 0.107340738
+    },
+    {
+      "group": "group-1",
+      "repetition": 2,
+      "arm": "single_sol_high",
+      "task_ids": [
+        "paginator-elided-symbol",
+        "url-namespace-symbol",
+        "forms-normalization",
+        "filefield-form-data-claim"
+      ],
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_ms": 45430,
+      "answer": "{\"answers\":{\"paginator-elided-symbol\":{\"answer\":{\"location\":\"django/core/paginator.py:132\"},\"citations\":{\"location\":[\"django/core/paginator.py:132\"]}},\"url-namespace-symbol\":{\"answer\":{\"location\":\"django/urls/resolvers.py:117\"},\"citations\":{\"location\":[\"django/urls/resolvers.py:117\"]}},\"forms-normalization\":{\"answer\":{\"url_scheme\":\"http\",\"boolean_false_strings\":\"false, 0\",\"checkbox_check_helper\":\"boolean_check\"},\"citations\":{\"url_scheme\":[\"django/forms/fields.py:773\",\"django/forms/fields.py:774\"],\"boolean_false_strings\":[\"django/forms/fields.py:796\",\"django/forms/fields.py:797\"],\"checkbox_check_helper\":[\"django/forms/widgets.py:554\"]}},\"filefield-form-data-claim\":{\"answer\":{\"claim\":true},\"citations\":{\"claim\":[\"django/db/models/fields/files.py:340\",\"django/db/models/fields/files.py:344\",\"django/db/models/fields/files.py:347\"]}}}}",
+      "grades": [
+        {
+          "task": "paginator-elided-symbol",
+          "correct": true,
+          "detail": "paginator-elided-symbol: PASS (correct)"
+        },
+        {
+          "task": "url-namespace-symbol",
+          "correct": true,
+          "detail": "url-namespace-symbol: PASS (correct)"
+        },
+        {
+          "task": "forms-normalization",
+          "correct": true,
+          "detail": "forms-normalization: PASS (correct)"
+        },
+        {
+          "task": "filefield-form-data-claim",
+          "correct": true,
+          "detail": "filefield-form-data-claim: PASS (correct)"
+        }
+      ],
+      "correct_count": 4,
+      "all_correct": true,
+      "extra_answer_ids": [],
+      "protocol_ok": true,
+      "root_thread_id": "01a0dd0f-0aca-7ed1-be59-8cebe49b1d2a",
+      "root_usage": {
+        "input_tokens": 43359,
+        "cached_input_tokens": 38272,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 656,
+        "reasoning_output_tokens": 273
+      },
+      "root_usage_matches_rollout": true,
+      "command_calls": 2,
+      "sessions": [
+        {
+          "id": "01a0dd0f-0aca-7ed1-be59-8cebe49b1d2a",
+          "parent_id": null,
+          "model": "gpt-6-sol",
+          "reasoning_effort": "high",
+          "usage": {
+            "input_tokens": 43359,
+            "cached_input_tokens": 38272,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 656,
+            "reasoning_output_tokens": 273,
+            "total_tokens": 44015
+          },
+          "trace": "group-1-rep-2-single_sol_high-rollout-1.jsonl"
+        }
+      ],
+      "usage_complete": true,
+      "codex_usage": {
+        "input_tokens": 43359,
+        "cached_input_tokens": 38272,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 656
+      },
+      "codex_tokens": 44015,
+      "estimated_codex_api_usd": 0.0243884,
+      "traces": {
+        "events": "group-1-rep-2-single_sol_high.events.jsonl",
+        "stderr": "group-1-rep-2-single_sol_high.stderr.txt",
+        "rollouts": [
+          "group-1-rep-2-single_sol_high-rollout-1.jsonl"
+        ]
+      },
+      "end_to_end_ms": 45430,
+      "estimated_total_api_usd": 0.0243884
+    },
+    {
+      "group": "group-2",
+      "repetition": 2,
+      "arm": "single_sol_high",
+      "task_ids": [
+        "signal-robust-symbol",
+        "slash-redirect-default",
+        "orm-chunk-sizes",
+        "extension-case-claim"
+      ],
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_ms": 53809,
+      "answer": "{\n  \"answers\": {\n    \"signal-robust-symbol\": {\n      \"answer\": {\n        \"location\": \"django/dispatch/dispatcher.py:269\"\n      },\n      \"citations\": {\n        \"location\": [\"django/dispatch/dispatcher.py:269\"]\n      }\n    },\n    \"slash-redirect-default\": {\n      \"answer\": {\n        \"redirect_class\": \"HttpResponsePermanentRedirect\",\n        \"status_code\": 301\n      },\n      \"citations\": {\n        \"redirect_class\": [\"django/middleware/common.py:32\"],\n        \"status_code\": [\"django/http/response.py:658\", \"django/http/response.py:659\"]\n      }\n    },\n    \"orm-chunk-sizes\": {\n      \"answer\": {\n        \"queryset_iterable_chunk_size\": 2000,\n        \"sql_get_iterator_chunk_size\": 100\n      },\n      \"citations\": {\n        \"queryset_iterable_chunk_size\": [\"django/db/models/query.py:512\"],\n        \"sql_get_iterator_chunk_size\": [\"django/db/models/sql/constants.py:7\"]\n      }\n    },\n    \"extension-case-claim\": {\n      \"answer\": {\n        \"claim\": true\n      },\n      \"citations\": {\n        \"claim\": [\"django/core/validators.py:537\", \"django/core/validators.py:539\", \"django/core/validators.py:548\", \"django/core/validators.py:551\"]\n      }\n    }\n  }\n}",
+      "grades": [
+        {
+          "task": "signal-robust-symbol",
+          "correct": true,
+          "detail": "signal-robust-symbol: PASS (correct)"
+        },
+        {
+          "task": "slash-redirect-default",
+          "correct": true,
+          "detail": "slash-redirect-default: PASS (correct)"
+        },
+        {
+          "task": "orm-chunk-sizes",
+          "correct": true,
+          "detail": "orm-chunk-sizes: PASS (correct)"
+        },
+        {
+          "task": "extension-case-claim",
+          "correct": true,
+          "detail": "extension-case-claim: PASS (correct)"
+        }
+      ],
+      "correct_count": 4,
+      "all_correct": true,
+      "extra_answer_ids": [],
+      "protocol_ok": true,
+      "root_thread_id": "01a0dd0f-c3c9-7473-b0a5-8c7e684ca13c",
+      "root_usage": {
+        "input_tokens": 42867,
+        "cached_input_tokens": 37120,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 727,
+        "reasoning_output_tokens": 116
+      },
+      "root_usage_matches_rollout": true,
+      "command_calls": 7,
+      "sessions": [
+        {
+          "id": "01a0dd0f-c3c9-7473-b0a5-8c7e684ca13c",
+          "parent_id": null,
+          "model": "gpt-6-sol",
+          "reasoning_effort": "high",
+          "usage": {
+            "input_tokens": 42867,
+            "cached_input_tokens": 37120,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 727,
+            "reasoning_output_tokens": 116,
+            "total_tokens": 43594
+          },
+          "trace": "group-2-rep-2-single_sol_high-rollout-1.jsonl"
+        }
+      ],
+      "usage_complete": true,
+      "codex_usage": {
+        "input_tokens": 42867,
+        "cached_input_tokens": 37120,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 727
+      },
+      "codex_tokens": 43594,
+      "estimated_codex_api_usd": 0.026188,
+      "traces": {
+        "events": "group-2-rep-2-single_sol_high.events.jsonl",
+        "stderr": "group-2-rep-2-single_sol_high.stderr.txt",
+        "rollouts": [
+          "group-2-rep-2-single_sol_high-rollout-1.jsonl"
+        ]
+      },
+      "end_to_end_ms": 53809,
+      "estimated_total_api_usd": 0.026188
+    },
+    {
+      "group": "group-2",
+      "repetition": 2,
+      "arm": "routed_parent",
+      "task_ids": [
+        "signal-robust-symbol",
+        "slash-redirect-default",
+        "orm-chunk-sizes",
+        "extension-case-claim"
+      ],
+      "routes": [
+        {
+          "task": "signal-robust-symbol",
+          "model": "gpt-6-luna",
+          "reasoning_effort": "low",
+          "reason": "simple",
+          "usage": {
+            "input_tokens": 624,
+            "output_tokens": 72
+          },
+          "wall_ms": 1965
+        },
+        {
+          "task": "slash-redirect-default",
+          "model": "gpt-6-luna",
+          "reasoning_effort": "medium",
+          "reason": "bounded",
+          "usage": {
+            "input_tokens": 628,
+            "output_tokens": 72
+          },
+          "wall_ms": 648
+        },
+        {
+          "task": "orm-chunk-sizes",
+          "model": "gpt-6-luna",
+          "reasoning_effort": "medium",
+          "reason": "bounded",
+          "usage": {
+            "input_tokens": 629,
+            "output_tokens": 72
+          },
+          "wall_ms": 648
+        },
+        {
+          "task": "extension-case-claim",
+          "model": "gpt-6-sol",
+          "reasoning_effort": "low",
+          "reason": "focused",
+          "usage": {
+            "input_tokens": 622,
+            "output_tokens": 71
+          },
+          "wall_ms": 577
+        }
+      ],
+      "jev_wall_ms": 3838,
+      "estimated_jev_api_usd": 0.00010512600000000001,
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_ms": 94668,
+      "answer": "{\"answers\":{\"signal-robust-symbol\":{\"answer\":{\"location\":\"django/dispatch/dispatcher.py:269\"},\"citations\":{\"location\":[\"django/dispatch/dispatcher.py:269\"]}},\"slash-redirect-default\":{\"answer\":{\"redirect_class\":\"HttpResponsePermanentRedirect\",\"status_code\":301},\"citations\":{\"redirect_class\":[\"django/middleware/common.py:32\"],\"status_code\":[\"django/http/response.py:658\",\"django/http/response.py:659\"]}},\"orm-chunk-sizes\":{\"answer\":{\"queryset_iterable_chunk_size\":\"2000\",\"sql_get_iterator_chunk_size\":\"100\"},\"citations\":{\"queryset_iterable_chunk_size\":[\"django/db/models/query.py:512\"],\"sql_get_iterator_chunk_size\":[\"django/db/models/sql/constants.py:7\"]}},\"extension-case-claim\":{\"answer\":{\"claim\":true},\"citations\":{\"claim\":[\"django/core/validators.py:538\",\"django/core/validators.py:539\",\"django/core/validators.py:548\",\"django/core/validators.py:551\"]}}}}",
+      "grades": [
+        {
+          "task": "signal-robust-symbol",
+          "correct": true,
+          "detail": "signal-robust-symbol: PASS (correct)"
+        },
+        {
+          "task": "slash-redirect-default",
+          "correct": true,
+          "detail": "slash-redirect-default: PASS (correct)"
+        },
+        {
+          "task": "orm-chunk-sizes",
+          "correct": true,
+          "detail": "orm-chunk-sizes: PASS (correct)"
+        },
+        {
+          "task": "extension-case-claim",
+          "correct": true,
+          "detail": "extension-case-claim: PASS (correct)"
+        }
+      ],
+      "correct_count": 4,
+      "all_correct": true,
+      "extra_answer_ids": [],
+      "protocol_ok": true,
+      "root_thread_id": "01a0dd10-9f5e-7dc3-b45e-dcd6eab5fc76",
+      "root_usage": {
+        "input_tokens": 124846,
+        "cached_input_tokens": 114944,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1203,
+        "reasoning_output_tokens": 91
+      },
+      "root_usage_matches_rollout": true,
+      "command_calls": 0,
+      "sessions": [
+        {
+          "id": "01a0dd10-9f5e-7dc3-b45e-dcd6eab5fc76",
+          "parent_id": null,
+          "model": "gpt-6-sol",
+          "reasoning_effort": "high",
+          "usage": {
+            "input_tokens": 124846,
+            "cached_input_tokens": 114944,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 1203,
+            "reasoning_output_tokens": 91,
+            "total_tokens": 126049
+          },
+          "trace": "group-2-rep-2-routed_parent-rollout-1.jsonl"
+        },
+        {
+          "id": "01a0dd10-d5e4-7303-a7af-d9624b2edea0",
+          "parent_id": "01a0dd10-9f5e-7dc3-b45e-dcd6eab5fc76",
+          "model": "gpt-6-luna",
+          "reasoning_effort": "low",
+          "usage": {
+            "input_tokens": 34897,
+            "cached_input_tokens": 28160,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 94,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 34991
+          },
+          "trace": "group-2-rep-2-routed_parent-rollout-2.jsonl"
+        },
+        {
+          "id": "01a0dd10-ee69-7a70-a89e-2cc38171039b",
+          "parent_id": "01a0dd10-9f5e-7dc3-b45e-dcd6eab5fc76",
+          "model": "gpt-6-luna",
+          "reasoning_effort": "medium",
+          "usage": {
+            "input_tokens": 53880,
+            "cached_input_tokens": 45312,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 235,
+            "reasoning_output_tokens": 30,
+            "total_tokens": 54115
+          },
+          "trace": "group-2-rep-2-routed_parent-rollout-3.jsonl"
+        },
+        {
+          "id": "01a0dd11-069a-7143-a231-9ea3957ca019",
+          "parent_id": "01a0dd10-9f5e-7dc3-b45e-dcd6eab5fc76",
+          "model": "gpt-6-luna",
+          "reasoning_effort": "medium",
+          "usage": {
+            "input_tokens": 53573,
+            "cached_input_tokens": 50432,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 226,
+            "reasoning_output_tokens": 8,
+            "total_tokens": 53799
+          },
+          "trace": "group-2-rep-2-routed_parent-rollout-4.jsonl"
+        },
+        {
+          "id": "01a0dd11-1f7c-7e13-99ff-8445c25b3974",
+          "parent_id": "01a0dd10-9f5e-7dc3-b45e-dcd6eab5fc76",
+          "model": "gpt-6-sol",
+          "reasoning_effort": "low",
+          "usage": {
+            "input_tokens": 42575,
+            "cached_input_tokens": 39168,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 203,
+            "reasoning_output_tokens": 7,
+            "total_tokens": 42778
+          },
+          "trace": "group-2-rep-2-routed_parent-rollout-5.jsonl"
+        }
+      ],
+      "usage_complete": true,
+      "codex_usage": {
+        "input_tokens": 309771,
+        "cached_input_tokens": 278016,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1961
+      },
+      "codex_tokens": 311732,
+      "estimated_codex_api_usd": 0.07486154,
+      "traces": {
+        "events": "group-2-rep-2-routed_parent.events.jsonl",
+        "stderr": "group-2-rep-2-routed_parent.stderr.txt",
+        "rollouts": [
+          "group-2-rep-2-routed_parent-rollout-1.jsonl",
+          "group-2-rep-2-routed_parent-rollout-2.jsonl",
+          "group-2-rep-2-routed_parent-rollout-3.jsonl",
+          "group-2-rep-2-routed_parent-rollout-4.jsonl",
+          "group-2-rep-2-routed_parent-rollout-5.jsonl"
+        ]
+      },
+      "end_to_end_ms": 98506,
+      "estimated_total_api_usd": 0.074966666
+    },
+    {
+      "group": "group-3",
+      "repetition": 2,
+      "arm": "routed_parent",
+      "task_ids": [
+        "static-location-symbol",
+        "template-truncation",
+        "paginator-float-claim",
+        "json-response-list-claim"
+      ],
+      "routes": [
+        {
+          "task": "static-location-symbol",
+          "model": "gpt-6-luna",
+          "reasoning_effort": "low",
+          "reason": "simple",
+          "usage": {
+            "input_tokens": 626,
+            "output_tokens": 72
+          },
+          "wall_ms": 1655
+        },
+        {
+          "task": "template-truncation",
+          "model": "gpt-6-luna",
+          "reasoning_effort": "medium",
+          "reason": "bounded",
+          "usage": {
+            "input_tokens": 632,
+            "output_tokens": 72
+          },
+          "wall_ms": 694
+        },
+        {
+          "task": "paginator-float-claim",
+          "model": "gpt-6-sol",
+          "reasoning_effort": "low",
+          "reason": "focused",
+          "usage": {
+            "input_tokens": 629,
+            "output_tokens": 71
+          },
+          "wall_ms": 651
+        },
+        {
+          "task": "json-response-list-claim",
+          "model": "gpt-6-sol",
+          "reasoning_effort": "low",
+          "reason": "focused",
+          "usage": {
+            "input_tokens": 621,
+            "output_tokens": 71
+          },
+          "wall_ms": 666
+        }
+      ],
+      "jev_wall_ms": 3666,
+      "estimated_jev_api_usd": 0.00010533600000000001,
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_ms": 57303,
+      "answer": "{\"answers\":{\"static-location-symbol\":{\"answer\":{\"location\":\"django/contrib/staticfiles/finders.py:131\"},\"citations\":{\"location\":[\"django/contrib/staticfiles/finders.py:131\"]}},\"template-truncation\":{\"answer\":{\"invalid_arg_result\":\"original_value\",\"default_truncation_format\":\"%(truncated_text)s\u2026\"},\"citations\":{\"invalid_arg_result\":[\"django/template/defaultfilters.py:295\",\"django/template/defaultfilters.py:298\"],\"default_truncation_format\":[\"django/utils/text.py:77\",\"django/utils/text.py:78\"]}},\"paginator-float-claim\":{\"answer\":{\"claim\":true},\"citations\":{\"claim\":[\"django/core/paginator.py:46\",\"django/core/paginator.py:48\",\"django/core/paginator.py:50\",\"django/core/paginator.py:53\"]}},\"json-response-list-claim\":{\"answer\":{\"claim\":false},\"citations\":{\"claim\":[\"django/http/response.py:736\",\"django/http/response.py:740\",\"django/http/response.py:741\"]}}}}",
+      "grades": [
+        {
+          "task": "static-location-symbol",
+          "correct": true,
+          "detail": "static-location-symbol: PASS (correct)"
+        },
+        {
+          "task": "template-truncation",
+          "correct": true,
+          "detail": "template-truncation: PASS (correct)"
+        },
+        {
+          "task": "paginator-float-claim",
+          "correct": false,
+          "detail": "paginator-float-claim: FAIL (citations.claim lacks a required source location)"
+        },
+        {
+          "task": "json-response-list-claim",
+          "correct": true,
+          "detail": "json-response-list-claim: PASS (correct)"
+        }
+      ],
+      "correct_count": 3,
+      "all_correct": false,
+      "extra_answer_ids": [],
+      "protocol_ok": true,
+      "root_thread_id": "01a0dd12-1a56-77a3-a9c7-45a47d230ed3",
+      "root_usage": {
+        "input_tokens": 123510,
+        "cached_input_tokens": 114176,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 995,
+        "reasoning_output_tokens": 67
+      },
+      "root_usage_matches_rollout": true,
+      "command_calls": 0,
+      "sessions": [
+        {
+          "id": "01a0dd12-1a56-77a3-a9c7-45a47d230ed3",
+          "parent_id": null,
+          "model": "gpt-6-sol",
+          "reasoning_effort": "high",
+          "usage": {
+            "input_tokens": 123510,
+            "cached_input_tokens": 114176,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 995,
+            "reasoning_output_tokens": 67,
+            "total_tokens": 124505
+          },
+          "trace": "group-3-rep-2-routed_parent-rollout-1.jsonl"
+        },
+        {
+          "id": "01a0dd12-4489-70a0-8398-c511e70a0737",
+          "parent_id": "01a0dd12-1a56-77a3-a9c7-45a47d230ed3",
+          "model": "gpt-6-luna",
+          "reasoning_effort": "low",
+          "usage": {
+            "input_tokens": 34781,
+            "cached_input_tokens": 28160,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 90,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 34871
+          },
+          "trace": "group-3-rep-2-routed_parent-rollout-2.jsonl"
+        },
+        {
+          "id": "01a0dd12-58d7-7e42-b7ea-3f224f96de1b",
+          "parent_id": "01a0dd12-1a56-77a3-a9c7-45a47d230ed3",
+          "model": "gpt-6-luna",
+          "reasoning_effort": "medium",
+          "usage": {
+            "input_tokens": 53318,
+            "cached_input_tokens": 45312,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 231,
+            "reasoning_output_tokens": 22,
+            "total_tokens": 53549
+          },
+          "trace": "group-3-rep-2-routed_parent-rollout-3.jsonl"
+        },
+        {
+          "id": "01a0dd12-6a79-7e51-9d45-189a1238269a",
+          "parent_id": "01a0dd12-1a56-77a3-a9c7-45a47d230ed3",
+          "model": "gpt-6-sol",
+          "reasoning_effort": "low",
+          "usage": {
+            "input_tokens": 42008,
+            "cached_input_tokens": 38784,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 161,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 42169
+          },
+          "trace": "group-3-rep-2-routed_parent-rollout-4.jsonl"
+        },
+        {
+          "id": "01a0dd12-7c94-74d0-b419-fa53fbd67850",
+          "parent_id": "01a0dd12-1a56-77a3-a9c7-45a47d230ed3",
+          "model": "gpt-6-sol",
+          "reasoning_effort": "low",
+          "usage": {
+            "input_tokens": 42233,
+            "cached_input_tokens": 38912,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 163,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 42396
+          },
+          "trace": "group-3-rep-2-routed_parent-rollout-5.jsonl"
+        }
+      ],
+      "usage_complete": true,
+      "codex_usage": {
+        "input_tokens": 295850,
+        "cached_input_tokens": 265344,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1640
+      },
+      "codex_tokens": 297490,
+      "estimated_codex_api_usd": 0.08568031999999999,
+      "traces": {
+        "events": "group-3-rep-2-routed_parent.events.jsonl",
+        "stderr": "group-3-rep-2-routed_parent.stderr.txt",
+        "rollouts": [
+          "group-3-rep-2-routed_parent-rollout-1.jsonl",
+          "group-3-rep-2-routed_parent-rollout-2.jsonl",
+          "group-3-rep-2-routed_parent-rollout-3.jsonl",
+          "group-3-rep-2-routed_parent-rollout-4.jsonl",
+          "group-3-rep-2-routed_parent-rollout-5.jsonl"
+        ]
+      },
+      "end_to_end_ms": 60969,
+      "estimated_total_api_usd": 0.08578565599999999
+    },
+    {
+      "group": "group-3",
+      "repetition": 2,
+      "arm": "single_sol_high",
+      "task_ids": [
+        "static-location-symbol",
+        "template-truncation",
+        "paginator-float-claim",
+        "json-response-list-claim"
+      ],
+      "exit_code": 0,
+      "timed_out": false,
+      "wall_ms": 44927,
+      "answer": "{\"answers\":{\"static-location-symbol\":{\"answer\":{\"location\":\"django/contrib/staticfiles/finders.py:131\"},\"citations\":{\"location\":[\"django/contrib/staticfiles/finders.py:131\"]}},\"template-truncation\":{\"answer\":{\"invalid_arg_result\":\"original_value\",\"default_truncation_format\":\"%(truncated_text)s\u2026\"},\"citations\":{\"invalid_arg_result\":[\"django/template/defaultfilters.py:295\",\"django/template/defaultfilters.py:296\",\"django/template/defaultfilters.py:297\",\"django/template/defaultfilters.py:298\"],\"default_truncation_format\":[\"django/utils/text.py:75\",\"django/utils/text.py:76\",\"django/utils/text.py:77\",\"django/utils/text.py:78\"]}},\"paginator-float-claim\":{\"answer\":{\"claim\":true},\"citations\":{\"claim\":[\"django/core/paginator.py:46\",\"django/core/paginator.py:47\",\"django/core/paginator.py:48\",\"django/core/paginator.py:49\",\"django/core/paginator.py:50\",\"django/core/paginator.py:53\",\"django/core/paginator.py:55\"]}},\"json-response-list-claim\":{\"answer\":{\"claim\":false},\"citations\":{\"claim\":[\"django/http/response.py:736\",\"django/http/response.py:740\",\"django/http/response.py:741\"]}}}",
+      "grades": [
+        {
+          "task": "static-location-symbol",
+          "correct": false,
+          "detail": "static-location-symbol: FAIL (invalid JSON: Expecting value: line 1 column 1 (char 0))"
+        },
+        {
+          "task": "template-truncation",
+          "correct": false,
+          "detail": "template-truncation: FAIL (invalid JSON: Expecting value: line 1 column 1 (char 0))"
+        },
+        {
+          "task": "paginator-float-claim",
+          "correct": false,
+          "detail": "paginator-float-claim: FAIL (invalid JSON: Expecting value: line 1 column 1 (char 0))"
+        },
+        {
+          "task": "json-response-list-claim",
+          "correct": false,
+          "detail": "json-response-list-claim: FAIL (invalid JSON: Expecting value: line 1 column 1 (char 0))"
+        }
+      ],
+      "correct_count": 0,
+      "all_correct": false,
+      "extra_answer_ids": [],
+      "protocol_ok": true,
+      "root_thread_id": "01a0dd13-069e-7960-8b43-0adeac78ec76",
+      "root_usage": {
+        "input_tokens": 51132,
+        "cached_input_tokens": 34304,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 594,
+        "reasoning_output_tokens": 133
+      },
+      "root_usage_matches_rollout": true,
+      "command_calls": 2,
+      "sessions": [
+        {
+          "id": "01a0dd13-069e-7960-8b43-0adeac78ec76",
+          "parent_id": null,
+          "model": "gpt-6-sol",
+          "reasoning_effort": "high",
+          "usage": {
+            "input_tokens": 51132,
+            "cached_input_tokens": 34304,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 594,
+            "reasoning_output_tokens": 133,
+            "total_tokens": 51726
+          },
+          "trace": "group-3-rep-2-single_sol_high-rollout-1.jsonl"
+        }
+      ],
+      "usage_complete": true,
+      "codex_usage": {
+        "input_tokens": 51132,
+        "cached_input_tokens": 34304,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 594
+      },
+      "codex_tokens": 51726,
+      "estimated_codex_api_usd": 0.0464568,
+      "traces": {
+        "events": "group-3-rep-2-single_sol_high.events.jsonl",
+        "stderr": "group-3-rep-2-single_sol_high.stderr.txt",
+        "rollouts": [
+          "group-3-rep-2-single_sol_high-rollout-1.jsonl"
+        ]
+      },
+      "answer_parse_error": "SyntaxError: Expected ',' or '}' after property value in JSON at position 1082 (line 1 column 1083)",
+      "end_to_end_ms": 44927,
+      "estimated_total_api_usd": 0.0464568,
+      "grades_before_uniform_recheck": [
+        {
+          "task": "static-location-symbol",
+          "correct": false,
+          "detail": "Invalid combined JSON: SyntaxError: Expected ',' or '}' after property value in JSON at position 1082 (line 1 column 1083)"
+        },
+        {
+          "task": "template-truncation",
+          "correct": false,
+          "detail": "Invalid combined JSON: SyntaxError: Expected ',' or '}' after property value in JSON at position 1082 (line 1 column 1083)"
+        },
+        {
+          "task": "paginator-float-claim",
+          "correct": false,
+          "detail": "Invalid combined JSON: SyntaxError: Expected ',' or '}' after property value in JSON at position 1082 (line 1 column 1083)"
+        },
+        {
+          "task": "json-response-list-claim",
+          "correct": false,
+          "detail": "Invalid combined JSON: SyntaxError: Expected ',' or '}' after property value in JSON at position 1082 (line 1 column 1083)"
+        }
+      ]
+    }
+  ]
+}

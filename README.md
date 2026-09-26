@@ -4,11 +4,17 @@
 
 This repository holds the benchmark runner, grading code, task inputs, traces, patches, and measurements for Codex subagent model routing. The router's installation and runtime code live in [suenot/codex-jev-router](https://github.com/suenot/codex-jev-router). The benchmark materials were moved from that repository after version 0.7.0; the report and raw artifacts are preserved here.
 
-## Estimated API cost savings
+## Full-workflow cost comparison
 
-In the selected real-task sample, the estimated API cost **fell 71.0%**, from **$0.214806 to $0.062317**, across nine paired Django source-task runs (9/9 correct in each arm). For three paired runs of one bounded Django fix, it **fell 98.3%**, from **$0.555916 to $0.009668** (3/3 official tests passed in each arm). Routed totals include the separately priced Jev decisions. Estimates apply published Standard, short-context API rates to measured input, cached input, and output tokens.
+On 12 preregistered Django source tasks, repeated twice per arm, a single Sol-high Codex session cost an estimated **$0.452677** and passed **22/24** strict checks. A Sol-high parent plus one Jev-routed child per task cost **$0.657100** and passed **21/24**: **45.2% more expensive**, including Jev. In six four-task runs using the same tasks, one continuing Sol-high session cost **$0.193704** (20/24 strict checks); a Sol-high parent with four routed children cost **$0.547248** (22/24), **182.5% more**. The checks include output format and precise source citations. See the [full-workflow method and results](BENCHMARK.md#full-codex-workflow-one-sol-high-agent-or-a-routed-subagent).
 
-These are **API price estimates, not measured Codex subscription charges or a general saving**. Same-model controls show run-to-run variation, and the historical synthetic run lacks a clean baseline. See the [cost calculation and limits](BENCHMARK.md#estimated-api-cost-savings).
+One paired Django code fix gave a different outcome: both arms passed the local official test; Sol high alone cost **$0.144088**, while a Sol-high parent with a Jev-selected Luna-medium child cost **$0.056660**, **60.7% less** but **50.5% slower**. This is one trial, not a general saving. [Patches, test logs, method, and limits](BENCHMARK.md#full-codex-workflow-one-real-django-code-fix).
+
+## Earlier selected worker-only savings
+
+In an earlier selected sample that priced **only the chosen worker and Jev decision**, the estimated API cost fell 71.0%, from $0.214806 to $0.062317, across nine paired Django source-task runs (9/9 correct in each arm). For three paired runs of one bounded Django fix, it fell 98.3%, from $0.555916 to $0.009668 (3/3 official tests passed in each arm). **Those comparisons exclude the Sol-high parent's work** and therefore do not establish savings for the complete subagent workflow. Estimates apply published Standard, short-context API rates to measured input, cached input, and output tokens.
+
+These are **API price estimates, not measured Codex subscription charges or a general saving**. Same-model controls show run-to-run variation, and the historical synthetic run lacks a clean baseline. See the [cost calculation and limits](BENCHMARK.md#earlier-selected-worker-only-cost-savings).
 
 ## Contents
 
@@ -16,6 +22,10 @@ These are **API price estimates, not measured Codex subscription charges or a ge
 - [benchmarks/](benchmarks/): recorded public task inputs, responses, event traces, patches, grades, and selection audits.
 - [scripts/benchmark.mjs](scripts/benchmark.mjs): synthetic inline-evidence runner. It does **not** reproduce the Django and pytest editing experiments automatically.
 - [benchmarks/django-source-tasks-2026-09-24/grade.py](benchmarks/django-source-tasks-2026-09-24/grade.py): checks the recorded 18 source-task answers; pass `--source` to verify facts against the pinned Django checkout too.
+- [scripts/agent-overhead.mjs](scripts/agent-overhead.mjs): runs the 12-task pinned Django suite with a clean single Sol-high Codex session versus a Sol-high parent and one Jev-routed Codex subagent. It counts the parent and child session usage separately, grades exact answers and citations, and records cost estimates and traces.
+- [scripts/batch-agent-overhead.mjs](scripts/batch-agent-overhead.mjs): compares one Sol-high session solving four tasks with one Sol-high parent delegating the same four tasks to separately routed subagents. Three fixed groups cover the 12-task suite.
+- [scripts/code-fix-agent-overhead.mjs](scripts/code-fix-agent-overhead.mjs): compares the complete single-agent and parent-plus-child workflows on the Django 16527 code fix and can replay the local official test from saved patches.
+- [benchmarks/django-task-suite-2026-09-26/](benchmarks/django-task-suite-2026-09-26/): preregistered prompts, expected source facts, grader, paired run results, and Codex JSON event traces.
 
 ## Setup and checks
 
@@ -39,3 +49,13 @@ npm run benchmark -- --repetitions 3 --output /tmp/codex-router-benchmark.json
 ```
 
 The runner creates a temporary Codex home containing only a link to the active authentication file. It removes that home and its fixture directory afterward. Read [BENCHMARK.md](BENCHMARK.md) before comparing token counts or illustrative API prices: the historical synthetic run predates the isolation fix, and real-repository results cover a small selected sample.
+
+For the real parent-versus-subagent comparison, check out the pinned Django commit recorded in the [suite manifest](benchmarks/django-task-suite-2026-09-26/manifest.json), then run:
+
+```sh
+python3 benchmarks/django-task-suite-2026-09-26/grade.py --source /path/to/pinned/django
+npm run benchmark:agents -- --repo /path/to/pinned/django --output /tmp/agent-overhead-results.json --repetitions 2
+npm run benchmark:batch -- --repo /path/to/pinned/django --output /tmp/batch-overhead-results.json --repetitions 2
+```
+
+The 12 prompts are read-only and do not use the internet. Each baseline run disables subagents; routed runs start a Sol-high parent and request one child per task with the profile chosen by the configured decision backend. Each run uses a fresh Codex home and alternates arm order. The per-task runner saves the CLI event trace and per-session usage; the batch runner also saves child rollout traces. The price estimate uses observed model, uncached input, cached input, and output tokens. See the [report](BENCHMARK.md) for selection limits and interpretation.

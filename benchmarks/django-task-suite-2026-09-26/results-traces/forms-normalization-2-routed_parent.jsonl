@@ -1,0 +1,6 @@
+{"type":"thread.started","thread_id":"01a0dcf4-882c-7932-8163-30f77b27d020"}
+{"type":"turn.started"}
+{"type":"item.started","item":{"id":"item_0","type":"collab_tool_call","tool":"wait","sender_thread_id":"01a0dcf4-882c-7932-8163-30f77b27d020","receiver_thread_ids":[],"prompt":null,"agents_states":{},"status":"in_progress"}}
+{"type":"item.completed","item":{"id":"item_0","type":"collab_tool_call","tool":"wait","sender_thread_id":"01a0dcf4-882c-7932-8163-30f77b27d020","receiver_thread_ids":[],"prompt":null,"agents_states":{},"status":"completed"}}
+{"type":"item.completed","item":{"id":"item_1","type":"agent_message","text":"{\"answer\":{\"url_scheme\":\"http\",\"boolean_false_strings\":\"false, 0\",\"checkbox_check_helper\":\"boolean_check\"},\"citations\":{\"url_scheme\":[\"django/forms/fields.py:773-774\"],\"boolean_false_strings\":[\"django/forms/fields.py:796\"],\"checkbox_check_helper\":[\"django/forms/widgets.py:554\"]}}"}}
+{"type":"turn.completed","usage":{"input_tokens":43345,"cached_input_tokens":40064,"cache_write_input_tokens":0,"output_tokens":424,"reasoning_output_tokens":46}}

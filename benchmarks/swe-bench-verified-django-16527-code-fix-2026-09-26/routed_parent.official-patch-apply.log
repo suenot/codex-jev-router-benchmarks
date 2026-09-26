@@ -1,0 +1,6 @@
+git apply:
+error: patch failed: tests/admin_views/test_templatetags.py:33
+error: tests/admin_views/test_templatetags.py: patch does not apply
+
+patch:
+patching file 'tests/admin_views/test_templatetags.py'

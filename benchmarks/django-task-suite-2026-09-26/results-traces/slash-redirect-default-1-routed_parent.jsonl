@@ -1,0 +1,6 @@
+{"type":"thread.started","thread_id":"01a0dcf6-da5a-7ec1-80b8-3ad705225529"}
+{"type":"turn.started"}
+{"type":"item.started","item":{"id":"item_0","type":"collab_tool_call","tool":"wait","sender_thread_id":"01a0dcf6-da5a-7ec1-80b8-3ad705225529","receiver_thread_ids":[],"prompt":null,"agents_states":{},"status":"in_progress"}}
+{"type":"item.completed","item":{"id":"item_0","type":"collab_tool_call","tool":"wait","sender_thread_id":"01a0dcf6-da5a-7ec1-80b8-3ad705225529","receiver_thread_ids":[],"prompt":null,"agents_states":{},"status":"completed"}}
+{"type":"item.completed","item":{"id":"item_1","type":"agent_message","text":"{\"answer\":{\"redirect_class\":\"HttpResponsePermanentRedirect\",\"status_code\":301},\"citations\":{\"redirect_class\":[\"django/middleware/common.py:32\"],\"status_code\":[\"django/http/response.py:659\"]}}"}}
+{"type":"turn.completed","usage":{"input_tokens":43097,"cached_input_tokens":37760,"cache_write_input_tokens":0,"output_tokens":334,"reasoning_output_tokens":33}}

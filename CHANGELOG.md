@@ -4,9 +4,19 @@ All notable changes are documented here in Keep a Changelog format.
 
 ## Unreleased
 
+## [0.2.0] - 2026-09-26
+
+### Added
+
+- Preregister 12 source tasks across Django modules with pinned answers, source evidence, and deterministic grading.
+- Measure one Sol-high Codex session against a Sol-high parent with one routed subagent per task, counting every Codex session and the Jev decision.
+- Measure four-task batches in one Sol-high session against a Sol-high parent with four routed subagents.
+- Measure one real Django code fix with an official local regression test, counting a Sol-high parent, its Jev-selected Luna-medium child, and the Jev decision.
+- Save paired results, Codex event traces, and the code-fix patches and test logs for the new experiments.
+
 ### Changed
 
-- Lead with estimated API cost savings, including Jev, and state the pricing assumptions and sample limits in both READMEs and the benchmark report.
+- Lead with complete parent-plus-child cost measurements and distinguish them from earlier worker-only savings in both READMEs and the benchmark report.
 
 ## [0.1.0] - 2026-09-25
 

@@ -1,0 +1,3 @@
+Fixed the admin “Save as new” button so it appears only when the user has add permission. Added a regression test that confirms a change-only user cannot see the button and that it appears after add permission is granted.
+
+The focused test reproduced the issue before the patch. After the patch, all 40 relevant save, template tag, and permission tests pass.

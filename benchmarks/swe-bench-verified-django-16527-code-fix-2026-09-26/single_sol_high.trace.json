@@ -1,0 +1,346 @@
+{
+  "root_thread_id": "01a0dd20-e03b-7430-9a1b-211cc9cc8b04",
+  "root_usage": {
+    "input_tokens": 347386,
+    "cached_input_tokens": 324352,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 3315,
+    "reasoning_output_tokens": 484
+  },
+  "sessions": [
+    {
+      "id": "01a0dd20-e03b-7430-9a1b-211cc9cc8b04",
+      "parent_id": null,
+      "model": "gpt-6-sol",
+      "reasoning_effort": "high",
+      "usage": {
+        "input_tokens": 347386,
+        "cached_input_tokens": 324352,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 3315,
+        "reasoning_output_tokens": 484,
+        "total_tokens": 350701
+      },
+      "spawn_calls": 0
+    }
+  ],
+  "cli_events": [
+    {
+      "type": "thread.started",
+      "thread_id": "01a0dd20-e03b-7430-9a1b-211cc9cc8b04"
+    },
+    {
+      "type": "turn.started"
+    },
+    {
+      "type": "item.completed",
+      "item_type": "agent_message",
+      "item_id": "item_0"
+    },
+    {
+      "type": "item.started",
+      "item_type": "command_execution",
+      "item_id": "item_1"
+    },
+    {
+      "type": "item.completed",
+      "item_type": "command_execution",
+      "item_id": "item_1"
+    },
+    {
+      "type": "item.started",
+      "item_type": "command_execution",
+      "item_id": "item_2"
+    },
+    {
+      "type": "item.completed",
+      "item_type": "command_execution",
+      "item_id": "item_2"
+    },
+    {
+      "type": "item.started",
+      "item_type": "command_execution",
+      "item_id": "item_3"
+    },
+    {
+      "type": "item.started",
+      "item_type": "command_execution",
+      "item_id": "item_4"
+    },
+    {
+      "type": "item.completed",
+      "item_type": "command_execution",
+      "item_id": "item_4"
+    },
+    {
+      "type": "item.completed",
+      "item_type": "command_execution",
+      "item_id": "item_3"
+    },
+    {
+      "type": "item.started",
+      "item_type": "command_execution",
+      "item_id": "item_5"
+    },
+    {
+      "type": "item.completed",
+      "item_type": "command_execution",
+      "item_id": "item_5"
+    },
+    {
+      "type": "item.started",
+      "item_type": "command_execution",
+      "item_id": "item_6"
+    },
+    {
+      "type": "item.completed",
+      "item_type": "command_execution",
+      "item_id": "item_6"
+    },
+    {
+      "type": "item.started",
+      "item_type": "command_execution",
+      "item_id": "item_7"
+    },
+    {
+      "type": "item.completed",
+      "item_type": "command_execution",
+      "item_id": "item_7"
+    },
+    {
+      "type": "item.started",
+      "item_type": "command_execution",
+      "item_id": "item_8"
+    },
+    {
+      "type": "item.completed",
+      "item_type": "command_execution",
+      "item_id": "item_8"
+    },
+    {
+      "type": "item.started",
+      "item_type": "command_execution",
+      "item_id": "item_9"
+    },
+    {
+      "type": "item.completed",
+      "item_type": "command_execution",
+      "item_id": "item_9"
+    },
+    {
+      "type": "item.started",
+      "item_type": "command_execution",
+      "item_id": "item_10"
+    },
+    {
+      "type": "item.completed",
+      "item_type": "command_execution",
+      "item_id": "item_10"
+    },
+    {
+      "type": "item.started",
+      "item_type": "command_execution",
+      "item_id": "item_11"
+    },
+    {
+      "type": "item.completed",
+      "item_type": "command_execution",
+      "item_id": "item_11"
+    },
+    {
+      "type": "item.started",
+      "item_type": "command_execution",
+      "item_id": "item_12"
+    },
+    {
+      "type": "item.completed",
+      "item_type": "command_execution",
+      "item_id": "item_12"
+    },
+    {
+      "type": "item.started",
+      "item_type": "command_execution",
+      "item_id": "item_13"
+    },
+    {
+      "type": "item.completed",
+      "item_type": "command_execution",
+      "item_id": "item_13"
+    },
+    {
+      "type": "item.started",
+      "item_type": "command_execution",
+      "item_id": "item_14"
+    },
+    {
+      "type": "item.completed",
+      "item_type": "command_execution",
+      "item_id": "item_14"
+    },
+    {
+      "type": "item.started",
+      "item_type": "command_execution",
+      "item_id": "item_15"
+    },
+    {
+      "type": "item.completed",
+      "item_type": "command_execution",
+      "item_id": "item_15"
+    },
+    {
+      "type": "item.started",
+      "item_type": "command_execution",
+      "item_id": "item_16"
+    },
+    {
+      "type": "item.completed",
+      "item_type": "command_execution",
+      "item_id": "item_16"
+    },
+    {
+      "type": "item.started",
+      "item_type": "command_execution",
+      "item_id": "item_17"
+    },
+    {
+      "type": "item.completed",
+      "item_type": "command_execution",
+      "item_id": "item_17"
+    },
+    {
+      "type": "item.started",
+      "item_type": "command_execution",
+      "item_id": "item_18"
+    },
+    {
+      "type": "item.completed",
+      "item_type": "command_execution",
+      "item_id": "item_18"
+    },
+    {
+      "type": "item.completed",
+      "item_type": "agent_message",
+      "item_id": "item_19"
+    },
+    {
+      "type": "item.started",
+      "item_type": "file_change",
+      "item_id": "item_20"
+    },
+    {
+      "type": "item.completed",
+      "item_type": "file_change",
+      "item_id": "item_20"
+    },
+    {
+      "type": "item.started",
+      "item_type": "command_execution",
+      "item_id": "item_21"
+    },
+    {
+      "type": "item.completed",
+      "item_type": "command_execution",
+      "item_id": "item_21"
+    },
+    {
+      "type": "item.started",
+      "item_type": "command_execution",
+      "item_id": "item_22"
+    },
+    {
+      "type": "item.completed",
+      "item_type": "command_execution",
+      "item_id": "item_22"
+    },
+    {
+      "type": "item.started",
+      "item_type": "file_change",
+      "item_id": "item_23"
+    },
+    {
+      "type": "item.completed",
+      "item_type": "file_change",
+      "item_id": "item_23"
+    },
+    {
+      "type": "item.completed",
+      "item_type": "agent_message",
+      "item_id": "item_24"
+    },
+    {
+      "type": "item.started",
+      "item_type": "command_execution",
+      "item_id": "item_25"
+    },
+    {
+      "type": "item.completed",
+      "item_type": "command_execution",
+      "item_id": "item_25"
+    },
+    {
+      "type": "item.started",
+      "item_type": "command_execution",
+      "item_id": "item_26"
+    },
+    {
+      "type": "item.completed",
+      "item_type": "command_execution",
+      "item_id": "item_26"
+    },
+    {
+      "type": "item.started",
+      "item_type": "command_execution",
+      "item_id": "item_27"
+    },
+    {
+      "type": "item.completed",
+      "item_type": "command_execution",
+      "item_id": "item_27"
+    },
+    {
+      "type": "item.started",
+      "item_type": "command_execution",
+      "item_id": "item_28"
+    },
+    {
+      "type": "item.completed",
+      "item_type": "command_execution",
+      "item_id": "item_28"
+    },
+    {
+      "type": "item.started",
+      "item_type": "command_execution",
+      "item_id": "item_29"
+    },
+    {
+      "type": "item.completed",
+      "item_type": "command_execution",
+      "item_id": "item_29"
+    },
+    {
+      "type": "item.started",
+      "item_type": "command_execution",
+      "item_id": "item_30"
+    },
+    {
+      "type": "item.completed",
+      "item_type": "command_execution",
+      "item_id": "item_30"
+    },
+    {
+      "type": "item.completed",
+      "item_type": "agent_message",
+      "item_id": "item_31"
+    },
+    {
+      "type": "turn.completed",
+      "usage": {
+        "input_tokens": 347386,
+        "cached_input_tokens": 324352,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 3315,
+        "reasoning_output_tokens": 484
+      }
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{"type":"thread.started","thread_id":"01a0dcfd-3227-7352-be79-23e6747453a6"}
+{"type":"turn.started"}
+{"type":"item.started","item":{"id":"item_0","type":"collab_tool_call","tool":"wait","sender_thread_id":"01a0dcfd-3227-7352-be79-23e6747453a6","receiver_thread_ids":[],"prompt":null,"agents_states":{},"status":"in_progress"}}
+{"type":"item.completed","item":{"id":"item_0","type":"collab_tool_call","tool":"wait","sender_thread_id":"01a0dcfd-3227-7352-be79-23e6747453a6","receiver_thread_ids":[],"prompt":null,"agents_states":{},"status":"completed"}}
+{"type":"item.completed","item":{"id":"item_1","type":"agent_message","text":"{\"answer\":{\"invalid_arg_result\":\"original_value\",\"default_truncation_format\":\"%(truncated_text)s…\"},\"citations\":{\"invalid_arg_result\":[\"django/template/defaultfilters.py:297\",\"django/template/defaultfilters.py:298\"],\"default_truncation_format\":[\"django/utils/text.py:77\",\"django/utils/text.py:78\"]}}"}}
+{"type":"turn.completed","usage":{"input_tokens":43191,"cached_input_tokens":39936,"cache_write_input_tokens":0,"output_tokens":352,"reasoning_output_tokens":0}}
