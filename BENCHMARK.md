@@ -1,5 +1,43 @@
 # Codex subagent routing benchmarks
 
+## Mixed four-arm release gate
+
+The [2026-09-26 manifest](benchmarks/mixed-2026-09-26/manifest.json) fixes six original public synthetic tasks before model runs: source lookup, log lookup, bounded extraction, focused source judgment, source research across an incident log and local operations policy, and a bounded code edit. The task evidence and expected answers are stored outside the fixture shown to Codex. The source research task is **offline**; this suite does not measure live web browsing. The older 12 selected Django read tasks remain diagnostic and are not the sole release gate.
+
+The [runner](scripts/mixed-four-arm.mjs) uses a deterministic pseudorandom seed from the manifest to shuffle four arms separately for each task and repetition, three repetitions each: one Sol xhigh root without subagents; a Sol xhigh parent with a fixed Sol high child; a Sol xhigh parent with a Jev-routed child; and a Sol xhigh root following the [optional delegation policy snapshot](benchmarks/mixed-2026-09-26/optional-policy.md). Each attempt has a fresh copy of the same fixture and an isolated Codex home containing only an authentication symlink. The optional arm decides whether delegation helps before Jev. If it delegates, a benchmark shim calls the same router and decider and records Jev usage. The shim replaces the policy's direct route command for measurement; this is an instrumented approximation of the installed instruction, not a terminal continuation or a subscription billing measurement. All runs are separate Codex root sessions, so this suite does not establish cache effects within a continuing dialog.
+
+Read answers must match exact JSON fields, values, and source line citations; source files must remain unchanged. The edit task must change only `src/receipts.mjs` and pass hidden behavior checks. A failed or invalid attempt may be retried once with a fresh fixture. Both attempts count toward the total, including root and child session tokens, cached input, uncached input, cache writes, output, and Jev input tokens. If Jev usage or a Codex session counter is unavailable, the run is unpriced and cannot pass the cost gate. [The auditor](scripts/audit-mixed-four-arm.py) independently recomputes these amounts from saved counters and verifies trace presence, model profiles, fixture and policy hashes, and run coverage. The trace stream contains event types, final answers, and usage rather than raw rollout text.
+
+For each task type, the auditor reports two separate gates after all three repetitions: **optional policy vs single Sol xhigh**, and **Jev-routed child vs fixed Sol high child**. Each candidate must add no failures in blocks where its own control passed, and its total illustrative API cost must be at least 10% lower than that control. A category with missing or unpriced runs is pending, and a category failing either condition stays unapproved for that comparison. The results report also shows elapsed time and cost variation. There is only **one task per type**, so a passing gate is evidence for that fixture task, not general quality equivalence or savings across the category. Pricing uses the [official OpenAI Sol](https://developers.openai.com/api/docs/models/gpt-6-sol) and [Luna](https://developers.openai.com/api/docs/models/gpt-6-luna) Standard short-context rates current when the manifest was written. [TypeSafe's published Jev announcement](https://typesafe.ai/blog/introducing-system-one-models-and-jev) lists $0.042 per million input tokens and free output tokens. We do not measure possible tool fees, other charges, or actual subscription billing.
+
+Run `npm run benchmark:mixed -- --output benchmarks/mixed-2026-09-26/results.json --repetitions 3` and then `npm run audit:mixed -- benchmarks/mixed-2026-09-26/results.json --report benchmarks/mixed-2026-09-26/REPORT.md`. The runner can resume the same output path after interruption when the pinned inputs and options still match. `--dry-run` prints the arm schedule without model calls.
+
+An earlier [26-run partial](benchmarks/mixed-2026-09-26/diagnostic-partial.json) and its traces are retained only as diagnostics. That interrupted attempt did not save generated edit patches, so its edit grades cannot be independently replayed and it is excluded from every release gate. The complete `results.json` run uses the patch-capturing runner; the auditor checks patch hashes, applies each edit to the pinned fixture, and reruns the hidden behavior checks.
+
+### Audited 72-run result
+
+The [complete results](benchmarks/mixed-2026-09-26/results.json), [audit report](benchmarks/mixed-2026-09-26/REPORT.md), event traces, and 12 generated edit patches cover all six tasks, three repetitions, and four arms. Strict final checks passed **18/18 in each arm**. The fixed-child arm needed one retry for a missing citation; both attempts are included in its price and elapsed time.
+
+| Arm | Strict | Estimated total API USD | Change vs single Sol xhigh | Median task time | Retries | Child sessions | Jev calls |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| Single Sol xhigh | 18/18 | $0.337455 | — | 17.48 s | 0 | 0 | 0 |
+| Optional delegation policy | 18/18 | $0.346462 | **+2.7%** | 19.25 s | 0 | 0 | 0 |
+| Fixed Sol high child | 18/18 | $0.786760 | +133.1% | 36.00 s | 1 | 19 | 0 |
+| Jev-routed child | 18/18 | $0.572820 | +69.7% | 30.10 s | 0 | 18 | 18 |
+
+The optional policy spawned no children on these serial tasks. Its aggregate cost was **2.7% higher** than the same-model single-root control, so this experiment does not show a full-workflow saving from the policy. A numeric per-task optional-policy gate passes only for bounded extraction; both arms used the same root model with no children, so that difference can be run variation. Jev-routed children cost **27.2% less than fixed Sol high children** in total, while still costing **69.7% more than the single-root workflow**. That child comparison is relevant only when a child is independently justified.
+
+| Task type | Jev child profile | Single USD | Optional USD | Fixed child USD | Jev child USD | Jev vs fixed | Cheaper child profile for this fixture |
+| --- | --- | ---: | ---: | ---: | ---: | ---: | --- |
+| Source lookup | Luna low | $0.061886 | $0.057677 | $0.124171 | $0.073477 | −40.8% | Conditional yes |
+| Log lookup | Luna low | $0.043962 | $0.050569 | $0.098821 | $0.077505 | −21.6% | Conditional yes |
+| Bounded extraction | Luna medium | $0.063610 | $0.045466 | $0.102051 | $0.063606 | −37.7% | Conditional yes |
+| Focused judgment | Sol high | $0.043242 | $0.051301 | $0.145731 | $0.096284 | −33.9% | No route change |
+| Source research | Sol high | $0.050236 | $0.055962 | $0.162270 | $0.125772 | −22.5% | No route change |
+| Code edit | Sol high | $0.074519 | $0.085488 | $0.153716 | $0.136176 | −11.4% | No route change |
+
+Every displayed task-type total covers three strict passes in each arm. For the three Luna profiles, the Jev child met the separate strict-quality and 10%-cost gate against a fixed Sol high child. These fixtures support **Luna low for a justified exact source/log lookup child and Luna medium for a justified bounded-extraction child**, with no automatic delegation for the serial tasks themselves. On the other three types, Jev chose the same Sol high profile as control in all three repeats. Their numeric price differences are same-model variation; they do not support a cheaper route. The corpus has one task per type, uses offline sources, and does not establish a general price or quality guarantee.
+
 ## Direct routing before the root Codex turn
 
 We ran a third arrangement of the **same 12 preregistered Django source tasks**, twice each. For every task, Jev chose a model and effort **before** `codex exec`; one isolated Codex root session then solved the task with subagents disabled. The [direct-root runner](scripts/direct-routed-root.mjs), [saved-result auditor](scripts/audit-direct-root.py), [results](benchmarks/django-task-suite-2026-09-26/direct-root-results.json), and [24 sanitized event traces](benchmarks/django-task-suite-2026-09-26/direct-root-results-traces/) record the experiment. The selected profiles matched the earlier routed-child arm: eight Luna low, eight Luna medium, and eight Sol low. All 24 root rollouts confirmed the requested model and effort, and showed no child session.

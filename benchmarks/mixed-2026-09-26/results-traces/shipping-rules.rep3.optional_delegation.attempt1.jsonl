@@ -1,0 +1,6 @@
+{"type":"thread.started","thread_id":"01a0dee1-d1b4-7652-b5c6-9c414cbac034"}
+{"type":"turn.started"}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":0}
+{"type":"item.completed","item_type":"agent_message","text":"{\"answer\":{\"free_threshold_cents\":5000,\"domestic_cents\":700,\"international_cents\":1800},\"citations\":{\"free_threshold_cents\":[\"config/policy.json:3\"],\"domestic_cents\":[\"config/policy.json:4\"],\"international_cents\":[\"config/policy.json:5\"]}}"}
+{"type":"turn.completed","usage":{"input_tokens":30056,"cached_input_tokens":26496,"cache_write_input_tokens":0,"output_tokens":216,"reasoning_output_tokens":59}}

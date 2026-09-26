@@ -1,0 +1,7 @@
+{
+  "currency": "USD",
+  "domestic_free_shipping_cents": 5000,
+  "domestic_shipping_cents": 700,
+  "international_shipping_cents": 1800,
+  "refund_window_days": 30
+}

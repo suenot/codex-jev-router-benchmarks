@@ -1,0 +1,9 @@
+{"type":"thread.started","thread_id":"01a0ded9-b910-7c52-9ef9-4001de7a0fc0"}
+{"type":"turn.started"}
+{"type":"item.completed","item_type":"agent_message","text":"I’ll read the two fixture files, check the relevant line numbers, and return the requested JSON."}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":0}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":0}
+{"type":"item.completed","item_type":"agent_message","text":"{\n  \"answer\": {\n    \"q42_completed\": true,\n    \"q43_retry\": false,\n    \"q42_receipt\": \"RCPT-2026-00421\"\n  },\n  \"citations\": {\n    \"q42_completed\": [\"logs/checkout.log:3\", \"logs/checkout.log:4\", \"docs/operations.md:5\"],\n    \"q43_retry\": [\"logs/checkout.log:6\", \"logs/checkout.log:7\", \"docs/operations.md:4\"],\n    \"q42_receipt\": [\"logs/checkout.log:4\", \"docs/operations.md:6\"]\n  }\n}"}
+{"type":"turn.completed","usage":{"input_tokens":26616,"cached_input_tokens":23424,"cache_write_input_tokens":0,"output_tokens":509,"reasoning_output_tokens":155}}

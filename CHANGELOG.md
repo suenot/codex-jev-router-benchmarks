@@ -4,6 +4,18 @@ All notable changes are documented here in Keep a Changelog format.
 
 ## Unreleased
 
+## [0.4.0] - 2026-09-26
+
+### Added
+
+- Preregistered mixed public fixture and randomized four-arm Sol-xhigh workflow runner with strict grading, retry-inclusive cost accounting, sanitized traces, and separate economic gates.
+- Published all 72 runs with hashed edit patches, replayable hidden checks, source and log evidence, and an independent audit report.
+
+### Changed
+
+- State the conditional Luna-child findings and the absence of measured savings against the single Sol-xhigh root in the benchmark report.
+- Summarize the new mixed-run result and limits in the Russian setup guide.
+
 ## [0.3.0] - 2026-09-26
 
 ### Added

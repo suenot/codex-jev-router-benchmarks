@@ -1,0 +1,7 @@
+{"type":"thread.started","thread_id":"01a0dede-6390-7172-bc41-a3e23930d484"}
+{"type":"turn.started"}
+{"type":"item.completed","item_type":"agent_message","text":"I’ll locate the definition in the fixture and verify its line number."}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":0}
+{"type":"item.completed","item_type":"agent_message","text":"{\"answer\":{\"location\":\"src/ledger.mjs:1\"},\"citations\":{\"location\":[\"src/ledger.mjs:1\"]}}"}
+{"type":"turn.completed","usage":{"input_tokens":25970,"cached_input_tokens":21504,"cache_write_input_tokens":0,"output_tokens":211,"reasoning_output_tokens":71}}

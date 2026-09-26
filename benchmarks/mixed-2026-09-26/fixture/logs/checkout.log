@@ -1,0 +1,7 @@
+2026-09-20T10:00:00Z INFO request=Q42 event=created region=domestic
+2026-09-20T10:00:01Z WARN request=Q42 event=retry reason=inventory_lock attempt=1
+2026-09-20T10:00:02Z INFO request=Q42 event=payment_authorized amount_cents=5700
+2026-09-20T10:00:03Z INFO request=Q42 event=completed receipt=RCPT-2026-00421
+2026-09-20T10:10:00Z INFO request=Q43 event=created region=international
+2026-09-20T10:10:01Z ERROR request=Q43 event=payment_declined code=DO_NOT_HONOR
+2026-09-20T10:10:02Z INFO request=Q43 event=closed status=unpaid

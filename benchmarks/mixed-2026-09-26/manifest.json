@@ -1,0 +1,68 @@
+{
+  "status": "preregistered_before_model_runs",
+  "fixture_license": "MIT; original synthetic public fixture",
+  "repetitions": 3,
+  "seed": 260926,
+  "answer_contract": "For read tasks, return only JSON with exactly answer and citations objects. Citations are path:line strings. For edit tasks, return only JSON {\"done\":true}; hidden behavioral checks grade the changed files.",
+  "tasks": [
+    {
+      "id": "sku-symbol",
+      "type": "source_lookup",
+      "role": "explorer",
+      "summary": "Locate the exact normalizeSku function definition in a small public source fixture.",
+      "prompt": "Find the definition of normalizeSku. Return answer.location as a repository-relative path:line string, with its source line in citations.location.",
+      "expected_answer": {"location": "src/ledger.mjs:1"},
+      "required_citations": {"location": ["src/ledger.mjs:1"]},
+      "source_evidence": {"src/ledger.mjs:1": "export function normalizeSku(value) {"}
+    },
+    {
+      "id": "checkout-log",
+      "type": "log_lookup",
+      "role": "explorer",
+      "summary": "Identify the final status and decline code for request Q43 from a short public checkout log.",
+      "prompt": "From logs/checkout.log, report request Q43's payment decline code and final status as answer.decline_code and answer.final_status. Cite the exact log lines.",
+      "expected_answer": {"decline_code": "DO_NOT_HONOR", "final_status": "unpaid"},
+      "required_citations": {"decline_code": ["logs/checkout.log:6"], "final_status": ["logs/checkout.log:7"]},
+      "source_evidence": {"logs/checkout.log:6": "2026-09-20T10:10:01Z ERROR request=Q43 event=payment_declined code=DO_NOT_HONOR", "logs/checkout.log:7": "2026-09-20T10:10:02Z INFO request=Q43 event=closed status=unpaid"}
+    },
+    {
+      "id": "shipping-rules",
+      "type": "bounded_extraction",
+      "role": "worker",
+      "summary": "Extract three shipping amounts and threshold from a local policy JSON file.",
+      "prompt": "From config/policy.json, return answer.free_threshold_cents, answer.domestic_cents, and answer.international_cents as JSON integers, citing their lines.",
+      "expected_answer": {"free_threshold_cents": 5000, "domestic_cents": 700, "international_cents": 1800},
+      "required_citations": {"free_threshold_cents": ["config/policy.json:3"], "domestic_cents": ["config/policy.json:4"], "international_cents": ["config/policy.json:5"]},
+      "source_evidence": {"config/policy.json:3": "\"domestic_free_shipping_cents\": 5000,", "config/policy.json:4": "\"domestic_shipping_cents\": 700,", "config/policy.json:5": "\"international_shipping_cents\": 1800,"}
+    },
+    {
+      "id": "international-claim",
+      "type": "focused_judgment",
+      "role": "worker",
+      "summary": "Check whether an international order receives free shipping at the threshold in a small public source fixture.",
+      "prompt": "Does an international order with subtotal 5000 cents receive free shipping under src/ledger.mjs? Return answer.claim as a JSON boolean and cite the decisive lines.",
+      "expected_answer": {"claim": false},
+      "required_citations": {"claim": ["src/ledger.mjs:6", "src/ledger.mjs:11"]},
+      "source_evidence": {"src/ledger.mjs:6": "return region === 'domestic' && subtotalCents >= 5000;", "src/ledger.mjs:11": "return region === 'domestic' ? 700 : 1800;"}
+    },
+    {
+      "id": "incident-source-research",
+      "type": "source_research",
+      "role": "worker",
+      "summary": "Reconcile a public checkout incident log with local operations policy to determine retry and completion facts.",
+      "prompt": "Use logs/checkout.log and docs/operations.md to determine whether Q42 completed, whether Q43 should be retried after its decline, and Q42's customer receipt. Return answer.q42_completed and answer.q43_retry as JSON booleans, and answer.q42_receipt as a string. Cite both the evidence log and relevant policy lines for each decision.",
+      "expected_answer": {"q42_completed": true, "q43_retry": false, "q42_receipt": "RCPT-2026-00421"},
+      "required_citations": {"q42_completed": ["logs/checkout.log:3", "logs/checkout.log:4", "docs/operations.md:5"], "q43_retry": ["logs/checkout.log:6", "docs/operations.md:4"], "q42_receipt": ["logs/checkout.log:4", "docs/operations.md:6"]},
+      "source_evidence": {"logs/checkout.log:3": "2026-09-20T10:00:02Z INFO request=Q42 event=payment_authorized amount_cents=5700", "logs/checkout.log:4": "2026-09-20T10:00:03Z INFO request=Q42 event=completed receipt=RCPT-2026-00421", "logs/checkout.log:6": "2026-09-20T10:10:01Z ERROR request=Q43 event=payment_declined code=DO_NOT_HONOR", "docs/operations.md:4": "Retry that lock once. A payment decline is final and should not be retried.", "docs/operations.md:5": "An order is complete only after a payment authorization and a completed event.", "docs/operations.md:6": "The receipt identifier in the completed event is the customer reference."}
+    },
+    {
+      "id": "receipt-year-validation",
+      "type": "code_edit",
+      "role": "worker",
+      "summary": "Fix one bounded receipt parser bug so years outside 2000–2099 are rejected while valid IDs remain accepted.",
+      "prompt": "Edit only src/receipts.mjs. parseReceiptId currently accepts any four-digit year. Make it reject years outside 2000 through 2099, while preserving valid IDs and the public return shape. Do not change formatReceiptId. Run a focused local check if helpful. Return only {\"done\":true} when finished.",
+      "allowed_changed_paths": ["src/receipts.mjs"],
+      "hidden_checks": ["RCPT-1999-00001 rejected", "RCPT-2100-00001 rejected", "RCPT-2026-00421 accepted with year 2026 and serial 421", "malformed IDs rejected", "formatReceiptId unchanged"]
+    }
+  ]
+}

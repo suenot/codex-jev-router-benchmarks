@@ -1,0 +1,7 @@
+{"type":"thread.started","thread_id":"01a0dece-9fd0-7d73-8012-2d68e0599825"}
+{"type":"turn.started"}
+{"type":"item.completed","item_type":"agent_message","text":"I’ll check the shipping condition and cite the lines that decide it."}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":0}
+{"type":"item.completed","item_type":"agent_message","text":"{\"answer\":{\"claim\":false},\"citations\":{\"claim\":[\"src/ledger.mjs:5\",\"src/ledger.mjs:6\",\"src/ledger.mjs:9\",\"src/ledger.mjs:10\",\"src/ledger.mjs:11\"]}}"}
+{"type":"turn.completed","usage":{"input_tokens":26126,"cached_input_tokens":19712,"cache_write_input_tokens":0,"output_tokens":225,"reasoning_output_tokens":62}}

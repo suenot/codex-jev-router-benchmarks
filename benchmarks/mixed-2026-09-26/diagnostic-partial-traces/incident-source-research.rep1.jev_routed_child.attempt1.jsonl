@@ -1,0 +1,6 @@
+{"type":"thread.started","thread_id":"01a0dec0-4f07-7523-a4ed-31d0d368e669"}
+{"type":"turn.started"}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"collab_tool_call"}
+{"type":"item.completed","item_type":"agent_message","text":"{\"answer\":{\"q42_completed\":true,\"q43_retry\":false,\"q42_receipt\":\"RCPT-2026-00421\"},\"citations\":{\"q42_completed\":[\"logs/checkout.log:3\",\"logs/checkout.log:4\",\"docs/operations.md:5\"],\"q43_retry\":[\"logs/checkout.log:6\",\"logs/checkout.log:7\",\"docs/operations.md:4\"],\"q42_receipt\":[\"logs/checkout.log:4\",\"docs/operations.md:6\"]}}"}
+{"type":"turn.completed","usage":{"input_tokens":44299,"cached_input_tokens":37888,"cache_write_input_tokens":0,"output_tokens":392,"reasoning_output_tokens":48}}

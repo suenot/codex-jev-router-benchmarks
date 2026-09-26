@@ -1,0 +1,7 @@
+{"type":"thread.started","thread_id":"01a0dee2-8676-71e2-80e6-9c9502ac4f70"}
+{"type":"turn.started"}
+{"type":"item.completed","item_type":"agent_message","text":"I’ll read the policy file and cite the lines for each value."}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":0}
+{"type":"item.completed","item_type":"agent_message","text":"{\"answer\":{\"free_threshold_cents\":5000,\"domestic_cents\":700,\"international_cents\":1800},\"citations\":{\"free_threshold_cents\":[\"config/policy.json:3\"],\"domestic_cents\":[\"config/policy.json:4\"],\"international_cents\":[\"config/policy.json:5\"]}}"}
+{"type":"turn.completed","usage":{"input_tokens":26034,"cached_input_tokens":21504,"cache_write_input_tokens":0,"output_tokens":264,"reasoning_output_tokens":85}}

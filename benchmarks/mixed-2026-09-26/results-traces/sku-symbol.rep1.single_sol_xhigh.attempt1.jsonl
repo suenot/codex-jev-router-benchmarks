@@ -1,0 +1,7 @@
+{"type":"thread.started","thread_id":"01a0deca-6e0f-7132-b8eb-f95ef1ee21dc"}
+{"type":"turn.started"}
+{"type":"item.completed","item_type":"agent_message","text":"I’ll search the fixture for the definition and report its exact source line."}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":0}
+{"type":"item.completed","item_type":"agent_message","text":"{\"answer\":{\"location\":\"src/ledger.mjs:1\"},\"citations\":{\"location\":[\"src/ledger.mjs:1\"]}}"}
+{"type":"turn.completed","usage":{"input_tokens":25965,"cached_input_tokens":10752,"cache_write_input_tokens":0,"output_tokens":222,"reasoning_output_tokens":82}}

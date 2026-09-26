@@ -1,0 +1,6 @@
+{"type":"thread.started","thread_id":"01a0ded5-816c-7da0-ad67-795800aaaef7"}
+{"type":"turn.started"}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":0}
+{"type":"item.completed","item_type":"agent_message","text":"{\"answer\":{\"decline_code\":\"DO_NOT_HONOR\",\"final_status\":\"unpaid\"},\"citations\":{\"decline_code\":[\"logs/checkout.log:6\"],\"final_status\":[\"logs/checkout.log:7\"]}}"}
+{"type":"turn.completed","usage":{"input_tokens":30077,"cached_input_tokens":26496,"cache_write_input_tokens":0,"output_tokens":206,"reasoning_output_tokens":63}}

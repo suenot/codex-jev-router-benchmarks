@@ -1,0 +1,5285 @@
+{
+  "benchmark": "four-arm mixed full-workflow comparison",
+  "generated_at": "2026-09-26T17:35:18.499Z",
+  "identity": {
+    "manifest_sha256": "baf1bbd1404bfc9571a695a63d0de30da0d18ea9968c0326452419d8f2bf1abf",
+    "fixture_sha256": "6512929bddfec36ccdc0dc817ad200110b3db64a9050110ec336b3b82b8505e8",
+    "grader_sha256": "ac5b6bcbbdeaf16c6e045fa74420378a7699a0af3e37bb47312d82c845f69c9b:8e7d6353de1c89e99e987312e080731ba5f12e859bd44294c58bf858c2180089",
+    "runner_sha256": "0229582c33f0353bb1ce889b4398ea29105ddc82742f8c0c8c404d089a1e33a5",
+    "router_sha256": "5c5d588872c342b09ead7579a79858b7c1a66d2fe5857611cf3c2b591e6d31e0",
+    "decider_sha256": "5013eb79f44e487072e9cfb353f7b7a1ec44b3515f5ebeea506a019fe7ab8d1f",
+    "policy_sha256": "7a3ed509bd12a09897767b97fca508261ea2cb74e839678449a5008f9d3a303d",
+    "repetitions": 3,
+    "max_attempts": 2,
+    "selected_tasks": [
+      "sku-symbol",
+      "checkout-log",
+      "shipping-rules",
+      "international-claim",
+      "incident-source-research",
+      "receipt-year-validation"
+    ],
+    "seed": 260926
+  },
+  "codex_version": "codex-cli 0.157.1",
+  "pricing": {
+    "units": "USD per million tokens",
+    "codex": {
+      "gpt-6-sol": {
+        "input": 2,
+        "cached": 0.2,
+        "cache_write": 2.5,
+        "output": 10
+      },
+      "gpt-6-luna": {
+        "input": 0.1,
+        "cached": 0.01,
+        "cache_write": 0.125,
+        "output": 0.5
+      }
+    },
+    "jev_input": 0.042,
+    "codex_source": "https://developers.openai.com/api/docs/models/gpt-6-sol",
+    "jev_source": "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
+    "assumption": "Standard short-context Codex API rates; TypeSafe lists Jev output tokens free; tool fees, other charges, and subscription billing are not measured"
+  },
+  "isolation": "fresh CODEX_HOME with auth symlink; --ignore-user-config; --ignore-rules; synthetic fixture copied per attempt",
+  "schedule": [
+    {
+      "task": "sku-symbol",
+      "repetition": 1,
+      "order": [
+        "fixed_sol_high_child",
+        "optional_delegation",
+        "jev_routed_child",
+        "single_sol_xhigh"
+      ]
+    },
+    {
+      "task": "checkout-log",
+      "repetition": 1,
+      "order": [
+        "single_sol_xhigh",
+        "jev_routed_child",
+        "fixed_sol_high_child",
+        "optional_delegation"
+      ]
+    },
+    {
+      "task": "shipping-rules",
+      "repetition": 1,
+      "order": [
+        "optional_delegation",
+        "fixed_sol_high_child",
+        "single_sol_xhigh",
+        "jev_routed_child"
+      ]
+    },
+    {
+      "task": "international-claim",
+      "repetition": 1,
+      "order": [
+        "optional_delegation",
+        "fixed_sol_high_child",
+        "single_sol_xhigh",
+        "jev_routed_child"
+      ]
+    },
+    {
+      "task": "incident-source-research",
+      "repetition": 1,
+      "order": [
+        "jev_routed_child",
+        "single_sol_xhigh",
+        "optional_delegation",
+        "fixed_sol_high_child"
+      ]
+    },
+    {
+      "task": "receipt-year-validation",
+      "repetition": 1,
+      "order": [
+        "jev_routed_child",
+        "optional_delegation",
+        "single_sol_xhigh",
+        "fixed_sol_high_child"
+      ]
+    },
+    {
+      "task": "sku-symbol",
+      "repetition": 2,
+      "order": [
+        "fixed_sol_high_child",
+        "single_sol_xhigh",
+        "jev_routed_child",
+        "optional_delegation"
+      ]
+    },
+    {
+      "task": "checkout-log",
+      "repetition": 2,
+      "order": [
+        "single_sol_xhigh",
+        "jev_routed_child",
+        "optional_delegation",
+        "fixed_sol_high_child"
+      ]
+    },
+    {
+      "task": "shipping-rules",
+      "repetition": 2,
+      "order": [
+        "jev_routed_child",
+        "optional_delegation",
+        "fixed_sol_high_child",
+        "single_sol_xhigh"
+      ]
+    },
+    {
+      "task": "international-claim",
+      "repetition": 2,
+      "order": [
+        "jev_routed_child",
+        "single_sol_xhigh",
+        "fixed_sol_high_child",
+        "optional_delegation"
+      ]
+    },
+    {
+      "task": "incident-source-research",
+      "repetition": 2,
+      "order": [
+        "single_sol_xhigh",
+        "jev_routed_child",
+        "optional_delegation",
+        "fixed_sol_high_child"
+      ]
+    },
+    {
+      "task": "receipt-year-validation",
+      "repetition": 2,
+      "order": [
+        "optional_delegation",
+        "jev_routed_child",
+        "single_sol_xhigh",
+        "fixed_sol_high_child"
+      ]
+    },
+    {
+      "task": "sku-symbol",
+      "repetition": 3,
+      "order": [
+        "optional_delegation",
+        "single_sol_xhigh",
+        "jev_routed_child",
+        "fixed_sol_high_child"
+      ]
+    },
+    {
+      "task": "checkout-log",
+      "repetition": 3,
+      "order": [
+        "fixed_sol_high_child",
+        "optional_delegation",
+        "single_sol_xhigh",
+        "jev_routed_child"
+      ]
+    },
+    {
+      "task": "shipping-rules",
+      "repetition": 3,
+      "order": [
+        "fixed_sol_high_child",
+        "optional_delegation",
+        "jev_routed_child",
+        "single_sol_xhigh"
+      ]
+    },
+    {
+      "task": "international-claim",
+      "repetition": 3,
+      "order": [
+        "optional_delegation",
+        "single_sol_xhigh",
+        "jev_routed_child",
+        "fixed_sol_high_child"
+      ]
+    },
+    {
+      "task": "incident-source-research",
+      "repetition": 3,
+      "order": [
+        "optional_delegation",
+        "jev_routed_child",
+        "fixed_sol_high_child",
+        "single_sol_xhigh"
+      ]
+    },
+    {
+      "task": "receipt-year-validation",
+      "repetition": 3,
+      "order": [
+        "fixed_sol_high_child",
+        "single_sol_xhigh",
+        "jev_routed_child",
+        "optional_delegation"
+      ]
+    }
+  ],
+  "runs": [
+    {
+      "task": "sku-symbol",
+      "type": "source_lookup",
+      "repetition": 1,
+      "arm": "fixed_sol_high_child",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 36058,
+          "end_to_end_ms": 36058,
+          "answer": "{\"answer\":{\"location\":\"src/ledger.mjs:1\"},\"citations\":{\"location\":[\"src/ledger.mjs:1\"]}}",
+          "grade": {
+            "correct": true,
+            "detail": "sku-symbol: PASS (correct)"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0dec9-31c6-7f00-a1a6-23e1d20528f1",
+          "root_usage": {
+            "input_tokens": 43945,
+            "cached_input_tokens": 40576,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 249,
+            "reasoning_output_tokens": 38
+          },
+          "sessions": [
+            {
+              "id": "01a0dec9-31c6-7f00-a1a6-23e1d20528f1",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 43945,
+                "cached_input_tokens": 40576,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 249,
+                "reasoning_output_tokens": 38,
+                "total_tokens": 44194
+              }
+            },
+            {
+              "id": "01a0dec9-59cc-7b60-bc01-1e3b52b29c86",
+              "parent_id": "01a0dec9-31c6-7f00-a1a6-23e1d20528f1",
+              "model": "gpt-6-sol",
+              "reasoning_effort": "high",
+              "usage": {
+                "input_tokens": 43222,
+                "cached_input_tokens": 37248,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 254,
+                "reasoning_output_tokens": 23,
+                "total_tokens": 43476
+              }
+            }
+          ],
+          "decisions": [],
+          "changed_paths": [],
+          "estimated_codex_api_usd": 0.0392808,
+          "estimated_jev_api_usd": 0,
+          "estimated_total_api_usd": 0.0392808,
+          "trace": "results-traces/sku-symbol.rep1.fixed_sol_high_child.attempt1.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "sku-symbol: PASS (correct)"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.0392808,
+      "end_to_end_ms": 36058
+    },
+    {
+      "task": "sku-symbol",
+      "type": "source_lookup",
+      "repetition": 1,
+      "arm": "optional_delegation",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 17226,
+          "end_to_end_ms": 17226,
+          "answer": "{\"answer\":{\"location\":\"src/ledger.mjs:1\"},\"citations\":{\"location\":[\"src/ledger.mjs:1\"]}}",
+          "grade": {
+            "correct": true,
+            "detail": "sku-symbol: PASS (correct)"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0dec9-b909-72a1-8d03-d2e7f098ba2b",
+          "root_usage": {
+            "input_tokens": 29965,
+            "cached_input_tokens": 26496,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 208,
+            "reasoning_output_tokens": 90
+          },
+          "sessions": [
+            {
+              "id": "01a0dec9-b909-72a1-8d03-d2e7f098ba2b",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 29965,
+                "cached_input_tokens": 26496,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 208,
+                "reasoning_output_tokens": 90,
+                "total_tokens": 30173
+              }
+            }
+          ],
+          "decisions": [],
+          "changed_paths": [],
+          "estimated_codex_api_usd": 0.0143172,
+          "estimated_jev_api_usd": 0,
+          "estimated_total_api_usd": 0.0143172,
+          "trace": "results-traces/sku-symbol.rep1.optional_delegation.attempt1.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "sku-symbol: PASS (correct)"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.0143172,
+      "end_to_end_ms": 17226
+    },
+    {
+      "task": "sku-symbol",
+      "type": "source_lookup",
+      "repetition": 1,
+      "arm": "jev_routed_child",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 30142,
+          "end_to_end_ms": 30530,
+          "answer": "{\"answer\":{\"location\":\"src/ledger.mjs:1\"},\"citations\":{\"location\":[\"src/ledger.mjs:1\"]}}",
+          "grade": {
+            "correct": true,
+            "detail": "sku-symbol: PASS (correct)"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0dec9-f7b8-70f0-9e0d-64b5c45bb007",
+          "root_usage": {
+            "input_tokens": 44069,
+            "cached_input_tokens": 38144,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 294,
+            "reasoning_output_tokens": 65
+          },
+          "sessions": [
+            {
+              "id": "01a0dec9-f7b8-70f0-9e0d-64b5c45bb007",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 44069,
+                "cached_input_tokens": 38144,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 294,
+                "reasoning_output_tokens": 65,
+                "total_tokens": 44363
+              }
+            },
+            {
+              "id": "01a0deca-182c-7632-9dd2-51bb05e99ec2",
+              "parent_id": "01a0dec9-f7b8-70f0-9e0d-64b5c45bb007",
+              "model": "gpt-6-luna",
+              "reasoning_effort": "low",
+              "usage": {
+                "input_tokens": 35702,
+                "cached_input_tokens": 24064,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 117,
+                "reasoning_output_tokens": 0,
+                "total_tokens": 35819
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "route": {
+                "model": "gpt-6-luna",
+                "reasoning_effort": "low",
+                "reason": "simple"
+              },
+              "usage": {
+                "input_tokens": 574,
+                "output_tokens": 64
+              },
+              "wall_ms": 388
+            }
+          ],
+          "changed_paths": [],
+          "estimated_codex_api_usd": 0.02388174,
+          "estimated_jev_api_usd": 0.000024108,
+          "estimated_total_api_usd": 0.023905847999999997,
+          "trace": "results-traces/sku-symbol.rep1.jev_routed_child.attempt1.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "sku-symbol: PASS (correct)"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.023905847999999997,
+      "end_to_end_ms": 30530
+    },
+    {
+      "task": "sku-symbol",
+      "type": "source_lookup",
+      "repetition": 1,
+      "arm": "single_sol_xhigh",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 17357,
+          "end_to_end_ms": 17357,
+          "answer": "{\"answer\":{\"location\":\"src/ledger.mjs:1\"},\"citations\":{\"location\":[\"src/ledger.mjs:1\"]}}",
+          "grade": {
+            "correct": true,
+            "detail": "sku-symbol: PASS (correct)"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0deca-6e0f-7132-b8eb-f95ef1ee21dc",
+          "root_usage": {
+            "input_tokens": 25965,
+            "cached_input_tokens": 10752,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 222,
+            "reasoning_output_tokens": 82
+          },
+          "sessions": [
+            {
+              "id": "01a0deca-6e0f-7132-b8eb-f95ef1ee21dc",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 25965,
+                "cached_input_tokens": 10752,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 222,
+                "reasoning_output_tokens": 82,
+                "total_tokens": 26187
+              }
+            }
+          ],
+          "decisions": [],
+          "changed_paths": [],
+          "estimated_codex_api_usd": 0.0347964,
+          "estimated_jev_api_usd": 0,
+          "estimated_total_api_usd": 0.0347964,
+          "trace": "results-traces/sku-symbol.rep1.single_sol_xhigh.attempt1.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "sku-symbol: PASS (correct)"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.0347964,
+      "end_to_end_ms": 17357
+    },
+    {
+      "task": "checkout-log",
+      "type": "log_lookup",
+      "repetition": 1,
+      "arm": "single_sol_xhigh",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 14071,
+          "end_to_end_ms": 14071,
+          "answer": "{\"answer\":{\"decline_code\":\"DO_NOT_HONOR\",\"final_status\":\"unpaid\"},\"citations\":{\"decline_code\":[\"logs/checkout.log:6\"],\"final_status\":[\"logs/checkout.log:7\"]}}",
+          "grade": {
+            "correct": true,
+            "detail": "checkout-log: PASS (correct)"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0deca-b38a-7120-a5e2-fb3ac812edad",
+          "root_usage": {
+            "input_tokens": 26012,
+            "cached_input_tokens": 23424,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 247,
+            "reasoning_output_tokens": 82
+          },
+          "sessions": [
+            {
+              "id": "01a0deca-b38a-7120-a5e2-fb3ac812edad",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 26012,
+                "cached_input_tokens": 23424,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 247,
+                "reasoning_output_tokens": 82,
+                "total_tokens": 26259
+              }
+            }
+          ],
+          "decisions": [],
+          "changed_paths": [],
+          "estimated_codex_api_usd": 0.0123308,
+          "estimated_jev_api_usd": 0,
+          "estimated_total_api_usd": 0.0123308,
+          "trace": "results-traces/checkout-log.rep1.single_sol_xhigh.attempt1.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "checkout-log: PASS (correct)"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.0123308,
+      "end_to_end_ms": 14071
+    },
+    {
+      "task": "checkout-log",
+      "type": "log_lookup",
+      "repetition": 1,
+      "arm": "jev_routed_child",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 23585,
+          "end_to_end_ms": 23970,
+          "answer": "{\"answer\":{\"decline_code\":\"DO_NOT_HONOR\",\"final_status\":\"unpaid\"},\"citations\":{\"decline_code\":[\"logs/checkout.log:6\"],\"final_status\":[\"logs/checkout.log:7\"]}}",
+          "grade": {
+            "correct": true,
+            "detail": "checkout-log: PASS (correct)"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0deca-ec96-7fb0-a434-ec1c45662061",
+          "root_usage": {
+            "input_tokens": 44004,
+            "cached_input_tokens": 37888,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 273,
+            "reasoning_output_tokens": 45
+          },
+          "sessions": [
+            {
+              "id": "01a0deca-ec96-7fb0-a434-ec1c45662061",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 44004,
+                "cached_input_tokens": 37888,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 273,
+                "reasoning_output_tokens": 45,
+                "total_tokens": 44277
+              }
+            },
+            {
+              "id": "01a0decb-1290-7ca2-b2b9-c7c339638b3d",
+              "parent_id": "01a0deca-ec96-7fb0-a434-ec1c45662061",
+              "model": "gpt-6-luna",
+              "reasoning_effort": "low",
+              "usage": {
+                "input_tokens": 35795,
+                "cached_input_tokens": 28160,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 97,
+                "reasoning_output_tokens": 0,
+                "total_tokens": 35892
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "route": {
+                "model": "gpt-6-luna",
+                "reasoning_effort": "low",
+                "reason": "simple"
+              },
+              "usage": {
+                "input_tokens": 578,
+                "output_tokens": 64
+              },
+              "wall_ms": 385
+            }
+          ],
+          "changed_paths": [],
+          "estimated_codex_api_usd": 0.0236332,
+          "estimated_jev_api_usd": 0.000024276,
+          "estimated_total_api_usd": 0.023657476,
+          "trace": "results-traces/checkout-log.rep1.jev_routed_child.attempt1.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "checkout-log: PASS (correct)"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.023657476,
+      "end_to_end_ms": 23970
+    },
+    {
+      "task": "checkout-log",
+      "type": "log_lookup",
+      "repetition": 1,
+      "arm": "fixed_sol_high_child",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 24753,
+          "end_to_end_ms": 24753,
+          "answer": "{\"answer\":{\"decline_code\":\"DO_NOT_HONOR\",\"final_status\":\"unpaid\"},\"citations\":{\"decline_code\":[\"logs/checkout.log:6\"],\"final_status\":[\"logs/checkout.log:7\"]}}",
+          "grade": {
+            "correct": true,
+            "detail": "checkout-log: PASS (correct)"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0decb-4817-7333-9a44-d11d48ae706f",
+          "root_usage": {
+            "input_tokens": 44122,
+            "cached_input_tokens": 40704,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 325,
+            "reasoning_output_tokens": 60
+          },
+          "sessions": [
+            {
+              "id": "01a0decb-4817-7333-9a44-d11d48ae706f",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 44122,
+                "cached_input_tokens": 40704,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 325,
+                "reasoning_output_tokens": 60,
+                "total_tokens": 44447
+              }
+            },
+            {
+              "id": "01a0decb-6d64-76f0-898a-ce6e3cf4510c",
+              "parent_id": "01a0decb-4817-7333-9a44-d11d48ae706f",
+              "model": "gpt-6-sol",
+              "reasoning_effort": "high",
+              "usage": {
+                "input_tokens": 28746,
+                "cached_input_tokens": 25600,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 183,
+                "reasoning_output_tokens": 42,
+                "total_tokens": 28929
+              }
+            }
+          ],
+          "decisions": [],
+          "changed_paths": [],
+          "estimated_codex_api_usd": 0.0314688,
+          "estimated_jev_api_usd": 0,
+          "estimated_total_api_usd": 0.0314688,
+          "trace": "results-traces/checkout-log.rep1.fixed_sol_high_child.attempt1.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "checkout-log: PASS (correct)"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.0314688,
+      "end_to_end_ms": 24753
+    },
+    {
+      "task": "checkout-log",
+      "type": "log_lookup",
+      "repetition": 1,
+      "arm": "optional_delegation",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 16841,
+          "end_to_end_ms": 16841,
+          "answer": "{\"answer\":{\"decline_code\":\"DO_NOT_HONOR\",\"final_status\":\"unpaid\"},\"citations\":{\"decline_code\":[\"logs/checkout.log:6\"],\"final_status\":[\"logs/checkout.log:7\"]}}",
+          "grade": {
+            "correct": true,
+            "detail": "checkout-log: PASS (correct)"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0decb-a9a9-7fd2-99f6-7bf1ae6a6663",
+          "root_usage": {
+            "input_tokens": 30117,
+            "cached_input_tokens": 23552,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 242,
+            "reasoning_output_tokens": 100
+          },
+          "sessions": [
+            {
+              "id": "01a0decb-a9a9-7fd2-99f6-7bf1ae6a6663",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 30117,
+                "cached_input_tokens": 23552,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 242,
+                "reasoning_output_tokens": 100,
+                "total_tokens": 30359
+              }
+            }
+          ],
+          "decisions": [],
+          "changed_paths": [],
+          "estimated_codex_api_usd": 0.0202604,
+          "estimated_jev_api_usd": 0,
+          "estimated_total_api_usd": 0.0202604,
+          "trace": "results-traces/checkout-log.rep1.optional_delegation.attempt1.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "checkout-log: PASS (correct)"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.0202604,
+      "end_to_end_ms": 16841
+    },
+    {
+      "task": "shipping-rules",
+      "type": "bounded_extraction",
+      "repetition": 1,
+      "arm": "optional_delegation",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 16701,
+          "end_to_end_ms": 16701,
+          "answer": "{\"answer\":{\"free_threshold_cents\":5000,\"domestic_cents\":700,\"international_cents\":1800},\"citations\":{\"free_threshold_cents\":[\"config/policy.json:3\"],\"domestic_cents\":[\"config/policy.json:4\"],\"international_cents\":[\"config/policy.json:5\"]}}",
+          "grade": {
+            "correct": true,
+            "detail": "shipping-rules: PASS (correct)"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0decb-ea34-74b2-a5ad-08273acece1b",
+          "root_usage": {
+            "input_tokens": 30144,
+            "cached_input_tokens": 26496,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 324,
+            "reasoning_output_tokens": 146
+          },
+          "sessions": [
+            {
+              "id": "01a0decb-ea34-74b2-a5ad-08273acece1b",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 30144,
+                "cached_input_tokens": 26496,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 324,
+                "reasoning_output_tokens": 146,
+                "total_tokens": 30468
+              }
+            }
+          ],
+          "decisions": [],
+          "changed_paths": [],
+          "estimated_codex_api_usd": 0.0158352,
+          "estimated_jev_api_usd": 0,
+          "estimated_total_api_usd": 0.0158352,
+          "trace": "results-traces/shipping-rules.rep1.optional_delegation.attempt1.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "shipping-rules: PASS (correct)"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.0158352,
+      "end_to_end_ms": 16701
+    },
+    {
+      "task": "shipping-rules",
+      "type": "bounded_extraction",
+      "repetition": 1,
+      "arm": "fixed_sol_high_child",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 26395,
+          "end_to_end_ms": 26395,
+          "answer": "{\"answer\":{\"free_threshold_cents\":5000,\"domestic_cents\":700,\"international_cents\":1800},\"citations\":{\"free_threshold_cents\":[\"config/policy.json:3\"],\"domestic_cents\":[\"config/policy.json:4\"],\"international_cents\":[\"config/policy.json:5\"]}}",
+          "grade": {
+            "correct": true,
+            "detail": "shipping-rules: PASS (correct)"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0decc-2cc1-78e1-991c-13a53d288620",
+          "root_usage": {
+            "input_tokens": 44121,
+            "cached_input_tokens": 40704,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 337,
+            "reasoning_output_tokens": 77
+          },
+          "sessions": [
+            {
+              "id": "01a0decc-2cc1-78e1-991c-13a53d288620",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 44121,
+                "cached_input_tokens": 40704,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 337,
+                "reasoning_output_tokens": 77,
+                "total_tokens": 44458
+              }
+            },
+            {
+              "id": "01a0decc-5451-7ef3-b494-d7f87a59d310",
+              "parent_id": "01a0decc-2cc1-78e1-991c-13a53d288620",
+              "model": "gpt-6-sol",
+              "reasoning_effort": "high",
+              "usage": {
+                "input_tokens": 28673,
+                "cached_input_tokens": 25600,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 194,
+                "reasoning_output_tokens": 15,
+                "total_tokens": 28867
+              }
+            }
+          ],
+          "decisions": [],
+          "changed_paths": [],
+          "estimated_codex_api_usd": 0.0315508,
+          "estimated_jev_api_usd": 0,
+          "estimated_total_api_usd": 0.0315508,
+          "trace": "results-traces/shipping-rules.rep1.fixed_sol_high_child.attempt1.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "shipping-rules: PASS (correct)"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.0315508,
+      "end_to_end_ms": 26395
+    },
+    {
+      "task": "shipping-rules",
+      "type": "bounded_extraction",
+      "repetition": 1,
+      "arm": "single_sol_xhigh",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 17612,
+          "end_to_end_ms": 17612,
+          "answer": "{\"answer\":{\"free_threshold_cents\":5000,\"domestic_cents\":700,\"international_cents\":1800},\"citations\":{\"free_threshold_cents\":[\"config/policy.json:3\"],\"domestic_cents\":[\"config/policy.json:4\"],\"international_cents\":[\"config/policy.json:5\"]}}",
+          "grade": {
+            "correct": true,
+            "detail": "shipping-rules: PASS (correct)"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0decc-92af-7b92-a280-591ff056adbb",
+          "root_usage": {
+            "input_tokens": 26009,
+            "cached_input_tokens": 12672,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 260,
+            "reasoning_output_tokens": 81
+          },
+          "sessions": [
+            {
+              "id": "01a0decc-92af-7b92-a280-591ff056adbb",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 26009,
+                "cached_input_tokens": 12672,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 260,
+                "reasoning_output_tokens": 81,
+                "total_tokens": 26269
+              }
+            }
+          ],
+          "decisions": [],
+          "changed_paths": [],
+          "estimated_codex_api_usd": 0.0318084,
+          "estimated_jev_api_usd": 0,
+          "estimated_total_api_usd": 0.0318084,
+          "trace": "results-traces/shipping-rules.rep1.single_sol_xhigh.attempt1.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "shipping-rules: PASS (correct)"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.0318084,
+      "end_to_end_ms": 17612
+    },
+    {
+      "task": "shipping-rules",
+      "type": "bounded_extraction",
+      "repetition": 1,
+      "arm": "jev_routed_child",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 29483,
+          "end_to_end_ms": 29840,
+          "answer": "{\"answer\":{\"free_threshold_cents\":5000,\"domestic_cents\":700,\"international_cents\":1800},\"citations\":{\"free_threshold_cents\":[\"config/policy.json:3\"],\"domestic_cents\":[\"config/policy.json:4\"],\"international_cents\":[\"config/policy.json:5\"]}}",
+          "grade": {
+            "correct": true,
+            "detail": "shipping-rules: PASS (correct)"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0decc-dc73-7a10-be0c-9f805e83e255",
+          "root_usage": {
+            "input_tokens": 44192,
+            "cached_input_tokens": 40704,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 381,
+            "reasoning_output_tokens": 132
+          },
+          "sessions": [
+            {
+              "id": "01a0decc-dc73-7a10-be0c-9f805e83e255",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 44192,
+                "cached_input_tokens": 40704,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 381,
+                "reasoning_output_tokens": 132,
+                "total_tokens": 44573
+              }
+            },
+            {
+              "id": "01a0decd-06ba-7b23-b26e-48634998fe9a",
+              "parent_id": "01a0decc-dc73-7a10-be0c-9f805e83e255",
+              "model": "gpt-6-luna",
+              "reasoning_effort": "medium",
+              "usage": {
+                "input_tokens": 35697,
+                "cached_input_tokens": 28160,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 171,
+                "reasoning_output_tokens": 52,
+                "total_tokens": 35868
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "route": {
+                "model": "gpt-6-luna",
+                "reasoning_effort": "medium",
+                "reason": "bounded"
+              },
+              "usage": {
+                "input_tokens": 569,
+                "output_tokens": 64
+              },
+              "wall_ms": 357
+            }
+          ],
+          "changed_paths": [],
+          "estimated_codex_api_usd": 0.020047600000000002,
+          "estimated_jev_api_usd": 0.000023898000000000004,
+          "estimated_total_api_usd": 0.020071498000000004,
+          "trace": "results-traces/shipping-rules.rep1.jev_routed_child.attempt1.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "shipping-rules: PASS (correct)"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.020071498000000004,
+      "end_to_end_ms": 29840
+    },
+    {
+      "task": "international-claim",
+      "type": "focused_judgment",
+      "repetition": 1,
+      "arm": "optional_delegation",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 15356,
+          "end_to_end_ms": 15356,
+          "answer": "{\"answer\":{\"claim\":false},\"citations\":{\"claim\":[\"src/ledger.mjs:5\",\"src/ledger.mjs:6\",\"src/ledger.mjs:9\",\"src/ledger.mjs:10\",\"src/ledger.mjs:11\"]}}",
+          "grade": {
+            "correct": true,
+            "detail": "international-claim: PASS (correct)"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0decd-4daa-71c2-a6ec-01d884453c37",
+          "root_usage": {
+            "input_tokens": 30209,
+            "cached_input_tokens": 26496,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 200,
+            "reasoning_output_tokens": 56
+          },
+          "sessions": [
+            {
+              "id": "01a0decd-4daa-71c2-a6ec-01d884453c37",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 30209,
+                "cached_input_tokens": 26496,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 200,
+                "reasoning_output_tokens": 56,
+                "total_tokens": 30409
+              }
+            }
+          ],
+          "decisions": [],
+          "changed_paths": [],
+          "estimated_codex_api_usd": 0.0147252,
+          "estimated_jev_api_usd": 0,
+          "estimated_total_api_usd": 0.0147252,
+          "trace": "results-traces/international-claim.rep1.optional_delegation.attempt1.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "international-claim: PASS (correct)"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.0147252,
+      "end_to_end_ms": 15356
+    },
+    {
+      "task": "international-claim",
+      "type": "focused_judgment",
+      "repetition": 1,
+      "arm": "fixed_sol_high_child",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 26320,
+          "end_to_end_ms": 26320,
+          "answer": "{\"answer\":{\"claim\":false},\"citations\":{\"claim\":[\"src/ledger.mjs:6\",\"src/ledger.mjs:10\"]}}",
+          "grade": {
+            "correct": false,
+            "detail": "international-claim: FAIL (citations.claim misses exact required lines)"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0decd-8aa8-75f1-862a-808836554150",
+          "root_usage": {
+            "input_tokens": 44057,
+            "cached_input_tokens": 37888,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 281,
+            "reasoning_output_tokens": 66
+          },
+          "sessions": [
+            {
+              "id": "01a0decd-8aa8-75f1-862a-808836554150",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 44057,
+                "cached_input_tokens": 37888,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 281,
+                "reasoning_output_tokens": 66,
+                "total_tokens": 44338
+              }
+            },
+            {
+              "id": "01a0decd-bae8-7521-a291-9e3e8592a7ec",
+              "parent_id": "01a0decd-8aa8-75f1-862a-808836554150",
+              "model": "gpt-6-sol",
+              "reasoning_effort": "high",
+              "usage": {
+                "input_tokens": 29097,
+                "cached_input_tokens": 25728,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 195,
+                "reasoning_output_tokens": 42,
+                "total_tokens": 29292
+              }
+            }
+          ],
+          "decisions": [],
+          "changed_paths": [],
+          "estimated_codex_api_usd": 0.0365592,
+          "estimated_jev_api_usd": 0,
+          "estimated_total_api_usd": 0.0365592,
+          "trace": "results-traces/international-claim.rep1.fixed_sol_high_child.attempt1.jsonl"
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 43545,
+          "end_to_end_ms": 43545,
+          "answer": "{\"answer\":{\"claim\":false},\"citations\":{\"claim\":[\"src/ledger.mjs:6\",\"src/ledger.mjs:10\",\"src/ledger.mjs:11\"]}}",
+          "grade": {
+            "correct": true,
+            "detail": "international-claim: PASS (correct)"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0decd-f2a0-7fb3-93af-019f374712eb",
+          "root_usage": {
+            "input_tokens": 44282,
+            "cached_input_tokens": 37888,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 459,
+            "reasoning_output_tokens": 250
+          },
+          "sessions": [
+            {
+              "id": "01a0decd-f2a0-7fb3-93af-019f374712eb",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 44282,
+                "cached_input_tokens": 37888,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 459,
+                "reasoning_output_tokens": 250,
+                "total_tokens": 44741
+              }
+            },
+            {
+              "id": "01a0decd-f2a0-7fb3-93af-019f374712eb",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "high",
+              "usage": {
+                "input_tokens": 29112,
+                "cached_input_tokens": 25728,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 287,
+                "reasoning_output_tokens": 158,
+                "total_tokens": 29399
+              }
+            }
+          ],
+          "decisions": [],
+          "changed_paths": [],
+          "estimated_codex_api_usd": 0.0397392,
+          "estimated_jev_api_usd": 0,
+          "estimated_total_api_usd": 0.0397392,
+          "trace": "results-traces/international-claim.rep1.fixed_sol_high_child.attempt2.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "international-claim: PASS (correct)"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.0762984,
+      "end_to_end_ms": 69865
+    },
+    {
+      "task": "international-claim",
+      "type": "focused_judgment",
+      "repetition": 1,
+      "arm": "single_sol_xhigh",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 14436,
+          "end_to_end_ms": 14436,
+          "answer": "{\"answer\":{\"claim\":false},\"citations\":{\"claim\":[\"src/ledger.mjs:5\",\"src/ledger.mjs:6\",\"src/ledger.mjs:9\",\"src/ledger.mjs:10\",\"src/ledger.mjs:11\"]}}",
+          "grade": {
+            "correct": true,
+            "detail": "international-claim: PASS (correct)"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0dece-9fd0-7d73-8012-2d68e0599825",
+          "root_usage": {
+            "input_tokens": 26126,
+            "cached_input_tokens": 19712,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 225,
+            "reasoning_output_tokens": 62
+          },
+          "sessions": [
+            {
+              "id": "01a0dece-9fd0-7d73-8012-2d68e0599825",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 26126,
+                "cached_input_tokens": 19712,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 225,
+                "reasoning_output_tokens": 62,
+                "total_tokens": 26351
+              }
+            }
+          ],
+          "decisions": [],
+          "changed_paths": [],
+          "estimated_codex_api_usd": 0.0190204,
+          "estimated_jev_api_usd": 0,
+          "estimated_total_api_usd": 0.0190204,
+          "trace": "results-traces/international-claim.rep1.single_sol_xhigh.attempt1.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "international-claim: PASS (correct)"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.0190204,
+      "end_to_end_ms": 14436
+    },
+    {
+      "task": "international-claim",
+      "type": "focused_judgment",
+      "repetition": 1,
+      "arm": "jev_routed_child",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 29086,
+          "end_to_end_ms": 29447,
+          "answer": "{\"answer\":{\"claim\":false},\"citations\":{\"claim\":[\"src/ledger.mjs:6\",\"src/ledger.mjs:10\",\"src/ledger.mjs:11\"]}}",
+          "grade": {
+            "correct": true,
+            "detail": "international-claim: PASS (correct)"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0dece-d5ac-7313-9bc9-969385903cae",
+          "root_usage": {
+            "input_tokens": 44079,
+            "cached_input_tokens": 40704,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 314,
+            "reasoning_output_tokens": 81
+          },
+          "sessions": [
+            {
+              "id": "01a0dece-d5ac-7313-9bc9-969385903cae",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 44079,
+                "cached_input_tokens": 40704,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 314,
+                "reasoning_output_tokens": 81,
+                "total_tokens": 44393
+              }
+            },
+            {
+              "id": "01a0decf-0ae9-7493-a4fe-c1baf5e26020",
+              "parent_id": "01a0dece-d5ac-7313-9bc9-969385903cae",
+              "model": "gpt-6-sol",
+              "reasoning_effort": "high",
+              "usage": {
+                "input_tokens": 28807,
+                "cached_input_tokens": 25600,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 211,
+                "reasoning_output_tokens": 54,
+                "total_tokens": 29018
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "route": {
+                "model": "gpt-6-sol",
+                "reasoning_effort": "high",
+                "reason": "default"
+              },
+              "usage": {
+                "input_tokens": 574,
+                "output_tokens": 64
+              },
+              "wall_ms": 361
+            }
+          ],
+          "changed_paths": [],
+          "estimated_codex_api_usd": 0.0316748,
+          "estimated_jev_api_usd": 0.000024108,
+          "estimated_total_api_usd": 0.031698908000000005,
+          "trace": "results-traces/international-claim.rep1.jev_routed_child.attempt1.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "international-claim: PASS (correct)"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.031698908000000005,
+      "end_to_end_ms": 29447
+    },
+    {
+      "task": "incident-source-research",
+      "type": "source_research",
+      "repetition": 1,
+      "arm": "jev_routed_child",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 38420,
+          "end_to_end_ms": 38736,
+          "answer": "{\"answer\":{\"q42_completed\":true,\"q43_retry\":false,\"q42_receipt\":\"RCPT-2026-00421\"},\"citations\":{\"q42_completed\":[\"logs/checkout.log:3\",\"logs/checkout.log:4\",\"docs/operations.md:5\"],\"q43_retry\":[\"logs/checkout.log:6\",\"logs/checkout.log:7\",\"docs/operations.md:4\"],\"q42_receipt\":[\"logs/checkout.log:4\",\"docs/operations.md:6\"]}}",
+          "grade": {
+            "correct": true,
+            "detail": "incident-source-research: PASS (correct)"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0decf-572e-7ed2-9e4c-a4355ef55668",
+          "root_usage": {
+            "input_tokens": 44391,
+            "cached_input_tokens": 38272,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 430,
+            "reasoning_output_tokens": 79
+          },
+          "sessions": [
+            {
+              "id": "01a0decf-572e-7ed2-9e4c-a4355ef55668",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 44391,
+                "cached_input_tokens": 38272,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 430,
+                "reasoning_output_tokens": 79,
+                "total_tokens": 44821
+              }
+            },
+            {
+              "id": "01a0decf-8dbb-7261-8404-5ac9cd2c0fd1",
+              "parent_id": "01a0decf-572e-7ed2-9e4c-a4355ef55668",
+              "model": "gpt-6-sol",
+              "reasoning_effort": "high",
+              "usage": {
+                "input_tokens": 29272,
+                "cached_input_tokens": 23040,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 374,
+                "reasoning_output_tokens": 61,
+                "total_tokens": 29646
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "route": {
+                "model": "gpt-6-sol",
+                "reasoning_effort": "high",
+                "reason": "default"
+              },
+              "usage": {
+                "input_tokens": 575,
+                "output_tokens": 64
+              },
+              "wall_ms": 316
+            }
+          ],
+          "changed_paths": [],
+          "estimated_codex_api_usd": 0.0450044,
+          "estimated_jev_api_usd": 0.00002415,
+          "estimated_total_api_usd": 0.04502855,
+          "trace": "results-traces/incident-source-research.rep1.jev_routed_child.attempt1.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "incident-source-research: PASS (correct)"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.04502855,
+      "end_to_end_ms": 38736
+    },
+    {
+      "task": "incident-source-research",
+      "type": "source_research",
+      "repetition": 1,
+      "arm": "single_sol_xhigh",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 16331,
+          "end_to_end_ms": 16331,
+          "answer": "{\n  \"answer\": {\n    \"q42_completed\": true,\n    \"q43_retry\": false,\n    \"q42_receipt\": \"RCPT-2026-00421\"\n  },\n  \"citations\": {\n    \"q42_completed\": [\n      \"logs/checkout.log:3\",\n      \"logs/checkout.log:4\",\n      \"docs/operations.md:5\"\n    ],\n    \"q43_retry\": [\n      \"logs/checkout.log:6\",\n      \"logs/checkout.log:7\",\n      \"docs/operations.md:4\"\n    ],\n    \"q42_receipt\": [\n      \"logs/checkout.log:4\",\n      \"docs/operations.md:6\"\n    ]\n  }\n}",
+          "grade": {
+            "correct": true,
+            "detail": "incident-source-research: PASS (correct)"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0decf-df1d-7440-86c5-3875ea52a785",
+          "root_usage": {
+            "input_tokens": 26544,
+            "cached_input_tokens": 23552,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 417,
+            "reasoning_output_tokens": 91
+          },
+          "sessions": [
+            {
+              "id": "01a0decf-df1d-7440-86c5-3875ea52a785",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 26544,
+                "cached_input_tokens": 23552,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 417,
+                "reasoning_output_tokens": 91,
+                "total_tokens": 26961
+              }
+            }
+          ],
+          "decisions": [],
+          "changed_paths": [],
+          "estimated_codex_api_usd": 0.014864400000000002,
+          "estimated_jev_api_usd": 0,
+          "estimated_total_api_usd": 0.014864400000000002,
+          "trace": "results-traces/incident-source-research.rep1.single_sol_xhigh.attempt1.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "incident-source-research: PASS (correct)"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.014864400000000002,
+      "end_to_end_ms": 16331
+    },
+    {
+      "task": "incident-source-research",
+      "type": "source_research",
+      "repetition": 1,
+      "arm": "optional_delegation",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 20375,
+          "end_to_end_ms": 20375,
+          "answer": "{\n  \"answer\": {\n    \"q42_completed\": true,\n    \"q43_retry\": false,\n    \"q42_receipt\": \"RCPT-2026-00421\"\n  },\n  \"citations\": {\n    \"q42_completed\": [\"logs/checkout.log:3\", \"logs/checkout.log:4\", \"docs/operations.md:5\"],\n    \"q43_retry\": [\"logs/checkout.log:6\", \"docs/operations.md:4\"],\n    \"q42_receipt\": [\"logs/checkout.log:4\", \"docs/operations.md:6\"]\n  }\n}",
+          "grade": {
+            "correct": true,
+            "detail": "incident-source-research: PASS (correct)"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0ded0-1e49-7822-a1fb-01c41aaaf9ea",
+          "root_usage": {
+            "input_tokens": 31010,
+            "cached_input_tokens": 26496,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 567,
+            "reasoning_output_tokens": 164
+          },
+          "sessions": [
+            {
+              "id": "01a0ded0-1e49-7822-a1fb-01c41aaaf9ea",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 31010,
+                "cached_input_tokens": 26496,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 567,
+                "reasoning_output_tokens": 164,
+                "total_tokens": 31577
+              }
+            }
+          ],
+          "decisions": [],
+          "changed_paths": [],
+          "estimated_codex_api_usd": 0.0199972,
+          "estimated_jev_api_usd": 0,
+          "estimated_total_api_usd": 0.0199972,
+          "trace": "results-traces/incident-source-research.rep1.optional_delegation.attempt1.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "incident-source-research: PASS (correct)"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.0199972,
+      "end_to_end_ms": 20375
+    },
+    {
+      "task": "incident-source-research",
+      "type": "source_research",
+      "repetition": 1,
+      "arm": "fixed_sol_high_child",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 36663,
+          "end_to_end_ms": 36663,
+          "answer": "{\"answer\":{\"q42_completed\":true,\"q43_retry\":false,\"q42_receipt\":\"RCPT-2026-00421\"},\"citations\":{\"q42_completed\":[\"logs/checkout.log:3\",\"logs/checkout.log:4\",\"docs/operations.md:5\"],\"q43_retry\":[\"logs/checkout.log:6\",\"docs/operations.md:4\"],\"q42_receipt\":[\"logs/checkout.log:4\",\"docs/operations.md:6\"]}}",
+          "grade": {
+            "correct": true,
+            "detail": "incident-source-research: PASS (correct)"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0ded0-6faf-7483-9c4b-c4caccf84460",
+          "root_usage": {
+            "input_tokens": 44427,
+            "cached_input_tokens": 26496,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 456,
+            "reasoning_output_tokens": 128
+          },
+          "sessions": [
+            {
+              "id": "01a0ded0-6faf-7483-9c4b-c4caccf84460",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 44427,
+                "cached_input_tokens": 26496,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 456,
+                "reasoning_output_tokens": 128,
+                "total_tokens": 44883
+              }
+            },
+            {
+              "id": "01a0ded0-a2ae-7102-97b0-0b5f12ff7d8e",
+              "parent_id": "01a0ded0-6faf-7483-9c4b-c4caccf84460",
+              "model": "gpt-6-sol",
+              "reasoning_effort": "high",
+              "usage": {
+                "input_tokens": 29123,
+                "cached_input_tokens": 25600,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 315,
+                "reasoning_output_tokens": 77,
+                "total_tokens": 29438
+              }
+            }
+          ],
+          "decisions": [],
+          "changed_paths": [],
+          "estimated_codex_api_usd": 0.0610372,
+          "estimated_jev_api_usd": 0,
+          "estimated_total_api_usd": 0.0610372,
+          "trace": "results-traces/incident-source-research.rep1.fixed_sol_high_child.attempt1.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "incident-source-research: PASS (correct)"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.0610372,
+      "end_to_end_ms": 36663
+    },
+    {
+      "task": "receipt-year-validation",
+      "type": "code_edit",
+      "repetition": 1,
+      "arm": "jev_routed_child",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 38671,
+          "end_to_end_ms": 39055,
+          "answer": "{\"done\":true}",
+          "grade": {
+            "correct": true,
+            "detail": "hidden behavior checks passed"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0ded1-030e-76e0-81e7-934df76b3f34",
+          "root_usage": {
+            "input_tokens": 44045,
+            "cached_input_tokens": 40704,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 300,
+            "reasoning_output_tokens": 122
+          },
+          "sessions": [
+            {
+              "id": "01a0ded1-030e-76e0-81e7-934df76b3f34",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 44045,
+                "cached_input_tokens": 40704,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 300,
+                "reasoning_output_tokens": 122,
+                "total_tokens": 44345
+              }
+            },
+            {
+              "id": "01a0ded1-3790-79a3-8385-63351a8462c1",
+              "parent_id": "01a0ded1-030e-76e0-81e7-934df76b3f34",
+              "model": "gpt-6-sol",
+              "reasoning_effort": "high",
+              "usage": {
+                "input_tokens": 58895,
+                "cached_input_tokens": 52096,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 582,
+                "reasoning_output_tokens": 121,
+                "total_tokens": 59477
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "route": {
+                "model": "gpt-6-sol",
+                "reasoning_effort": "high",
+                "reason": "default"
+              },
+              "usage": {
+                "input_tokens": 583,
+                "output_tokens": 64
+              },
+              "wall_ms": 384
+            }
+          ],
+          "changed_paths": [
+            "src/receipts.mjs"
+          ],
+          "patch": {
+            "path": "results-traces/receipt-year-validation.rep1.jev_routed_child.attempt1.patch",
+            "sha256": "b7653531531328a7cc4c0b8ad565335c4b1734369bc2871a65269a3c4fa58531",
+            "bytes": 299
+          },
+          "estimated_codex_api_usd": 0.04766,
+          "estimated_jev_api_usd": 0.000024486,
+          "estimated_total_api_usd": 0.047684486,
+          "trace": "results-traces/receipt-year-validation.rep1.jev_routed_child.attempt1.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "hidden behavior checks passed"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.047684486,
+      "end_to_end_ms": 39055
+    },
+    {
+      "task": "receipt-year-validation",
+      "type": "code_edit",
+      "repetition": 1,
+      "arm": "optional_delegation",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 33492,
+          "end_to_end_ms": 33492,
+          "answer": "{\"done\":true}",
+          "grade": {
+            "correct": true,
+            "detail": "hidden behavior checks passed"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0ded1-986f-7e93-b268-1ae53f275768",
+          "root_usage": {
+            "input_tokens": 62535,
+            "cached_input_tokens": 56832,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 909,
+            "reasoning_output_tokens": 302
+          },
+          "sessions": [
+            {
+              "id": "01a0ded1-986f-7e93-b268-1ae53f275768",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 62535,
+                "cached_input_tokens": 56832,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 909,
+                "reasoning_output_tokens": 302,
+                "total_tokens": 63444
+              }
+            }
+          ],
+          "decisions": [],
+          "changed_paths": [
+            "src/receipts.mjs"
+          ],
+          "patch": {
+            "path": "results-traces/receipt-year-validation.rep1.optional_delegation.attempt1.patch",
+            "sha256": "b7653531531328a7cc4c0b8ad565335c4b1734369bc2871a65269a3c4fa58531",
+            "bytes": 299
+          },
+          "estimated_codex_api_usd": 0.0318624,
+          "estimated_jev_api_usd": 0,
+          "estimated_total_api_usd": 0.0318624,
+          "trace": "results-traces/receipt-year-validation.rep1.optional_delegation.attempt1.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "hidden behavior checks passed"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.0318624,
+      "end_to_end_ms": 33492
+    },
+    {
+      "task": "receipt-year-validation",
+      "type": "code_edit",
+      "repetition": 1,
+      "arm": "single_sol_xhigh",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 28552,
+          "end_to_end_ms": 28552,
+          "answer": "{\"done\":true}",
+          "grade": {
+            "correct": true,
+            "detail": "hidden behavior checks passed"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0ded2-1ab9-75b2-be33-85f15eb7bcfa",
+          "root_usage": {
+            "input_tokens": 53148,
+            "cached_input_tokens": 49536,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 724,
+            "reasoning_output_tokens": 226
+          },
+          "sessions": [
+            {
+              "id": "01a0ded2-1ab9-75b2-be33-85f15eb7bcfa",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 53148,
+                "cached_input_tokens": 49536,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 724,
+                "reasoning_output_tokens": 226,
+                "total_tokens": 53872
+              }
+            }
+          ],
+          "decisions": [],
+          "changed_paths": [
+            "src/receipts.mjs"
+          ],
+          "patch": {
+            "path": "results-traces/receipt-year-validation.rep1.single_sol_xhigh.attempt1.patch",
+            "sha256": "b7653531531328a7cc4c0b8ad565335c4b1734369bc2871a65269a3c4fa58531",
+            "bytes": 299
+          },
+          "estimated_codex_api_usd": 0.0243712,
+          "estimated_jev_api_usd": 0,
+          "estimated_total_api_usd": 0.0243712,
+          "trace": "results-traces/receipt-year-validation.rep1.single_sol_xhigh.attempt1.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "hidden behavior checks passed"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.0243712,
+      "end_to_end_ms": 28552
+    },
+    {
+      "task": "receipt-year-validation",
+      "type": "code_edit",
+      "repetition": 1,
+      "arm": "fixed_sol_high_child",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 45644,
+          "end_to_end_ms": 45644,
+          "answer": "{\"done\":true}",
+          "grade": {
+            "correct": true,
+            "detail": "hidden behavior checks passed"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0ded2-8bf4-77f1-be55-2708368ff014",
+          "root_usage": {
+            "input_tokens": 43906,
+            "cached_input_tokens": 40576,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 244,
+            "reasoning_output_tokens": 60
+          },
+          "sessions": [
+            {
+              "id": "01a0ded2-8bf4-77f1-be55-2708368ff014",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 43906,
+                "cached_input_tokens": 40576,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 244,
+                "reasoning_output_tokens": 60,
+                "total_tokens": 44150
+              }
+            },
+            {
+              "id": "01a0ded2-cb28-7893-8455-9bae9b6271bd",
+              "parent_id": "01a0ded2-8bf4-77f1-be55-2708368ff014",
+              "model": "gpt-6-sol",
+              "reasoning_effort": "high",
+              "usage": {
+                "input_tokens": 60109,
+                "cached_input_tokens": 54400,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 715,
+                "reasoning_output_tokens": 136,
+                "total_tokens": 60824
+              }
+            }
+          ],
+          "decisions": [],
+          "changed_paths": [
+            "src/receipts.mjs"
+          ],
+          "patch": {
+            "path": "results-traces/receipt-year-validation.rep1.fixed_sol_high_child.attempt1.patch",
+            "sha256": "b7653531531328a7cc4c0b8ad565335c4b1734369bc2871a65269a3c4fa58531",
+            "bytes": 299
+          },
+          "estimated_codex_api_usd": 0.0466632,
+          "estimated_jev_api_usd": 0,
+          "estimated_total_api_usd": 0.0466632,
+          "trace": "results-traces/receipt-year-validation.rep1.fixed_sol_high_child.attempt1.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "hidden behavior checks passed"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.0466632,
+      "end_to_end_ms": 45644
+    },
+    {
+      "task": "sku-symbol",
+      "type": "source_lookup",
+      "repetition": 2,
+      "arm": "fixed_sol_high_child",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 41886,
+          "end_to_end_ms": 41886,
+          "answer": "{\"answer\":{\"location\":\"src/ledger.mjs:1\"},\"citations\":{\"location\":[\"src/ledger.mjs:1\"]}}",
+          "grade": {
+            "correct": true,
+            "detail": "sku-symbol: PASS (correct)"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0ded3-3f05-7660-a24e-0369d2af1f68",
+          "root_usage": {
+            "input_tokens": 43974,
+            "cached_input_tokens": 37888,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 255,
+            "reasoning_output_tokens": 43
+          },
+          "sessions": [
+            {
+              "id": "01a0ded3-3f05-7660-a24e-0369d2af1f68",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 43974,
+                "cached_input_tokens": 37888,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 255,
+                "reasoning_output_tokens": 43,
+                "total_tokens": 44229
+              }
+            },
+            {
+              "id": "01a0ded3-7e40-7251-ae29-0e559295494b",
+              "parent_id": "01a0ded3-3f05-7660-a24e-0369d2af1f68",
+              "model": "gpt-6-sol",
+              "reasoning_effort": "high",
+              "usage": {
+                "input_tokens": 43301,
+                "cached_input_tokens": 37120,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 282,
+                "reasoning_output_tokens": 45,
+                "total_tokens": 43583
+              }
+            }
+          ],
+          "decisions": [],
+          "changed_paths": [],
+          "estimated_codex_api_usd": 0.044905600000000004,
+          "estimated_jev_api_usd": 0,
+          "estimated_total_api_usd": 0.044905600000000004,
+          "trace": "results-traces/sku-symbol.rep2.fixed_sol_high_child.attempt1.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "sku-symbol: PASS (correct)"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.044905600000000004,
+      "end_to_end_ms": 41886
+    },
+    {
+      "task": "sku-symbol",
+      "type": "source_lookup",
+      "repetition": 2,
+      "arm": "single_sol_xhigh",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 19489,
+          "end_to_end_ms": 19489,
+          "answer": "{\"answer\":{\"location\":\"src/ledger.mjs:1\"},\"citations\":{\"location\":[\"src/ledger.mjs:1\"]}}",
+          "grade": {
+            "correct": true,
+            "detail": "sku-symbol: PASS (correct)"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0ded3-e2c6-7af3-89a1-b089e6b944b5",
+          "root_usage": {
+            "input_tokens": 25945,
+            "cached_input_tokens": 23424,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 202,
+            "reasoning_output_tokens": 84
+          },
+          "sessions": [
+            {
+              "id": "01a0ded3-e2c6-7af3-89a1-b089e6b944b5",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 25945,
+                "cached_input_tokens": 23424,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 202,
+                "reasoning_output_tokens": 84,
+                "total_tokens": 26147
+              }
+            }
+          ],
+          "decisions": [],
+          "changed_paths": [],
+          "estimated_codex_api_usd": 0.0117468,
+          "estimated_jev_api_usd": 0,
+          "estimated_total_api_usd": 0.0117468,
+          "trace": "results-traces/sku-symbol.rep2.single_sol_xhigh.attempt1.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "sku-symbol: PASS (correct)"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.0117468,
+      "end_to_end_ms": 19489
+    },
+    {
+      "task": "sku-symbol",
+      "type": "source_lookup",
+      "repetition": 2,
+      "arm": "jev_routed_child",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 24624,
+          "end_to_end_ms": 24995,
+          "answer": "{\"answer\":{\"location\":\"src/ledger.mjs:1\"},\"citations\":{\"location\":[\"src/ledger.mjs:1\"]}}",
+          "grade": {
+            "correct": true,
+            "detail": "sku-symbol: PASS (correct)"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0ded4-30df-7c93-b979-8f7b60dfcb7f",
+          "root_usage": {
+            "input_tokens": 44099,
+            "cached_input_tokens": 37888,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 324,
+            "reasoning_output_tokens": 82
+          },
+          "sessions": [
+            {
+              "id": "01a0ded4-30df-7c93-b979-8f7b60dfcb7f",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 44099,
+                "cached_input_tokens": 37888,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 324,
+                "reasoning_output_tokens": 82,
+                "total_tokens": 44423
+              }
+            },
+            {
+              "id": "01a0ded4-5848-78f1-88fb-117993bea503",
+              "parent_id": "01a0ded4-30df-7c93-b979-8f7b60dfcb7f",
+              "model": "gpt-6-luna",
+              "reasoning_effort": "low",
+              "usage": {
+                "input_tokens": 35654,
+                "cached_input_tokens": 28160,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 115,
+                "reasoning_output_tokens": 0,
+                "total_tokens": 35769
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "route": {
+                "model": "gpt-6-luna",
+                "reasoning_effort": "low",
+                "reason": "simple"
+              },
+              "usage": {
+                "input_tokens": 574,
+                "output_tokens": 64
+              },
+              "wall_ms": 371
+            }
+          ],
+          "changed_paths": [],
+          "estimated_codex_api_usd": 0.0243281,
+          "estimated_jev_api_usd": 0.000024108,
+          "estimated_total_api_usd": 0.024352207999999997,
+          "trace": "results-traces/sku-symbol.rep2.jev_routed_child.attempt1.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "sku-symbol: PASS (correct)"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.024352207999999997,
+      "end_to_end_ms": 24995
+    },
+    {
+      "task": "sku-symbol",
+      "type": "source_lookup",
+      "repetition": 2,
+      "arm": "optional_delegation",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 17539,
+          "end_to_end_ms": 17539,
+          "answer": "{\"answer\":{\"location\":\"src/ledger.mjs:1\"},\"citations\":{\"location\":[\"src/ledger.mjs:1\"]}}",
+          "grade": {
+            "correct": true,
+            "detail": "sku-symbol: PASS (correct)"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0ded4-8f9a-7a41-b0dc-7316851351fc",
+          "root_usage": {
+            "input_tokens": 45329,
+            "cached_input_tokens": 41472,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 314,
+            "reasoning_output_tokens": 104
+          },
+          "sessions": [
+            {
+              "id": "01a0ded4-8f9a-7a41-b0dc-7316851351fc",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 45329,
+                "cached_input_tokens": 41472,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 314,
+                "reasoning_output_tokens": 104,
+                "total_tokens": 45643
+              }
+            }
+          ],
+          "decisions": [],
+          "changed_paths": [],
+          "estimated_codex_api_usd": 0.019148400000000003,
+          "estimated_jev_api_usd": 0,
+          "estimated_total_api_usd": 0.019148400000000003,
+          "trace": "results-traces/sku-symbol.rep2.optional_delegation.attempt1.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "sku-symbol: PASS (correct)"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.019148400000000003,
+      "end_to_end_ms": 17539
+    },
+    {
+      "task": "checkout-log",
+      "type": "log_lookup",
+      "repetition": 2,
+      "arm": "single_sol_xhigh",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 17130,
+          "end_to_end_ms": 17130,
+          "answer": "{\"answer\":{\"decline_code\":\"DO_NOT_HONOR\",\"final_status\":\"unpaid\"},\"citations\":{\"decline_code\":[\"logs/checkout.log:6\"],\"final_status\":[\"logs/checkout.log:7\"]}}",
+          "grade": {
+            "correct": true,
+            "detail": "checkout-log: PASS (correct)"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0ded4-d5d9-7e12-8fdf-169067482495",
+          "root_usage": {
+            "input_tokens": 26140,
+            "cached_input_tokens": 19712,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 222,
+            "reasoning_output_tokens": 80
+          },
+          "sessions": [
+            {
+              "id": "01a0ded4-d5d9-7e12-8fdf-169067482495",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 26140,
+                "cached_input_tokens": 19712,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 222,
+                "reasoning_output_tokens": 80,
+                "total_tokens": 26362
+              }
+            }
+          ],
+          "decisions": [],
+          "changed_paths": [],
+          "estimated_codex_api_usd": 0.0190184,
+          "estimated_jev_api_usd": 0,
+          "estimated_total_api_usd": 0.0190184,
+          "trace": "results-traces/checkout-log.rep2.single_sol_xhigh.attempt1.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "checkout-log: PASS (correct)"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.0190184,
+      "end_to_end_ms": 17130
+    },
+    {
+      "task": "checkout-log",
+      "type": "log_lookup",
+      "repetition": 2,
+      "arm": "jev_routed_child",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 25953,
+          "end_to_end_ms": 26292,
+          "answer": "{\"answer\":{\"decline_code\":\"DO_NOT_HONOR\",\"final_status\":\"unpaid\"},\"citations\":{\"decline_code\":[\"logs/checkout.log:6\"],\"final_status\":[\"logs/checkout.log:7\"]}}",
+          "grade": {
+            "correct": true,
+            "detail": "checkout-log: PASS (correct)"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0ded5-18a3-7ab2-a024-b756af71f10e",
+          "root_usage": {
+            "input_tokens": 44041,
+            "cached_input_tokens": 35328,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 304,
+            "reasoning_output_tokens": 53
+          },
+          "sessions": [
+            {
+              "id": "01a0ded5-18a3-7ab2-a024-b756af71f10e",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 44041,
+                "cached_input_tokens": 35328,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 304,
+                "reasoning_output_tokens": 53,
+                "total_tokens": 44345
+              }
+            },
+            {
+              "id": "01a0ded5-3d96-7640-a60f-1425fc9e59ab",
+              "parent_id": "01a0ded5-18a3-7ab2-a024-b756af71f10e",
+              "model": "gpt-6-luna",
+              "reasoning_effort": "low",
+              "usage": {
+                "input_tokens": 35778,
+                "cached_input_tokens": 24064,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 161,
+                "reasoning_output_tokens": 0,
+                "total_tokens": 35939
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "route": {
+                "model": "gpt-6-luna",
+                "reasoning_effort": "low",
+                "reason": "simple"
+              },
+              "usage": {
+                "input_tokens": 578,
+                "output_tokens": 64
+              },
+              "wall_ms": 339
+            }
+          ],
+          "changed_paths": [],
+          "estimated_codex_api_usd": 0.02902414,
+          "estimated_jev_api_usd": 0.000024276,
+          "estimated_total_api_usd": 0.029048416,
+          "trace": "results-traces/checkout-log.rep2.jev_routed_child.attempt1.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "checkout-log: PASS (correct)"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.029048416,
+      "end_to_end_ms": 26292
+    },
+    {
+      "task": "checkout-log",
+      "type": "log_lookup",
+      "repetition": 2,
+      "arm": "optional_delegation",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 17486,
+          "end_to_end_ms": 17486,
+          "answer": "{\"answer\":{\"decline_code\":\"DO_NOT_HONOR\",\"final_status\":\"unpaid\"},\"citations\":{\"decline_code\":[\"logs/checkout.log:6\"],\"final_status\":[\"logs/checkout.log:7\"]}}",
+          "grade": {
+            "correct": true,
+            "detail": "checkout-log: PASS (correct)"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0ded5-816c-7da0-ad67-795800aaaef7",
+          "root_usage": {
+            "input_tokens": 30077,
+            "cached_input_tokens": 26496,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 206,
+            "reasoning_output_tokens": 63
+          },
+          "sessions": [
+            {
+              "id": "01a0ded5-816c-7da0-ad67-795800aaaef7",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 30077,
+                "cached_input_tokens": 26496,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 206,
+                "reasoning_output_tokens": 63,
+                "total_tokens": 30283
+              }
+            }
+          ],
+          "decisions": [],
+          "changed_paths": [],
+          "estimated_codex_api_usd": 0.014521200000000001,
+          "estimated_jev_api_usd": 0,
+          "estimated_total_api_usd": 0.014521200000000001,
+          "trace": "results-traces/checkout-log.rep2.optional_delegation.attempt1.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "checkout-log: PASS (correct)"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.014521200000000001,
+      "end_to_end_ms": 17486
+    },
+    {
+      "task": "checkout-log",
+      "type": "log_lookup",
+      "repetition": 2,
+      "arm": "fixed_sol_high_child",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 41446,
+          "end_to_end_ms": 41446,
+          "answer": "{\"answer\":{\"decline_code\":\"DO_NOT_HONOR\",\"final_status\":\"unpaid\"},\"citations\":{\"decline_code\":[\"logs/checkout.log:6\"],\"final_status\":[\"logs/checkout.log:7\"]}}",
+          "grade": {
+            "correct": true,
+            "detail": "checkout-log: PASS (correct)"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0ded5-d356-73d1-9298-3d0f92d43cc9",
+          "root_usage": {
+            "input_tokens": 44038,
+            "cached_input_tokens": 40704,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 287,
+            "reasoning_output_tokens": 53
+          },
+          "sessions": [
+            {
+              "id": "01a0ded5-d356-73d1-9298-3d0f92d43cc9",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 44038,
+                "cached_input_tokens": 40704,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 287,
+                "reasoning_output_tokens": 53,
+                "total_tokens": 44325
+              }
+            },
+            {
+              "id": "01a0ded6-29c7-7af1-bc66-569a49ba53f1",
+              "parent_id": "01a0ded5-d356-73d1-9298-3d0f92d43cc9",
+              "model": "gpt-6-sol",
+              "reasoning_effort": "high",
+              "usage": {
+                "input_tokens": 28959,
+                "cached_input_tokens": 25728,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 187,
+                "reasoning_output_tokens": 23,
+                "total_tokens": 29146
+              }
+            }
+          ],
+          "decisions": [],
+          "changed_paths": [],
+          "estimated_codex_api_usd": 0.0311564,
+          "estimated_jev_api_usd": 0,
+          "estimated_total_api_usd": 0.0311564,
+          "trace": "results-traces/checkout-log.rep2.fixed_sol_high_child.attempt1.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "checkout-log: PASS (correct)"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.0311564,
+      "end_to_end_ms": 41446
+    },
+    {
+      "task": "shipping-rules",
+      "type": "bounded_extraction",
+      "repetition": 2,
+      "arm": "jev_routed_child",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 27672,
+          "end_to_end_ms": 28016,
+          "answer": "{\"answer\":{\"free_threshold_cents\":5000,\"domestic_cents\":700,\"international_cents\":1800},\"citations\":{\"free_threshold_cents\":[\"config/policy.json:3\"],\"domestic_cents\":[\"config/policy.json:4\"],\"international_cents\":[\"config/policy.json:5\"]}}",
+          "grade": {
+            "correct": true,
+            "detail": "shipping-rules: PASS (correct)"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0ded6-692d-7591-ab20-ccd9b8aba85b",
+          "root_usage": {
+            "input_tokens": 44118,
+            "cached_input_tokens": 37888,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 334,
+            "reasoning_output_tokens": 57
+          },
+          "sessions": [
+            {
+              "id": "01a0ded6-692d-7591-ab20-ccd9b8aba85b",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 44118,
+                "cached_input_tokens": 37888,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 334,
+                "reasoning_output_tokens": 57,
+                "total_tokens": 44452
+              }
+            },
+            {
+              "id": "01a0ded6-9905-7550-a11f-39e040999b64",
+              "parent_id": "01a0ded6-692d-7591-ab20-ccd9b8aba85b",
+              "model": "gpt-6-luna",
+              "reasoning_effort": "medium",
+              "usage": {
+                "input_tokens": 35736,
+                "cached_input_tokens": 28160,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 121,
+                "reasoning_output_tokens": 10,
+                "total_tokens": 35857
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "route": {
+                "model": "gpt-6-luna",
+                "reasoning_effort": "medium",
+                "reason": "bounded"
+              },
+              "usage": {
+                "input_tokens": 569,
+                "output_tokens": 64
+              },
+              "wall_ms": 344
+            }
+          ],
+          "changed_paths": [],
+          "estimated_codex_api_usd": 0.024477299999999997,
+          "estimated_jev_api_usd": 0.000023898000000000004,
+          "estimated_total_api_usd": 0.024501198,
+          "trace": "results-traces/shipping-rules.rep2.jev_routed_child.attempt1.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "shipping-rules: PASS (correct)"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.024501198,
+      "end_to_end_ms": 28016
+    },
+    {
+      "task": "shipping-rules",
+      "type": "bounded_extraction",
+      "repetition": 2,
+      "arm": "optional_delegation",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 16975,
+          "end_to_end_ms": 16975,
+          "answer": "{\"answer\":{\"free_threshold_cents\":5000,\"domestic_cents\":700,\"international_cents\":1800},\"citations\":{\"free_threshold_cents\":[\"config/policy.json:3\"],\"domestic_cents\":[\"config/policy.json:4\"],\"international_cents\":[\"config/policy.json:5\"]}}",
+          "grade": {
+            "correct": true,
+            "detail": "shipping-rules: PASS (correct)"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0ded6-d6e0-7052-92f1-25a681f4d8ce",
+          "root_usage": {
+            "input_tokens": 30087,
+            "cached_input_tokens": 26496,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 257,
+            "reasoning_output_tokens": 100
+          },
+          "sessions": [
+            {
+              "id": "01a0ded6-d6e0-7052-92f1-25a681f4d8ce",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 30087,
+                "cached_input_tokens": 26496,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 257,
+                "reasoning_output_tokens": 100,
+                "total_tokens": 30344
+              }
+            }
+          ],
+          "decisions": [],
+          "changed_paths": [],
+          "estimated_codex_api_usd": 0.0150512,
+          "estimated_jev_api_usd": 0,
+          "estimated_total_api_usd": 0.0150512,
+          "trace": "results-traces/shipping-rules.rep2.optional_delegation.attempt1.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "shipping-rules: PASS (correct)"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.0150512,
+      "end_to_end_ms": 16975
+    },
+    {
+      "task": "shipping-rules",
+      "type": "bounded_extraction",
+      "repetition": 2,
+      "arm": "fixed_sol_high_child",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 33004,
+          "end_to_end_ms": 33004,
+          "answer": "{\"answer\":{\"free_threshold_cents\":5000,\"domestic_cents\":700,\"international_cents\":1800},\"citations\":{\"free_threshold_cents\":[\"config/policy.json:3\"],\"domestic_cents\":[\"config/policy.json:4\"],\"international_cents\":[\"config/policy.json:5\"]}}",
+          "grade": {
+            "correct": true,
+            "detail": "shipping-rules: PASS (correct)"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0ded7-168e-7b20-92b9-82e8431947e9",
+          "root_usage": {
+            "input_tokens": 44073,
+            "cached_input_tokens": 40704,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 332,
+            "reasoning_output_tokens": 58
+          },
+          "sessions": [
+            {
+              "id": "01a0ded7-168e-7b20-92b9-82e8431947e9",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 44073,
+                "cached_input_tokens": 40704,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 332,
+                "reasoning_output_tokens": 58,
+                "total_tokens": 44405
+              }
+            },
+            {
+              "id": "01a0ded7-40ba-7250-a5d3-0b705c0284b0",
+              "parent_id": "01a0ded7-168e-7b20-92b9-82e8431947e9",
+              "model": "gpt-6-sol",
+              "reasoning_effort": "high",
+              "usage": {
+                "input_tokens": 28704,
+                "cached_input_tokens": 25600,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 241,
+                "reasoning_output_tokens": 57,
+                "total_tokens": 28945
+              }
+            }
+          ],
+          "decisions": [],
+          "changed_paths": [],
+          "estimated_codex_api_usd": 0.0319368,
+          "estimated_jev_api_usd": 0,
+          "estimated_total_api_usd": 0.0319368,
+          "trace": "results-traces/shipping-rules.rep2.fixed_sol_high_child.attempt1.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "shipping-rules: PASS (correct)"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.0319368,
+      "end_to_end_ms": 33004
+    },
+    {
+      "task": "shipping-rules",
+      "type": "bounded_extraction",
+      "repetition": 2,
+      "arm": "single_sol_xhigh",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 15774,
+          "end_to_end_ms": 15774,
+          "answer": "{\"answer\":{\"free_threshold_cents\":5000,\"domestic_cents\":700,\"international_cents\":1800},\"citations\":{\"free_threshold_cents\":[\"config/policy.json:3\"],\"domestic_cents\":[\"config/policy.json:4\"],\"international_cents\":[\"config/policy.json:5\"]}}",
+          "grade": {
+            "correct": true,
+            "detail": "shipping-rules: PASS (correct)"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0ded7-97c0-7dc0-981c-a98abe931cf9",
+          "root_usage": {
+            "input_tokens": 25994,
+            "cached_input_tokens": 21504,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 252,
+            "reasoning_output_tokens": 75
+          },
+          "sessions": [
+            {
+              "id": "01a0ded7-97c0-7dc0-981c-a98abe931cf9",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 25994,
+                "cached_input_tokens": 21504,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 252,
+                "reasoning_output_tokens": 75,
+                "total_tokens": 26246
+              }
+            }
+          ],
+          "decisions": [],
+          "changed_paths": [],
+          "estimated_codex_api_usd": 0.0158008,
+          "estimated_jev_api_usd": 0,
+          "estimated_total_api_usd": 0.0158008,
+          "trace": "results-traces/shipping-rules.rep2.single_sol_xhigh.attempt1.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "shipping-rules: PASS (correct)"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.0158008,
+      "end_to_end_ms": 15774
+    },
+    {
+      "task": "international-claim",
+      "type": "focused_judgment",
+      "repetition": 2,
+      "arm": "jev_routed_child",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 29882,
+          "end_to_end_ms": 30368,
+          "answer": "{\"answer\":{\"claim\":false},\"citations\":{\"claim\":[\"src/ledger.mjs:5\",\"src/ledger.mjs:6\",\"src/ledger.mjs:9\",\"src/ledger.mjs:10\",\"src/ledger.mjs:11\"]}}",
+          "grade": {
+            "correct": true,
+            "detail": "international-claim: PASS (correct)"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0ded7-d83d-7d33-944c-578762ed4ebf",
+          "root_usage": {
+            "input_tokens": 44117,
+            "cached_input_tokens": 40704,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 328,
+            "reasoning_output_tokens": 86
+          },
+          "sessions": [
+            {
+              "id": "01a0ded7-d83d-7d33-944c-578762ed4ebf",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 44117,
+                "cached_input_tokens": 40704,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 328,
+                "reasoning_output_tokens": 86,
+                "total_tokens": 44445
+              }
+            },
+            {
+              "id": "01a0ded8-0946-79b2-abc6-3f773c40d414",
+              "parent_id": "01a0ded7-d83d-7d33-944c-578762ed4ebf",
+              "model": "gpt-6-sol",
+              "reasoning_effort": "high",
+              "usage": {
+                "input_tokens": 29162,
+                "cached_input_tokens": 25728,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 220,
+                "reasoning_output_tokens": 75,
+                "total_tokens": 29382
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "route": {
+                "model": "gpt-6-sol",
+                "reasoning_effort": "high",
+                "reason": "default"
+              },
+              "usage": {
+                "input_tokens": 574,
+                "output_tokens": 64
+              },
+              "wall_ms": 486
+            }
+          ],
+          "changed_paths": [],
+          "estimated_codex_api_usd": 0.0324604,
+          "estimated_jev_api_usd": 0.000024108,
+          "estimated_total_api_usd": 0.032484508,
+          "trace": "results-traces/international-claim.rep2.jev_routed_child.attempt1.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "international-claim: PASS (correct)"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.032484508,
+      "end_to_end_ms": 30368
+    },
+    {
+      "task": "international-claim",
+      "type": "focused_judgment",
+      "repetition": 2,
+      "arm": "single_sol_xhigh",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 15615,
+          "end_to_end_ms": 15615,
+          "answer": "{\"answer\":{\"claim\":false},\"citations\":{\"claim\":[\"src/ledger.mjs:5\",\"src/ledger.mjs:6\",\"src/ledger.mjs:10\",\"src/ledger.mjs:11\"]}}",
+          "grade": {
+            "correct": true,
+            "detail": "international-claim: PASS (correct)"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0ded8-4d69-7630-8edf-3d809f96d3d4",
+          "root_usage": {
+            "input_tokens": 26080,
+            "cached_input_tokens": 23424,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 187,
+            "reasoning_output_tokens": 54
+          },
+          "sessions": [
+            {
+              "id": "01a0ded8-4d69-7630-8edf-3d809f96d3d4",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 26080,
+                "cached_input_tokens": 23424,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 187,
+                "reasoning_output_tokens": 54,
+                "total_tokens": 26267
+              }
+            }
+          ],
+          "decisions": [],
+          "changed_paths": [],
+          "estimated_codex_api_usd": 0.011866799999999999,
+          "estimated_jev_api_usd": 0,
+          "estimated_total_api_usd": 0.011866799999999999,
+          "trace": "results-traces/international-claim.rep2.single_sol_xhigh.attempt1.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "international-claim: PASS (correct)"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.011866799999999999,
+      "end_to_end_ms": 15615
+    },
+    {
+      "task": "international-claim",
+      "type": "focused_judgment",
+      "repetition": 2,
+      "arm": "fixed_sol_high_child",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 40415,
+          "end_to_end_ms": 40415,
+          "answer": "{\"answer\":{\"claim\":false},\"citations\":{\"claim\":[\"src/ledger.mjs:5\",\"src/ledger.mjs:6\",\"src/ledger.mjs:9\",\"src/ledger.mjs:11\"]}}",
+          "grade": {
+            "correct": true,
+            "detail": "international-claim: PASS (correct)"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0ded8-89ac-7a62-8f81-04348d49a0ba",
+          "root_usage": {
+            "input_tokens": 44249,
+            "cached_input_tokens": 37888,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 399,
+            "reasoning_output_tokens": 149
+          },
+          "sessions": [
+            {
+              "id": "01a0ded8-89ac-7a62-8f81-04348d49a0ba",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 44249,
+                "cached_input_tokens": 37888,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 399,
+                "reasoning_output_tokens": 149,
+                "total_tokens": 44648
+              }
+            },
+            {
+              "id": "01a0ded8-c23e-7c90-8e76-fc95eadf6aa6",
+              "parent_id": "01a0ded8-89ac-7a62-8f81-04348d49a0ba",
+              "model": "gpt-6-sol",
+              "reasoning_effort": "high",
+              "usage": {
+                "input_tokens": 28852,
+                "cached_input_tokens": 25600,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 221,
+                "reasoning_output_tokens": 84,
+                "total_tokens": 29073
+              }
+            }
+          ],
+          "decisions": [],
+          "changed_paths": [],
+          "estimated_codex_api_usd": 0.0381236,
+          "estimated_jev_api_usd": 0,
+          "estimated_total_api_usd": 0.0381236,
+          "trace": "results-traces/international-claim.rep2.fixed_sol_high_child.attempt1.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "international-claim: PASS (correct)"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.0381236,
+      "end_to_end_ms": 40415
+    },
+    {
+      "task": "international-claim",
+      "type": "focused_judgment",
+      "repetition": 2,
+      "arm": "optional_delegation",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 37036,
+          "end_to_end_ms": 37036,
+          "answer": "{\"answer\":{\"claim\":false},\"citations\":{\"claim\":[\"src/ledger.mjs:5\",\"src/ledger.mjs:6\",\"src/ledger.mjs:9\",\"src/ledger.mjs:10\",\"src/ledger.mjs:11\"]}}",
+          "grade": {
+            "correct": true,
+            "detail": "international-claim: PASS (correct)"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0ded9-2ae9-7cd3-bc03-55427e7ad47a",
+          "root_usage": {
+            "input_tokens": 30234,
+            "cached_input_tokens": 23552,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 286,
+            "reasoning_output_tokens": 122
+          },
+          "sessions": [
+            {
+              "id": "01a0ded9-2ae9-7cd3-bc03-55427e7ad47a",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 30234,
+                "cached_input_tokens": 23552,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 286,
+                "reasoning_output_tokens": 122,
+                "total_tokens": 30520
+              }
+            }
+          ],
+          "decisions": [],
+          "changed_paths": [],
+          "estimated_codex_api_usd": 0.020934400000000002,
+          "estimated_jev_api_usd": 0,
+          "estimated_total_api_usd": 0.020934400000000002,
+          "trace": "results-traces/international-claim.rep2.optional_delegation.attempt1.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "international-claim: PASS (correct)"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.020934400000000002,
+      "end_to_end_ms": 37036
+    },
+    {
+      "task": "incident-source-research",
+      "type": "source_research",
+      "repetition": 2,
+      "arm": "single_sol_xhigh",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 19903,
+          "end_to_end_ms": 19903,
+          "answer": "{\n  \"answer\": {\n    \"q42_completed\": true,\n    \"q43_retry\": false,\n    \"q42_receipt\": \"RCPT-2026-00421\"\n  },\n  \"citations\": {\n    \"q42_completed\": [\"logs/checkout.log:3\", \"logs/checkout.log:4\", \"docs/operations.md:5\"],\n    \"q43_retry\": [\"logs/checkout.log:6\", \"logs/checkout.log:7\", \"docs/operations.md:4\"],\n    \"q42_receipt\": [\"logs/checkout.log:4\", \"docs/operations.md:6\"]\n  }\n}",
+          "grade": {
+            "correct": true,
+            "detail": "incident-source-research: PASS (correct)"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0ded9-b910-7c52-9ef9-4001de7a0fc0",
+          "root_usage": {
+            "input_tokens": 26616,
+            "cached_input_tokens": 23424,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 509,
+            "reasoning_output_tokens": 155
+          },
+          "sessions": [
+            {
+              "id": "01a0ded9-b910-7c52-9ef9-4001de7a0fc0",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 26616,
+                "cached_input_tokens": 23424,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 509,
+                "reasoning_output_tokens": 155,
+                "total_tokens": 27125
+              }
+            }
+          ],
+          "decisions": [],
+          "changed_paths": [],
+          "estimated_codex_api_usd": 0.0161588,
+          "estimated_jev_api_usd": 0,
+          "estimated_total_api_usd": 0.0161588,
+          "trace": "results-traces/incident-source-research.rep2.single_sol_xhigh.attempt1.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "incident-source-research: PASS (correct)"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.0161588,
+      "end_to_end_ms": 19903
+    },
+    {
+      "task": "incident-source-research",
+      "type": "source_research",
+      "repetition": 2,
+      "arm": "jev_routed_child",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 43611,
+          "end_to_end_ms": 43985,
+          "answer": "{\"answer\":{\"q42_completed\":true,\"q43_retry\":false,\"q42_receipt\":\"RCPT-2026-00421\"},\"citations\":{\"q42_completed\":[\"logs/checkout.log:3\",\"logs/checkout.log:4\",\"docs/operations.md:5\"],\"q43_retry\":[\"logs/checkout.log:6\",\"docs/operations.md:4\"],\"q42_receipt\":[\"logs/checkout.log:4\",\"docs/operations.md:6\"]}}",
+          "grade": {
+            "correct": true,
+            "detail": "incident-source-research: PASS (correct)"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0deda-0721-7411-aff4-19581016060c",
+          "root_usage": {
+            "input_tokens": 44283,
+            "cached_input_tokens": 38144,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 394,
+            "reasoning_output_tokens": 70
+          },
+          "sessions": [
+            {
+              "id": "01a0deda-0721-7411-aff4-19581016060c",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 44283,
+                "cached_input_tokens": 38144,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 394,
+                "reasoning_output_tokens": 70,
+                "total_tokens": 44677
+              }
+            },
+            {
+              "id": "01a0deda-3a27-7e73-9fb5-23cd8a59764e",
+              "parent_id": "01a0deda-0721-7411-aff4-19581016060c",
+              "model": "gpt-6-sol",
+              "reasoning_effort": "high",
+              "usage": {
+                "input_tokens": 29189,
+                "cached_input_tokens": 25600,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 357,
+                "reasoning_output_tokens": 85,
+                "total_tokens": 29546
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "route": {
+                "model": "gpt-6-sol",
+                "reasoning_effort": "high",
+                "reason": "default"
+              },
+              "usage": {
+                "input_tokens": 575,
+                "output_tokens": 64
+              },
+              "wall_ms": 374
+            }
+          ],
+          "changed_paths": [],
+          "estimated_codex_api_usd": 0.039714799999999995,
+          "estimated_jev_api_usd": 0.00002415,
+          "estimated_total_api_usd": 0.039738949999999995,
+          "trace": "results-traces/incident-source-research.rep2.jev_routed_child.attempt1.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "incident-source-research: PASS (correct)"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.039738949999999995,
+      "end_to_end_ms": 43985
+    },
+    {
+      "task": "incident-source-research",
+      "type": "source_research",
+      "repetition": 2,
+      "arm": "optional_delegation",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 28351,
+          "end_to_end_ms": 28351,
+          "answer": "{\n  \"answer\": {\n    \"q42_completed\": true,\n    \"q43_retry\": false,\n    \"q42_receipt\": \"RCPT-2026-00421\"\n  },\n  \"citations\": {\n    \"q42_completed\": [\"logs/checkout.log:3\", \"logs/checkout.log:4\", \"docs/operations.md:5\"],\n    \"q43_retry\": [\"logs/checkout.log:6\", \"docs/operations.md:4\"],\n    \"q42_receipt\": [\"logs/checkout.log:4\", \"docs/operations.md:6\"]\n  }\n}",
+          "grade": {
+            "correct": true,
+            "detail": "incident-source-research: PASS (correct)"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0deda-b354-71c2-8ac4-36dd5db2ca38",
+          "root_usage": {
+            "input_tokens": 30631,
+            "cached_input_tokens": 26496,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 440,
+            "reasoning_output_tokens": 120
+          },
+          "sessions": [
+            {
+              "id": "01a0deda-b354-71c2-8ac4-36dd5db2ca38",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 30631,
+                "cached_input_tokens": 26496,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 440,
+                "reasoning_output_tokens": 120,
+                "total_tokens": 31071
+              }
+            }
+          ],
+          "decisions": [],
+          "changed_paths": [],
+          "estimated_codex_api_usd": 0.0179692,
+          "estimated_jev_api_usd": 0,
+          "estimated_total_api_usd": 0.0179692,
+          "trace": "results-traces/incident-source-research.rep2.optional_delegation.attempt1.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "incident-source-research: PASS (correct)"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.0179692,
+      "end_to_end_ms": 28351
+    },
+    {
+      "task": "incident-source-research",
+      "type": "source_research",
+      "repetition": 2,
+      "arm": "fixed_sol_high_child",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 35938,
+          "end_to_end_ms": 35938,
+          "answer": "{\"answer\":{\"q42_completed\":true,\"q43_retry\":false,\"q42_receipt\":\"RCPT-2026-00421\"},\"citations\":{\"q42_completed\":[\"logs/checkout.log:3\",\"logs/checkout.log:4\",\"docs/operations.md:5\"],\"q43_retry\":[\"logs/checkout.log:6\",\"logs/checkout.log:7\",\"docs/operations.md:4\"],\"q42_receipt\":[\"logs/checkout.log:4\",\"docs/operations.md:6\"]}}",
+          "grade": {
+            "correct": true,
+            "detail": "incident-source-research: PASS (correct)"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0dedb-2554-7f10-918a-988c60701dc3",
+          "root_usage": {
+            "input_tokens": 44330,
+            "cached_input_tokens": 40704,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 441,
+            "reasoning_output_tokens": 99
+          },
+          "sessions": [
+            {
+              "id": "01a0dedb-2554-7f10-918a-988c60701dc3",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 44330,
+                "cached_input_tokens": 40704,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 441,
+                "reasoning_output_tokens": 99,
+                "total_tokens": 44771
+              }
+            },
+            {
+              "id": "01a0dedb-5b7a-7ae3-a2c8-888e0efc7a02",
+              "parent_id": "01a0dedb-2554-7f10-918a-988c60701dc3",
+              "model": "gpt-6-sol",
+              "reasoning_effort": "high",
+              "usage": {
+                "input_tokens": 29151,
+                "cached_input_tokens": 25600,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 362,
+                "reasoning_output_tokens": 75,
+                "total_tokens": 29513
+              }
+            }
+          ],
+          "decisions": [],
+          "changed_paths": [],
+          "estimated_codex_api_usd": 0.0356448,
+          "estimated_jev_api_usd": 0,
+          "estimated_total_api_usd": 0.0356448,
+          "trace": "results-traces/incident-source-research.rep2.fixed_sol_high_child.attempt1.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "incident-source-research: PASS (correct)"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.0356448,
+      "end_to_end_ms": 35938
+    },
+    {
+      "task": "receipt-year-validation",
+      "type": "code_edit",
+      "repetition": 2,
+      "arm": "optional_delegation",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 31730,
+          "end_to_end_ms": 31730,
+          "answer": "{\"done\":true}",
+          "grade": {
+            "correct": true,
+            "detail": "hidden behavior checks passed"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0dedb-be1e-7080-96fb-a22c66da7f0b",
+          "root_usage": {
+            "input_tokens": 61198,
+            "cached_input_tokens": 56704,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 642,
+            "reasoning_output_tokens": 177
+          },
+          "sessions": [
+            {
+              "id": "01a0dedb-be1e-7080-96fb-a22c66da7f0b",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 61198,
+                "cached_input_tokens": 56704,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 642,
+                "reasoning_output_tokens": 177,
+                "total_tokens": 61840
+              }
+            }
+          ],
+          "decisions": [],
+          "changed_paths": [
+            "src/receipts.mjs"
+          ],
+          "patch": {
+            "path": "results-traces/receipt-year-validation.rep2.optional_delegation.attempt1.patch",
+            "sha256": "b7653531531328a7cc4c0b8ad565335c4b1734369bc2871a65269a3c4fa58531",
+            "bytes": 299
+          },
+          "estimated_codex_api_usd": 0.026748800000000003,
+          "estimated_jev_api_usd": 0,
+          "estimated_total_api_usd": 0.026748800000000003,
+          "trace": "results-traces/receipt-year-validation.rep2.optional_delegation.attempt1.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "hidden behavior checks passed"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.026748800000000003,
+      "end_to_end_ms": 31730
+    },
+    {
+      "task": "receipt-year-validation",
+      "type": "code_edit",
+      "repetition": 2,
+      "arm": "jev_routed_child",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 49451,
+          "end_to_end_ms": 49823,
+          "answer": "{\"done\":true}",
+          "grade": {
+            "correct": true,
+            "detail": "hidden behavior checks passed"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0dedc-2e69-7f70-ae36-fdff87a47690",
+          "root_usage": {
+            "input_tokens": 44004,
+            "cached_input_tokens": 40704,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 291,
+            "reasoning_output_tokens": 105
+          },
+          "sessions": [
+            {
+              "id": "01a0dedc-2e69-7f70-ae36-fdff87a47690",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 44004,
+                "cached_input_tokens": 40704,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 291,
+                "reasoning_output_tokens": 105,
+                "total_tokens": 44295
+              }
+            },
+            {
+              "id": "01a0dedc-5756-7d60-a3f0-3f32a30efb3e",
+              "parent_id": "01a0dedc-2e69-7f70-ae36-fdff87a47690",
+              "model": "gpt-6-sol",
+              "reasoning_effort": "high",
+              "usage": {
+                "input_tokens": 59343,
+                "cached_input_tokens": 54400,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 663,
+                "reasoning_output_tokens": 119,
+                "total_tokens": 60006
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "route": {
+                "model": "gpt-6-sol",
+                "reasoning_effort": "high",
+                "reason": "default"
+              },
+              "usage": {
+                "input_tokens": 583,
+                "output_tokens": 64
+              },
+              "wall_ms": 372
+            }
+          ],
+          "changed_paths": [
+            "src/receipts.mjs"
+          ],
+          "patch": {
+            "path": "results-traces/receipt-year-validation.rep2.jev_routed_child.attempt1.patch",
+            "sha256": "53a7b6b57475d7d02e859a677a159704cb076e104f764987d280f11d4e1d798b",
+            "bytes": 450
+          },
+          "estimated_codex_api_usd": 0.0450468,
+          "estimated_jev_api_usd": 0.000024486,
+          "estimated_total_api_usd": 0.045071285999999995,
+          "trace": "results-traces/receipt-year-validation.rep2.jev_routed_child.attempt1.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "hidden behavior checks passed"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.045071285999999995,
+      "end_to_end_ms": 49823
+    },
+    {
+      "task": "receipt-year-validation",
+      "type": "code_edit",
+      "repetition": 2,
+      "arm": "single_sol_xhigh",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 27534,
+          "end_to_end_ms": 27534,
+          "answer": "{\"done\":true}",
+          "grade": {
+            "correct": true,
+            "detail": "hidden behavior checks passed"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0dedc-efd8-75b0-ac85-9fa1556b2f8b",
+          "root_usage": {
+            "input_tokens": 52858,
+            "cached_input_tokens": 49536,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 544,
+            "reasoning_output_tokens": 88
+          },
+          "sessions": [
+            {
+              "id": "01a0dedc-efd8-75b0-ac85-9fa1556b2f8b",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 52858,
+                "cached_input_tokens": 49536,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 544,
+                "reasoning_output_tokens": 88,
+                "total_tokens": 53402
+              }
+            }
+          ],
+          "decisions": [],
+          "changed_paths": [
+            "src/receipts.mjs"
+          ],
+          "patch": {
+            "path": "results-traces/receipt-year-validation.rep2.single_sol_xhigh.attempt1.patch",
+            "sha256": "b7653531531328a7cc4c0b8ad565335c4b1734369bc2871a65269a3c4fa58531",
+            "bytes": 299
+          },
+          "estimated_codex_api_usd": 0.021991200000000002,
+          "estimated_jev_api_usd": 0,
+          "estimated_total_api_usd": 0.021991200000000002,
+          "trace": "results-traces/receipt-year-validation.rep2.single_sol_xhigh.attempt1.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "hidden behavior checks passed"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.021991200000000002,
+      "end_to_end_ms": 27534
+    },
+    {
+      "task": "receipt-year-validation",
+      "type": "code_edit",
+      "repetition": 2,
+      "arm": "fixed_sol_high_child",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 44663,
+          "end_to_end_ms": 44663,
+          "answer": "{\"done\":true}",
+          "grade": {
+            "correct": true,
+            "detail": "hidden behavior checks passed"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0dedd-58d9-7840-a458-3e12052c9b03",
+          "root_usage": {
+            "input_tokens": 43881,
+            "cached_input_tokens": 37888,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 239,
+            "reasoning_output_tokens": 72
+          },
+          "sessions": [
+            {
+              "id": "01a0dedd-58d9-7840-a458-3e12052c9b03",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 43881,
+                "cached_input_tokens": 37888,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 239,
+                "reasoning_output_tokens": 72,
+                "total_tokens": 44120
+              }
+            },
+            {
+              "id": "01a0dedd-972b-7461-b4f6-2dad249e44ab",
+              "parent_id": "01a0dedd-58d9-7840-a458-3e12052c9b03",
+              "model": "gpt-6-sol",
+              "reasoning_effort": "high",
+              "usage": {
+                "input_tokens": 59356,
+                "cached_input_tokens": 50432,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 704,
+                "reasoning_output_tokens": 105,
+                "total_tokens": 60060
+              }
+            }
+          ],
+          "decisions": [],
+          "changed_paths": [
+            "src/receipts.mjs"
+          ],
+          "patch": {
+            "path": "results-traces/receipt-year-validation.rep2.fixed_sol_high_child.attempt1.patch",
+            "sha256": "b7653531531328a7cc4c0b8ad565335c4b1734369bc2871a65269a3c4fa58531",
+            "bytes": 299
+          },
+          "estimated_codex_api_usd": 0.056928000000000006,
+          "estimated_jev_api_usd": 0,
+          "estimated_total_api_usd": 0.056928000000000006,
+          "trace": "results-traces/receipt-year-validation.rep2.fixed_sol_high_child.attempt1.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "hidden behavior checks passed"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.056928000000000006,
+      "end_to_end_ms": 44663
+    },
+    {
+      "task": "sku-symbol",
+      "type": "source_lookup",
+      "repetition": 3,
+      "arm": "optional_delegation",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 19143,
+          "end_to_end_ms": 19143,
+          "answer": "{\"answer\":{\"location\":\"src/ledger.mjs:1\"},\"citations\":{\"location\":[\"src/ledger.mjs:1\"]}}",
+          "grade": {
+            "correct": true,
+            "detail": "sku-symbol: PASS (correct)"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0dede-07cc-7a10-a22e-e51006a21f2c",
+          "root_usage": {
+            "input_tokens": 45326,
+            "cached_input_tokens": 38528,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 291,
+            "reasoning_output_tokens": 79
+          },
+          "sessions": [
+            {
+              "id": "01a0dede-07cc-7a10-a22e-e51006a21f2c",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 45326,
+                "cached_input_tokens": 38528,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 291,
+                "reasoning_output_tokens": 79,
+                "total_tokens": 45617
+              }
+            }
+          ],
+          "decisions": [],
+          "changed_paths": [],
+          "estimated_codex_api_usd": 0.0242116,
+          "estimated_jev_api_usd": 0,
+          "estimated_total_api_usd": 0.0242116,
+          "trace": "results-traces/sku-symbol.rep3.optional_delegation.attempt1.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "sku-symbol: PASS (correct)"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.0242116,
+      "end_to_end_ms": 19143
+    },
+    {
+      "task": "sku-symbol",
+      "type": "source_lookup",
+      "repetition": 3,
+      "arm": "single_sol_xhigh",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 22865,
+          "end_to_end_ms": 22865,
+          "answer": "{\"answer\":{\"location\":\"src/ledger.mjs:1\"},\"citations\":{\"location\":[\"src/ledger.mjs:1\"]}}",
+          "grade": {
+            "correct": true,
+            "detail": "sku-symbol: PASS (correct)"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0dede-6390-7172-bc41-a3e23930d484",
+          "root_usage": {
+            "input_tokens": 25970,
+            "cached_input_tokens": 21504,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 211,
+            "reasoning_output_tokens": 71
+          },
+          "sessions": [
+            {
+              "id": "01a0dede-6390-7172-bc41-a3e23930d484",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 25970,
+                "cached_input_tokens": 21504,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 211,
+                "reasoning_output_tokens": 71,
+                "total_tokens": 26181
+              }
+            }
+          ],
+          "decisions": [],
+          "changed_paths": [],
+          "estimated_codex_api_usd": 0.015342799999999998,
+          "estimated_jev_api_usd": 0,
+          "estimated_total_api_usd": 0.015342799999999998,
+          "trace": "results-traces/sku-symbol.rep3.single_sol_xhigh.attempt1.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "sku-symbol: PASS (correct)"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.015342799999999998,
+      "end_to_end_ms": 22865
+    },
+    {
+      "task": "sku-symbol",
+      "type": "source_lookup",
+      "repetition": 3,
+      "arm": "jev_routed_child",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 26448,
+          "end_to_end_ms": 26807,
+          "answer": "{\"answer\":{\"location\":\"src/ledger.mjs:1\"},\"citations\":{\"location\":[\"src/ledger.mjs:1\"]}}",
+          "grade": {
+            "correct": true,
+            "detail": "sku-symbol: PASS (correct)"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0dede-af84-7153-b82a-210bca9710ee",
+          "root_usage": {
+            "input_tokens": 44123,
+            "cached_input_tokens": 37888,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 338,
+            "reasoning_output_tokens": 114
+          },
+          "sessions": [
+            {
+              "id": "01a0dede-af84-7153-b82a-210bca9710ee",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 44123,
+                "cached_input_tokens": 37888,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 338,
+                "reasoning_output_tokens": 114,
+                "total_tokens": 44461
+              }
+            },
+            {
+              "id": "01a0dede-ddfe-7e13-962a-17bce7671b1e",
+              "parent_id": "01a0dede-af84-7153-b82a-210bca9710ee",
+              "model": "gpt-6-luna",
+              "reasoning_effort": "low",
+              "usage": {
+                "input_tokens": 53755,
+                "cached_input_tokens": 41216,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 203,
+                "reasoning_output_tokens": 0,
+                "total_tokens": 53958
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "route": {
+                "model": "gpt-6-luna",
+                "reasoning_effort": "low",
+                "reason": "simple"
+              },
+              "usage": {
+                "input_tokens": 574,
+                "output_tokens": 64
+              },
+              "wall_ms": 359
+            }
+          ],
+          "changed_paths": [],
+          "estimated_codex_api_usd": 0.02519516,
+          "estimated_jev_api_usd": 0.000024108,
+          "estimated_total_api_usd": 0.025219268,
+          "trace": "results-traces/sku-symbol.rep3.jev_routed_child.attempt1.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "sku-symbol: PASS (correct)"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.025219268,
+      "end_to_end_ms": 26807
+    },
+    {
+      "task": "sku-symbol",
+      "type": "source_lookup",
+      "repetition": 3,
+      "arm": "fixed_sol_high_child",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 29239,
+          "end_to_end_ms": 29239,
+          "answer": "{\"answer\":{\"location\":\"src/ledger.mjs:1\"},\"citations\":{\"location\":[\"src/ledger.mjs:1\"]}}",
+          "grade": {
+            "correct": true,
+            "detail": "sku-symbol: PASS (correct)"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0dedf-186e-75d2-8ea4-0ffa1dc516e2",
+          "root_usage": {
+            "input_tokens": 44062,
+            "cached_input_tokens": 40704,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 300,
+            "reasoning_output_tokens": 70
+          },
+          "sessions": [
+            {
+              "id": "01a0dedf-186e-75d2-8ea4-0ffa1dc516e2",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 44062,
+                "cached_input_tokens": 40704,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 300,
+                "reasoning_output_tokens": 70,
+                "total_tokens": 44362
+              }
+            },
+            {
+              "id": "01a0dedf-4597-7713-85ae-6dce40032b0d",
+              "parent_id": "01a0dedf-186e-75d2-8ea4-0ffa1dc516e2",
+              "model": "gpt-6-sol",
+              "reasoning_effort": "high",
+              "usage": {
+                "input_tokens": 43262,
+                "cached_input_tokens": 37248,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 265,
+                "reasoning_output_tokens": 55,
+                "total_tokens": 43527
+              }
+            }
+          ],
+          "decisions": [],
+          "changed_paths": [],
+          "estimated_codex_api_usd": 0.039984399999999996,
+          "estimated_jev_api_usd": 0,
+          "estimated_total_api_usd": 0.039984399999999996,
+          "trace": "results-traces/sku-symbol.rep3.fixed_sol_high_child.attempt1.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "sku-symbol: PASS (correct)"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.039984399999999996,
+      "end_to_end_ms": 29239
+    },
+    {
+      "task": "checkout-log",
+      "type": "log_lookup",
+      "repetition": 3,
+      "arm": "fixed_sol_high_child",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 29226,
+          "end_to_end_ms": 29226,
+          "answer": "{\"answer\":{\"decline_code\":\"DO_NOT_HONOR\",\"final_status\":\"unpaid\"},\"citations\":{\"decline_code\":[\"logs/checkout.log:6\"],\"final_status\":[\"logs/checkout.log:7\"]}}",
+          "grade": {
+            "correct": true,
+            "detail": "checkout-log: PASS (correct)"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0dedf-8a34-7343-9522-0b94f2a17015",
+          "root_usage": {
+            "input_tokens": 44063,
+            "cached_input_tokens": 37888,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 296,
+            "reasoning_output_tokens": 54
+          },
+          "sessions": [
+            {
+              "id": "01a0dedf-8a34-7343-9522-0b94f2a17015",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 44063,
+                "cached_input_tokens": 37888,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 296,
+                "reasoning_output_tokens": 54,
+                "total_tokens": 44359
+              }
+            },
+            {
+              "id": "01a0dedf-b8de-7cb0-80cb-ef542fd08fdb",
+              "parent_id": "01a0dedf-8a34-7343-9522-0b94f2a17015",
+              "model": "gpt-6-sol",
+              "reasoning_effort": "high",
+              "usage": {
+                "input_tokens": 28709,
+                "cached_input_tokens": 25600,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 197,
+                "reasoning_output_tokens": 22,
+                "total_tokens": 28906
+              }
+            }
+          ],
+          "decisions": [],
+          "changed_paths": [],
+          "estimated_codex_api_usd": 0.036195599999999994,
+          "estimated_jev_api_usd": 0,
+          "estimated_total_api_usd": 0.036195599999999994,
+          "trace": "results-traces/checkout-log.rep3.fixed_sol_high_child.attempt1.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "checkout-log: PASS (correct)"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.036195599999999994,
+      "end_to_end_ms": 29226
+    },
+    {
+      "task": "checkout-log",
+      "type": "log_lookup",
+      "repetition": 3,
+      "arm": "optional_delegation",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 24440,
+          "end_to_end_ms": 24440,
+          "answer": "{\"answer\":{\"decline_code\":\"DO_NOT_HONOR\",\"final_status\":\"unpaid\"},\"citations\":{\"decline_code\":[\"logs/checkout.log:6\"],\"final_status\":[\"logs/checkout.log:7\"]}}",
+          "grade": {
+            "correct": true,
+            "detail": "checkout-log: PASS (correct)"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0dedf-fd7e-78e0-b3bd-0e013208df2f",
+          "root_usage": {
+            "input_tokens": 30175,
+            "cached_input_tokens": 26496,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 313,
+            "reasoning_output_tokens": 149
+          },
+          "sessions": [
+            {
+              "id": "01a0dedf-fd7e-78e0-b3bd-0e013208df2f",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 30175,
+                "cached_input_tokens": 26496,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 313,
+                "reasoning_output_tokens": 149,
+                "total_tokens": 30488
+              }
+            }
+          ],
+          "decisions": [],
+          "changed_paths": [],
+          "estimated_codex_api_usd": 0.0157872,
+          "estimated_jev_api_usd": 0,
+          "estimated_total_api_usd": 0.0157872,
+          "trace": "results-traces/checkout-log.rep3.optional_delegation.attempt1.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "checkout-log: PASS (correct)"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.0157872,
+      "end_to_end_ms": 24440
+    },
+    {
+      "task": "checkout-log",
+      "type": "log_lookup",
+      "repetition": 3,
+      "arm": "single_sol_xhigh",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 27691,
+          "end_to_end_ms": 27691,
+          "answer": "{\"answer\":{\"decline_code\":\"DO_NOT_HONOR\",\"final_status\":\"unpaid\"},\"citations\":{\"decline_code\":[\"logs/checkout.log:6\"],\"final_status\":[\"logs/checkout.log:7\"]}}",
+          "grade": {
+            "correct": true,
+            "detail": "checkout-log: PASS (correct)"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0dee0-5d9b-75f2-8d11-f73ca535b556",
+          "root_usage": {
+            "input_tokens": 26163,
+            "cached_input_tokens": 23424,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 245,
+            "reasoning_output_tokens": 78
+          },
+          "sessions": [
+            {
+              "id": "01a0dee0-5d9b-75f2-8d11-f73ca535b556",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 26163,
+                "cached_input_tokens": 23424,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 245,
+                "reasoning_output_tokens": 78,
+                "total_tokens": 26408
+              }
+            }
+          ],
+          "decisions": [],
+          "changed_paths": [],
+          "estimated_codex_api_usd": 0.012612799999999999,
+          "estimated_jev_api_usd": 0,
+          "estimated_total_api_usd": 0.012612799999999999,
+          "trace": "results-traces/checkout-log.rep3.single_sol_xhigh.attempt1.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "checkout-log: PASS (correct)"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.012612799999999999,
+      "end_to_end_ms": 27691
+    },
+    {
+      "task": "checkout-log",
+      "type": "log_lookup",
+      "repetition": 3,
+      "arm": "jev_routed_child",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 36195,
+          "end_to_end_ms": 36635,
+          "answer": "{\"answer\":{\"decline_code\":\"DO_NOT_HONOR\",\"final_status\":\"unpaid\"},\"citations\":{\"decline_code\":[\"logs/checkout.log:6\"],\"final_status\":[\"logs/checkout.log:7\"]}}",
+          "grade": {
+            "correct": true,
+            "detail": "checkout-log: PASS (correct)"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0dee0-caf1-7ab2-96ca-cd46cce7effe",
+          "root_usage": {
+            "input_tokens": 44084,
+            "cached_input_tokens": 37888,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 331,
+            "reasoning_output_tokens": 99
+          },
+          "sessions": [
+            {
+              "id": "01a0dee0-caf1-7ab2-96ca-cd46cce7effe",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 44084,
+                "cached_input_tokens": 37888,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 331,
+                "reasoning_output_tokens": 99,
+                "total_tokens": 44415
+              }
+            },
+            {
+              "id": "01a0dee1-036f-7210-bf50-ca44144c9988",
+              "parent_id": "01a0dee0-caf1-7ab2-96ca-cd46cce7effe",
+              "model": "gpt-6-luna",
+              "reasoning_effort": "low",
+              "usage": {
+                "input_tokens": 36116,
+                "cached_input_tokens": 24064,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 99,
+                "reasoning_output_tokens": 0,
+                "total_tokens": 36215
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "route": {
+                "model": "gpt-6-luna",
+                "reasoning_effort": "low",
+                "reason": "simple"
+              },
+              "usage": {
+                "input_tokens": 578,
+                "output_tokens": 64
+              },
+              "wall_ms": 440
+            }
+          ],
+          "changed_paths": [],
+          "estimated_codex_api_usd": 0.02477494,
+          "estimated_jev_api_usd": 0.000024276,
+          "estimated_total_api_usd": 0.024799216,
+          "trace": "results-traces/checkout-log.rep3.jev_routed_child.attempt1.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "checkout-log: PASS (correct)"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.024799216,
+      "end_to_end_ms": 36635
+    },
+    {
+      "task": "shipping-rules",
+      "type": "bounded_extraction",
+      "repetition": 3,
+      "arm": "fixed_sol_high_child",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 30858,
+          "end_to_end_ms": 30858,
+          "answer": "{\"answer\":{\"free_threshold_cents\":5000,\"domestic_cents\":700,\"international_cents\":1800},\"citations\":{\"free_threshold_cents\":[\"config/policy.json:3\"],\"domestic_cents\":[\"config/policy.json:4\"],\"international_cents\":[\"config/policy.json:5\"]}}",
+          "grade": {
+            "correct": true,
+            "detail": "shipping-rules: PASS (correct)"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0dee1-5ca1-7540-a6b9-4ecef51e3343",
+          "root_usage": {
+            "input_tokens": 44301,
+            "cached_input_tokens": 37888,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 427,
+            "reasoning_output_tokens": 162
+          },
+          "sessions": [
+            {
+              "id": "01a0dee1-5ca1-7540-a6b9-4ecef51e3343",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 44301,
+                "cached_input_tokens": 37888,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 427,
+                "reasoning_output_tokens": 162,
+                "total_tokens": 44728
+              }
+            },
+            {
+              "id": "01a0dee1-8e28-7ea1-ae64-66ad65f89bf7",
+              "parent_id": "01a0dee1-5ca1-7540-a6b9-4ecef51e3343",
+              "model": "gpt-6-sol",
+              "reasoning_effort": "high",
+              "usage": {
+                "input_tokens": 28750,
+                "cached_input_tokens": 25600,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 247,
+                "reasoning_output_tokens": 98,
+                "total_tokens": 28997
+              }
+            }
+          ],
+          "decisions": [],
+          "changed_paths": [],
+          "estimated_codex_api_usd": 0.038563599999999996,
+          "estimated_jev_api_usd": 0,
+          "estimated_total_api_usd": 0.038563599999999996,
+          "trace": "results-traces/shipping-rules.rep3.fixed_sol_high_child.attempt1.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "shipping-rules: PASS (correct)"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.038563599999999996,
+      "end_to_end_ms": 30858
+    },
+    {
+      "task": "shipping-rules",
+      "type": "bounded_extraction",
+      "repetition": 3,
+      "arm": "optional_delegation",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 19361,
+          "end_to_end_ms": 19361,
+          "answer": "{\"answer\":{\"free_threshold_cents\":5000,\"domestic_cents\":700,\"international_cents\":1800},\"citations\":{\"free_threshold_cents\":[\"config/policy.json:3\"],\"domestic_cents\":[\"config/policy.json:4\"],\"international_cents\":[\"config/policy.json:5\"]}}",
+          "grade": {
+            "correct": true,
+            "detail": "shipping-rules: PASS (correct)"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0dee1-d1b4-7652-b5c6-9c414cbac034",
+          "root_usage": {
+            "input_tokens": 30056,
+            "cached_input_tokens": 26496,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 216,
+            "reasoning_output_tokens": 59
+          },
+          "sessions": [
+            {
+              "id": "01a0dee1-d1b4-7652-b5c6-9c414cbac034",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 30056,
+                "cached_input_tokens": 26496,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 216,
+                "reasoning_output_tokens": 59,
+                "total_tokens": 30272
+              }
+            }
+          ],
+          "decisions": [],
+          "changed_paths": [],
+          "estimated_codex_api_usd": 0.0145792,
+          "estimated_jev_api_usd": 0,
+          "estimated_total_api_usd": 0.0145792,
+          "trace": "results-traces/shipping-rules.rep3.optional_delegation.attempt1.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "shipping-rules: PASS (correct)"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.0145792,
+      "end_to_end_ms": 19361
+    },
+    {
+      "task": "shipping-rules",
+      "type": "bounded_extraction",
+      "repetition": 3,
+      "arm": "jev_routed_child",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 26885,
+          "end_to_end_ms": 27236,
+          "answer": "{\"answer\":{\"free_threshold_cents\":5000,\"domestic_cents\":700,\"international_cents\":1800},\"citations\":{\"free_threshold_cents\":[\"config/policy.json:3\"],\"domestic_cents\":[\"config/policy.json:4\"],\"international_cents\":[\"config/policy.json:5\"]}}",
+          "grade": {
+            "correct": true,
+            "detail": "shipping-rules: PASS (correct)"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0dee2-1ddb-73b1-bb89-8f5bfa922d8e",
+          "root_usage": {
+            "input_tokens": 44045,
+            "cached_input_tokens": 40704,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 305,
+            "reasoning_output_tokens": 49
+          },
+          "sessions": [
+            {
+              "id": "01a0dee2-1ddb-73b1-bb89-8f5bfa922d8e",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 44045,
+                "cached_input_tokens": 40704,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 305,
+                "reasoning_output_tokens": 49,
+                "total_tokens": 44350
+              }
+            },
+            {
+              "id": "01a0dee2-4406-73a0-9d86-2e781e51fdf3",
+              "parent_id": "01a0dee2-1ddb-73b1-bb89-8f5bfa922d8e",
+              "model": "gpt-6-luna",
+              "reasoning_effort": "medium",
+              "usage": {
+                "input_tokens": 35956,
+                "cached_input_tokens": 28160,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 151,
+                "reasoning_output_tokens": 38,
+                "total_tokens": 36107
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "route": {
+                "model": "gpt-6-luna",
+                "reasoning_effort": "medium",
+                "reason": "bounded"
+              },
+              "usage": {
+                "input_tokens": 569,
+                "output_tokens": 64
+              },
+              "wall_ms": 351
+            }
+          ],
+          "changed_paths": [],
+          "estimated_codex_api_usd": 0.0190095,
+          "estimated_jev_api_usd": 0.000023898000000000004,
+          "estimated_total_api_usd": 0.019033398,
+          "trace": "results-traces/shipping-rules.rep3.jev_routed_child.attempt1.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "shipping-rules: PASS (correct)"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.019033398,
+      "end_to_end_ms": 27236
+    },
+    {
+      "task": "shipping-rules",
+      "type": "bounded_extraction",
+      "repetition": 3,
+      "arm": "single_sol_xhigh",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 15087,
+          "end_to_end_ms": 15087,
+          "answer": "{\"answer\":{\"free_threshold_cents\":5000,\"domestic_cents\":700,\"international_cents\":1800},\"citations\":{\"free_threshold_cents\":[\"config/policy.json:3\"],\"domestic_cents\":[\"config/policy.json:4\"],\"international_cents\":[\"config/policy.json:5\"]}}",
+          "grade": {
+            "correct": true,
+            "detail": "shipping-rules: PASS (correct)"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0dee2-8676-71e2-80e6-9c9502ac4f70",
+          "root_usage": {
+            "input_tokens": 26034,
+            "cached_input_tokens": 21504,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 264,
+            "reasoning_output_tokens": 85
+          },
+          "sessions": [
+            {
+              "id": "01a0dee2-8676-71e2-80e6-9c9502ac4f70",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 26034,
+                "cached_input_tokens": 21504,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 264,
+                "reasoning_output_tokens": 85,
+                "total_tokens": 26298
+              }
+            }
+          ],
+          "decisions": [],
+          "changed_paths": [],
+          "estimated_codex_api_usd": 0.0160008,
+          "estimated_jev_api_usd": 0,
+          "estimated_total_api_usd": 0.0160008,
+          "trace": "results-traces/shipping-rules.rep3.single_sol_xhigh.attempt1.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "shipping-rules: PASS (correct)"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.0160008,
+      "end_to_end_ms": 15087
+    },
+    {
+      "task": "international-claim",
+      "type": "focused_judgment",
+      "repetition": 3,
+      "arm": "optional_delegation",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 17367,
+          "end_to_end_ms": 17367,
+          "answer": "{\"answer\":{\"claim\":false},\"citations\":{\"claim\":[\"src/ledger.mjs:5\",\"src/ledger.mjs:6\",\"src/ledger.mjs:9\",\"src/ledger.mjs:11\"]}}",
+          "grade": {
+            "correct": true,
+            "detail": "international-claim: PASS (correct)"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0dee2-c38d-7883-93b1-47bbe3f0f5da",
+          "root_usage": {
+            "input_tokens": 30292,
+            "cached_input_tokens": 26496,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 275,
+            "reasoning_output_tokens": 114
+          },
+          "sessions": [
+            {
+              "id": "01a0dee2-c38d-7883-93b1-47bbe3f0f5da",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 30292,
+                "cached_input_tokens": 26496,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 275,
+                "reasoning_output_tokens": 114,
+                "total_tokens": 30567
+              }
+            }
+          ],
+          "decisions": [],
+          "changed_paths": [],
+          "estimated_codex_api_usd": 0.0156412,
+          "estimated_jev_api_usd": 0,
+          "estimated_total_api_usd": 0.0156412,
+          "trace": "results-traces/international-claim.rep3.optional_delegation.attempt1.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "international-claim: PASS (correct)"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.0156412,
+      "end_to_end_ms": 17367
+    },
+    {
+      "task": "international-claim",
+      "type": "focused_judgment",
+      "repetition": 3,
+      "arm": "single_sol_xhigh",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 14381,
+          "end_to_end_ms": 14381,
+          "answer": "{\"answer\":{\"claim\":false},\"citations\":{\"claim\":[\"src/ledger.mjs:5\",\"src/ledger.mjs:6\",\"src/ledger.mjs:9\",\"src/ledger.mjs:10\",\"src/ledger.mjs:11\"]}}",
+          "grade": {
+            "correct": true,
+            "detail": "international-claim: PASS (correct)"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0dee3-06a1-7b23-a809-f5f37ca60cfa",
+          "root_usage": {
+            "input_tokens": 26134,
+            "cached_input_tokens": 23424,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 225,
+            "reasoning_output_tokens": 79
+          },
+          "sessions": [
+            {
+              "id": "01a0dee3-06a1-7b23-a809-f5f37ca60cfa",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 26134,
+                "cached_input_tokens": 23424,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 225,
+                "reasoning_output_tokens": 79,
+                "total_tokens": 26359
+              }
+            }
+          ],
+          "decisions": [],
+          "changed_paths": [],
+          "estimated_codex_api_usd": 0.012354799999999999,
+          "estimated_jev_api_usd": 0,
+          "estimated_total_api_usd": 0.012354799999999999,
+          "trace": "results-traces/international-claim.rep3.single_sol_xhigh.attempt1.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "international-claim: PASS (correct)"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.012354799999999999,
+      "end_to_end_ms": 14381
+    },
+    {
+      "task": "international-claim",
+      "type": "focused_judgment",
+      "repetition": 3,
+      "arm": "jev_routed_child",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 26714,
+          "end_to_end_ms": 27053,
+          "answer": "{\"answer\":{\"claim\":false},\"citations\":{\"claim\":[\"src/ledger.mjs:6\",\"src/ledger.mjs:10\",\"src/ledger.mjs:11\"]}}",
+          "grade": {
+            "correct": true,
+            "detail": "international-claim: PASS (correct)"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0dee3-4298-7a50-b612-bd66987fb0ba",
+          "root_usage": {
+            "input_tokens": 44085,
+            "cached_input_tokens": 40704,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 315,
+            "reasoning_output_tokens": 105
+          },
+          "sessions": [
+            {
+              "id": "01a0dee3-4298-7a50-b612-bd66987fb0ba",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 44085,
+                "cached_input_tokens": 40704,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 315,
+                "reasoning_output_tokens": 105,
+                "total_tokens": 44400
+              }
+            },
+            {
+              "id": "01a0dee3-6bd4-71b3-80bd-6a77357d6eff",
+              "parent_id": "01a0dee3-4298-7a50-b612-bd66987fb0ba",
+              "model": "gpt-6-sol",
+              "reasoning_effort": "high",
+              "usage": {
+                "input_tokens": 29122,
+                "cached_input_tokens": 25728,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 209,
+                "reasoning_output_tokens": 80,
+                "total_tokens": 29331
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "route": {
+                "model": "gpt-6-sol",
+                "reasoning_effort": "high",
+                "reason": "default"
+              },
+              "usage": {
+                "input_tokens": 574,
+                "output_tokens": 64
+              },
+              "wall_ms": 339
+            }
+          ],
+          "changed_paths": [],
+          "estimated_codex_api_usd": 0.032076400000000005,
+          "estimated_jev_api_usd": 0.000024108,
+          "estimated_total_api_usd": 0.03210050800000001,
+          "trace": "results-traces/international-claim.rep3.jev_routed_child.attempt1.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "international-claim: PASS (correct)"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.03210050800000001,
+      "end_to_end_ms": 27053
+    },
+    {
+      "task": "international-claim",
+      "type": "focused_judgment",
+      "repetition": 3,
+      "arm": "fixed_sol_high_child",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 31501,
+          "end_to_end_ms": 31501,
+          "answer": "{\"answer\":{\"claim\":false},\"citations\":{\"claim\":[\"src/ledger.mjs:6\",\"src/ledger.mjs:10\",\"src/ledger.mjs:11\"]}}",
+          "grade": {
+            "correct": true,
+            "detail": "international-claim: PASS (correct)"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0dee3-b3bf-7e81-bbf3-e7aa740caf52",
+          "root_usage": {
+            "input_tokens": 44070,
+            "cached_input_tokens": 40704,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 281,
+            "reasoning_output_tokens": 51
+          },
+          "sessions": [
+            {
+              "id": "01a0dee3-b3bf-7e81-bbf3-e7aa740caf52",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 44070,
+                "cached_input_tokens": 40704,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 281,
+                "reasoning_output_tokens": 51,
+                "total_tokens": 44351
+              }
+            },
+            {
+              "id": "01a0dee3-defc-7140-806e-7585da8606c9",
+              "parent_id": "01a0dee3-b3bf-7e81-bbf3-e7aa740caf52",
+              "model": "gpt-6-sol",
+              "reasoning_effort": "high",
+              "usage": {
+                "input_tokens": 28838,
+                "cached_input_tokens": 25600,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 203,
+                "reasoning_output_tokens": 43,
+                "total_tokens": 29041
+              }
+            }
+          ],
+          "decisions": [],
+          "changed_paths": [],
+          "estimated_codex_api_usd": 0.0313088,
+          "estimated_jev_api_usd": 0,
+          "estimated_total_api_usd": 0.0313088,
+          "trace": "results-traces/international-claim.rep3.fixed_sol_high_child.attempt1.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "international-claim: PASS (correct)"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.0313088,
+      "end_to_end_ms": 31501
+    },
+    {
+      "task": "incident-source-research",
+      "type": "source_research",
+      "repetition": 3,
+      "arm": "optional_delegation",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 26107,
+          "end_to_end_ms": 26107,
+          "answer": "{\n  \"answer\": {\n    \"q42_completed\": true,\n    \"q43_retry\": false,\n    \"q42_receipt\": \"RCPT-2026-00421\"\n  },\n  \"citations\": {\n    \"q42_completed\": [\"logs/checkout.log:3\", \"logs/checkout.log:4\", \"docs/operations.md:5\"],\n    \"q43_retry\": [\"logs/checkout.log:6\", \"logs/checkout.log:7\", \"docs/operations.md:4\"],\n    \"q42_receipt\": [\"logs/checkout.log:4\", \"docs/operations.md:6\"]\n  }\n}",
+          "grade": {
+            "correct": true,
+            "detail": "incident-source-research: PASS (correct)"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0dee4-2523-75f3-95f6-638327eac7fc",
+          "root_usage": {
+            "input_tokens": 30654,
+            "cached_input_tokens": 26496,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 438,
+            "reasoning_output_tokens": 109
+          },
+          "sessions": [
+            {
+              "id": "01a0dee4-2523-75f3-95f6-638327eac7fc",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 30654,
+                "cached_input_tokens": 26496,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 438,
+                "reasoning_output_tokens": 109,
+                "total_tokens": 31092
+              }
+            }
+          ],
+          "decisions": [],
+          "changed_paths": [],
+          "estimated_codex_api_usd": 0.0179952,
+          "estimated_jev_api_usd": 0,
+          "estimated_total_api_usd": 0.0179952,
+          "trace": "results-traces/incident-source-research.rep3.optional_delegation.attempt1.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "incident-source-research: PASS (correct)"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.0179952,
+      "end_to_end_ms": 26107
+    },
+    {
+      "task": "incident-source-research",
+      "type": "source_research",
+      "repetition": 3,
+      "arm": "jev_routed_child",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 37662,
+          "end_to_end_ms": 38029,
+          "answer": "{\"answer\":{\"q42_completed\":true,\"q43_retry\":false,\"q42_receipt\":\"RCPT-2026-00421\"},\"citations\":{\"q42_completed\":[\"logs/checkout.log:3\",\"logs/checkout.log:4\",\"docs/operations.md:5\"],\"q43_retry\":[\"logs/checkout.log:6\",\"logs/checkout.log:7\",\"docs/operations.md:4\"],\"q42_receipt\":[\"logs/checkout.log:4\",\"docs/operations.md:6\"]}}",
+          "grade": {
+            "correct": true,
+            "detail": "incident-source-research: PASS (correct)"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0dee4-8d93-72c0-afa1-a1f4026bc875",
+          "root_usage": {
+            "input_tokens": 44600,
+            "cached_input_tokens": 38272,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 558,
+            "reasoning_output_tokens": 177
+          },
+          "sessions": [
+            {
+              "id": "01a0dee4-8d93-72c0-afa1-a1f4026bc875",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 44600,
+                "cached_input_tokens": 38272,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 558,
+                "reasoning_output_tokens": 177,
+                "total_tokens": 45158
+              }
+            },
+            {
+              "id": "01a0dee4-c930-71b3-9af4-b84720f37ccb",
+              "parent_id": "01a0dee4-8d93-72c0-afa1-a1f4026bc875",
+              "model": "gpt-6-sol",
+              "reasoning_effort": "high",
+              "usage": {
+                "input_tokens": 29080,
+                "cached_input_tokens": 25600,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 301,
+                "reasoning_output_tokens": 104,
+                "total_tokens": 29381
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "route": {
+                "model": "gpt-6-sol",
+                "reasoning_effort": "high",
+                "reason": "default"
+              },
+              "usage": {
+                "input_tokens": 575,
+                "output_tokens": 64
+              },
+              "wall_ms": 367
+            }
+          ],
+          "changed_paths": [],
+          "estimated_codex_api_usd": 0.0409804,
+          "estimated_jev_api_usd": 0.00002415,
+          "estimated_total_api_usd": 0.04100455,
+          "trace": "results-traces/incident-source-research.rep3.jev_routed_child.attempt1.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "incident-source-research: PASS (correct)"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.04100455,
+      "end_to_end_ms": 38029
+    },
+    {
+      "task": "incident-source-research",
+      "type": "source_research",
+      "repetition": 3,
+      "arm": "fixed_sol_high_child",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 35884,
+          "end_to_end_ms": 35884,
+          "answer": "{\"answer\":{\"q42_completed\":true,\"q43_retry\":false,\"q42_receipt\":\"RCPT-2026-00421\"},\"citations\":{\"q42_completed\":[\"logs/checkout.log:3\",\"logs/checkout.log:4\",\"docs/operations.md:5\"],\"q43_retry\":[\"logs/checkout.log:6\",\"logs/checkout.log:7\",\"docs/operations.md:4\"],\"q42_receipt\":[\"logs/checkout.log:4\",\"docs/operations.md:6\"]}}",
+          "grade": {
+            "correct": true,
+            "detail": "incident-source-research: PASS (correct)"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0dee5-231a-74c2-9bc9-bbdcf0c1dded",
+          "root_usage": {
+            "input_tokens": 44260,
+            "cached_input_tokens": 37888,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 387,
+            "reasoning_output_tokens": 73
+          },
+          "sessions": [
+            {
+              "id": "01a0dee5-231a-74c2-9bc9-bbdcf0c1dded",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 44260,
+                "cached_input_tokens": 37888,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 387,
+                "reasoning_output_tokens": 73,
+                "total_tokens": 44647
+              }
+            },
+            {
+              "id": "01a0dee5-5649-7663-b886-9feeadfefe0d",
+              "parent_id": "01a0dee5-231a-74c2-9bc9-bbdcf0c1dded",
+              "model": "gpt-6-sol",
+              "reasoning_effort": "high",
+              "usage": {
+                "input_tokens": 29166,
+                "cached_input_tokens": 11520,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 380,
+                "reasoning_output_tokens": 107,
+                "total_tokens": 29546
+              }
+            }
+          ],
+          "decisions": [],
+          "changed_paths": [],
+          "estimated_codex_api_usd": 0.0655876,
+          "estimated_jev_api_usd": 0,
+          "estimated_total_api_usd": 0.0655876,
+          "trace": "results-traces/incident-source-research.rep3.fixed_sol_high_child.attempt1.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "incident-source-research: PASS (correct)"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.0655876,
+      "end_to_end_ms": 35884
+    },
+    {
+      "task": "incident-source-research",
+      "type": "source_research",
+      "repetition": 3,
+      "arm": "single_sol_xhigh",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 25305,
+          "end_to_end_ms": 25305,
+          "answer": "{\n  \"answer\": {\n    \"q42_completed\": true,\n    \"q43_retry\": false,\n    \"q42_receipt\": \"RCPT-2026-00421\"\n  },\n  \"citations\": {\n    \"q42_completed\": [\n      \"logs/checkout.log:3\",\n      \"logs/checkout.log:4\",\n      \"docs/operations.md:5\"\n    ],\n    \"q43_retry\": [\n      \"logs/checkout.log:6\",\n      \"docs/operations.md:4\"\n    ],\n    \"q42_receipt\": [\n      \"logs/checkout.log:4\",\n      \"docs/operations.md:6\"\n    ]\n  }\n}",
+          "grade": {
+            "correct": true,
+            "detail": "incident-source-research: PASS (correct)"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0dee5-aec0-7450-bd72-6cf66a022bad",
+          "root_usage": {
+            "input_tokens": 26580,
+            "cached_input_tokens": 21504,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 476,
+            "reasoning_output_tokens": 122
+          },
+          "sessions": [
+            {
+              "id": "01a0dee5-aec0-7450-bd72-6cf66a022bad",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 26580,
+                "cached_input_tokens": 21504,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 476,
+                "reasoning_output_tokens": 122,
+                "total_tokens": 27056
+              }
+            }
+          ],
+          "decisions": [],
+          "changed_paths": [],
+          "estimated_codex_api_usd": 0.0192128,
+          "estimated_jev_api_usd": 0,
+          "estimated_total_api_usd": 0.0192128,
+          "trace": "results-traces/incident-source-research.rep3.single_sol_xhigh.attempt1.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "incident-source-research: PASS (correct)"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.0192128,
+      "end_to_end_ms": 25305
+    },
+    {
+      "task": "receipt-year-validation",
+      "type": "code_edit",
+      "repetition": 3,
+      "arm": "fixed_sol_high_child",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 53513,
+          "end_to_end_ms": 53513,
+          "answer": "{\"done\":true}",
+          "grade": {
+            "correct": true,
+            "detail": "hidden behavior checks passed"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0dee6-137d-7ef2-9380-3c435bb60848",
+          "root_usage": {
+            "input_tokens": 44061,
+            "cached_input_tokens": 40704,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 317,
+            "reasoning_output_tokens": 128
+          },
+          "sessions": [
+            {
+              "id": "01a0dee6-137d-7ef2-9380-3c435bb60848",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 44061,
+                "cached_input_tokens": 40704,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 317,
+                "reasoning_output_tokens": 128,
+                "total_tokens": 44378
+              }
+            },
+            {
+              "id": "01a0dee6-439d-7e40-968c-8650b14b4520",
+              "parent_id": "01a0dee6-137d-7ef2-9380-3c435bb60848",
+              "model": "gpt-6-sol",
+              "reasoning_effort": "high",
+              "usage": {
+                "input_tokens": 59376,
+                "cached_input_tokens": 51712,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 643,
+                "reasoning_output_tokens": 74,
+                "total_tokens": 60019
+              }
+            }
+          ],
+          "decisions": [],
+          "changed_paths": [
+            "src/receipts.mjs"
+          ],
+          "patch": {
+            "path": "results-traces/receipt-year-validation.rep3.fixed_sol_high_child.attempt1.patch",
+            "sha256": "b7653531531328a7cc4c0b8ad565335c4b1734369bc2871a65269a3c4fa58531",
+            "bytes": 299
+          },
+          "estimated_codex_api_usd": 0.0501252,
+          "estimated_jev_api_usd": 0,
+          "estimated_total_api_usd": 0.0501252,
+          "trace": "results-traces/receipt-year-validation.rep3.fixed_sol_high_child.attempt1.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "hidden behavior checks passed"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.0501252,
+      "end_to_end_ms": 53513
+    },
+    {
+      "task": "receipt-year-validation",
+      "type": "code_edit",
+      "repetition": 3,
+      "arm": "single_sol_xhigh",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 30314,
+          "end_to_end_ms": 30314,
+          "answer": "{\"done\":true}",
+          "grade": {
+            "correct": true,
+            "detail": "hidden behavior checks passed"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0dee6-e13e-7083-b454-aaa6fedb599b",
+          "root_usage": {
+            "input_tokens": 53062,
+            "cached_input_tokens": 47104,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 682,
+            "reasoning_output_tokens": 172
+          },
+          "sessions": [
+            {
+              "id": "01a0dee6-e13e-7083-b454-aaa6fedb599b",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 53062,
+                "cached_input_tokens": 47104,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 682,
+                "reasoning_output_tokens": 172,
+                "total_tokens": 53744
+              }
+            }
+          ],
+          "decisions": [],
+          "changed_paths": [
+            "src/receipts.mjs"
+          ],
+          "patch": {
+            "path": "results-traces/receipt-year-validation.rep3.single_sol_xhigh.attempt1.patch",
+            "sha256": "b7653531531328a7cc4c0b8ad565335c4b1734369bc2871a65269a3c4fa58531",
+            "bytes": 299
+          },
+          "estimated_codex_api_usd": 0.028156800000000003,
+          "estimated_jev_api_usd": 0,
+          "estimated_total_api_usd": 0.028156800000000003,
+          "trace": "results-traces/receipt-year-validation.rep3.single_sol_xhigh.attempt1.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "hidden behavior checks passed"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.028156800000000003,
+      "end_to_end_ms": 30314
+    },
+    {
+      "task": "receipt-year-validation",
+      "type": "code_edit",
+      "repetition": 3,
+      "arm": "jev_routed_child",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 37872,
+          "end_to_end_ms": 38290,
+          "answer": "{\"done\":true}",
+          "grade": {
+            "correct": true,
+            "detail": "hidden behavior checks passed"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0dee7-59b2-7e33-838b-385c868c64d7",
+          "root_usage": {
+            "input_tokens": 43875,
+            "cached_input_tokens": 40576,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 226,
+            "reasoning_output_tokens": 56
+          },
+          "sessions": [
+            {
+              "id": "01a0dee7-59b2-7e33-838b-385c868c64d7",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 43875,
+                "cached_input_tokens": 40576,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 226,
+                "reasoning_output_tokens": 56,
+                "total_tokens": 44101
+              }
+            },
+            {
+              "id": "01a0dee7-847f-7e70-b6b2-e972a7c02fc0",
+              "parent_id": "01a0dee7-59b2-7e33-838b-385c868c64d7",
+              "model": "gpt-6-sol",
+              "reasoning_effort": "high",
+              "usage": {
+                "input_tokens": 59122,
+                "cached_input_tokens": 54912,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 702,
+                "reasoning_output_tokens": 211,
+                "total_tokens": 59824
+              }
+            }
+          ],
+          "decisions": [
+            {
+              "route": {
+                "model": "gpt-6-sol",
+                "reasoning_effort": "high",
+                "reason": "default"
+              },
+              "usage": {
+                "input_tokens": 583,
+                "output_tokens": 64
+              },
+              "wall_ms": 418
+            }
+          ],
+          "changed_paths": [
+            "src/receipts.mjs"
+          ],
+          "patch": {
+            "path": "results-traces/receipt-year-validation.rep3.jev_routed_child.attempt1.patch",
+            "sha256": "b7653531531328a7cc4c0b8ad565335c4b1734369bc2871a65269a3c4fa58531",
+            "bytes": 299
+          },
+          "estimated_codex_api_usd": 0.043395600000000006,
+          "estimated_jev_api_usd": 0.000024486,
+          "estimated_total_api_usd": 0.043420086000000004,
+          "trace": "results-traces/receipt-year-validation.rep3.jev_routed_child.attempt1.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "hidden behavior checks passed"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.043420086000000004,
+      "end_to_end_ms": 38290
+    },
+    {
+      "task": "receipt-year-validation",
+      "type": "code_edit",
+      "repetition": 3,
+      "arm": "optional_delegation",
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 30034,
+          "end_to_end_ms": 30034,
+          "answer": "{\"done\":true}",
+          "grade": {
+            "correct": true,
+            "detail": "hidden behavior checks passed"
+          },
+          "protocol_ok": true,
+          "root_thread_id": "01a0dee7-ef79-7b70-afea-fa94b6382a82",
+          "root_usage": {
+            "input_tokens": 61267,
+            "cached_input_tokens": 56704,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 641,
+            "reasoning_output_tokens": 149
+          },
+          "sessions": [
+            {
+              "id": "01a0dee7-ef79-7b70-afea-fa94b6382a82",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 61267,
+                "cached_input_tokens": 56704,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 641,
+                "reasoning_output_tokens": 149,
+                "total_tokens": 61908
+              }
+            }
+          ],
+          "decisions": [],
+          "changed_paths": [
+            "src/receipts.mjs"
+          ],
+          "patch": {
+            "path": "results-traces/receipt-year-validation.rep3.optional_delegation.attempt1.patch",
+            "sha256": "b7653531531328a7cc4c0b8ad565335c4b1734369bc2871a65269a3c4fa58531",
+            "bytes": 299
+          },
+          "estimated_codex_api_usd": 0.026876800000000003,
+          "estimated_jev_api_usd": 0,
+          "estimated_total_api_usd": 0.026876800000000003,
+          "trace": "results-traces/receipt-year-validation.rep3.optional_delegation.attempt1.jsonl"
+        }
+      ],
+      "grade": {
+        "correct": true,
+        "detail": "hidden behavior checks passed"
+      },
+      "protocol_ok": true,
+      "passed": true,
+      "estimated_total_api_usd": 0.026876800000000003,
+      "end_to_end_ms": 30034
+    }
+  ]
+}
