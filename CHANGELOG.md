@@ -4,6 +4,18 @@ All notable changes are documented here in Keep a Changelog format.
 
 ## Unreleased
 
+### Changed
+
+- Publish the audited 144-run local evidence MCP result and task-level prices. Deterministic selection saved an estimated 29.9% on eligible tasks, driven by noisy logs; local Laya did not improve the eligible-task price over deterministic selection.
+- Document excluded diagnostics, post-run privacy hardening, and the limits of the supplemental implementation digest.
+
+## [0.5.0] - 2026-09-27
+
+### Added
+
+- Preregister 16 holdout and eight separate tuning tasks across pinned Django and pytest commits for local evidence retrieval.
+- Add isolated three-arm Sol-xhigh runner, local MCP selector preflight, hidden edit checks, and independent price and quality auditor.
+
 ## [0.4.0] - 2026-09-26
 
 ### Added

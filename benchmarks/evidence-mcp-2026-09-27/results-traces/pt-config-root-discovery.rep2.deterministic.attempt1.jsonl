@@ -1,0 +1,9 @@
+{"type":"thread.started","thread_id":"01a0e1cb-4ae1-7710-b13c-afe4df5b3eb1"}
+{"type":"turn.started"}
+{"type":"item.completed","item_type":"agent_message","text":"I’ll trace the configuration call and helper definition in the checkout, then return the answer with line citations."}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":0}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":0}
+{"type":"item.completed","item_type":"agent_message","text":"{\"value\":\"determine_setup\",\"citations\":[\"src/_pytest/config/__init__.py:1652\",\"src/_pytest/config/__init__.py:1659\",\"src/_pytest/config/__init__.py:1660\",\"src/_pytest/config/findpaths.py:395\",\"src/_pytest/config/findpaths.py:403\"]}"}
+{"type":"turn.completed","usage":{"input_tokens":57240,"cached_input_tokens":51072,"cache_write_input_tokens":0,"output_tokens":498,"reasoning_output_tokens":169}}

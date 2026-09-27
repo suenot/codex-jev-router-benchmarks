@@ -1,0 +1,10 @@
+{"type":"thread.started","thread_id":"01a0e1db-5b76-7180-be9e-a89cbb8bac7c"}
+{"type":"turn.started"}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":0}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":0}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":0}
+{"type":"item.completed","item_type":"agent_message","text":"{\"value\":\"django/core/paginator.py:191\",\"citations\":[\"django/core/paginator.py:164\",\"django/core/paginator.py:191\",\"django/core/paginator.py:192\"]}"}
+{"type":"turn.completed","usage":{"input_tokens":52764,"cached_input_tokens":36224,"cache_write_input_tokens":0,"output_tokens":291,"reasoning_output_tokens":104}}

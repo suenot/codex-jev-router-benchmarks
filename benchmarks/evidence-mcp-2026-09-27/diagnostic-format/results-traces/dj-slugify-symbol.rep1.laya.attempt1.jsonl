@@ -1,0 +1,8 @@
+{"type":"thread.started","thread_id":"01a0e172-1d0f-7790-8e3d-33406eab19a7"}
+{"type":"turn.started"}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":0}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":0}
+{"type":"item.completed","item_type":"agent_message","text":"{\"value\":\"django/utils/text.py:420\",\"citations\":[\"django/utils/text.py:420\"]}"}
+{"type":"turn.completed","usage":{"input_tokens":39136,"cached_input_tokens":36224,"cache_write_input_tokens":0,"output_tokens":196,"reasoning_output_tokens":80}}

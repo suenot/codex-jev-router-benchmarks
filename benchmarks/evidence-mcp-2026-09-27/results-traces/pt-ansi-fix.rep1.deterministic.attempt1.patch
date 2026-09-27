@@ -1,0 +1,11 @@
+--- a/src/_pytest/logging.py
++++ b/src/_pytest/logging.py
+@@ -55,7 +55,7 @@
+ 
+ 
+ def _remove_ansi_escape_sequences(text: str) -> str:
+-    return text
++    return _ANSI_ESCAPE_SEQ.sub("", text)
+ 
+ 
+ class DatetimeFormatter(logging.Formatter):

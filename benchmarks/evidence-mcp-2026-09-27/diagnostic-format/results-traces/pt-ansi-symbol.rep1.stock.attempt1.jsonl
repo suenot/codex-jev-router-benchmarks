@@ -1,0 +1,9 @@
+{"type":"thread.started","thread_id":"01a0e173-574b-7202-a7d7-e754a1e64f10"}
+{"type":"turn.started"}
+{"type":"item.completed","item_type":"agent_message","text":"I’ll search the pinned checkout and verify the definition’s line number."}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":0}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":0}
+{"type":"item.completed","item_type":"agent_message","text":"{\"value\":\"src/_pytest/logging.py:57\",\"citations\":[\"src/_pytest/logging.py:57\"]}"}
+{"type":"turn.completed","usage":{"input_tokens":39256,"cached_input_tokens":32640,"cache_write_input_tokens":0,"output_tokens":310,"reasoning_output_tokens":74}}

@@ -1,0 +1,16 @@
+{"type":"thread.started","thread_id":"01a0e1a9-550f-7673-aac1-75186bbe00e2"}
+{"type":"turn.started"}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":0}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":0}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":0}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"file_change"}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":0}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":0}
+{"type":"item.completed","item_type":"agent_message","text":"{\"done\":true}"}
+{"type":"turn.completed","usage":{"input_tokens":68739,"cached_input_tokens":64384,"cache_write_input_tokens":0,"output_tokens":722,"reasoning_output_tokens":163}}

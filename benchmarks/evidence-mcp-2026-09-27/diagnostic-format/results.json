@@ -1,0 +1,2748 @@
+{
+  "benchmark": "local evidence MCP against one Sol xhigh root",
+  "generated_at": "2026-09-27T05:58:02.788Z",
+  "identity": {
+    "manifest_sha256": "06a4ff9c19ef02b10242a3e3ee6d370adb0f6dce17f401e0d569ff68cbc20eb3",
+    "runner_sha256": "9c49babedd766863eba64a47030ae30f8095a38bfdc7aa6ec7eaa80ca24b8feb",
+    "library_sha256": "f386812c5c88bdb84b6f260de92be5dc1e798b98194456610f0921466544fabd",
+    "grader_sha256": "8a7afe0bd13a0c700a4ea59e0cafd759eb9541e764d6a81d7d0fec551bb76510",
+    "server_sha256": "5fc47d46d85b1e70e76f31d98a359fa91c5e4051d6ae59fe22e9bd86a800a861",
+    "phase": "holdout",
+    "selected_tasks": [
+      "dj-valid-filename-symbol",
+      "dj-slugify-symbol",
+      "pt-ansi-symbol",
+      "pt-pattern-symbol",
+      "dj-storage-incident",
+      "dj-filename-incident",
+      "pt-collection-incident",
+      "pt-color-incident",
+      "dj-storage-delegation",
+      "dj-permanent-redirect",
+      "pt-collection-glob-helper",
+      "pt-report-factory",
+      "dj-filename-fix",
+      "dj-slugify-fix",
+      "pt-ansi-fix",
+      "pt-pattern-fix"
+    ],
+    "repetitions": 3,
+    "max_attempts": 2,
+    "commits": {
+      "django": "9b224579875e30203d079cc2fee83b116d98eb78",
+      "pytest": "8721173580390a9d297e5af06cac3f0b6841f425"
+    }
+  },
+  "codex_version": "codex-cli 0.157.1",
+  "pricing": {
+    "currency": "USD",
+    "units": "per million tokens",
+    "model_rates": {
+      "gpt-6-sol": {
+        "input": 2,
+        "cached": 0.2,
+        "cache_write": 2.5,
+        "output": 10
+      }
+    },
+    "source": "https://developers.openai.com/api/docs/pricing",
+    "caveat": "API cost estimate, not subscription billing; local selector compute and electricity not priced"
+  },
+  "laya_backend": {
+    "url": "http://127.0.0.1:8000/v1/systemone",
+    "model": "typed-decisions",
+    "binding": "loopback only; no hosted decision backend"
+  },
+  "isolation": "fresh local clone and CODEX_HOME per attempt; no inherited MCP config; agents disabled; no hosted decider",
+  "schedule": [
+    {
+      "task": "dj-valid-filename-symbol",
+      "repetition": 1,
+      "order": [
+        "laya",
+        "stock",
+        "deterministic"
+      ]
+    },
+    {
+      "task": "dj-slugify-symbol",
+      "repetition": 1,
+      "order": [
+        "laya",
+        "deterministic",
+        "stock"
+      ]
+    },
+    {
+      "task": "pt-ansi-symbol",
+      "repetition": 1,
+      "order": [
+        "stock",
+        "laya",
+        "deterministic"
+      ]
+    },
+    {
+      "task": "pt-pattern-symbol",
+      "repetition": 1,
+      "order": [
+        "laya",
+        "deterministic",
+        "stock"
+      ]
+    },
+    {
+      "task": "dj-storage-incident",
+      "repetition": 1,
+      "order": [
+        "deterministic",
+        "stock",
+        "laya"
+      ]
+    },
+    {
+      "task": "dj-filename-incident",
+      "repetition": 1,
+      "order": [
+        "stock",
+        "deterministic",
+        "laya"
+      ]
+    },
+    {
+      "task": "pt-collection-incident",
+      "repetition": 1,
+      "order": [
+        "deterministic",
+        "laya",
+        "stock"
+      ]
+    },
+    {
+      "task": "pt-color-incident",
+      "repetition": 1,
+      "order": [
+        "laya",
+        "deterministic",
+        "stock"
+      ]
+    },
+    {
+      "task": "dj-storage-delegation",
+      "repetition": 1,
+      "order": [
+        "stock",
+        "laya",
+        "deterministic"
+      ]
+    },
+    {
+      "task": "dj-permanent-redirect",
+      "repetition": 1,
+      "order": [
+        "laya",
+        "deterministic",
+        "stock"
+      ]
+    },
+    {
+      "task": "pt-collection-glob-helper",
+      "repetition": 1,
+      "order": [
+        "stock",
+        "laya",
+        "deterministic"
+      ]
+    },
+    {
+      "task": "pt-report-factory",
+      "repetition": 1,
+      "order": [
+        "laya",
+        "stock",
+        "deterministic"
+      ]
+    },
+    {
+      "task": "dj-filename-fix",
+      "repetition": 1,
+      "order": [
+        "laya",
+        "stock",
+        "deterministic"
+      ]
+    },
+    {
+      "task": "dj-slugify-fix",
+      "repetition": 1,
+      "order": [
+        "laya",
+        "deterministic",
+        "stock"
+      ]
+    },
+    {
+      "task": "pt-ansi-fix",
+      "repetition": 1,
+      "order": [
+        "stock",
+        "laya",
+        "deterministic"
+      ]
+    },
+    {
+      "task": "pt-pattern-fix",
+      "repetition": 1,
+      "order": [
+        "laya",
+        "deterministic",
+        "stock"
+      ]
+    },
+    {
+      "task": "dj-valid-filename-symbol",
+      "repetition": 2,
+      "order": [
+        "deterministic",
+        "laya",
+        "stock"
+      ]
+    },
+    {
+      "task": "dj-slugify-symbol",
+      "repetition": 2,
+      "order": [
+        "laya",
+        "stock",
+        "deterministic"
+      ]
+    },
+    {
+      "task": "pt-ansi-symbol",
+      "repetition": 2,
+      "order": [
+        "stock",
+        "laya",
+        "deterministic"
+      ]
+    },
+    {
+      "task": "pt-pattern-symbol",
+      "repetition": 2,
+      "order": [
+        "deterministic",
+        "laya",
+        "stock"
+      ]
+    },
+    {
+      "task": "dj-storage-incident",
+      "repetition": 2,
+      "order": [
+        "laya",
+        "deterministic",
+        "stock"
+      ]
+    },
+    {
+      "task": "dj-filename-incident",
+      "repetition": 2,
+      "order": [
+        "laya",
+        "stock",
+        "deterministic"
+      ]
+    },
+    {
+      "task": "pt-collection-incident",
+      "repetition": 2,
+      "order": [
+        "deterministic",
+        "stock",
+        "laya"
+      ]
+    },
+    {
+      "task": "pt-color-incident",
+      "repetition": 2,
+      "order": [
+        "laya",
+        "stock",
+        "deterministic"
+      ]
+    },
+    {
+      "task": "dj-storage-delegation",
+      "repetition": 2,
+      "order": [
+        "deterministic",
+        "stock",
+        "laya"
+      ]
+    },
+    {
+      "task": "dj-permanent-redirect",
+      "repetition": 2,
+      "order": [
+        "deterministic",
+        "laya",
+        "stock"
+      ]
+    },
+    {
+      "task": "pt-collection-glob-helper",
+      "repetition": 2,
+      "order": [
+        "deterministic",
+        "laya",
+        "stock"
+      ]
+    },
+    {
+      "task": "pt-report-factory",
+      "repetition": 2,
+      "order": [
+        "deterministic",
+        "laya",
+        "stock"
+      ]
+    },
+    {
+      "task": "dj-filename-fix",
+      "repetition": 2,
+      "order": [
+        "stock",
+        "deterministic",
+        "laya"
+      ]
+    },
+    {
+      "task": "dj-slugify-fix",
+      "repetition": 2,
+      "order": [
+        "laya",
+        "stock",
+        "deterministic"
+      ]
+    },
+    {
+      "task": "pt-ansi-fix",
+      "repetition": 2,
+      "order": [
+        "laya",
+        "stock",
+        "deterministic"
+      ]
+    },
+    {
+      "task": "pt-pattern-fix",
+      "repetition": 2,
+      "order": [
+        "laya",
+        "deterministic",
+        "stock"
+      ]
+    },
+    {
+      "task": "dj-valid-filename-symbol",
+      "repetition": 3,
+      "order": [
+        "laya",
+        "deterministic",
+        "stock"
+      ]
+    },
+    {
+      "task": "dj-slugify-symbol",
+      "repetition": 3,
+      "order": [
+        "laya",
+        "deterministic",
+        "stock"
+      ]
+    },
+    {
+      "task": "pt-ansi-symbol",
+      "repetition": 3,
+      "order": [
+        "deterministic",
+        "stock",
+        "laya"
+      ]
+    },
+    {
+      "task": "pt-pattern-symbol",
+      "repetition": 3,
+      "order": [
+        "stock",
+        "laya",
+        "deterministic"
+      ]
+    },
+    {
+      "task": "dj-storage-incident",
+      "repetition": 3,
+      "order": [
+        "deterministic",
+        "laya",
+        "stock"
+      ]
+    },
+    {
+      "task": "dj-filename-incident",
+      "repetition": 3,
+      "order": [
+        "deterministic",
+        "laya",
+        "stock"
+      ]
+    },
+    {
+      "task": "pt-collection-incident",
+      "repetition": 3,
+      "order": [
+        "laya",
+        "deterministic",
+        "stock"
+      ]
+    },
+    {
+      "task": "pt-color-incident",
+      "repetition": 3,
+      "order": [
+        "laya",
+        "deterministic",
+        "stock"
+      ]
+    },
+    {
+      "task": "dj-storage-delegation",
+      "repetition": 3,
+      "order": [
+        "deterministic",
+        "laya",
+        "stock"
+      ]
+    },
+    {
+      "task": "dj-permanent-redirect",
+      "repetition": 3,
+      "order": [
+        "stock",
+        "laya",
+        "deterministic"
+      ]
+    },
+    {
+      "task": "pt-collection-glob-helper",
+      "repetition": 3,
+      "order": [
+        "stock",
+        "laya",
+        "deterministic"
+      ]
+    },
+    {
+      "task": "pt-report-factory",
+      "repetition": 3,
+      "order": [
+        "laya",
+        "stock",
+        "deterministic"
+      ]
+    },
+    {
+      "task": "dj-filename-fix",
+      "repetition": 3,
+      "order": [
+        "stock",
+        "laya",
+        "deterministic"
+      ]
+    },
+    {
+      "task": "dj-slugify-fix",
+      "repetition": 3,
+      "order": [
+        "stock",
+        "deterministic",
+        "laya"
+      ]
+    },
+    {
+      "task": "pt-ansi-fix",
+      "repetition": 3,
+      "order": [
+        "stock",
+        "laya",
+        "deterministic"
+      ]
+    },
+    {
+      "task": "pt-pattern-fix",
+      "repetition": 3,
+      "order": [
+        "deterministic",
+        "stock",
+        "laya"
+      ]
+    }
+  ],
+  "runs": [
+    {
+      "task": "dj-valid-filename-symbol",
+      "kind": "exact",
+      "repo": "django",
+      "arm": "laya",
+      "repetition": 1,
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 27840,
+          "root_thread_id": "01a0e171-3a9a-7781-9479-374dd04163a6",
+          "root_usage": {
+            "input_tokens": 39355,
+            "cached_input_tokens": 36352,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 364,
+            "reasoning_output_tokens": 121
+          },
+          "sessions": [
+            {
+              "id": "01a0e171-3a9a-7781-9479-374dd04163a6",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 39355,
+                "cached_input_tokens": 36352,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 364,
+                "reasoning_output_tokens": 121,
+                "total_tokens": 39719
+              }
+            }
+          ],
+          "selector_audit": [],
+          "protocol_ok": true,
+          "answer": "{\"value\":\"django/utils/text.py:237\",\"citations\":[\"django/utils/text.py:237\"]}",
+          "grade": {
+            "correct": true,
+            "detail": "exact answer and source citations"
+          },
+          "changed_paths": [],
+          "patch": null,
+          "estimated_api_usd": 0.0169164,
+          "trace": "results-traces/dj-valid-filename-symbol.rep1.laya.attempt1.jsonl"
+        }
+      ],
+      "passed": true,
+      "estimated_api_usd": 0.0169164,
+      "end_to_end_ms": 27840
+    },
+    {
+      "task": "dj-valid-filename-symbol",
+      "kind": "exact",
+      "repo": "django",
+      "arm": "stock",
+      "repetition": 1,
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 12258,
+          "root_thread_id": "01a0e171-9ff7-7113-9e95-ec719359c86d",
+          "root_usage": {
+            "input_tokens": 25887,
+            "cached_input_tokens": 10752,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 190,
+            "reasoning_output_tokens": 76
+          },
+          "sessions": [
+            {
+              "id": "01a0e171-9ff7-7113-9e95-ec719359c86d",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 25887,
+                "cached_input_tokens": 10752,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 190,
+                "reasoning_output_tokens": 76,
+                "total_tokens": 26077
+              }
+            }
+          ],
+          "selector_audit": [],
+          "protocol_ok": true,
+          "answer": "{\"value\":\"django/utils/text.py:237\",\"citations\":[\"django/utils/text.py:237\"]}",
+          "grade": {
+            "correct": true,
+            "detail": "exact answer and source citations"
+          },
+          "changed_paths": [],
+          "patch": null,
+          "estimated_api_usd": 0.0343204,
+          "trace": "results-traces/dj-valid-filename-symbol.rep1.stock.attempt1.jsonl"
+        }
+      ],
+      "passed": true,
+      "estimated_api_usd": 0.0343204,
+      "end_to_end_ms": 12258
+    },
+    {
+      "task": "dj-valid-filename-symbol",
+      "kind": "exact",
+      "repo": "django",
+      "arm": "deterministic",
+      "repetition": 1,
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 11533,
+          "root_thread_id": "01a0e171-d702-7e72-a2aa-072a25ac482f",
+          "root_usage": {
+            "input_tokens": 25915,
+            "cached_input_tokens": 12672,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 178,
+            "reasoning_output_tokens": 51
+          },
+          "sessions": [
+            {
+              "id": "01a0e171-d702-7e72-a2aa-072a25ac482f",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 25915,
+                "cached_input_tokens": 12672,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 178,
+                "reasoning_output_tokens": 51,
+                "total_tokens": 26093
+              }
+            }
+          ],
+          "selector_audit": [],
+          "protocol_ok": true,
+          "answer": "{\"value\":\"django/utils/text.py:237\",\"citations\":[\"django/utils/text.py:237\"]}",
+          "grade": {
+            "correct": true,
+            "detail": "exact answer and source citations"
+          },
+          "changed_paths": [],
+          "patch": null,
+          "estimated_api_usd": 0.030800400000000002,
+          "trace": "results-traces/dj-valid-filename-symbol.rep1.deterministic.attempt1.jsonl"
+        }
+      ],
+      "passed": true,
+      "estimated_api_usd": 0.030800400000000002,
+      "end_to_end_ms": 11533
+    },
+    {
+      "task": "dj-slugify-symbol",
+      "kind": "exact",
+      "repo": "django",
+      "arm": "laya",
+      "repetition": 1,
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 24389,
+          "root_thread_id": "01a0e172-1d0f-7790-8e3d-33406eab19a7",
+          "root_usage": {
+            "input_tokens": 39136,
+            "cached_input_tokens": 36224,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 196,
+            "reasoning_output_tokens": 80
+          },
+          "sessions": [
+            {
+              "id": "01a0e172-1d0f-7790-8e3d-33406eab19a7",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 39136,
+                "cached_input_tokens": 36224,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 196,
+                "reasoning_output_tokens": 80,
+                "total_tokens": 39332
+              }
+            }
+          ],
+          "selector_audit": [],
+          "protocol_ok": true,
+          "answer": "{\"value\":\"django/utils/text.py:420\",\"citations\":[\"django/utils/text.py:420\"]}",
+          "grade": {
+            "correct": true,
+            "detail": "exact answer and source citations"
+          },
+          "changed_paths": [],
+          "patch": null,
+          "estimated_api_usd": 0.015028799999999998,
+          "trace": "results-traces/dj-slugify-symbol.rep1.laya.attempt1.jsonl"
+        }
+      ],
+      "passed": true,
+      "estimated_api_usd": 0.015028799999999998,
+      "end_to_end_ms": 24389
+    },
+    {
+      "task": "dj-slugify-symbol",
+      "kind": "exact",
+      "repo": "django",
+      "arm": "deterministic",
+      "repetition": 1,
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 36080,
+          "root_thread_id": "01a0e172-7517-7b60-a83e-0a07a6da4d12",
+          "root_usage": {
+            "input_tokens": 39480,
+            "cached_input_tokens": 36352,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 331,
+            "reasoning_output_tokens": 125
+          },
+          "sessions": [
+            {
+              "id": "01a0e172-7517-7b60-a83e-0a07a6da4d12",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 39480,
+                "cached_input_tokens": 36352,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 331,
+                "reasoning_output_tokens": 125,
+                "total_tokens": 39811
+              }
+            }
+          ],
+          "selector_audit": [],
+          "protocol_ok": true,
+          "answer": "{\"value\":\"django/utils/text.py:420\",\"citations\":[\"django/utils/text.py:420\"]}",
+          "grade": {
+            "correct": true,
+            "detail": "exact answer and source citations"
+          },
+          "changed_paths": [],
+          "patch": null,
+          "estimated_api_usd": 0.0168364,
+          "trace": "results-traces/dj-slugify-symbol.rep1.deterministic.attempt1.jsonl"
+        }
+      ],
+      "passed": true,
+      "estimated_api_usd": 0.0168364,
+      "end_to_end_ms": 36080
+    },
+    {
+      "task": "dj-slugify-symbol",
+      "kind": "exact",
+      "repo": "django",
+      "arm": "stock",
+      "repetition": 1,
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 19226,
+          "root_thread_id": "01a0e173-08be-7442-91e9-223c091de1aa",
+          "root_usage": {
+            "input_tokens": 39380,
+            "cached_input_tokens": 34176,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 377,
+            "reasoning_output_tokens": 154
+          },
+          "sessions": [
+            {
+              "id": "01a0e173-08be-7442-91e9-223c091de1aa",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 39380,
+                "cached_input_tokens": 34176,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 377,
+                "reasoning_output_tokens": 154,
+                "total_tokens": 39757
+              }
+            }
+          ],
+          "selector_audit": [],
+          "protocol_ok": true,
+          "answer": "{\"value\":\"django/utils/text.py:420\",\"citations\":[\"django/utils/text.py:420\"]}",
+          "grade": {
+            "correct": true,
+            "detail": "exact answer and source citations"
+          },
+          "changed_paths": [],
+          "patch": null,
+          "estimated_api_usd": 0.0210132,
+          "trace": "results-traces/dj-slugify-symbol.rep1.stock.attempt1.jsonl"
+        }
+      ],
+      "passed": true,
+      "estimated_api_usd": 0.0210132,
+      "end_to_end_ms": 19226
+    },
+    {
+      "task": "pt-ansi-symbol",
+      "kind": "exact",
+      "repo": "pytest",
+      "arm": "stock",
+      "repetition": 1,
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 15523,
+          "root_thread_id": "01a0e173-574b-7202-a7d7-e754a1e64f10",
+          "root_usage": {
+            "input_tokens": 39256,
+            "cached_input_tokens": 32640,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 310,
+            "reasoning_output_tokens": 74
+          },
+          "sessions": [
+            {
+              "id": "01a0e173-574b-7202-a7d7-e754a1e64f10",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 39256,
+                "cached_input_tokens": 32640,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 310,
+                "reasoning_output_tokens": 74,
+                "total_tokens": 39566
+              }
+            }
+          ],
+          "selector_audit": [],
+          "protocol_ok": true,
+          "answer": "{\"value\":\"src/_pytest/logging.py:57\",\"citations\":[\"src/_pytest/logging.py:57\"]}",
+          "grade": {
+            "correct": true,
+            "detail": "exact answer and source citations"
+          },
+          "changed_paths": [],
+          "patch": null,
+          "estimated_api_usd": 0.02286,
+          "trace": "results-traces/pt-ansi-symbol.rep1.stock.attempt1.jsonl"
+        }
+      ],
+      "passed": true,
+      "estimated_api_usd": 0.02286,
+      "end_to_end_ms": 15523
+    },
+    {
+      "task": "pt-ansi-symbol",
+      "kind": "exact",
+      "repo": "pytest",
+      "arm": "laya",
+      "repetition": 1,
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 21363,
+          "root_thread_id": "01a0e173-964b-7c71-ac46-639b5367df5a",
+          "root_usage": {
+            "input_tokens": 25907,
+            "cached_input_tokens": 12672,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 158,
+            "reasoning_output_tokens": 39
+          },
+          "sessions": [
+            {
+              "id": "01a0e173-964b-7c71-ac46-639b5367df5a",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 25907,
+                "cached_input_tokens": 12672,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 158,
+                "reasoning_output_tokens": 39,
+                "total_tokens": 26065
+              }
+            }
+          ],
+          "selector_audit": [],
+          "protocol_ok": true,
+          "answer": "{\"value\":\"src/_pytest/logging.py:57\",\"citations\":[\"src/_pytest/logging.py:57\"]}",
+          "grade": {
+            "correct": true,
+            "detail": "exact answer and source citations"
+          },
+          "changed_paths": [],
+          "patch": null,
+          "estimated_api_usd": 0.0305844,
+          "trace": "results-traces/pt-ansi-symbol.rep1.laya.attempt1.jsonl"
+        }
+      ],
+      "passed": true,
+      "estimated_api_usd": 0.0305844,
+      "end_to_end_ms": 21363
+    },
+    {
+      "task": "pt-ansi-symbol",
+      "kind": "exact",
+      "repo": "pytest",
+      "arm": "deterministic",
+      "repetition": 1,
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 22388,
+          "root_thread_id": "01a0e173-ec59-7ba0-a3c2-4a5a2e179465",
+          "root_usage": {
+            "input_tokens": 39285,
+            "cached_input_tokens": 30464,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 335,
+            "reasoning_output_tokens": 103
+          },
+          "sessions": [
+            {
+              "id": "01a0e173-ec59-7ba0-a3c2-4a5a2e179465",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 39285,
+                "cached_input_tokens": 30464,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 335,
+                "reasoning_output_tokens": 103,
+                "total_tokens": 39620
+              }
+            }
+          ],
+          "selector_audit": [],
+          "protocol_ok": true,
+          "answer": "{\"value\":\"src/_pytest/logging.py:57\",\"citations\":[\"src/_pytest/logging.py:57\"]}",
+          "grade": {
+            "correct": true,
+            "detail": "exact answer and source citations"
+          },
+          "changed_paths": [],
+          "patch": null,
+          "estimated_api_usd": 0.0270848,
+          "trace": "results-traces/pt-ansi-symbol.rep1.deterministic.attempt1.jsonl"
+        }
+      ],
+      "passed": true,
+      "estimated_api_usd": 0.0270848,
+      "end_to_end_ms": 22388
+    },
+    {
+      "task": "pt-pattern-symbol",
+      "kind": "exact",
+      "repo": "pytest",
+      "arm": "laya",
+      "repetition": 1,
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 14649,
+          "root_thread_id": "01a0e174-459b-7471-b64f-01a51299420b",
+          "root_usage": {
+            "input_tokens": 25881,
+            "cached_input_tokens": 23424,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 151,
+            "reasoning_output_tokens": 38
+          },
+          "sessions": [
+            {
+              "id": "01a0e174-459b-7471-b64f-01a51299420b",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 25881,
+                "cached_input_tokens": 23424,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 151,
+                "reasoning_output_tokens": 38,
+                "total_tokens": 26032
+              }
+            }
+          ],
+          "selector_audit": [],
+          "protocol_ok": true,
+          "answer": "{\"value\":\"src/_pytest/python.py:230\",\"citations\":[\"src/_pytest/python.py:230\"]}",
+          "grade": {
+            "correct": true,
+            "detail": "exact answer and source citations"
+          },
+          "changed_paths": [],
+          "patch": null,
+          "estimated_api_usd": 0.011108799999999999,
+          "trace": "results-traces/pt-pattern-symbol.rep1.laya.attempt1.jsonl"
+        }
+      ],
+      "passed": true,
+      "estimated_api_usd": 0.011108799999999999,
+      "end_to_end_ms": 14649
+    },
+    {
+      "task": "pt-pattern-symbol",
+      "kind": "exact",
+      "repo": "pytest",
+      "arm": "deterministic",
+      "repetition": 1,
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 20730,
+          "root_thread_id": "01a0e174-7f17-7840-9f87-0cc0cbcc069b",
+          "root_usage": {
+            "input_tokens": 25926,
+            "cached_input_tokens": 23424,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 196,
+            "reasoning_output_tokens": 81
+          },
+          "sessions": [
+            {
+              "id": "01a0e174-7f17-7840-9f87-0cc0cbcc069b",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 25926,
+                "cached_input_tokens": 23424,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 196,
+                "reasoning_output_tokens": 81,
+                "total_tokens": 26122
+              }
+            }
+          ],
+          "selector_audit": [],
+          "protocol_ok": true,
+          "answer": "{\"value\":\"src/_pytest/python.py:230\",\"citations\":[\"src/_pytest/python.py:230\"]}",
+          "grade": {
+            "correct": true,
+            "detail": "exact answer and source citations"
+          },
+          "changed_paths": [],
+          "patch": null,
+          "estimated_api_usd": 0.011648799999999999,
+          "trace": "results-traces/pt-pattern-symbol.rep1.deterministic.attempt1.jsonl"
+        }
+      ],
+      "passed": true,
+      "estimated_api_usd": 0.011648799999999999,
+      "end_to_end_ms": 20730
+    },
+    {
+      "task": "pt-pattern-symbol",
+      "kind": "exact",
+      "repo": "pytest",
+      "arm": "stock",
+      "repetition": 1,
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 13247,
+          "root_thread_id": "01a0e174-d0fd-7281-a80e-636b9db422f5",
+          "root_usage": {
+            "input_tokens": 25803,
+            "cached_input_tokens": 23424,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 145,
+            "reasoning_output_tokens": 32
+          },
+          "sessions": [
+            {
+              "id": "01a0e174-d0fd-7281-a80e-636b9db422f5",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 25803,
+                "cached_input_tokens": 23424,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 145,
+                "reasoning_output_tokens": 32,
+                "total_tokens": 25948
+              }
+            }
+          ],
+          "selector_audit": [],
+          "protocol_ok": true,
+          "answer": "{\"value\":\"src/_pytest/python.py:230\",\"citations\":[\"src/_pytest/python.py:230\"]}",
+          "grade": {
+            "correct": true,
+            "detail": "exact answer and source citations"
+          },
+          "changed_paths": [],
+          "patch": null,
+          "estimated_api_usd": 0.0108928,
+          "trace": "results-traces/pt-pattern-symbol.rep1.stock.attempt1.jsonl"
+        }
+      ],
+      "passed": true,
+      "estimated_api_usd": 0.0108928,
+      "end_to_end_ms": 13247
+    },
+    {
+      "task": "dj-storage-incident",
+      "kind": "log",
+      "repo": "django",
+      "arm": "deterministic",
+      "repetition": 1,
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 24589,
+          "root_thread_id": "01a0e175-0ae7-78e0-9e9e-b430990c236e",
+          "root_usage": {
+            "input_tokens": 56796,
+            "cached_input_tokens": 51328,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 577,
+            "reasoning_output_tokens": 174
+          },
+          "sessions": [
+            {
+              "id": "01a0e175-0ae7-78e0-9e9e-b430990c236e",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 56796,
+                "cached_input_tokens": 51328,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 577,
+                "reasoning_output_tokens": 174,
+                "total_tokens": 57373
+              }
+            }
+          ],
+          "selector_audit": [
+            {
+              "timestamp": "2026-09-27T06:02:29.862Z",
+              "requested_selector": "deterministic",
+              "used_selector": "deterministic",
+              "fallback": null,
+              "candidates": 16,
+              "returned": 6,
+              "kind": "log"
+            }
+          ],
+          "protocol_ok": true,
+          "answer": "{\"value\":\"Storage.generate_filename\",\"citations\":[\"bench-logs/incident.log:360\",\"bench-logs/incident.log:730\",\"bench-logs/incident.log:901\",\"bench-logs/incident.log:902\",\"django/core/files/storage/base.py:101\"]}",
+          "grade": {
+            "correct": true,
+            "detail": "exact answer and source citations"
+          },
+          "changed_paths": [],
+          "patch": null,
+          "estimated_api_usd": 0.0269716,
+          "trace": "results-traces/dj-storage-incident.rep1.deterministic.attempt1.jsonl"
+        }
+      ],
+      "passed": true,
+      "estimated_api_usd": 0.0269716,
+      "end_to_end_ms": 24589
+    },
+    {
+      "task": "dj-storage-incident",
+      "kind": "log",
+      "repo": "django",
+      "arm": "stock",
+      "repetition": 1,
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 29614,
+          "root_thread_id": "01a0e175-729b-70a0-b5eb-ffbd8fb7760c",
+          "root_usage": {
+            "input_tokens": 43554,
+            "cached_input_tokens": 38144,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 480,
+            "reasoning_output_tokens": 133
+          },
+          "sessions": [
+            {
+              "id": "01a0e175-729b-70a0-b5eb-ffbd8fb7760c",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 43554,
+                "cached_input_tokens": 38144,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 480,
+                "reasoning_output_tokens": 133,
+                "total_tokens": 44034
+              }
+            }
+          ],
+          "selector_audit": [],
+          "protocol_ok": true,
+          "answer": "{\"value\":\"Storage.generate_filename\",\"citations\":[\"bench-logs/incident.log:902\",\"django/core/files/storage/base.py:101\"]}",
+          "grade": {
+            "correct": false,
+            "detail": "answer or required source citations do not match"
+          },
+          "changed_paths": [],
+          "patch": null,
+          "estimated_api_usd": 0.0232488,
+          "trace": "results-traces/dj-storage-incident.rep1.stock.attempt1.jsonl"
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 25543,
+          "root_thread_id": "01a0e175-ee0b-7cb1-8d5d-9f3f7b96cfa6",
+          "root_usage": {
+            "input_tokens": 59518,
+            "cached_input_tokens": 45952,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 538,
+            "reasoning_output_tokens": 83
+          },
+          "sessions": [
+            {
+              "id": "01a0e175-ee0b-7cb1-8d5d-9f3f7b96cfa6",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 59518,
+                "cached_input_tokens": 45952,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 538,
+                "reasoning_output_tokens": 83,
+                "total_tokens": 60056
+              }
+            }
+          ],
+          "selector_audit": [],
+          "protocol_ok": true,
+          "answer": "{\"value\":\"Storage.generate_filename\",\"citations\":[\"bench-logs/incident.log:901\",\"bench-logs/incident.log:902\",\"django/core/files/storage/base.py:101\"]}",
+          "grade": {
+            "correct": false,
+            "detail": "answer or required source citations do not match"
+          },
+          "changed_paths": [],
+          "patch": null,
+          "estimated_api_usd": 0.0417024,
+          "trace": "results-traces/dj-storage-incident.rep1.stock.attempt2.jsonl"
+        }
+      ],
+      "passed": false,
+      "estimated_api_usd": 0.0649512,
+      "end_to_end_ms": 55157
+    },
+    {
+      "task": "dj-storage-incident",
+      "kind": "log",
+      "repo": "django",
+      "arm": "laya",
+      "repetition": 1,
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 28706,
+          "root_thread_id": "01a0e176-5913-7bb3-ade5-a7f7f2943682",
+          "root_usage": {
+            "input_tokens": 43804,
+            "cached_input_tokens": 30464,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 652,
+            "reasoning_output_tokens": 273
+          },
+          "sessions": [
+            {
+              "id": "01a0e176-5913-7bb3-ade5-a7f7f2943682",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 43804,
+                "cached_input_tokens": 30464,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 652,
+                "reasoning_output_tokens": 273,
+                "total_tokens": 44456
+              }
+            }
+          ],
+          "selector_audit": [],
+          "protocol_ok": true,
+          "answer": "{\"value\":\"Storage.generate_filename\",\"citations\":[\"bench-logs/incident.log:360\",\"bench-logs/incident.log:730\",\"bench-logs/incident.log:901\",\"bench-logs/incident.log:902\",\"django/core/files/storage/base.py:101\"]}",
+          "grade": {
+            "correct": true,
+            "detail": "exact answer and source citations"
+          },
+          "changed_paths": [],
+          "patch": null,
+          "estimated_api_usd": 0.0392928,
+          "trace": "results-traces/dj-storage-incident.rep1.laya.attempt1.jsonl"
+        }
+      ],
+      "passed": true,
+      "estimated_api_usd": 0.0392928,
+      "end_to_end_ms": 28706
+    },
+    {
+      "task": "dj-filename-incident",
+      "kind": "log",
+      "repo": "django",
+      "arm": "stock",
+      "repetition": 1,
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 27127,
+          "root_thread_id": "01a0e176-d182-7503-844c-2e416683ddda",
+          "root_usage": {
+            "input_tokens": 45656,
+            "cached_input_tokens": 33536,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 502,
+            "reasoning_output_tokens": 81
+          },
+          "sessions": [
+            {
+              "id": "01a0e176-d182-7503-844c-2e416683ddda",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 45656,
+                "cached_input_tokens": 33536,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 502,
+                "reasoning_output_tokens": 81,
+                "total_tokens": 46158
+              }
+            }
+          ],
+          "selector_audit": [],
+          "protocol_ok": true,
+          "answer": "{\"value\":\"get_valid_filename\",\"citations\":[\"bench-logs/incident.log:902\",\"django/utils/text.py:237\"]}",
+          "grade": {
+            "correct": false,
+            "detail": "answer or required source citations do not match"
+          },
+          "changed_paths": [],
+          "patch": null,
+          "estimated_api_usd": 0.0359672,
+          "trace": "results-traces/dj-filename-incident.rep1.stock.attempt1.jsonl"
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 23781,
+          "root_thread_id": "01a0e177-413c-7433-8a96-3c68b195200b",
+          "root_usage": {
+            "input_tokens": 43404,
+            "cached_input_tokens": 34176,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 600,
+            "reasoning_output_tokens": 238
+          },
+          "sessions": [
+            {
+              "id": "01a0e177-413c-7433-8a96-3c68b195200b",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 43404,
+                "cached_input_tokens": 34176,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 600,
+                "reasoning_output_tokens": 238,
+                "total_tokens": 44004
+              }
+            }
+          ],
+          "selector_audit": [],
+          "protocol_ok": true,
+          "answer": "{\"value\":\"get_valid_filename\",\"citations\":[\"bench-logs/incident.log:360\",\"bench-logs/incident.log:730\",\"bench-logs/incident.log:901\",\"bench-logs/incident.log:902\",\"django/utils/text.py:237\"]}",
+          "grade": {
+            "correct": true,
+            "detail": "exact answer and source citations"
+          },
+          "changed_paths": [],
+          "patch": null,
+          "estimated_api_usd": 0.0312912,
+          "trace": "results-traces/dj-filename-incident.rep1.stock.attempt2.jsonl"
+        }
+      ],
+      "passed": true,
+      "estimated_api_usd": 0.0672584,
+      "end_to_end_ms": 50908
+    },
+    {
+      "task": "dj-filename-incident",
+      "kind": "log",
+      "repo": "django",
+      "arm": "deterministic",
+      "repetition": 1,
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 38257,
+          "root_thread_id": "01a0e177-a73b-7a81-b178-b6849c369387",
+          "root_usage": {
+            "input_tokens": 43556,
+            "cached_input_tokens": 23424,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 538,
+            "reasoning_output_tokens": 167
+          },
+          "sessions": [
+            {
+              "id": "01a0e177-a73b-7a81-b178-b6849c369387",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 43556,
+                "cached_input_tokens": 23424,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 538,
+                "reasoning_output_tokens": 167,
+                "total_tokens": 44094
+              }
+            }
+          ],
+          "selector_audit": [],
+          "protocol_ok": true,
+          "answer": "{\"value\":\"get_valid_filename\",\"citations\":[\"bench-logs/incident.log:360\",\"bench-logs/incident.log:730\",\"bench-logs/incident.log:901\",\"bench-logs/incident.log:902\",\"django/utils/text.py:237\"]}",
+          "grade": {
+            "correct": true,
+            "detail": "exact answer and source citations"
+          },
+          "changed_paths": [],
+          "patch": null,
+          "estimated_api_usd": 0.0503288,
+          "trace": "results-traces/dj-filename-incident.rep1.deterministic.attempt1.jsonl"
+        }
+      ],
+      "passed": true,
+      "estimated_api_usd": 0.0503288,
+      "end_to_end_ms": 38257
+    },
+    {
+      "task": "dj-filename-incident",
+      "kind": "log",
+      "repo": "django",
+      "arm": "laya",
+      "repetition": 1,
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 38068,
+          "root_thread_id": "01a0e178-42f7-7473-bd7b-be8cbe202eb3",
+          "root_usage": {
+            "input_tokens": 90846,
+            "cached_input_tokens": 82688,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 919,
+            "reasoning_output_tokens": 435
+          },
+          "sessions": [
+            {
+              "id": "01a0e178-42f7-7473-bd7b-be8cbe202eb3",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 90846,
+                "cached_input_tokens": 82688,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 919,
+                "reasoning_output_tokens": 435,
+                "total_tokens": 91765
+              }
+            }
+          ],
+          "selector_audit": [
+            {
+              "timestamp": "2026-09-27T06:06:03.748Z",
+              "requested_selector": "laya",
+              "used_selector": "laya",
+              "fallback": null,
+              "candidates": 16,
+              "returned": 6,
+              "kind": "log"
+            }
+          ],
+          "protocol_ok": true,
+          "answer": "{\"value\":\"get_valid_filename\",\"citations\":[\"bench-logs/incident.log:120\",\"bench-logs/incident.log:360\",\"bench-logs/incident.log:620\",\"bench-logs/incident.log:730\",\"bench-logs/incident.log:901\",\"bench-logs/incident.log:902\",\"django/utils/text.py:237\"]}",
+          "grade": {
+            "correct": true,
+            "detail": "exact answer and source citations"
+          },
+          "changed_paths": [],
+          "patch": null,
+          "estimated_api_usd": 0.04204360000000001,
+          "trace": "results-traces/dj-filename-incident.rep1.laya.attempt1.jsonl"
+        }
+      ],
+      "passed": true,
+      "estimated_api_usd": 0.04204360000000001,
+      "end_to_end_ms": 38068
+    },
+    {
+      "task": "pt-collection-incident",
+      "kind": "log",
+      "repo": "pytest",
+      "arm": "deterministic",
+      "repetition": 1,
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 27866,
+          "root_thread_id": "01a0e178-de0a-72d2-b135-42de26e0dd88",
+          "root_usage": {
+            "input_tokens": 91846,
+            "cached_input_tokens": 75264,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 629,
+            "reasoning_output_tokens": 259
+          },
+          "sessions": [
+            {
+              "id": "01a0e178-de0a-72d2-b135-42de26e0dd88",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 91846,
+                "cached_input_tokens": 75264,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 629,
+                "reasoning_output_tokens": 259,
+                "total_tokens": 92475
+              }
+            }
+          ],
+          "selector_audit": [],
+          "protocol_ok": true,
+          "answer": "{\"value\":\"path_matches_patterns\",\"citations\":[\"bench-logs/incident.log:120\",\"bench-logs/incident.log:360\",\"bench-logs/incident.log:620\",\"bench-logs/incident.log:730\",\"bench-logs/incident.log:901\",\"bench-logs/incident.log:902\",\"src/_pytest/python.py:230\"]}",
+          "grade": {
+            "correct": true,
+            "detail": "exact answer and source citations"
+          },
+          "changed_paths": [],
+          "patch": null,
+          "estimated_api_usd": 0.0545068,
+          "trace": "results-traces/pt-collection-incident.rep1.deterministic.attempt1.jsonl"
+        }
+      ],
+      "passed": true,
+      "estimated_api_usd": 0.0545068,
+      "end_to_end_ms": 27866
+    },
+    {
+      "task": "pt-collection-incident",
+      "kind": "log",
+      "repo": "pytest",
+      "arm": "laya",
+      "repetition": 1,
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 31326,
+          "root_thread_id": "01a0e179-4d56-7480-99c0-67766505209f",
+          "root_usage": {
+            "input_tokens": 93375,
+            "cached_input_tokens": 84864,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 840,
+            "reasoning_output_tokens": 236
+          },
+          "sessions": [
+            {
+              "id": "01a0e179-4d56-7480-99c0-67766505209f",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 93375,
+                "cached_input_tokens": 84864,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 840,
+                "reasoning_output_tokens": 236,
+                "total_tokens": 94215
+              }
+            }
+          ],
+          "selector_audit": [
+            {
+              "timestamp": "2026-09-27T06:07:09.460Z",
+              "requested_selector": "laya",
+              "used_selector": "laya",
+              "fallback": null,
+              "candidates": 16,
+              "returned": 6,
+              "kind": "log"
+            }
+          ],
+          "protocol_ok": true,
+          "answer": "{\"value\":\"path_matches_patterns\",\"citations\":[\"bench-logs/incident.log:120\",\"bench-logs/incident.log:360\",\"bench-logs/incident.log:620\",\"bench-logs/incident.log:730\",\"bench-logs/incident.log:901\",\"bench-logs/incident.log:902\",\"src/_pytest/python.py:230\"]}",
+          "grade": {
+            "correct": true,
+            "detail": "exact answer and source citations"
+          },
+          "changed_paths": [],
+          "patch": null,
+          "estimated_api_usd": 0.0423948,
+          "trace": "results-traces/pt-collection-incident.rep1.laya.attempt1.jsonl"
+        }
+      ],
+      "passed": true,
+      "estimated_api_usd": 0.0423948,
+      "end_to_end_ms": 31326
+    },
+    {
+      "task": "pt-collection-incident",
+      "kind": "log",
+      "repo": "pytest",
+      "arm": "stock",
+      "repetition": 1,
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 33090,
+          "root_thread_id": "01a0e179-c71e-77e3-8021-16585cef7d75",
+          "root_usage": {
+            "input_tokens": 77805,
+            "cached_input_tokens": 65536,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 824,
+            "reasoning_output_tokens": 231
+          },
+          "sessions": [
+            {
+              "id": "01a0e179-c71e-77e3-8021-16585cef7d75",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 77805,
+                "cached_input_tokens": 65536,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 824,
+                "reasoning_output_tokens": 231,
+                "total_tokens": 78629
+              }
+            }
+          ],
+          "selector_audit": [],
+          "protocol_ok": true,
+          "answer": "{\"value\":\"path_matches_patterns\",\"citations\":[\"bench-logs/incident.log:120\",\"bench-logs/incident.log:360\",\"bench-logs/incident.log:620\",\"bench-logs/incident.log:730\",\"bench-logs/incident.log:901\",\"bench-logs/incident.log:902\",\"src/_pytest/python.py:230\"]}",
+          "grade": {
+            "correct": true,
+            "detail": "exact answer and source citations"
+          },
+          "changed_paths": [],
+          "patch": null,
+          "estimated_api_usd": 0.045885199999999994,
+          "trace": "results-traces/pt-collection-incident.rep1.stock.attempt1.jsonl"
+        }
+      ],
+      "passed": true,
+      "estimated_api_usd": 0.045885199999999994,
+      "end_to_end_ms": 33090
+    },
+    {
+      "task": "pt-color-incident",
+      "kind": "log",
+      "repo": "pytest",
+      "arm": "laya",
+      "repetition": 1,
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 34228,
+          "root_thread_id": "01a0e17a-49f0-70a0-8eec-449a568bc0aa",
+          "root_usage": {
+            "input_tokens": 78061,
+            "cached_input_tokens": 62080,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 654,
+            "reasoning_output_tokens": 214
+          },
+          "sessions": [
+            {
+              "id": "01a0e17a-49f0-70a0-8eec-449a568bc0aa",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 78061,
+                "cached_input_tokens": 62080,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 654,
+                "reasoning_output_tokens": 214,
+                "total_tokens": 78715
+              }
+            }
+          ],
+          "selector_audit": [
+            {
+              "timestamp": "2026-09-27T06:08:19.964Z",
+              "requested_selector": "laya",
+              "used_selector": "laya",
+              "fallback": null,
+              "candidates": 16,
+              "returned": 6,
+              "kind": "log"
+            },
+            {
+              "timestamp": "2026-09-27T06:08:25.053Z",
+              "requested_selector": "laya",
+              "used_selector": "laya",
+              "fallback": null,
+              "candidates": 16,
+              "returned": 6,
+              "kind": "code"
+            }
+          ],
+          "protocol_ok": true,
+          "answer": "{\"value\":\"_remove_ansi_escape_sequences\",\"citations\":[\"bench-logs/incident.log:360\",\"bench-logs/incident.log:730\",\"bench-logs/incident.log:901\",\"bench-logs/incident.log:902\",\"src/_pytest/logging.py:57\"]}",
+          "grade": {
+            "correct": true,
+            "detail": "exact answer and source citations"
+          },
+          "changed_paths": [],
+          "patch": null,
+          "estimated_api_usd": 0.050918,
+          "trace": "results-traces/pt-color-incident.rep1.laya.attempt1.jsonl"
+        }
+      ],
+      "passed": true,
+      "estimated_api_usd": 0.050918,
+      "end_to_end_ms": 34228
+    },
+    {
+      "task": "pt-color-incident",
+      "kind": "log",
+      "repo": "pytest",
+      "arm": "deterministic",
+      "repetition": 1,
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 27760,
+          "root_thread_id": "01a0e17a-d1c1-7b82-ad59-5d1bcef6f566",
+          "root_usage": {
+            "input_tokens": 62372,
+            "cached_input_tokens": 51200,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 464,
+            "reasoning_output_tokens": 181
+          },
+          "sessions": [
+            {
+              "id": "01a0e17a-d1c1-7b82-ad59-5d1bcef6f566",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 62372,
+                "cached_input_tokens": 51200,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 464,
+                "reasoning_output_tokens": 181,
+                "total_tokens": 62836
+              }
+            }
+          ],
+          "selector_audit": [
+            {
+              "timestamp": "2026-09-27T06:08:50.017Z",
+              "requested_selector": "deterministic",
+              "used_selector": "deterministic",
+              "fallback": null,
+              "candidates": 16,
+              "returned": 6,
+              "kind": "log"
+            }
+          ],
+          "protocol_ok": true,
+          "answer": "{\"value\":\"_remove_ansi_escape_sequences\",\"citations\":[\"bench-logs/incident.log:120\",\"bench-logs/incident.log:360\",\"bench-logs/incident.log:620\",\"bench-logs/incident.log:730\",\"bench-logs/incident.log:901\",\"bench-logs/incident.log:902\",\"src/_pytest/logging.py:57\"]}",
+          "grade": {
+            "correct": true,
+            "detail": "exact answer and source citations"
+          },
+          "changed_paths": [],
+          "patch": null,
+          "estimated_api_usd": 0.037224,
+          "trace": "results-traces/pt-color-incident.rep1.deterministic.attempt1.jsonl"
+        }
+      ],
+      "passed": true,
+      "estimated_api_usd": 0.037224,
+      "end_to_end_ms": 27760
+    },
+    {
+      "task": "pt-color-incident",
+      "kind": "log",
+      "repo": "pytest",
+      "arm": "stock",
+      "repetition": 1,
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 48764,
+          "root_thread_id": "01a0e17b-3f41-71c0-84a1-a9b0818df065",
+          "root_usage": {
+            "input_tokens": 43560,
+            "cached_input_tokens": 38144,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 447,
+            "reasoning_output_tokens": 108
+          },
+          "sessions": [
+            {
+              "id": "01a0e17b-3f41-71c0-84a1-a9b0818df065",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 43560,
+                "cached_input_tokens": 38144,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 447,
+                "reasoning_output_tokens": 108,
+                "total_tokens": 44007
+              }
+            }
+          ],
+          "selector_audit": [],
+          "protocol_ok": true,
+          "answer": "{\"value\":\"_remove_ansi_escape_sequences\",\"citations\":[\"bench-logs/incident.log:901\",\"bench-logs/incident.log:902\",\"src/_pytest/logging.py:57\"]}",
+          "grade": {
+            "correct": false,
+            "detail": "answer or required source citations do not match"
+          },
+          "changed_paths": [],
+          "patch": null,
+          "estimated_api_usd": 0.022930799999999998,
+          "trace": "results-traces/pt-color-incident.rep1.stock.attempt1.jsonl"
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 77678,
+          "root_thread_id": "01a0e17c-000d-7810-b9fd-4bbe528d8294",
+          "root_usage": {
+            "input_tokens": 91652,
+            "cached_input_tokens": 75648,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 492,
+            "reasoning_output_tokens": 110
+          },
+          "sessions": [
+            {
+              "id": "01a0e17c-000d-7810-b9fd-4bbe528d8294",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 91652,
+                "cached_input_tokens": 75648,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 492,
+                "reasoning_output_tokens": 110,
+                "total_tokens": 92144
+              }
+            }
+          ],
+          "selector_audit": [],
+          "protocol_ok": true,
+          "answer": "{\"value\":\"_remove_ansi_escape_sequences\",\"citations\":[\"bench-logs/incident.log:360\",\"bench-logs/incident.log:730\",\"bench-logs/incident.log:901\",\"bench-logs/incident.log:902\",\"src/_pytest/logging.py:57\"]}",
+          "grade": {
+            "correct": true,
+            "detail": "exact answer and source citations"
+          },
+          "changed_paths": [],
+          "patch": null,
+          "estimated_api_usd": 0.052057599999999996,
+          "trace": "results-traces/pt-color-incident.rep1.stock.attempt2.jsonl"
+        }
+      ],
+      "passed": true,
+      "estimated_api_usd": 0.0749884,
+      "end_to_end_ms": 126442
+    },
+    {
+      "task": "dj-storage-delegation",
+      "kind": "multi",
+      "repo": "django",
+      "arm": "stock",
+      "repetition": 1,
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 18643,
+          "root_thread_id": "01a0e17d-32d6-7732-9e40-1fc7e0ab7726",
+          "root_usage": {
+            "input_tokens": 40226,
+            "cached_input_tokens": 34432,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 351,
+            "reasoning_output_tokens": 75
+          },
+          "sessions": [
+            {
+              "id": "01a0e17d-32d6-7732-9e40-1fc7e0ab7726",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 40226,
+                "cached_input_tokens": 34432,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 351,
+                "reasoning_output_tokens": 75,
+                "total_tokens": 40577
+              }
+            }
+          ],
+          "selector_audit": [],
+          "protocol_ok": true,
+          "answer": "{\"value\":\"django.utils.text.get_valid_filename\",\"citations\":[\"django/core/files/storage/base.py:8\",\"django/core/files/storage/base.py:45\",\"django/core/files/storage/base.py:50\",\"django/utils/text.py:237\",\"django/utils/text.py:246\",\"django/utils/text.py:247\"]}",
+          "grade": {
+            "correct": false,
+            "detail": "answer or required source citations do not match"
+          },
+          "changed_paths": [],
+          "patch": null,
+          "estimated_api_usd": 0.0219844,
+          "trace": "results-traces/dj-storage-delegation.rep1.stock.attempt1.jsonl"
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 26705,
+          "root_thread_id": "01a0e17d-956d-7782-856b-a97de6a2ce1c",
+          "root_usage": {
+            "input_tokens": 40089,
+            "cached_input_tokens": 36352,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 387,
+            "reasoning_output_tokens": 105
+          },
+          "sessions": [
+            {
+              "id": "01a0e17d-956d-7782-856b-a97de6a2ce1c",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 40089,
+                "cached_input_tokens": 36352,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 387,
+                "reasoning_output_tokens": 105,
+                "total_tokens": 40476
+              }
+            }
+          ],
+          "selector_audit": [],
+          "protocol_ok": true,
+          "answer": "{\"value\":\"django.utils.text.get_valid_filename\",\"citations\":[\"django/core/files/storage/base.py:8\",\"django/core/files/storage/base.py:50\",\"django/utils/text.py:237\",\"django/utils/text.py:246\",\"django/utils/text.py:247\"]}",
+          "grade": {
+            "correct": false,
+            "detail": "answer or required source citations do not match"
+          },
+          "changed_paths": [],
+          "patch": null,
+          "estimated_api_usd": 0.018614400000000003,
+          "trace": "results-traces/dj-storage-delegation.rep1.stock.attempt2.jsonl"
+        }
+      ],
+      "passed": false,
+      "estimated_api_usd": 0.040598800000000004,
+      "end_to_end_ms": 45348
+    },
+    {
+      "task": "dj-storage-delegation",
+      "kind": "multi",
+      "repo": "django",
+      "arm": "laya",
+      "repetition": 1,
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 32396,
+          "root_thread_id": "01a0e17d-f90a-78e3-8b14-ccfd73629eef",
+          "root_usage": {
+            "input_tokens": 39703,
+            "cached_input_tokens": 36352,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 365,
+            "reasoning_output_tokens": 110
+          },
+          "sessions": [
+            {
+              "id": "01a0e17d-f90a-78e3-8b14-ccfd73629eef",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 39703,
+                "cached_input_tokens": 36352,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 365,
+                "reasoning_output_tokens": 110,
+                "total_tokens": 40068
+              }
+            }
+          ],
+          "selector_audit": [],
+          "protocol_ok": true,
+          "answer": "{\"value\":\"django.utils.text.get_valid_filename\",\"citations\":[\"django/core/files/storage/base.py:50\",\"django/utils/text.py:237\",\"django/utils/text.py:246\",\"django/utils/text.py:247\"]}",
+          "grade": {
+            "correct": false,
+            "detail": "answer or required source citations do not match"
+          },
+          "changed_paths": [],
+          "patch": null,
+          "estimated_api_usd": 0.0176224,
+          "trace": "results-traces/dj-storage-delegation.rep1.laya.attempt1.jsonl"
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 24281,
+          "root_thread_id": "01a0e17e-7de7-7372-ac32-b96522cdd515",
+          "root_usage": {
+            "input_tokens": 40279,
+            "cached_input_tokens": 36352,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 333,
+            "reasoning_output_tokens": 130
+          },
+          "sessions": [
+            {
+              "id": "01a0e17e-7de7-7372-ac32-b96522cdd515",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 40279,
+                "cached_input_tokens": 36352,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 333,
+                "reasoning_output_tokens": 130,
+                "total_tokens": 40612
+              }
+            }
+          ],
+          "selector_audit": [],
+          "protocol_ok": true,
+          "answer": "{\"value\":\"django.utils.text.get_valid_filename\",\"citations\":[\"django/core/files/storage/base.py:8\",\"django/core/files/storage/base.py:50\",\"django/utils/text.py:237\",\"django/utils/text.py:246\",\"django/utils/text.py:247\"]}",
+          "grade": {
+            "correct": false,
+            "detail": "answer or required source citations do not match"
+          },
+          "changed_paths": [],
+          "patch": null,
+          "estimated_api_usd": 0.018454400000000003,
+          "trace": "results-traces/dj-storage-delegation.rep1.laya.attempt2.jsonl"
+        }
+      ],
+      "passed": false,
+      "estimated_api_usd": 0.036076800000000006,
+      "end_to_end_ms": 56677
+    },
+    {
+      "task": "dj-storage-delegation",
+      "kind": "multi",
+      "repo": "django",
+      "arm": "deterministic",
+      "repetition": 1,
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 27404,
+          "root_thread_id": "01a0e17e-e457-7460-bf97-485d71d4cf73",
+          "root_usage": {
+            "input_tokens": 40242,
+            "cached_input_tokens": 34432,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 311,
+            "reasoning_output_tokens": 122
+          },
+          "sessions": [
+            {
+              "id": "01a0e17e-e457-7460-bf97-485d71d4cf73",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 40242,
+                "cached_input_tokens": 34432,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 311,
+                "reasoning_output_tokens": 122,
+                "total_tokens": 40553
+              }
+            }
+          ],
+          "selector_audit": [],
+          "protocol_ok": true,
+          "answer": "{\"value\":\"django.utils.text.get_valid_filename\",\"citations\":[\"django/core/files/storage/base.py:50\",\"django/utils/text.py:237\",\"django/utils/text.py:246\",\"django/utils/text.py:247\"]}",
+          "grade": {
+            "correct": false,
+            "detail": "answer or required source citations do not match"
+          },
+          "changed_paths": [],
+          "patch": null,
+          "estimated_api_usd": 0.0216164,
+          "trace": "results-traces/dj-storage-delegation.rep1.deterministic.attempt1.jsonl"
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 21474,
+          "root_thread_id": "01a0e17f-58a5-7920-b702-004fac419e3c",
+          "root_usage": {
+            "input_tokens": 40253,
+            "cached_input_tokens": 36352,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 386,
+            "reasoning_output_tokens": 96
+          },
+          "sessions": [
+            {
+              "id": "01a0e17f-58a5-7920-b702-004fac419e3c",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 40253,
+                "cached_input_tokens": 36352,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 386,
+                "reasoning_output_tokens": 96,
+                "total_tokens": 40639
+              }
+            }
+          ],
+          "selector_audit": [],
+          "protocol_ok": true,
+          "answer": "{\"value\":\"django.utils.text.get_valid_filename\",\"citations\":[\"django/core/files/storage/base.py:50\",\"django/utils/text.py:237\",\"django/utils/text.py:246\",\"django/utils/text.py:247\"]}",
+          "grade": {
+            "correct": false,
+            "detail": "answer or required source citations do not match"
+          },
+          "changed_paths": [],
+          "patch": null,
+          "estimated_api_usd": 0.018932400000000002,
+          "trace": "results-traces/dj-storage-delegation.rep1.deterministic.attempt2.jsonl"
+        }
+      ],
+      "passed": false,
+      "estimated_api_usd": 0.0405488,
+      "end_to_end_ms": 48878
+    },
+    {
+      "task": "dj-permanent-redirect",
+      "kind": "multi",
+      "repo": "django",
+      "arm": "laya",
+      "repetition": 1,
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 23905,
+          "root_thread_id": "01a0e17f-b2c4-7472-9137-bc98239a76e4",
+          "root_usage": {
+            "input_tokens": 53864,
+            "cached_input_tokens": 39296,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 431,
+            "reasoning_output_tokens": 144
+          },
+          "sessions": [
+            {
+              "id": "01a0e17f-b2c4-7472-9137-bc98239a76e4",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 53864,
+                "cached_input_tokens": 39296,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 431,
+                "reasoning_output_tokens": 144,
+                "total_tokens": 54295
+              }
+            }
+          ],
+          "selector_audit": [],
+          "protocol_ok": true,
+          "answer": "{\"value\":301,\"citations\":[\"django/middleware/common.py:7\",\"django/middleware/common.py:32\",\"django/http/response.py:658\",\"django/http/response.py:659\"]}",
+          "grade": {
+            "correct": true,
+            "detail": "exact answer and source citations"
+          },
+          "changed_paths": [],
+          "patch": null,
+          "estimated_api_usd": 0.0413052,
+          "trace": "results-traces/dj-permanent-redirect.rep1.laya.attempt1.jsonl"
+        }
+      ],
+      "passed": true,
+      "estimated_api_usd": 0.0413052,
+      "end_to_end_ms": 23905
+    },
+    {
+      "task": "dj-permanent-redirect",
+      "kind": "multi",
+      "repo": "django",
+      "arm": "deterministic",
+      "repetition": 1,
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 25062,
+          "root_thread_id": "01a0e180-18af-7261-8fcf-7496bbaf6b11",
+          "root_usage": {
+            "input_tokens": 68710,
+            "cached_input_tokens": 64128,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 576,
+            "reasoning_output_tokens": 107
+          },
+          "sessions": [
+            {
+              "id": "01a0e180-18af-7261-8fcf-7496bbaf6b11",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 68710,
+                "cached_input_tokens": 64128,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 576,
+                "reasoning_output_tokens": 107,
+                "total_tokens": 69286
+              }
+            }
+          ],
+          "selector_audit": [],
+          "protocol_ok": true,
+          "answer": "{\"value\":301,\"citations\":[\"django/middleware/common.py:7\",\"django/middleware/common.py:32\",\"django/http/__init__.py:10\",\"django/http/__init__.py:21\",\"django/http/response.py:658\",\"django/http/response.py:659\"]}",
+          "grade": {
+            "correct": true,
+            "detail": "exact answer and source citations"
+          },
+          "changed_paths": [],
+          "patch": null,
+          "estimated_api_usd": 0.0277496,
+          "trace": "results-traces/dj-permanent-redirect.rep1.deterministic.attempt1.jsonl"
+        }
+      ],
+      "passed": true,
+      "estimated_api_usd": 0.0277496,
+      "end_to_end_ms": 25062
+    },
+    {
+      "task": "dj-permanent-redirect",
+      "kind": "multi",
+      "repo": "django",
+      "arm": "stock",
+      "repetition": 1,
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 17867,
+          "root_thread_id": "01a0e180-84ad-7cc2-af24-2d36f5269ee9",
+          "root_usage": {
+            "input_tokens": 40090,
+            "cached_input_tokens": 36480,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 286,
+            "reasoning_output_tokens": 113
+          },
+          "sessions": [
+            {
+              "id": "01a0e180-84ad-7cc2-af24-2d36f5269ee9",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 40090,
+                "cached_input_tokens": 36480,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 286,
+                "reasoning_output_tokens": 113,
+                "total_tokens": 40376
+              }
+            }
+          ],
+          "selector_audit": [],
+          "protocol_ok": true,
+          "answer": "{\"value\":301,\"citations\":[\"django/middleware/common.py:7\",\"django/middleware/common.py:32\",\"django/http/response.py:658\",\"django/http/response.py:659\"]}",
+          "grade": {
+            "correct": true,
+            "detail": "exact answer and source citations"
+          },
+          "changed_paths": [],
+          "patch": null,
+          "estimated_api_usd": 0.017376,
+          "trace": "results-traces/dj-permanent-redirect.rep1.stock.attempt1.jsonl"
+        }
+      ],
+      "passed": true,
+      "estimated_api_usd": 0.017376,
+      "end_to_end_ms": 17867
+    },
+    {
+      "task": "pt-collection-glob-helper",
+      "kind": "multi",
+      "repo": "pytest",
+      "arm": "stock",
+      "repetition": 1,
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 24739,
+          "root_thread_id": "01a0e180-cc5f-7a71-90d9-a657c9e7393a",
+          "root_usage": {
+            "input_tokens": 55134,
+            "cached_input_tokens": 50688,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 658,
+            "reasoning_output_tokens": 146
+          },
+          "sessions": [
+            {
+              "id": "01a0e180-cc5f-7a71-90d9-a657c9e7393a",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 55134,
+                "cached_input_tokens": 50688,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 658,
+                "reasoning_output_tokens": 146,
+                "total_tokens": 55792
+              }
+            }
+          ],
+          "selector_audit": [],
+          "protocol_ok": true,
+          "answer": "{\"value\":\"`path_matches_patterns` calls `_pytest.pathlib.fnmatch_ex(pattern, path)` for each configured `python_files` pattern.\",\"citations\":[\"src/_pytest/python.py:218\",\"src/_pytest/python.py:219\",\"src/_pytest/python.py:230\",\"src/_pytest/python.py:232\",\"src/_pytest/pathlib.py:476\"]}",
+          "grade": {
+            "correct": false,
+            "detail": "answer or required source citations do not match"
+          },
+          "changed_paths": [],
+          "patch": null,
+          "estimated_api_usd": 0.0256096,
+          "trace": "results-traces/pt-collection-glob-helper.rep1.stock.attempt1.jsonl"
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 22319,
+          "root_thread_id": "01a0e181-2faf-7ae3-8df8-09bceb553f97",
+          "root_usage": {
+            "input_tokens": 47423,
+            "cached_input_tokens": 39808,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 540,
+            "reasoning_output_tokens": 208
+          },
+          "sessions": [
+            {
+              "id": "01a0e181-2faf-7ae3-8df8-09bceb553f97",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 47423,
+                "cached_input_tokens": 39808,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 540,
+                "reasoning_output_tokens": 208,
+                "total_tokens": 47963
+              }
+            }
+          ],
+          "selector_audit": [],
+          "protocol_ok": true,
+          "answer": "{\"value\":\"_pytest.pathlib.fnmatch_ex performs each glob match. pytest_collect_file passes the configured python_files patterns to path_matches_patterns, which calls fnmatch_ex for each pattern.\",\"citations\":[\"src/_pytest/python.py:218\",\"src/_pytest/python.py:219\",\"src/_pytest/python.py:230\",\"src/_pytest/python.py:232\",\"src/_pytest/pathlib.py:476\",\"src/_pytest/pathlib.py:509\"]}",
+          "grade": {
+            "correct": false,
+            "detail": "answer or required source citations do not match"
+          },
+          "changed_paths": [],
+          "patch": null,
+          "estimated_api_usd": 0.0285916,
+          "trace": "results-traces/pt-collection-glob-helper.rep1.stock.attempt2.jsonl"
+        }
+      ],
+      "passed": false,
+      "estimated_api_usd": 0.0542012,
+      "end_to_end_ms": 47058
+    },
+    {
+      "task": "pt-collection-glob-helper",
+      "kind": "multi",
+      "repo": "pytest",
+      "arm": "laya",
+      "repetition": 1,
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 30307,
+          "root_thread_id": "01a0e181-87bb-7651-b4dc-17f64b4b2e44",
+          "root_usage": {
+            "input_tokens": 56052,
+            "cached_input_tokens": 50944,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 796,
+            "reasoning_output_tokens": 257
+          },
+          "sessions": [
+            {
+              "id": "01a0e181-87bb-7651-b4dc-17f64b4b2e44",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 56052,
+                "cached_input_tokens": 50944,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 796,
+                "reasoning_output_tokens": 257,
+                "total_tokens": 56848
+              }
+            }
+          ],
+          "selector_audit": [],
+          "protocol_ok": true,
+          "answer": "{\"value\":\"_pytest.pathlib.fnmatch_ex performs each glob match. pytest_collect_file passes the configured python_files patterns to path_matches_patterns, which calls fnmatch_ex for each pattern.\",\"citations\":[\"src/_pytest/python.py:218\",\"src/_pytest/python.py:219\",\"src/_pytest/python.py:230\",\"src/_pytest/python.py:232\",\"src/_pytest/pathlib.py:476\"]}",
+          "grade": {
+            "correct": false,
+            "detail": "answer or required source citations do not match"
+          },
+          "changed_paths": [],
+          "patch": null,
+          "estimated_api_usd": 0.028364800000000003,
+          "trace": "results-traces/pt-collection-glob-helper.rep1.laya.attempt1.jsonl"
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 29585,
+          "root_thread_id": "01a0e182-018d-7e10-b7c7-f524457c8712",
+          "root_usage": {
+            "input_tokens": 70648,
+            "cached_input_tokens": 65280,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 585,
+            "reasoning_output_tokens": 244
+          },
+          "sessions": [
+            {
+              "id": "01a0e182-018d-7e10-b7c7-f524457c8712",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 70648,
+                "cached_input_tokens": 65280,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 585,
+                "reasoning_output_tokens": 244,
+                "total_tokens": 71233
+              }
+            }
+          ],
+          "selector_audit": [],
+          "protocol_ok": true,
+          "answer": "{\"value\":\"path_matches_patterns checks the configured python_files patterns and calls fnmatch_ex for each glob. fnmatch_ex performs the match using fnmatch.fnmatch.\",\"citations\":[\"src/_pytest/python.py:218\",\"src/_pytest/python.py:219\",\"src/_pytest/python.py:230\",\"src/_pytest/python.py:232\",\"src/_pytest/pathlib.py:476\",\"src/_pytest/pathlib.py:509\"]}",
+          "grade": {
+            "correct": false,
+            "detail": "answer or required source citations do not match"
+          },
+          "changed_paths": [],
+          "patch": null,
+          "estimated_api_usd": 0.029642,
+          "trace": "results-traces/pt-collection-glob-helper.rep1.laya.attempt2.jsonl"
+        }
+      ],
+      "passed": false,
+      "estimated_api_usd": 0.058006800000000004,
+      "end_to_end_ms": 59892
+    },
+    {
+      "task": "pt-collection-glob-helper",
+      "kind": "multi",
+      "repo": "pytest",
+      "arm": "deterministic",
+      "repetition": 1,
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 39387,
+          "root_thread_id": "01a0e182-7516-7331-b30e-9ce3f539e682",
+          "root_usage": {
+            "input_tokens": 121162,
+            "cached_input_tokens": 101120,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 837,
+            "reasoning_output_tokens": 318
+          },
+          "sessions": [
+            {
+              "id": "01a0e182-7516-7331-b30e-9ce3f539e682",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 121162,
+                "cached_input_tokens": 101120,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 837,
+                "reasoning_output_tokens": 318,
+                "total_tokens": 121999
+              }
+            }
+          ],
+          "selector_audit": [
+            {
+              "timestamp": "2026-09-27T06:17:11.752Z",
+              "requested_selector": "deterministic",
+              "used_selector": "deterministic",
+              "fallback": null,
+              "candidates": 16,
+              "returned": 6,
+              "kind": "code"
+            },
+            {
+              "timestamp": "2026-09-27T06:17:15.278Z",
+              "requested_selector": "deterministic",
+              "used_selector": "deterministic",
+              "fallback": null,
+              "candidates": 16,
+              "returned": 6,
+              "kind": "code"
+            },
+            {
+              "timestamp": "2026-09-27T06:17:18.808Z",
+              "requested_selector": "deterministic",
+              "used_selector": "deterministic",
+              "fallback": null,
+              "candidates": 16,
+              "returned": 6,
+              "kind": "code"
+            }
+          ],
+          "protocol_ok": true,
+          "answer": "{\"value\":\"_pytest.pathlib.fnmatch_ex, called once per pattern by path_matches_patterns.\",\"citations\":[\"src/_pytest/python.py:218\",\"src/_pytest/python.py:219\",\"src/_pytest/python.py:232\",\"src/_pytest/pathlib.py:476\"]}",
+          "grade": {
+            "correct": false,
+            "detail": "answer or required source citations do not match"
+          },
+          "changed_paths": [],
+          "patch": null,
+          "estimated_api_usd": 0.068678,
+          "trace": "results-traces/pt-collection-glob-helper.rep1.deterministic.attempt1.jsonl"
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 54345,
+          "root_thread_id": "01a0e183-120b-7aa3-9b7c-8829726828da",
+          "root_usage": {
+            "input_tokens": 54008,
+            "cached_input_tokens": 48000,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 417,
+            "reasoning_output_tokens": 124
+          },
+          "sessions": [
+            {
+              "id": "01a0e183-120b-7aa3-9b7c-8829726828da",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 54008,
+                "cached_input_tokens": 48000,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 417,
+                "reasoning_output_tokens": 124,
+                "total_tokens": 54425
+              }
+            }
+          ],
+          "selector_audit": [],
+          "protocol_ok": true,
+          "answer": "{\"value\":\"fnmatch_ex performs each glob match. pytest_collect_file passes the configured python_files patterns to path_matches_patterns, which calls fnmatch_ex for each pattern.\",\"citations\":[\"src/_pytest/python.py:218\",\"src/_pytest/python.py:219\",\"src/_pytest/python.py:232\",\"src/_pytest/pathlib.py:476\"]}",
+          "grade": {
+            "correct": false,
+            "detail": "answer or required source citations do not match"
+          },
+          "changed_paths": [],
+          "patch": null,
+          "estimated_api_usd": 0.025786,
+          "trace": "results-traces/pt-collection-glob-helper.rep1.deterministic.attempt2.jsonl"
+        }
+      ],
+      "passed": false,
+      "estimated_api_usd": 0.094464,
+      "end_to_end_ms": 93732
+    },
+    {
+      "task": "pt-report-factory",
+      "kind": "multi",
+      "repo": "pytest",
+      "arm": "laya",
+      "repetition": 1,
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 37792,
+          "root_thread_id": "01a0e183-e65b-76f2-a6c3-4b3f00e101cd",
+          "root_usage": {
+            "input_tokens": 69415,
+            "cached_input_tokens": 64768,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 556,
+            "reasoning_output_tokens": 178
+          },
+          "sessions": [
+            {
+              "id": "01a0e183-e65b-76f2-a6c3-4b3f00e101cd",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 69415,
+                "cached_input_tokens": 64768,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 556,
+                "reasoning_output_tokens": 178,
+                "total_tokens": 69971
+              }
+            }
+          ],
+          "selector_audit": [],
+          "protocol_ok": true,
+          "answer": "{\"value\":\"_pytest.reports.TestReport.from_item_and_call\",\"citations\":[\"src/_pytest/runner.py:23\",\"src/_pytest/runner.py:384\",\"src/_pytest/runner.py:385\",\"src/_pytest/reports.py:324\",\"src/_pytest/reports.py:410\",\"src/_pytest/reports.py:411\"]}",
+          "grade": {
+            "correct": false,
+            "detail": "answer or required source citations do not match"
+          },
+          "changed_paths": [],
+          "patch": null,
+          "estimated_api_usd": 0.0278076,
+          "trace": "results-traces/pt-report-factory.rep1.laya.attempt1.jsonl"
+        },
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 30634,
+          "root_thread_id": "01a0e184-7d9e-79a0-af78-2eff53f39981",
+          "root_usage": {
+            "input_tokens": 39852,
+            "cached_input_tokens": 34176,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 446,
+            "reasoning_output_tokens": 159
+          },
+          "sessions": [
+            {
+              "id": "01a0e184-7d9e-79a0-af78-2eff53f39981",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 39852,
+                "cached_input_tokens": 34176,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 446,
+                "reasoning_output_tokens": 159,
+                "total_tokens": 40298
+              }
+            }
+          ],
+          "selector_audit": [],
+          "protocol_ok": true,
+          "answer": "{\"value\":\"_pytest.reports.TestReport.from_item_and_call\",\"citations\":[\"src/_pytest/runner.py:384\",\"src/_pytest/runner.py:385\",\"src/_pytest/reports.py:324\",\"src/_pytest/reports.py:411\"]}",
+          "grade": {
+            "correct": false,
+            "detail": "answer or required source citations do not match"
+          },
+          "changed_paths": [],
+          "patch": null,
+          "estimated_api_usd": 0.0226472,
+          "trace": "results-traces/pt-report-factory.rep1.laya.attempt2.jsonl"
+        }
+      ],
+      "passed": false,
+      "estimated_api_usd": 0.050454799999999994,
+      "end_to_end_ms": 68426
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{"type":"thread.started","thread_id":"01a0e174-7f17-7840-9f87-0cc0cbcc069b"}
+{"type":"turn.started"}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":0}
+{"type":"item.completed","item_type":"agent_message","text":"{\"value\":\"src/_pytest/python.py:230\",\"citations\":[\"src/_pytest/python.py:230\"]}"}
+{"type":"turn.completed","usage":{"input_tokens":25926,"cached_input_tokens":23424,"cache_write_input_tokens":0,"output_tokens":196,"reasoning_output_tokens":81}}

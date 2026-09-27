@@ -1,0 +1,11 @@
+--- a/django/utils/text.py
++++ b/django/utils/text.py
+@@ -434,7 +434,7 @@
+             .decode("ascii")
+         )
+     value = re.sub(r"[^\w\s-]", "", value.lower())
+-    return re.sub(r"\s+", "-", value).strip("-_")
++    return re.sub(r"[-\s]+", "-", value).strip("-_")
+ 
+ 
+ def camel_case_to_spaces(value):

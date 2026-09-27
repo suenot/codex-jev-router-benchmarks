@@ -1,0 +1,12 @@
+{"type":"thread.started","thread_id":"01a0e1a8-9787-7c11-8867-dc94c1648fab"}
+{"type":"turn.started"}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":0}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":0}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":0}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":0}
+{"type":"item.completed","item_type":"agent_message","text":"{\"value\":\"_pytest.pathlib.import_path\",\"citations\":[\"src/_pytest/python.py:77\",\"src/_pytest/python.py:528\",\"src/_pytest/pathlib.py:546\"]}"}
+{"type":"turn.completed","usage":{"input_tokens":69788,"cached_input_tokens":51840,"cache_write_input_tokens":0,"output_tokens":568,"reasoning_output_tokens":105}}

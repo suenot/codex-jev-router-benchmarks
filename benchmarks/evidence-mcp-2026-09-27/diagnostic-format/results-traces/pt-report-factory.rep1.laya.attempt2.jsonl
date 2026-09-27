@@ -1,0 +1,8 @@
+{"type":"thread.started","thread_id":"01a0e184-7d9e-79a0-af78-2eff53f39981"}
+{"type":"turn.started"}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":0}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":0}
+{"type":"item.completed","item_type":"agent_message","text":"{\"value\":\"_pytest.reports.TestReport.from_item_and_call\",\"citations\":[\"src/_pytest/runner.py:384\",\"src/_pytest/runner.py:385\",\"src/_pytest/reports.py:324\",\"src/_pytest/reports.py:411\"]}"}
+{"type":"turn.completed","usage":{"input_tokens":39852,"cached_input_tokens":34176,"cache_write_input_tokens":0,"output_tokens":446,"reasoning_output_tokens":159}}

@@ -1,0 +1,6 @@
+{"type":"thread.started","thread_id":"01a0e197-aa37-7600-a28d-ba33b4860ba2"}
+{"type":"turn.started"}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":0}
+{"type":"item.completed","item_type":"agent_message","text":"{\"value\":\"django/core/paginator.py:191\",\"citations\":[\"django/core/paginator.py:191\"]}"}
+{"type":"turn.completed","usage":{"input_tokens":25883,"cached_input_tokens":21504,"cache_write_input_tokens":0,"output_tokens":154,"reasoning_output_tokens":40}}

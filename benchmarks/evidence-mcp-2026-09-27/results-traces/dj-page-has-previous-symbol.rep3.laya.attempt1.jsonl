@@ -1,0 +1,7 @@
+{"type":"thread.started","thread_id":"01a0e1db-e1d0-70d2-85a8-fc57f5e3f15b"}
+{"type":"turn.started"}
+{"type":"item.completed","item_type":"agent_message","text":"I’ll locate the method in the checkout and report its exact line."}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":0}
+{"type":"item.completed","item_type":"agent_message","text":"{\"value\":\"django/core/paginator.py:191\",\"citations\":[\"django/core/paginator.py:191\"]}"}
+{"type":"turn.completed","usage":{"input_tokens":25936,"cached_input_tokens":23424,"cache_write_input_tokens":0,"output_tokens":249,"reasoning_output_tokens":113}}

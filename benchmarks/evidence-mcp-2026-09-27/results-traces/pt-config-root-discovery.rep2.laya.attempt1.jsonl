@@ -1,0 +1,10 @@
+{"type":"thread.started","thread_id":"01a0e1cb-d93b-74e1-9101-6227c274fa6d"}
+{"type":"turn.started"}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":0}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":0}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":0}
+{"type":"item.completed","item_type":"agent_message","text":"{\"value\":\"determine_setup, called by Config.parse to discover the root path and ini file.\",\"citations\":[\"src/_pytest/config/__init__.py:1631\",\"src/_pytest/config/__init__.py:1652\",\"src/_pytest/config/__init__.py:1659\",\"src/_pytest/config/__init__.py:1660\",\"src/_pytest/config/findpaths.py:395\",\"src/_pytest/config/findpaths.py:403\"]}"}
+{"type":"turn.completed","usage":{"input_tokens":58377,"cached_input_tokens":46080,"cache_write_input_tokens":0,"output_tokens":544,"reasoning_output_tokens":189}}

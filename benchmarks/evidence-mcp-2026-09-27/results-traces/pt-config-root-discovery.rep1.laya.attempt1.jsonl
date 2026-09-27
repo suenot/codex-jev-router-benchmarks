@@ -1,0 +1,11 @@
+{"type":"thread.started","thread_id":"01a0e1a7-b3b5-79a1-9f95-f0e331d5bb15"}
+{"type":"turn.started"}
+{"type":"item.completed","item_type":"agent_message","text":"I’ll trace the call in the local checkout and check the exact line numbers."}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":2}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":0}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":0}
+{"type":"item.completed","item_type":"agent_message","text":"{\"value\":\"determine_setup\",\"citations\":[\"src/_pytest/config/__init__.py:1652\",\"src/_pytest/config/__init__.py:1659\",\"src/_pytest/config/__init__.py:1660\",\"src/_pytest/config/findpaths.py:395\",\"src/_pytest/config/findpaths.py:403\"]}"}
+{"type":"turn.completed","usage":{"input_tokens":57070,"cached_input_tokens":51328,"cache_write_input_tokens":0,"output_tokens":715,"reasoning_output_tokens":280}}

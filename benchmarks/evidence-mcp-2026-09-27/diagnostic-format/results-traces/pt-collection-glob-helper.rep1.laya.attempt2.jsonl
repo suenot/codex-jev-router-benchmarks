@@ -1,0 +1,12 @@
+{"type":"thread.started","thread_id":"01a0e182-018d-7e10-b7c7-f524457c8712"}
+{"type":"turn.started"}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":0}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":0}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":0}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":0}
+{"type":"item.completed","item_type":"agent_message","text":"{\"value\":\"path_matches_patterns checks the configured python_files patterns and calls fnmatch_ex for each glob. fnmatch_ex performs the match using fnmatch.fnmatch.\",\"citations\":[\"src/_pytest/python.py:218\",\"src/_pytest/python.py:219\",\"src/_pytest/python.py:230\",\"src/_pytest/python.py:232\",\"src/_pytest/pathlib.py:476\",\"src/_pytest/pathlib.py:509\"]}"}
+{"type":"turn.completed","usage":{"input_tokens":70648,"cached_input_tokens":65280,"cache_write_input_tokens":0,"output_tokens":585,"reasoning_output_tokens":244}}

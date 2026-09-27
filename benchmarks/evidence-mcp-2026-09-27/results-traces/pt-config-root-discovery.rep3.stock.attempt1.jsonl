@@ -1,0 +1,10 @@
+{"type":"thread.started","thread_id":"01a0e1ef-94c7-7af0-b4c4-5edcc79de089"}
+{"type":"turn.started"}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":0}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":1}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":0}
+{"type":"item.completed","item_type":"agent_message","text":"{\"value\":\"determine_setup\",\"citations\":[\"src/_pytest/config/__init__.py:1652\",\"src/_pytest/config/findpaths.py:395\"]}"}
+{"type":"turn.completed","usage":{"input_tokens":59225,"cached_input_tokens":53248,"cache_write_input_tokens":0,"output_tokens":546,"reasoning_output_tokens":141}}

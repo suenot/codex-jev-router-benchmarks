@@ -1,0 +1,9 @@
+{"type":"thread.started","thread_id":"01a0e1df-4be5-7e50-a771-56e6d6d52a40"}
+{"type":"turn.started"}
+{"type":"item.completed","item_type":"agent_message","text":"I’ll check the local checkout for the definition and its line number."}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":0}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":0}
+{"type":"item.completed","item_type":"agent_message","text":"{\"value\":\"src/_pytest/pathlib.py:1082\",\"citations\":[\"src/_pytest/pathlib.py:1082\"]}"}
+{"type":"turn.completed","usage":{"input_tokens":39186,"cached_input_tokens":34432,"cache_write_input_tokens":0,"output_tokens":346,"reasoning_output_tokens":114}}

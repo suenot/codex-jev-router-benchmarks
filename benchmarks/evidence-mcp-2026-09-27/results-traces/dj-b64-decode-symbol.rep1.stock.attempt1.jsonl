@@ -1,0 +1,8 @@
+{"type":"thread.started","thread_id":"01a0e197-22af-7d00-a149-af58819d4582"}
+{"type":"turn.started"}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":0}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":0}
+{"type":"item.completed","item_type":"agent_message","text":"{\"value\":\"django/core/signing.py:95\",\"citations\":[\"django/core/signing.py:95\"]}"}
+{"type":"turn.completed","usage":{"input_tokens":38999,"cached_input_tokens":36224,"cache_write_input_tokens":0,"output_tokens":246,"reasoning_output_tokens":43}}

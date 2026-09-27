@@ -1,0 +1,6 @@
+{"type":"thread.started","thread_id":"01a0e1dc-73ac-72e0-90c4-4439dfe90255"}
+{"type":"turn.started"}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":0}
+{"type":"item.completed","item_type":"agent_message","text":"{\"value\":\"src/_pytest/pathlib.py:873\",\"citations\":[\"src/_pytest/pathlib.py:873\"]}"}
+{"type":"turn.completed","usage":{"input_tokens":25916,"cached_input_tokens":23424,"cache_write_input_tokens":0,"output_tokens":154,"reasoning_output_tokens":37}}

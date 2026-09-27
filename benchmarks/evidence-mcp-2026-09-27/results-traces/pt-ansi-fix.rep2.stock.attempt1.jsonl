@@ -1,0 +1,30 @@
+{"type":"thread.started","thread_id":"01a0e1d4-4c45-7e10-b422-0548d53df890"}
+{"type":"turn.started"}
+{"type":"item.completed","item_type":"agent_message","text":"I’ll inspect the helper and its callers in this checkout, then make the smallest change in `src/_pytest/logging.py`."}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":0}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":2}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":2}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":0}
+{"type":"item.completed","item_type":"agent_message","text":"The checkout has a one-line change that makes the helper return the input unchanged. I’ll restore the existing ANSI substitution, then run the focused logging test."}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"file_change"}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":127}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":1}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":0}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":0}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":1}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":0}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":0}
+{"type":"item.completed","item_type":"agent_message","text":"{\"done\":true}"}
+{"type":"turn.completed","usage":{"input_tokens":205428,"cached_input_tokens":191232,"cache_write_input_tokens":0,"output_tokens":2412,"reasoning_output_tokens":728}}

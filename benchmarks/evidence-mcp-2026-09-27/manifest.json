@@ -1,0 +1,57 @@
+{
+  "schema": 1,
+  "status": "frozen after format diagnostics; all exposed read tasks replaced before final runs",
+  "seed": 20260927,
+  "repetitions": 3,
+  "repositories": {
+    "django": {
+      "url": "https://github.com/django/django.git",
+      "commit": "9b224579875e30203d079cc2fee83b116d98eb78"
+    },
+    "pytest": {
+      "url": "https://github.com/pytest-dev/pytest.git",
+      "commit": "8721173580390a9d297e5af06cac3f0b6841f425"
+    }
+  },
+  "protocol": {
+    "arms": ["stock", "deterministic", "laya"],
+    "model": "gpt-6-sol",
+    "reasoning_effort": "xhigh",
+    "max_attempts": 2,
+    "mcp_eligible_kinds": ["log", "multi"],
+    "primary_outcome": "complete_retry_inclusive_estimated_api_usd",
+    "quality_gate": "no fewer strict passes than stock and no new critical failures",
+    "cost_gate": "at least 10 percent lower total estimated cost on eligible tasks; paired 95 percent bootstrap confidence interval excludes zero saving",
+    "laya_gate": "every eligible Laya search must report Selection: laya, no Fallback marker"
+  },
+  "tasks": [
+    {"id":"dj-b64-decode-symbol","phase":"holdout","repo":"django","kind":"exact","prompt":"Locate the definition of b64_decode in the Django source. Return its repository-relative path and line.","expected":"django/core/signing.py:95","citations":["django/core/signing.py:95"]},
+    {"id":"dj-page-has-previous-symbol","phase":"holdout","repo":"django","kind":"exact","prompt":"Locate the definition of Page.has_previous in the Django source. Return its repository-relative path and line.","expected":"django/core/paginator.py:191","citations":["django/core/paginator.py:191"]},
+    {"id":"pt-resolve-package-symbol","phase":"holdout","repo":"pytest","kind":"exact","prompt":"Locate the definition of resolve_package_path in pytest. Return its repository-relative path and line.","expected":"src/_pytest/pathlib.py:873","citations":["src/_pytest/pathlib.py:873"]},
+    {"id":"pt-safe-exists-symbol","phase":"holdout","repo":"pytest","kind":"exact","prompt":"Locate the definition of safe_exists in pytest. Return its repository-relative path and line.","expected":"src/_pytest/pathlib.py:1082","citations":["src/_pytest/pathlib.py:1082"]},
+
+    {"id":"dj-signing-incident","phase":"holdout","repo":"django","kind":"log","prompt":"In bench-logs/incident.log, trace correlation DJ-SIGN-634 through its recoverable first and second attempts to the terminal third attempt. Name the source method at the terminal failing frame, ignoring earlier recovered frames and later replay messages.","expected":"TimestampSigner.unsign","citations":["bench-logs/incident.log:901","bench-logs/incident.log:902","django/core/signing.py:287"],"log_source":"django/core/signing.py:287"},
+    {"id":"dj-paginator-page-incident","phase":"holdout","repo":"django","kind":"log","prompt":"In bench-logs/incident.log, trace correlation DJ-PAGE-572 through its recoverable first and second attempts to the terminal third attempt. Name the source method at the terminal failing frame, ignoring earlier recovered frames and later replay messages.","expected":"Paginator.page","citations":["bench-logs/incident.log:901","bench-logs/incident.log:902","django/core/paginator.py:70"],"log_source":"django/core/paginator.py:70"},
+    {"id":"pt-collect-report-incident","phase":"holdout","repo":"pytest","kind":"log","prompt":"In bench-logs/incident.log, trace correlation PT-REPORT-841 through its recoverable first and second attempts to the terminal third attempt. Name the source function at the terminal failing frame, ignoring earlier recovered frames and later replay messages.","expected":"pytest_make_collect_report","citations":["bench-logs/incident.log:901","bench-logs/incident.log:902","src/_pytest/runner.py:388"],"log_source":"src/_pytest/runner.py:388"},
+    {"id":"pt-locate-config-incident","phase":"holdout","repo":"pytest","kind":"log","prompt":"In bench-logs/incident.log, trace correlation PT-CONFIG-286 through its recoverable first and second attempts to the terminal third attempt. Name the source function at the terminal failing frame, ignoring earlier recovered frames and later replay messages.","expected":"locate_config","citations":["bench-logs/incident.log:901","bench-logs/incident.log:902","src/_pytest/config/findpaths.py:289"],"log_source":"src/_pytest/config/findpaths.py:289"},
+
+    {"id":"dj-random-storage-suffix","phase":"holdout","repo":"django","kind":"multi","prompt":"When Storage.get_alternative_name creates a collision-resistant filename suffix, which helper generates the random characters? Trace the call to that helper definition.","expected":"get_random_string","citations":["django/core/files/storage/base.py:58","django/utils/crypto.py:50"]},
+    {"id":"dj-redirect-iri-conversion","phase":"holdout","repo":"django","kind":"multi","prompt":"When HttpResponseRedirectBase sets the Location header from redirect_to, which Django helper converts the IRI to a URI? Trace the call to that helper definition.","expected":"iri_to_uri","citations":["django/http/response.py:633","django/utils/encoding.py:111"]},
+    {"id":"pt-config-root-discovery","phase":"holdout","repo":"pytest","kind":"multi","prompt":"During pytest configuration initialization, which helper discovers the root path and ini file? Trace its call in config initialization to the helper definition.","expected":"determine_setup","citations":["src/_pytest/config/__init__.py:1652","src/_pytest/config/findpaths.py:395"]},
+    {"id":"pt-test-module-import","phase":"holdout","repo":"pytest","kind":"multi","prompt":"When importtestmodule loads a test module, which helper performs the path-based import? Trace the call to its definition.","expected":"import_path","citations":["src/_pytest/python.py:528","src/_pytest/pathlib.py:546"]},
+
+    {"id":"dj-filename-fix","phase":"holdout","repo":"django","kind":"edit","prompt":"get_valid_filename incorrectly removes internal spaces instead of converting them to underscores. Restore the intended behavior with the smallest change in django/utils/text.py. Preserve other filename rules.","changed":"django/utils/text.py","mutation":{"old":"s = str(name).strip().replace(\" \", \"_\")","new":"s = str(name).strip().replace(\" \", \"\")"}},
+    {"id":"dj-slugify-fix","phase":"holdout","repo":"django","kind":"edit","prompt":"slugify no longer collapses runs of dashes with whitespace. Restore that behavior in django/utils/text.py without changing Unicode handling.","changed":"django/utils/text.py","mutation":{"old":"return re.sub(r\"[-\\s]+\", \"-\", value).strip(\"-_\")","new":"return re.sub(r\"\\s+\", \"-\", value).strip(\"-_\")"}},
+    {"id":"pt-ansi-fix","phase":"holdout","repo":"pytest","kind":"edit","prompt":"Captured logs retain ANSI color codes. Repair _remove_ansi_escape_sequences in src/_pytest/logging.py without changing unrelated formatting.","changed":"src/_pytest/logging.py","mutation":{"old":"return _ANSI_ESCAPE_SEQ.sub(\"\", text)","new":"return text"}},
+    {"id":"pt-pattern-fix","phase":"holdout","repo":"pytest","kind":"edit","prompt":"Python test files currently need to match every configured python_files glob. Repair path_matches_patterns in src/_pytest/python.py so one matching glob is sufficient.","changed":"src/_pytest/python.py","mutation":{"old":"return any(fnmatch_ex(pattern, path) for pattern in patterns)","new":"return all(fnmatch_ex(pattern, path) for pattern in patterns)"}},
+
+    {"id":"dj-pagination-incident","phase":"tuning","repo":"django","kind":"log","prompt":"In bench-logs/incident.log, trace correlation DJ-PAGE-482 through its recoverable first and second attempts to the terminal third attempt. Name the source method at the terminal failing frame, ignoring earlier recovered frames and later replay messages.","expected":"Paginator.validate_number","citations":["bench-logs/incident.log:901","bench-logs/incident.log:902","django/core/paginator.py:43"],"log_source":"django/core/paginator.py:43"},
+    {"id":"tune-dj-storage-symbol","phase":"tuning","repo":"django","kind":"exact","prompt":"Locate Storage.generate_filename and return its repository-relative definition location.","expected":"django/core/files/storage/base.py:101","citations":["django/core/files/storage/base.py:101"]},
+    {"id":"tune-pt-collect-symbol","phase":"tuning","repo":"pytest","kind":"exact","prompt":"Locate pytest_collect_file and return its repository-relative definition location.","expected":"src/_pytest/python.py:215","citations":["src/_pytest/python.py:215"]},
+    {"id":"tune-pt-fnmatch-symbol","phase":"tuning","repo":"pytest","kind":"exact","prompt":"Locate fnmatch_ex and return its repository-relative definition location.","expected":"src/_pytest/pathlib.py:476","citations":["src/_pytest/pathlib.py:476"]},
+    {"id":"tune-dj-storage-chain","phase":"tuning","repo":"django","kind":"multi","prompt":"Which Storage method delegates to get_valid_filename? Give its method name and cite the call and callee definition.","expected":"Storage.get_valid_name","citations":["django/core/files/storage/base.py:50","django/utils/text.py:237"]},
+    {"id":"tune-dj-redirect-class","phase":"tuning","repo":"django","kind":"multi","prompt":"Name the default CommonMiddleware redirect response class and cite the assignment and class definition.","expected":"HttpResponsePermanentRedirect","citations":["django/middleware/common.py:32","django/http/response.py:658"]},
+    {"id":"tune-pt-pattern-default","phase":"tuning","repo":"pytest","kind":"multi","prompt":"Which two default python_files globs are configured for Python test discovery? Return them in source order joined with a comma, and cite the configuration and use.","expected":"test_*.py,*_test.py","citations":["src/_pytest/python.py:101","src/_pytest/python.py:219"]},
+    {"id":"tune-pt-call-report","phase":"tuning","repo":"pytest","kind":"multi","prompt":"Which helper emits pytest_runtest_logreport after constructing a TestReport? Name the helper and cite its definition and report call.","expected":"call_and_report","citations":["src/_pytest/runner.py:236","src/_pytest/runner.py:256"]}
+  ]
+}

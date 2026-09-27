@@ -1,0 +1,11 @@
+{"type":"thread.started","thread_id":"01a0e17f-b2c4-7472-9137-bc98239a76e4"}
+{"type":"turn.started"}
+{"type":"item.completed","item_type":"agent_message","text":"I’ll trace the middleware setting to the response class and check its status definition in the pinned checkout."}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":0}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":0}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":0}
+{"type":"item.completed","item_type":"agent_message","text":"{\"value\":301,\"citations\":[\"django/middleware/common.py:7\",\"django/middleware/common.py:32\",\"django/http/response.py:658\",\"django/http/response.py:659\"]}"}
+{"type":"turn.completed","usage":{"input_tokens":53864,"cached_input_tokens":39296,"cache_write_input_tokens":0,"output_tokens":431,"reasoning_output_tokens":144}}

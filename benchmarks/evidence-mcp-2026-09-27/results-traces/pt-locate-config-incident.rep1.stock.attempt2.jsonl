@@ -1,0 +1,8 @@
+{"type":"thread.started","thread_id":"01a0e1a3-0586-7813-8f87-4b0f9fc5ea76"}
+{"type":"turn.started"}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":0}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":0}
+{"type":"item.completed","item_type":"agent_message","text":"{\"value\":\"locate_config\",\"citations\":[\"bench-logs/incident.log:902\",\"src/_pytest/config/findpaths.py:289\"]}"}
+{"type":"turn.completed","usage":{"input_tokens":43373,"cached_input_tokens":38144,"cache_write_input_tokens":0,"output_tokens":314,"reasoning_output_tokens":76}}

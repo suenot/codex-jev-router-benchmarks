@@ -1,0 +1,240 @@
+{
+  "benchmark": "local evidence MCP against one Sol xhigh root",
+  "generated_at": "2026-09-27T05:44:15.155Z",
+  "identity": {
+    "manifest_sha256": "57bd76f40e52723db5bdc1dc3ecbdd3a0dd0e250b63cc4f2a1cb6452d056f345",
+    "runner_sha256": "9c49babedd766863eba64a47030ae30f8095a38bfdc7aa6ec7eaa80ca24b8feb",
+    "library_sha256": "3c2d1a75eee63d8baf795fc3e81096857028a82ec96985b6d5f5376c4549fbcd",
+    "grader_sha256": "8a7afe0bd13a0c700a4ea59e0cafd759eb9541e764d6a81d7d0fec551bb76510",
+    "server_sha256": "5fc47d46d85b1e70e76f31d98a359fa91c5e4051d6ae59fe22e9bd86a800a861",
+    "phase": "holdout",
+    "selected_tasks": [
+      "dj-pagination-incident"
+    ],
+    "repetitions": 1,
+    "max_attempts": 1,
+    "commits": {
+      "django": "9b224579875e30203d079cc2fee83b116d98eb78",
+      "pytest": "8721173580390a9d297e5af06cac3f0b6841f425"
+    }
+  },
+  "codex_version": "codex-cli 0.157.1",
+  "pricing": {
+    "currency": "USD",
+    "units": "per million tokens",
+    "model_rates": {
+      "gpt-6-sol": {
+        "input": 2,
+        "cached": 0.2,
+        "cache_write": 2.5,
+        "output": 10
+      }
+    },
+    "source": "https://developers.openai.com/api/docs/pricing",
+    "caveat": "API cost estimate, not subscription billing; local selector compute and electricity not priced"
+  },
+  "laya_backend": {
+    "url": "http://127.0.0.1:8000/v1/systemone",
+    "model": "typed-decisions",
+    "binding": "loopback only; no hosted decision backend"
+  },
+  "isolation": "fresh local clone and CODEX_HOME per attempt; no inherited MCP config; agents disabled; no hosted decider",
+  "schedule": [
+    {
+      "task": "dj-pagination-incident",
+      "repetition": 1,
+      "order": [
+        "deterministic",
+        "laya",
+        "stock"
+      ]
+    }
+  ],
+  "runs": [
+    {
+      "task": "dj-pagination-incident",
+      "kind": "log",
+      "repo": "django",
+      "arm": "deterministic",
+      "repetition": 1,
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 43638,
+          "root_thread_id": "01a0e164-99b3-7e23-866d-f448b7040187",
+          "root_usage": {
+            "input_tokens": 84600,
+            "cached_input_tokens": 69120,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 769,
+            "reasoning_output_tokens": 377
+          },
+          "sessions": [
+            {
+              "id": "01a0e164-99b3-7e23-866d-f448b7040187",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 84600,
+                "cached_input_tokens": 69120,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 769,
+                "reasoning_output_tokens": 377,
+                "total_tokens": 85369
+              }
+            }
+          ],
+          "selector_audit": [
+            {
+              "timestamp": "2026-09-27T05:44:41.926Z",
+              "requested_selector": "deterministic",
+              "used_selector": "deterministic",
+              "fallback": null,
+              "candidates": 16,
+              "returned": 6,
+              "kind": "log"
+            }
+          ],
+          "protocol_ok": true,
+          "answer": "{\"value\":\"Paginator.validate_number\",\"citations\":[\"bench-logs/incident.log:120\",\"bench-logs/incident.log:360\",\"bench-logs/incident.log:620\",\"bench-logs/incident.log:730\",\"bench-logs/incident.log:901\",\"bench-logs/incident.log:902\",\"django/core/paginator.py:43\"]}",
+          "grade": {
+            "correct": true,
+            "detail": "exact answer and source citations"
+          },
+          "changed_paths": [],
+          "patch": null,
+          "estimated_api_usd": 0.052474,
+          "trace": "evidence-pilot-log-traces/dj-pagination-incident.rep1.deterministic.attempt1.jsonl"
+        }
+      ],
+      "passed": true,
+      "estimated_api_usd": 0.052474,
+      "end_to_end_ms": 43638
+    },
+    {
+      "task": "dj-pagination-incident",
+      "kind": "log",
+      "repo": "django",
+      "arm": "laya",
+      "repetition": 1,
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 30680,
+          "root_thread_id": "01a0e165-3c2f-73b2-8841-f203798f3210",
+          "root_usage": {
+            "input_tokens": 73333,
+            "cached_input_tokens": 66304,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 596,
+            "reasoning_output_tokens": 270
+          },
+          "sessions": [
+            {
+              "id": "01a0e165-3c2f-73b2-8841-f203798f3210",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 73333,
+                "cached_input_tokens": 66304,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 596,
+                "reasoning_output_tokens": 270,
+                "total_tokens": 73929
+              }
+            }
+          ],
+          "selector_audit": [
+            {
+              "timestamp": "2026-09-27T05:45:16.788Z",
+              "requested_selector": "laya",
+              "used_selector": "laya",
+              "fallback": null,
+              "candidates": 16,
+              "returned": 6,
+              "kind": "log"
+            },
+            {
+              "timestamp": "2026-09-27T05:45:25.731Z",
+              "requested_selector": "laya",
+              "used_selector": "laya",
+              "fallback": null,
+              "candidates": 16,
+              "returned": 6,
+              "kind": "log"
+            }
+          ],
+          "protocol_ok": true,
+          "answer": "{\"value\":\"Paginator.validate_number\",\"citations\":[\"bench-logs/incident.log:360\",\"bench-logs/incident.log:730\",\"bench-logs/incident.log:901\",\"bench-logs/incident.log:902\",\"django/core/paginator.py:43\"]}",
+          "grade": {
+            "correct": false,
+            "detail": "answer or required source citations do not match"
+          },
+          "changed_paths": [],
+          "patch": null,
+          "estimated_api_usd": 0.033278800000000004,
+          "trace": "evidence-pilot-log-traces/dj-pagination-incident.rep1.laya.attempt1.jsonl"
+        }
+      ],
+      "passed": false,
+      "estimated_api_usd": 0.033278800000000004,
+      "end_to_end_ms": 30680
+    },
+    {
+      "task": "dj-pagination-incident",
+      "kind": "log",
+      "repo": "django",
+      "arm": "stock",
+      "repetition": 1,
+      "attempts": [
+        {
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_ms": 23518,
+          "root_thread_id": "01a0e165-bb9e-7170-a6cb-71b4e106136e",
+          "root_usage": {
+            "input_tokens": 92014,
+            "cached_input_tokens": 75392,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 627,
+            "reasoning_output_tokens": 230
+          },
+          "sessions": [
+            {
+              "id": "01a0e165-bb9e-7170-a6cb-71b4e106136e",
+              "parent_id": null,
+              "model": "gpt-6-sol",
+              "reasoning_effort": "xhigh",
+              "usage": {
+                "input_tokens": 92014,
+                "cached_input_tokens": 75392,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 627,
+                "reasoning_output_tokens": 230,
+                "total_tokens": 92641
+              }
+            }
+          ],
+          "selector_audit": [],
+          "protocol_ok": true,
+          "answer": "{\"value\":\"Paginator.validate_number\",\"citations\":[\"bench-logs/incident.log:120\",\"bench-logs/incident.log:360\",\"bench-logs/incident.log:620\",\"bench-logs/incident.log:730\",\"bench-logs/incident.log:901\",\"bench-logs/incident.log:902\",\"django/core/paginator.py:43\"]}",
+          "grade": {
+            "correct": true,
+            "detail": "exact answer and source citations"
+          },
+          "changed_paths": [],
+          "patch": null,
+          "estimated_api_usd": 0.0545924,
+          "trace": "evidence-pilot-log-traces/dj-pagination-incident.rep1.stock.attempt1.jsonl"
+        }
+      ],
+      "passed": true,
+      "estimated_api_usd": 0.0545924,
+      "end_to_end_ms": 23518
+    }
+  ]
+}

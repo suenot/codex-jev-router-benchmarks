@@ -1,0 +1,8 @@
+{"type":"thread.started","thread_id":"01a0e1f0-1961-7612-a32f-a91d18bab1aa"}
+{"type":"turn.started"}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":0}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":0}
+{"type":"item.completed","item_type":"agent_message","text":"{\"value\":\"determine_setup discovers the root path and ini file. Config.parse calls it, then stores the returned rootpath and inipath.\",\"citations\":[\"src/_pytest/config/__init__.py:1652\",\"src/_pytest/config/__init__.py:1659\",\"src/_pytest/config/__init__.py:1660\",\"src/_pytest/config/findpaths.py:395\",\"src/_pytest/config/findpaths.py:403\",\"src/_pytest/config/findpaths.py:493\"]}"}
+{"type":"turn.completed","usage":{"input_tokens":43838,"cached_input_tokens":37760,"cache_write_input_tokens":0,"output_tokens":602,"reasoning_output_tokens":350}}

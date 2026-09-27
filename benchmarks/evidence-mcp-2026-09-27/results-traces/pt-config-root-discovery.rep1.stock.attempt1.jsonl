@@ -1,0 +1,9 @@
+{"type":"thread.started","thread_id":"01a0e1a6-43f0-7aa3-83bd-50e592eb6e3b"}
+{"type":"turn.started"}
+{"type":"item.completed","item_type":"agent_message","text":"I’ll trace the local configuration call and helper definition, then return the source lines in JSON."}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":0}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":0}
+{"type":"item.completed","item_type":"agent_message","text":"{\"value\":\"determine_setup\",\"citations\":[\"src/_pytest/config/__init__.py:54\",\"src/_pytest/config/__init__.py:1652\",\"src/_pytest/config/findpaths.py:395\",\"src/_pytest/config/findpaths.py:403\"]}"}
+{"type":"turn.completed","usage":{"input_tokens":44293,"cached_input_tokens":37760,"cache_write_input_tokens":0,"output_tokens":609,"reasoning_output_tokens":222}}

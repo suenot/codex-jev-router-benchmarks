@@ -1,0 +1,9 @@
+{"type":"thread.started","thread_id":"01a0e173-08be-7442-91e9-223c091de1aa"}
+{"type":"turn.started"}
+{"type":"item.completed","item_type":"agent_message","text":"I’ll inspect the pinned checkout for the definition and its line number."}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":0}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":0}
+{"type":"item.completed","item_type":"agent_message","text":"{\"value\":\"django/utils/text.py:420\",\"citations\":[\"django/utils/text.py:420\"]}"}
+{"type":"turn.completed","usage":{"input_tokens":39380,"cached_input_tokens":34176,"cache_write_input_tokens":0,"output_tokens":377,"reasoning_output_tokens":154}}

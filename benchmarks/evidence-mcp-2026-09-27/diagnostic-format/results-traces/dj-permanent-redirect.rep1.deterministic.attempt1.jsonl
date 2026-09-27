@@ -1,0 +1,12 @@
+{"type":"thread.started","thread_id":"01a0e180-18af-7261-8fcf-7496bbaf6b11"}
+{"type":"turn.started"}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":0}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":0}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":0}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":0}
+{"type":"item.completed","item_type":"agent_message","text":"{\"value\":301,\"citations\":[\"django/middleware/common.py:7\",\"django/middleware/common.py:32\",\"django/http/__init__.py:10\",\"django/http/__init__.py:21\",\"django/http/response.py:658\",\"django/http/response.py:659\"]}"}
+{"type":"turn.completed","usage":{"input_tokens":68710,"cached_input_tokens":64128,"cache_write_input_tokens":0,"output_tokens":576,"reasoning_output_tokens":107}}

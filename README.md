@@ -6,6 +6,29 @@ This repository holds the benchmark runner, grading code, task inputs, traces, p
 
 The [new mixed four-arm run](BENCHMARK.md#audited-72-run-result) completed 72 comparisons on six public synthetic tasks, with three repetitions per arm. All four arms passed 18/18 strict checks. Optional delegation used no children and cost an estimated **2.7% more** than one Sol-xhigh root; Jev-routed children cost **27.2% less** than fixed Sol-high children but **69.7% more** than the single-root workflow. Luna low for exact lookups and Luna medium for bounded extraction passed the child-only comparison on one fixture task each. These results do not show an overall money saving against the single-root workflow.
 
+## Local evidence MCP study
+
+The [audited 144-run study](benchmarks/evidence-mcp-2026-09-27/REPORT.md) compares one Sol-xhigh Codex root with no MCP, deterministic local evidence MCP, and local Laya selection on 16 final tasks from two pinned real repositories, three repetitions each. On the preregistered log and multi-file set, deterministic MCP cost an estimated **$0.769878 versus $1.097944**, **29.9% less** (task-cluster 95% CI 5.7% to 46.0%), with **24/24 versus 21/24** strict passes. Across all tasks it cost **19.8% less**. The measured signal came from noisy synthetic logs (**41.5% less**); MCP was unused in all multi-file intervention runs. Laya made 14 genuine local selections but cost **8.8% more** than deterministic MCP on eligible tasks, so it is not the default.
+
+Two excluded diagnostics exposed grading problems. The read tasks seen in those diagnostics were replaced, and the final manifest and grader were frozen before the complete comparison. This is a final holdout after diagnostic feedback. Exact lookups are negative controls; each attempt starts a fresh session, so continuing-dialog cache effects remain unmeasured. After the full run, the main implementation was hardened to exclude hidden paths; a targeted fixture preflight passed, but the economic study was not rerun on that change. Costs are API price estimates, not subscription charges or local-compute costs.
+
+Clone [Django](https://github.com/django/django) and [pytest](https://github.com/pytest-dev/pytest) into separate directories and check out the exact commits in the manifest. Install the sibling router with `npm ci`, ensure a Codex CLI login and `uv` with Python 3.12 are available, then inspect the schedule and local MCP health:
+
+```sh
+npm run benchmark:evidence -- --dry-run
+npm run preflight:evidence
+# With a local Laya service on loopback: npm run preflight:evidence -- --laya
+```
+
+To reproduce the study, use pinned checkouts and a fresh output path:
+
+```sh
+npm run benchmark:evidence -- --repo django=/absolute/path/to/django --repo pytest=/absolute/path/to/pytest --output /absolute/path/evidence-results.json
+npm run audit:evidence -- --results /absolute/path/evidence-results.json --report /absolute/path/evidence-report.md --repo django=/absolute/path/to/django --repo pytest=/absolute/path/to/pytest
+```
+
+The auditor replays edit patches, checks all Codex usage and selector audit records, and evaluates paired quality and estimated API cost. It reports MCP nonuse rather than hiding it. Local selector CPU/electricity and subscription billing are not priced. A session with more than 272K total input tokens remains unpriced pending request-level long-context accounting.
+
 ## Full-workflow cost comparison
 
 Routing **before a root Codex session** gave a different result on the same 12 selected Django source tasks, twice each: Jev-routed single sessions cost an estimated **$0.184377** including Jev versus **$0.452677** for the saved direct Sol-high control, **59.3% less**. Strict checks passed **21/24 versus 22/24**, and elapsed time was **5.4% longer**. This is a historical comparison, not randomized A/B evidence of equal quality. Luna routes produced the aggregate saving; the Sol-low subset was **34.7% more expensive** than its direct Sol-high control. See the [direct-root experiment](BENCHMARK.md#direct-routing-before-the-root-codex-turn).

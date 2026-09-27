@@ -1,0 +1,14 @@
+{"type":"thread.started","thread_id":"01a0e1a1-4df5-7fa1-880e-b26db982103d"}
+{"type":"turn.started"}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"mcp_tool_call","tool":"search_workspace_evidence","server":"evidence"}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"mcp_tool_call","tool":"read_selected_evidence","server":"evidence"}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":0}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":0}
+{"type":"item.started"}
+{"type":"item.completed","item_type":"command_execution","exit_code":0}
+{"type":"item.completed","item_type":"agent_message","text":"{\"value\":\"pytest_make_collect_report\",\"citations\":[\"bench-logs/incident.log:360\",\"bench-logs/incident.log:730\",\"bench-logs/incident.log:901\",\"bench-logs/incident.log:902\",\"src/_pytest/runner.py:388\",\"bench-logs/incident.log:1100\"]}"}
+{"type":"turn.completed","usage":{"input_tokens":73560,"cached_input_tokens":65920,"cache_write_input_tokens":0,"output_tokens":1107,"reasoning_output_tokens":523}}

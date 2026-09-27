@@ -1,0 +1,13 @@
+{
+  "provenance": "post-run-supplement-not-runtime-attestation",
+  "captured_at": "2026-09-27T13:25:31Z",
+  "results_sha256": "13982f624e90186b7cc7d0001df8261abeae1209cedb2e455fedbd3bfa8aef2e",
+  "evidence_impl_sha256": "12c16294f892bbe1509bdc18311de2b710aa3098b6dbfc502cfe9c6f20ca0e4d",
+  "mcp_wrapper_sha256": "5fc47d46d85b1e70e76f31d98a359fa91c5e4051d6ae59fe22e9bd86a800a861",
+  "pre_privacy_post_run_capture": {
+    "captured_at": "2026-09-27T08:51:01.092Z",
+    "evidence_impl_sha256": "d7eb20634e92b40350dd6f46ea802edae9f0386df8d62b8594c8d5fd5f28ffe3"
+  },
+  "post_benchmark_change": "The main evidence implementation now excludes hidden paths and no longer passes --hidden to rg.",
+  "limitation": "All implementation digests were captured after the full run. The run-time identity hashes only the MCP wrapper. These post-run digests do not prove implementation bytes used at each model invocation."
+}
